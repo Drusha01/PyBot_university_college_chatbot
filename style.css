@@ -1,0 +1,309 @@
+@mixin ball {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .5);
+    z-index: 2;
+    margin-top: 4px;
+    animation: ball .45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  }
+
+body {
+    height: 100vh;
+    font-family: Roboto, sans-serif;
+    margin: 0px;
+    background-color: gainsboro;
+    overflow: hidden;
+    background: gainsboro;
+    display:flex;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  .glass-back-drop {
+    background: hsla(0, 0%, 100%, 0.55);
+    backdrop-filter: blur(1px);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .components{
+    margin:auto;
+  }
+  @media (min-width: 450px) {
+        .main-card {
+          width: 96%;
+          max-width: 400px;
+          height: calc(100% - 32px) !important;
+          border-radius: 8px !important;
+          max-height: 600px;
+        margin: 16px!important;
+        }
+      }
+
+      .collapsed {
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 24px !important;
+        margin: 16px!important;
+      }
+
+      .main-card {
+        background: #effffafc;
+        color: gainsboro;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transition: all 0.5s;
+        box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+  #chatbot_toggle {
+    position: absolute;
+    right: 0;
+    border: none;
+    height: 48px;
+    width: 48px;
+    background: #0d330d;
+    padding: 14px;
+  }
+  #chatbot_toggle:hover {
+    background: #0b4826;
+  }
+  .line {
+    height: 1px;
+    background-color: #0d330d;
+    width: 100%;
+    opacity: 0.2;
+  }
+  .main-title {
+    background-color: #0d330d;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    height: 48px;
+  }
+  .main-title>div{
+    height: 38px;
+    width: 37px;
+    display: flex;
+    margin-left: 19px;
+  }
+  .main-title svg {
+    height: 24px;
+    margin: auto;
+  }
+  .main-title > span {
+    margin: auto auto auto 8px;
+  }
+  .chat-area {
+    flex-grow: 1;
+    overflow: auto;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .timestamp {
+        position: absolute;
+        bottom: -15px;
+        font-size: 9px;
+        color: rgba(255, 255, 255, .3);
+      }
+  }
+  .input-message {
+    padding: 8px 48px 8px 16px;
+    flex-grow: 1;
+    border: none;
+  }
+  .input-message:focus {
+    outline: none;
+  }
+  .input-div {
+    height: 48px;
+    display: flex;
+  }
+
+  .input-send {
+    background: transparent;
+    width: 48px;
+    height: 48px;
+    right: 0%;
+    border: none;
+    cursor: pointer;
+  }
+  .input-send:hover {
+    background: lavender;
+  }
+  .input-send svg {
+    fill: #0d330d;
+    margin: 11px 8px;
+  }
+  .chat-message-div {
+    display: flex;
+  }
+
+  .chat-message-sent {
+    background-color: gainsboro;
+    margin: 8px 16px 8px 64px;
+    padding: 8px 16px;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 100ms;
+    color: black;
+    border-radius: 8px 8px 2px 8px;
+    background-color: lavender;
+    font-size: large;
+  }
+
+  .chat-message-received {
+    background-color: gainsboro;
+    margin: 8px 64px 8px 16px;
+    padding: 8px 16px;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 100ms;
+    color: black;
+    border-radius: 8px 8px 8px 2px;
+    background-color: lavender;
+    font-size: large;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+/*--------------------
+Custom Srollbar
+--------------------*/
+.mCSB_scrollTools {
+    margin: 1px -3px 1px 0;
+    opacity: 0;
+}
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px;
+  padding: 0 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(0, 0, 0, 0.5)!important;
+}
+
+
+/*--------------------
+Bounce
+--------------------*/
+@keyframes bounce {
+  0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.11% { transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.72% { transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.32% { transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.93% { transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  35.54% { transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  41.04% { transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.15% { transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  63.26% { transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  85.49% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+
+@keyframes ball {
+  from {
+    transform: translateY(0) scaleY(.8);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+
+.avatar {
+  position: relative;
+  /* z-index: 1; */
+  top: 3px;
+  left: 0;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  background: azure;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+
+  /*--------------------
+  Media Queries
+  --------------------*/
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* CSS styles for tablets */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    /* CSS styles for smartphones */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* CSS styles for laptops */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+
