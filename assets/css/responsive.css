@@ -1,0 +1,43 @@
+  /*--------------------
+  Media Queries
+  --------------------*/
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* CSS styles for tablets  Width: 768px Height: 1024px */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    /* CSS styles for smartphones Width: 480px Height: 928px */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* CSS styles for laptops Width: 1200px Height: 768px */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1440px){
+    /* CSS styles for desktops Width: 1440px Height: 768px */
+    .components img {
+        max-width: 100%;
+        height: auto;
+    }
+    .frame-item {
+        position: absolute;
+        margin: 0 !important;
+        top: -2% !important;
+        left: 25.3% !important;
+        width: 94% !important;
+        height: 105% !important;
+        z-index: 2;
+    }
+  }

@@ -26,7 +26,7 @@ body {
   --gap-3xs: 10px;
   --gap-6xs: 7px;
   --gap-7xs: 6px;
-  --gap-578xl: 597px;
+  --gap-578xl: 330px;
 
   /* Paddings */
   --padding-5xs: 8px;
@@ -37,4 +37,14 @@ body {
   /* Border radiuses */
   --br-3xs: 10px;
   --br-base: 16px;
+}
+
+@font-face {
+  font-family: 'Nico-Moji';
+  src:url('../fonts/Nico-Moji.ttf.woff') format('woff'),
+      url('../fonts/Nico-Moji.ttf.svg#Nico-Moji') format('svg'),
+      url('../fonts/Nico-Moji.ttf.eot'),
+      url('../fonts/Nico-Moji.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -278,32 +278,5 @@ Bounce
 
 
 
-  /*--------------------
-  Media Queries
-  --------------------*/
-
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    /* CSS styles for tablets */
-    .components img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    /* CSS styles for smartphones */
-    .components img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    /* CSS styles for laptops */
-    .components img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
 
 
