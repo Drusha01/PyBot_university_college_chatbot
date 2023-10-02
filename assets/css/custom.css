@@ -72,7 +72,7 @@ body {
     border: none;
     height: 48px;
     width: 48px;
-    background: #0d330d;
+    background: #0DCF7E;
     padding: 14px;
   }
   #chatbot_toggle:hover {
@@ -85,7 +85,7 @@ body {
     opacity: 0.2;
   }
   .main-title {
-    background-color: #0d330d;
+    background-color: #0DCF7E;
     font-size: large;
     font-weight: bold;
     display: flex;

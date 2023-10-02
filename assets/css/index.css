@@ -237,7 +237,8 @@
   font-family: var(--font-nico-moji);
 }
 .logo {
-  position: relative;
+  position: absolute;
+  top: 220%;
   width: 429px;
   height: 112px;
 }
@@ -568,23 +569,24 @@
 .chat-screen {
   margin: 0 !important;
   position: absolute;
-  top: 462px;
-  left: 1499px;
+  top: 291px;
+  left: 1306px;
   border-radius: 15px;
   background: linear-gradient(#fff, #fff), rgba(233, 254, 254, 0.2);
   width: 412px;
   height: 601px;
   flex-shrink: 0;
   align-items: center;
-  z-index: 2;
+  z-index: 0;
   text-align: left;
   font-size: var(--font-size-base);
   color: var(--color-gray-100);
   font-family: var(--font-inter);
+  opacity: 0.4;
 }
 .web-sized {
   position: relative;
-  background-color: #36b8b8;
+  background-color: #1c4533;
   width: 100%;
   align-items: flex-start;
   gap: var(--gap-3xs);

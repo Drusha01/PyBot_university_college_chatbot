@@ -34,6 +34,8 @@ Users:
 
 
 **Color Scheme list**
+- #0DCF7E,#1c4533
+
 - Modified whitesmoke "≈ Alto"
   - `#2596be`
   - rgb(222, 222, 222)
