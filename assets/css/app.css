@@ -1666,4 +1666,44 @@ dl {
   --tyn-icon-size: var(--bs-icon-size-4xl);
 }
 
+
+
+/* Hide sub-menus by default */
+.sub-menu ul {
+  display: none;
+}
+
+/* Show sub-menu on hover */
+.sub-menu:hover ul {
+  display: block;
+  margin-left: 19px;
+}
+
+li.lk {
+  display: flex;
+}
+.sub-menu#dept {
+  font-weight: 600;
+}
+
+/* Style the links and icons as needed */
+.tyn-list-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000; /* Adjust the color as needed */
+  padding: 10px;
+}
+
+/* Style the hover effect */
+.tyn-list-links a:hover {
+  background-color: #f0f0f0; /* Adjust the background color as needed */
+}
+
+/* Style the chat icons (you can customize these styles) */
+.tyn-list-links svg {
+  margin-right: 10px; /* Adjust the spacing between icon and text */
+}
+
+
 /*! END */
