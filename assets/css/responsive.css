@@ -1,0 +1,94 @@
+  /*--------------------
+  Media Queries
+  --------------------*/
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* CSS styles for tablets  Width: 768px Height: 1024px */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+    .frame-child {
+      position: absolute;
+      width: 200%;
+    }
+    .frame-item {
+      position: absolute;
+      top: -1.2%;
+      left: 39.5%;
+      width: 226%;
+      height: 99%;
+    }
+    .frame-parent {
+      position: absolute;
+      top: 5%;
+      left: 105px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    /* CSS styles for smartphones Width: 480px Height: 928px */
+    :root {
+      /* Gaps */
+      --gap-578xl: 210px !important;
+    }
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+    .frame-child {
+      position: absolute;
+      width: 200%;
+    }
+    .frame-item {
+      position: absolute;
+      top: -23.2%;
+      left: 77.5%;
+      width: 195%;
+      height: 143%;
+    }
+    .frame-parent {
+      position: absolute;
+      top: 5%;
+      left: 105px;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* CSS styles for laptops Width: 1200px Height: 768px */
+    .components img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  @media only screen and (min-width: 1250px) and (max-width: 1440px){
+    /* CSS styles for desktops Width: 1440px Height: 768px */
+    .components img {
+        max-width: 100%;
+        height: auto;
+    }
+    .frame-item {
+        position: absolute;
+        top: -11PX !important;
+        left: 25.3% !important;
+        width: 94% !important;
+        height: 105% !important;
+        z-index: 2;
+    }
+  }
+  @media only screen and (min-width:1480px) {
+    :root {
+      /* Gaps */
+      --gap-578xl: 400px !important;
+    }
+    .frame-item {
+      position: absolute;
+      top: -3.3% !important;
+      left: 33.7% !important;
+      width: 78% !important;
+      height: 109% !important;
+      z-index: 2;
+    }
+
+  }
+
