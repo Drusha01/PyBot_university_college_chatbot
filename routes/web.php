@@ -21,3 +21,15 @@ Route::get('/', function () {
 Route::get('/chat-live', function () {
     return view('chat-live');
 });
+
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::get('/admin/colleges', function () {
+    return view('admin.colleges');
+})->name('colleges');
+
+Route::get('/admin/department', function () {
+    return view('admin.department');
+})->name('department');
