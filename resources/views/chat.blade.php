@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="Chat Interface" content="PyBot">
-    <title>Pybot</title>
+    <title>Homapge Pybot</title>
     <!-- styled css -->
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
 <link rel="stylesheet" href="{{ asset('/assets/css/global.css') }}">
@@ -126,6 +126,7 @@
           </div>
         </div>
       </div>
+      
     <div id="chatbot" class="main-card collapsed">
         <button id="chatbot_toggle">
         <img src="{{ asset('assets/svg/chat-toggle.svg') }}" alt="Logo">
@@ -133,7 +134,7 @@
         </button>
         <div class="main-title">
             <div class="avatar">
-            <img src="{{ asset('svg/icon.svg') }}" alt="Logo">
+            <img src="{{ asset('assets/svg/icon.svg') }}" alt="Logo">
 
             </div>
             <span>Chatbot</span>

@@ -12,15 +12,15 @@
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('admin-assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 
-  <!-- Template Main CSS File -->
-  <link href="dashboard.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
 </head>
 
 <body class="admin-dashboard">
@@ -30,7 +30,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="dasboard-logo d-flex align-items-center">
-        <img src="logo.png" alt="">
+      <img src="{{ asset('logo.png') }}" alt="">
         <span class="d-none d-lg-block">PyBot</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -129,7 +129,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+          <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block bc-white">Hanz D</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -137,33 +137,32 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+ <!-- ======= Sidebar ======= -->
+ <aside id="sidebar" class="sidebar">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+<ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link " href="dashboard.blade.php">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
+  <li class="nav-item">
+    <a class="nav-link " href="dashboard">
+      <i class="bi bi-grid"></i>
+      <span>Dashboard</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
 
+  <li class="nav-item">
+<a class="nav-link collapsed" href="colleges">
+    <i class="bi bi-person"></i>
+    <span>Colleges</span>
+</a>
+</li><!-- End Profile Page Nav -->
 
+<li class="nav-item">
+    <a class="nav-link collapsed" href="department">
+        <i class="bi bi-question-circle"></i>
+        <span>Department</span>
+    </a>
+</li><!-- End F.A.Q Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="colleges.blade.php">
-          <i class="bi bi-person"></i>
-          <span>Colleges</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="department.blade.php">
-          <i class="bi bi-question-circle"></i>
-          <span>Department</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.html">
@@ -208,7 +207,7 @@
             <h1>College Management</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('admin-dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('admin-dashboard') }}">Home</a></li>
                     <li class="breadcrumb-item active">Manage Colleges</li>
                 </ol>
             </nav>
@@ -508,10 +507,10 @@
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="admin-assets/vendor/chart.js/chart.umd.js"></script>
+    <!-- Template Main JS File -->
+    <script src="admin-assets/js/main.js"></script>
 
 </body>
 
