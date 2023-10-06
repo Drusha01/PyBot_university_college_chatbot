@@ -33,3 +33,7 @@ Route::get('/admin/colleges', function () {
 Route::get('/admin/department', function () {
     return view('admin.department');
 })->name('department');
+
+Route::get('/admin/chatbox', function () {
+    return view('admin.chatbox');
+})->name('chatbox');
