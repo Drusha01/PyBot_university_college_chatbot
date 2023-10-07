@@ -42,10 +42,10 @@
 /* Nico Moji font for logo */  
 @font-face {
     font-family: 'Nico-Moji';
-    src:url('assets/fonts/Nico-Moji.ttf.woff') format('woff'),
-        url('assets/fonts/Nico-Moji.ttf.svg#Nico-Moji') format('svg'),
-        url('assets/fonts/Nico-Moji.ttf.eot'),
-        url('assets/fonts/Nico-Moji.ttf.eot?#iefix') format('embedded-opentype');
+    src:url('../admin-assets/fonts/Nico-Moji.ttf.woff') format('woff'),
+        url('../admin-assets/fonts/Nico-Moji.ttf.svg#Nico-Moji') format('svg'),
+        url('../admin-assets/fonts/Nico-Moji.ttf.eot'),
+        url('../admin-assets/fonts/Nico-Moji.ttf.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
   }
@@ -1429,7 +1429,7 @@
   position: absolute;
   overflow: hidden;
   top: calc(94% - 49px);
-  left: calc(15% - 154px);
+  left: calc(15% - 161px);
   width: 39px;
   height: 49%;
 }
