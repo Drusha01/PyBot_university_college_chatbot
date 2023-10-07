@@ -204,7 +204,7 @@
                         </div>
                         <div class="col-xl-9 col-12">
                             <div class="row">
-                                <div class="col-xl-8 col-12">
+                                <div class="col-xl-12 col-12">
                                     <div class="box">
                                     <div class="box-body px-20 py-10 bb-1 bbsr-0 bber-0">
                                         <div class="d-md-flex d-block justify-content-between align-items-center w-p100">
