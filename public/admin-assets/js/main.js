@@ -130,6 +130,20 @@
   }
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
+  
+  function setActiveNavigation() {
+    // Your JavaScript code here
+    var currentUrl = window.location.href;
+    var sidebarLinks = document.querySelectorAll("#sidebar-nav a");
+    sidebarLinks.forEach(function (link) {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    setActiveNavigation();
+  });
 
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
