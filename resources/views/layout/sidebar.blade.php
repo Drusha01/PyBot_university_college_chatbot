@@ -40,7 +40,7 @@
 
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="pages-error-404.html">
+      <a class="nav-link collapsed" href="chatbox">
         <i class="bi bi-dash-circle"></i>
         <span>Chat box Management</span>
       </a>

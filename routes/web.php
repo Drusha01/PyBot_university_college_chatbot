@@ -33,5 +33,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/department', function () {
         return view('admin.department');
     })->name('department');
+    Route::get('/chatbox', function () {
+        return view('admin.chatbox');
+    })->name('chatbox');
 
 });
