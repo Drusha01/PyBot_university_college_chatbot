@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="Chat Interface" content="PyBot">
-    <title>Homapge Pybot</title>
-    <!-- styled css -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}">
-
-    <!-- inject:Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400&display=swap"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"/>
-
-    <!-- injects:css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ asset('assets/js/chat.js') }}"></script>
-</head>
-<div class="glass-back-drop"><img src="" alt="" srcset=""></div>
-
-<body translate="no">
+<div>
     <div class="web-sized">
         <main class="computer-science-facts-blog-he-parent" id="main-panel">
           <<img class="computer-science-facts-blog-he-icon" alt="" src="{{ asset('assets/images/computersciencefactsblogheader-1@2x.png') }}">
@@ -35,6 +9,7 @@
         <div class="frame-parent">
           <div class="wmsu-logo-1-parent">
           <img class="wmsu-logo-1" alt="" src="{{ asset('assets/images/wmsu-logo-1@2x.png') }}">
+          
           <img class="ccs-logo-icon" alt="" src="{{ asset('assets/images/ccs-logo@2x.png') }}">
           </div>
           <div class="logo">
@@ -121,7 +96,7 @@
               <img class="vector-icon" alt="" src="{{ asset('svg/three_dots.svg') }}" />
             </div>
             <div class="header">
-            <img class="header-child" alt="" src="{{ asset('svg/active_profile.svg') }}" />
+            <img class="header-child" alt="" src="{{ asset('assets/svg/active_profile.svg') }}" />
 
               <h2 class="pybot1">PyBot</h2>
             </div>
@@ -155,12 +130,5 @@
     </div>
 
 
-<!-- ............................................. -->
-
-    
-
-
-
-</body>
-
-</html>
+  <!-- ............................................. -->
+</div>
