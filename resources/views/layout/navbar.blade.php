@@ -45,7 +45,11 @@
 
     <li class="nav-item dropdown">
 
+<<<<<<< Updated upstream
       <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+=======
+      <a class="nav-link nav-icon text-white" href="#" data-bs-toggle="dropdown">
+>>>>>>> Stashed changes
         <i class="bi bi-bell"></i>
         <span class="badge bg-primary badge-number">4</span>
       </a><!-- End Notification Icon -->

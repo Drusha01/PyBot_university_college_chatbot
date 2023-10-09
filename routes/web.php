@@ -29,7 +29,6 @@ Route::prefix('/admin')->group(function () {
     Route::get('/colleges', function () {
         return view('admin.colleges');
     })->name('colleges');
-
     Route::get('/department', function () {
         return view('admin.department');
     })->name('department');

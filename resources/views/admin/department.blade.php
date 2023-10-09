@@ -1,14 +1,10 @@
-@include('layout.header')
+@extends('layout.app')
+@section('title', 'Pybot | Department') <!-- Set the page title -->
+
+@section('department', 'active')
 
 
-<body class="admin-dashboard">
-
-  <!-- ======= Navbar ======= -->
-  @include('layout.navbar')
-
-  <!-- ======= Sidebar ======= -->
-  @include('layout.sidebar')
-
+@section('content')
 
     <!-- Main Content -->
     <main id="main" class="main">
@@ -40,11 +36,11 @@
         <!-- IT Management Tab -->
         <div class="tab-pane fade show active" id="IT-management-tab">
           <div class="container-fluid">      
-              <div class="table-responsive m-3">
-              <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#AddModal">Add</button>
-                <table id="example1" class="table table-bordered hover" style="width:100%">
-
-                  <thead>
+              <div class="table-responsive-sm m-3">
+                <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#AddModal">Add</button>
+                <table id="example1" class="table caption-top table-sm table-bordered hover" style="width:100%">
+                  <caption>These data can be modified and structured before calling as a function in the model</caption>
+                  <thead class="thead-dark">
                       <tr>
                           <th>Questions</th>
                           <th>Tags</th>
@@ -63,10 +59,10 @@
                             <p>If you're already enroll there would be an email with your schedule attached</p>
                             <p>Login to your university credentials and extract from the 'Schedule' menu</p>
                           </td>
-                          <td class="text-center">
-                            <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                        </td>
+                          </td>
                       </tr>
                       <tr>
                     
@@ -77,10 +73,10 @@
                             <p>Answer 2</p>
                             <p>Answer 3</p>
                           </td>
-                          <td class="text-center">
-                            <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                        </td>
+                          </td>
                       </tr>
                       <!-- Add more rows as needed -->
                   </tbody>
@@ -92,12 +88,12 @@
         <!-- IT dep Tab -->
         <div class="tab-pane fade" id="CS-management-tab">
           <div class="container-fluid">
-              <div class="table-responsive m-3">
-              <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#AddModal">Add</button>
-                <table id="example2" class="table table-bordered hover" style="width:100%">
-                  <thead>
+              <div class="table-responsive-sm m-3">
+                <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#AddModal">Add</button>
+                <table id="example1" class="table caption-top table-sm table-bordered hover" style="width:100%">
+                  <caption>These data can be modified and structured before calling as a function in the model</caption>
+                  <thead class="thead-dark">
                       <tr>
-                     
                           <th>Questions</th>
                           <th>Tags</th>
                           <th>Responses</th>
@@ -107,7 +103,7 @@
                   <tbody>
                       <!-- Add your table rows dynamically using server-side data or JavaScript -->
                       <tr>
-                     
+                   
                           <td>How can I view the class schedule?</td>
                           <td>Specific</td>
                           <td class="response-column">
@@ -115,13 +111,13 @@
                             <p>If you're already enroll there would be an email with your schedule attached</p>
                             <p>Login to your university credentials and extract from the 'Schedule' menu</p>
                           </td>
-                          <td class="text-center">
-                            <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                        </td>
+                          </td>
                       </tr>
                       <tr>
-                     
+                    
                           <td>What documents do I need for enrollment?</td>
                           <td>General</td>
                           <td class="response-column">
@@ -129,10 +125,10 @@
                             <p>Answer 2</p>
                             <p>Answer 3</p>
                           </td>
-                          <td class="text-center">
-                            <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                        </td>
+                          </td>
                       </tr>
                       <!-- Add more rows as needed -->
                   </tbody>
@@ -144,12 +140,12 @@
         <!-- act colleges Tab -->
         <div class="tab-pane fade" id="ACT-management-tab">
           <div class="container-fluid">
-              <div class="table-responsive m-3">
-              <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#AddModal">Add</button>
-                <table id="example3" class="table table-bordered hover" style="width:100%">
-                  <thead>
+            <div class="table-responsive-sm m-3">
+                <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#AddModal">Add</button>
+                <table id="example1" class="table caption-top table-sm table-bordered hover" style="width:100%">
+                  <caption>These data can be modified and structured before calling as a function in the model</caption>
+                  <thead class="thead-dark">
                       <tr>
-                   
                           <th>Questions</th>
                           <th>Tags</th>
                           <th>Responses</th>
@@ -159,7 +155,7 @@
                   <tbody>
                       <!-- Add your table rows dynamically using server-side data or JavaScript -->
                       <tr>
-                      
+                   
                           <td>How can I view the class schedule?</td>
                           <td>Specific</td>
                           <td class="response-column">
@@ -167,13 +163,13 @@
                             <p>If you're already enroll there would be an email with your schedule attached</p>
                             <p>Login to your university credentials and extract from the 'Schedule' menu</p>
                           </td>
-                          <td class="text-center">
-                            <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                        </td>
+                          </td>
                       </tr>
                       <tr>
-                     
+                    
                           <td>What documents do I need for enrollment?</td>
                           <td>General</td>
                           <td class="response-column">
@@ -181,10 +177,10 @@
                             <p>Answer 2</p>
                             <p>Answer 3</p>
                           </td>
-                          <td class="text-center">
-                            <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                        </td>
+                          </td>
                       </tr>
                       <!-- Add more rows as needed -->
                   </tbody>
@@ -234,8 +230,4 @@
 
     </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('layout.footer')
-  </body>
-
-</html>
+@endsection

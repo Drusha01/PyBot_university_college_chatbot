@@ -716,6 +716,18 @@
   .sidebar-nav .nav-item {
     margin-bottom: 5px;
   }
+  .sidebar-nav .nav-item.active {    
+    color: #ffffff;
+    background: #266545;
+    text-shadow: 0px -0.3px 2px #206433;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+  .sidebar-nav .nav-item.active i {
+    color: #ffffff;
+    text-shadow: 0px -0.3px 2px #206433;
+  }
   
   .sidebar-nav .nav-heading {
     font-size: 11px;
@@ -727,14 +739,14 @@
   
   .sidebar-nav .nav-link {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     font-size: 15px;
     font-weight: 600;
-    color: #033b21;
     transition: 0.3;
-    background: #9cc0a6;
     padding: 10px 15px;
     border-radius: 4px;
+    flex-direction: row;
+    justify-content: flex-start;
   }
   
   .sidebar-nav .nav-link i {
@@ -743,12 +755,6 @@
     color: #033b21;
   }
   
-  .sidebar-nav .nav-link.collapsed {
-    color: #033b21;
-    background: #9cc0a6;
-  }
-  
-
   .sidebar-nav .nav-link:hover {
     color: #0d0d0d;
     background: #43995b;
@@ -793,11 +799,13 @@
   
   .sidebar-nav .nav-content a:hover,
   .sidebar-nav .nav-content a.active {
-    color: #4154f1;
+    color: #ffff;
+    text-shadow: 0px -0.3px 2px #206433;
+
   }
   
   .sidebar-nav .nav-content a.active i {
-    background-color: #4154f1;
+    background-color: #1b532b;
   }
   
   /*--------------------------------------------------------------
@@ -1280,6 +1288,7 @@
     position: absolute;
     top: 0;
     left: 0;
+<<<<<<< Updated upstream
     width: 100%;
     height: 112px;
     overflow: hidden;
@@ -1433,3 +1442,101 @@
   width: 39px;
   height: 49%;
 }
+=======
+    z-index: 1; }
+
+.waves-circle {
+  text-align: center;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: 50%;
+  -webkit-mask-image: none; }
+
+.waves-block {
+  display: block; }
+
+/* Firefox Bug: link not triggered */
+.waves-effect .waves-ripple {
+  z-index: -1; }
+
+  .dash-chat .customtab li a.nav-link {
+    padding: 1.5rem 0rem;
+    font-weight: 600;
+    font-size: 1.143rem;
+    border: 1px solid #ecf0f3 !important; }
+    .dash-chat .customtab li a.nav-link .badge {
+      background: #e5e6eb;
+      color: #475f7b;
+      font-size: 0.8571rem; }
+    .dash-chat .customtab li a.nav-link.active {
+      background-color: #ffffff;
+      color: #6993ff;
+      border: 1px solid #ecf0f3 !important; }
+      .dash-chat .customtab li a.nav-link.active .badge {
+        background: #6993ff;
+        color: #ffffff; }
+    .dash-chat .customtab li a.nav-link:hover, .dash-chat .customtab li a.nav-link:active, .dash-chat .customtab li a.nav-link:focus, .dash-chat .customtab li a.nav-link.active {
+      background-color: #ffffff !important;
+      color: #6993ff !important;
+      border: 1px solid #ecf0f3 !important; }
+      .dash-chat .customtab li a.nav-link:hover .badge, .dash-chat .customtab li a.nav-link:active .badge, .dash-chat .customtab li a.nav-link:focus .badge, .dash-chat .customtab li a.nav-link.active .badge {
+        background: #6993ff;
+        color: #ffffff; }
+  .dash-chat .search-bar button:hover, .dash-chat .search-bar button:active, .dash-chat .search-bar button:focus, .dash-chat .search-bar button.active {
+    box-shadow: none; }
+    
+  .chat-box-six .rt-bx {
+    direction: rtl; }
+    .chat-box-six .rt-bx .chat-comment {
+      direction: ltr;
+      text-align: right; }
+    .chat-box-six .rt-bx p {
+      direction: ltr;
+      text-align: right; }
+  .chat-box-six .spt-line {
+    text-align: center; }
+    .chat-box-six .spt-line p::after {
+      content: "";
+      width: 100%;
+      background: #d5dfea;
+      height: 1px;
+      display: block;
+      bottom: 11px;
+      position: relative; }
+    .chat-box-six .spt-line p span {
+      position: relative;
+      z-index: 1;
+      padding: 5px 30px; }
+  
+  .dash-tag .bootstrap-tagsinput {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none; }
+    .dash-tag .bootstrap-tagsinput .tag {
+      background-color: #f1f2f4 !important;
+      color: #475f7b;
+      padding: 8px 5px 8px 15px;
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: inline-table; }
+      .dash-tag .bootstrap-tagsinput .tag [data-role="remove"] {
+        background: #c5ccd4;
+        border-radius: 2px;
+        padding: 0px 5px; }
+        .box-shadowed:hover {
+          -webkit-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+          -moz-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+          box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+      }
+     .bg-primary {
+        background-color: #6993ff !important;
+        color: #ffffff !important;
+    }
+      .avr-round {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+>>>>>>> Stashed changes
