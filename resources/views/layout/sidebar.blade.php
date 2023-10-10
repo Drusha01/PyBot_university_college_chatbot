@@ -23,6 +23,13 @@
         </a>
     </li><!-- End F.A.Q Page Nav -->
 
+    <li class="nav-item">
+        <a class="nav-link collapsed {{ request()->is('admin/csc') ? 'active' : '' }}" href="{{ route('csc') }}">
+            <i class="bi bi-question-circle"></i>
+            <span>CSC</span>
+        </a>
+    </li><!-- End F.A.Q Page Nav -->
+
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="pages-contact.html">

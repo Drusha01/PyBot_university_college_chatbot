@@ -21,8 +21,7 @@
       </nav>
     </div><!-- End Page Title -->
 
- 
-    </section>
+
 
   </main><!-- End #main -->
 

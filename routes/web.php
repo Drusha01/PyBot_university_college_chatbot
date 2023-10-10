@@ -82,6 +82,9 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/department', function () {
             return view('admin.department');
         })->name('department');
+        Route::get('/csc', function () {
+            return view('admin.csc');
+        })->name('csc');
         Route::get('/chatbox', function () {
             return view('admin.chatbox');
         })->name('chatbox');
