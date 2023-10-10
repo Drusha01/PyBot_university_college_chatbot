@@ -1,3 +1,4 @@
+import sys
 import random
 import json
 import pickle
@@ -10,21 +11,29 @@ from tensorflow import keras
 from keras import layers,models
 from keras.models import load_model
 
+if len(sys.argv) > 1:
+    iteration = sys.argv[1]
+    path = sys.argv[2]+'\\core\\'
+    model_name =  sys.argv[3]
+else:
+    iteration = '0'
+    path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
+    model_name =  'pybot_model'
+    threshhold = .25
 
 lemmatizer = WordNetLemmatizer()
 
-path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
-intents = json.loads(open('C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\intents\\intents.json').read())
+intents = json.loads(open('C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\intents\\intents_v'+iteration+'.json').read())
 
 
 word_folder = 'words\\'
 classes_folder = 'classes\\'
 
-words = pickle.load( open(path+word_folder+'words.pk1','rb'))
-classes  = pickle.load(open(path+classes_folder+'classes.pk1','rb'))
+words = pickle.load( open(path+word_folder+'words_v'+iteration+'.pk1','rb'))
+classes  = pickle.load(open(path+classes_folder+'classes_v'+iteration+'.pk1','rb'))
 
 model_folder = 'models\\'
-model = load_model(path+model_folder+'pybot_model.h5')
+model = load_model(path+model_folder+model_name+'_v'+iteration+'.h5')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -43,7 +52,7 @@ def bag_of_words(sentence):
 def predict_class(sentence):
     bow = bag_of_words(sentence)
     res = model.predict(np.array([bow]))[0]
-    ERROR_THRESHOLD = 0.25
+    ERROR_THRESHOLD = threshhold
     results = [[i,r]  for i, r in enumerate(res) if r > ERROR_THRESHOLD]
 
     results.sort(key = lambda x: x[1], reverse=True)
@@ -57,6 +66,7 @@ def predict_class(sentence):
 def get_response(intent_list, intents_json):
     tag = intent_list[0]['intent']
     list_of_intents = intents_json['intents']
+    result = 'i dont understand you'
     for i in list_of_intents:   
         if i['tag'] == tag:
             result = random.choice(i['responses'])

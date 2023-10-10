@@ -1,3 +1,5 @@
+
+import sys
 import random
 import json
 import pickle
@@ -17,10 +19,24 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
 
+if len(sys.argv) > 1:
+    iteration = sys.argv[1]
+    path = sys.argv[2]+'\\core'
+    model_name =  sys.argv[3]
+else:
+    iteration = '0'
+    path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core'
+    model_name =  'pybot_model'
+    max_epoch =1000
+    model_lr = 0.001
+
+
+
+
 lemmatizer = WordNetLemmatizer()
 
-path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
-intents = json.loads(open('C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\intents\\intents.json').read())
+
+intents = json.loads(open(path+'\\intents\\intents_v'+iteration+'.json').read())
 
 words =[]
 classes = []
@@ -41,10 +57,10 @@ words = sorted(set(words))
 
 classes = sorted(set(classes))
 
-word_folder = 'words\\'
-classes_folder = 'classes\\'
-pickle.dump(words, open(path+word_folder+'words.pk1','wb'))
-pickle.dump(classes, open(path+classes_folder+'classes.pk1','wb'))
+word_folder = '\\words\\'
+classes_folder = '\\classes\\'
+pickle.dump(words, open(path+word_folder+'words_v'+iteration+'.pk1','wb'))
+pickle.dump(classes, open(path+classes_folder+'classes_v'+iteration+'.pk1','wb'))
 
 training = []
 output_empty = [0] * len(classes)
@@ -75,10 +91,10 @@ model.add(Dense(64,activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]),activation='softmax'))
 
-sgd = SGD(lr=0.01,decay=1e-6,momentum=0.9,nesterov=True)
+sgd = SGD(lr=model_lr,decay=1e-6,momentum=0.9,nesterov=True)
 model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
-hist = model.fit(np.array(train_x),np.array(train_y), epochs=200,batch_size=5,verbose=1)
-model_folder = 'models\\'
-model.save(path+model_folder+'pybot_model.h5',hist)
+hist = model.fit(np.array(train_x),np.array(train_y), epochs=max_epoch,batch_size=5,verbose=1)
+model_folder = '\\models\\'
+model.save(path+model_folder+model_name+'_v'+iteration+'.h5',hist)
 
-print('mioce')
+print('done')
