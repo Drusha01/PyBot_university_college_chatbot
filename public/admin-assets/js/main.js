@@ -168,17 +168,3 @@
 
 })();
 
-
-
-
-$(document).ready(function () {
-  // Add a click event handler to the toggle buttons
-  $('.toggle-response').click(function () {
-      // Find the closest parent row
-      var row = $(this).closest('tr');
-      // Find the response content within the row
-      var responseContent = row.find('.response-content');
-      // Toggle the display of the response content
-      responseContent.slideToggle();
-  });
-});
