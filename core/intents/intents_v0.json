@@ -38,7 +38,12 @@
     "patterns": ["how to shift?", "what is the shifting process?", "shifting process"],
     "responses": ["shifting process!"],
     "context_set": ""
-  }
+    },
+    {"tag": "9",
+    "patterns": ["Thank you", "Thank you so much", "I appreciate it","Please accept my deepest gratitude","Much appreciated","Many thanks","Thanks"],
+    "responses": ["Thank you", "Thank you so much", "I appreciate it","Please accept my deepest gratitude","Cheers","Much appreciated","Many thanks","Thanks"],
+    "context_set": ""
+    }
     
   ]
 }
