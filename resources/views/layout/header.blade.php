@@ -16,6 +16,9 @@
     <link href="{{ asset('admin-assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/perfect-scrollbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/materialdesignicons.css') }}" rel="stylesheet">
 
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -25,8 +28,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{ asset('admin-assets/js/main.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/template.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
 
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+
     
 </head>

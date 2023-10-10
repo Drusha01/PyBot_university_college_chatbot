@@ -2,27 +2,8 @@
 <header id="header" class="dashboard-header fixed-top d-flex align-items-center">
 
 <div class="d-flex align-items-center justify-content-between">
-  <a href="dashboard" class="dasboard-logo d-flex align-items-center">
-  <div class="frame-group">
-              <div class="frame3">
-                <div class="frame4">
-                  <div class="frame5">
-                    <h1 class="p">P</h1>
-                  </div>
-                  <div class="frame6">
-                    <h1 class="y">y</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="frame7">
-                <div class="frame8">
-                  <h1 class="b">b</h1>
-                  <h1 class="o">o</h1>
-                  <h1 class="t">t</h1>
-                </div>
-              </div>
-            </div>
-            <img class="tableryin-yang-icon" alt="" src="{{ asset('admin-assets/pybot_icon.svg') }}" />
+  <a href="dashboard" class="dasboard-logo d-flex align-items-center logo">
+  <img src="{{ asset('admin-assets/logo.svg') }}" alt="">
   </a>
   <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
@@ -126,8 +107,8 @@
 
     <li class="nav-item dropdown pe-3">
 
-      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+      <a class="nav-link nav-profile d-flex align-items-center pe-4" href="#" data-bs-toggle="dropdown">
+        <img src="{{ asset('admin-assets/avatar/avatar-1.png') }}" alt="Profile" class="rounded-circle me-3">
         <span class="d-none d-md-block bc-white">Matt Luna</span>
       </a><!-- End Profile Iamge Icon -->
 
