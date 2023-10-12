@@ -8,9 +8,9 @@
     <title>Homapge Pybot</title>
     <!-- styled css -->
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
-<link rel="stylesheet" href="{{ asset('/assets/css/global.css') }}">
-<link rel="stylesheet" href="{{ asset('/assets/css/index.css') }}">
-<link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}">
 
     <!-- inject:Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400&display=swap"/>
@@ -19,6 +19,8 @@
 
     <!-- injects:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ asset('assets/js/chat.js') }}"></script>
 </head>
 <div class="glass-back-drop"><img src="" alt="" srcset=""></div>
 
@@ -155,8 +157,7 @@
 
 <!-- ............................................. -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ asset('assets/js/chat.js') }}"></script>
+    
 
 
 
