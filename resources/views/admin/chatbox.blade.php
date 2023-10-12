@@ -1,13 +1,10 @@
-@include('layout.header')
+@extends('layout.app')
+@section('title', 'Pybot | ChatBox Management') <!-- Set the page title -->
+
+@section('chatbox', 'active')
 
 
-<body class="admin-dashboard">
-
-  <!-- ======= Navbar ======= -->
-  @include('layout.navbar')
-
-  <!-- ======= Sidebar ======= -->
-  @include('layout.sidebar')
+@section('content')
 
     <main id="main" class="main">
 
@@ -407,9 +404,4 @@
 
     </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('layout.footer')
-
-</body>
-
-</html>
+@endsection

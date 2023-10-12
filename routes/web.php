@@ -78,7 +78,6 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/colleges', function () {
             return view('admin.colleges');
         })->name('colleges');
-
         Route::get('/department', function () {
             return view('admin.department');
         })->name('department');

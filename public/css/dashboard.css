@@ -716,6 +716,18 @@
   .sidebar-nav .nav-item {
     margin-bottom: 5px;
   }
+  .sidebar-nav .nav-item.active {    
+    color: #ffffff;
+    background: #266545;
+    text-shadow: 0px -0.3px 2px #206433;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+  .sidebar-nav .nav-item.active i {
+    color: #ffffff;
+    text-shadow: 0px -0.3px 2px #206433;
+  }
   
   .sidebar-nav .nav-heading {
     font-size: 11px;
@@ -727,14 +739,14 @@
   
   .sidebar-nav .nav-link {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     font-size: 15px;
     font-weight: 600;
-    color: #033b21;
     transition: 0.3;
-    background: #9cc0a6;
     padding: 10px 15px;
     border-radius: 4px;
+    flex-direction: row;
+    justify-content: flex-start;
   }
   
   .sidebar-nav .nav-link i {
@@ -743,12 +755,6 @@
     color: #033b21;
   }
   
-  .sidebar-nav .nav-link.collapsed {
-    color: #033b21;
-    background: #9cc0a6;
-  }
-  
-
   .sidebar-nav .nav-link:hover {
     color: #0d0d0d;
     background: #43995b;
@@ -793,11 +799,13 @@
   
   .sidebar-nav .nav-content a:hover,
   .sidebar-nav .nav-content a.active {
-    color: #4154f1;
+    color: #ffff;
+    text-shadow: 0px -0.3px 2px #206433;
+
   }
   
   .sidebar-nav .nav-content a.active i {
-    background-color: #4154f1;
+    background-color: #1b532b;
   }
   
   /*--------------------------------------------------------------
