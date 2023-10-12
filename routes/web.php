@@ -36,5 +36,16 @@ Route::prefix('/admin')->group(function () {
     Route::get('/chatbox', function () {
         return view('admin.chatbox');
     })->name('chatbox');
-
+    Route::get('/user-management', function () {
+        return view('admin.user-management');
+    })->name('user-management');
+    Route::get('/admin-setting', function () {
+        return view('admin.admin-setting');
+    })->name('admin-setting');
+    Route::get('/admin-profile', function () {
+        return view('admin.admin-profile');
+    })->name('admin-profile');
+    Route::get('/admin-notification', function () {
+        return view('admin.admin-notification');
+    })->name('admin-notification');
 });

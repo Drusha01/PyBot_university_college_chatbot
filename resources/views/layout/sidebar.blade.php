@@ -32,7 +32,7 @@
     </li><!-- End Contact Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="pages-register.html">
+      <a class="nav-link collapsed {{ request()->is('admin/department') ? 'active' : '' }}" href="{{ route('user-management') }}">
         <i class="bi bi-card-list"></i>
         <span>User Management</span>
       </a>
@@ -47,7 +47,7 @@
     </li><!-- End Error 404 Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="pages-blank.html">
+      <a class="nav-link collapsed" href="admin-setting">
         <i class="bi bi-file-earmark"></i>
         <span>Setting</span>
       </a>
