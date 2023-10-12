@@ -30,9 +30,6 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#user-management-tab">Q&A Management</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#role-management-tab">TBD</a>
-            </li>
         </ul>
 
          <!-- Tab Content -->
@@ -40,10 +37,7 @@
 
 <!-- College Management tab -->
 <div class="tab-pane fade show active " id="admin-management-tab">
-    <div class="container-fluid">
-        <!-- Add Admin Button (Opens Add Modal) -->
-        <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>      
-
+    <div class="container-fluid mt-4 mb-2">
         <!-- Admin Table -->
         <div class="table-responsive">
             <table class="table table-bordered">
