@@ -41,7 +41,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed {{ request()->is('admin/department') ? 'active' : '' }}" href="{{ route('user-management') }}">
+      <a class="nav-link collapsed {{ request()->is('admin/user-management') ? 'active' : '' }}" href="{{ route('user-management') }}">
         <i class="bi bi-card-list"></i>
         <span>User Management</span>
       </a>
@@ -60,7 +60,7 @@
       </a>
     </li>
     <li class="nav-item bottom-0">
-      <a class="nav-link" href="pages-login.html">
+      <a class="nav-link" href="{{route('logout')}}">
         <i class="bi bi-box-arrow-in-right"></i>
         <span>Logout</span>
       </a>
