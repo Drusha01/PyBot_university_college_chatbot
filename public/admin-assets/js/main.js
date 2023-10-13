@@ -82,7 +82,7 @@
                 orderable: false,
                 targets: 0
             }
-        ],
+        ],                    //Disabled if False
         info: true,           // Disable the "Showing X of Y entries" information
         ordering: true,       // Disable column sorting
         paging: true,         // Disable pagination (previous and next buttons)
@@ -106,6 +106,7 @@
     });
 }
     // Initialize DataTable for table with ID 'example'
+    initializeDataTable('#example');
     initializeDataTable('#example1');
     initializeDataTable('#example2');
     initializeDataTable('#example3');
@@ -131,19 +132,6 @@
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
   
-  function setActiveNavigation() {
-    // Your JavaScript code here
-    var currentUrl = window.location.href;
-    var sidebarLinks = document.querySelectorAll("#sidebar-nav a");
-    sidebarLinks.forEach(function (link) {
-        if (link.href === currentUrl) {
-            link.classList.add("active");
-        }
-    });
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    setActiveNavigation();
-  });
 
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
@@ -179,3 +167,4 @@
   
 
 })();
+
