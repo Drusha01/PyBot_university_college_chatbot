@@ -24,6 +24,10 @@
     <link href="{{ asset('admin-assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/perfect-scrollbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/materialdesignicons.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
     <!-- === Datatables === -->
@@ -45,9 +49,9 @@
     <script src="{{ asset('admin-assets/js/template.js') }}"></script>
     <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-    
 </head>
 
 

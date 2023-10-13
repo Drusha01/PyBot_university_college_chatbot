@@ -23,15 +23,12 @@
         </ul>
     </li>
     
-
     <li class="nav-item @yield('department')">
         <a class="nav-link" href="{{ route('department') }}">
             <i class="bi bi-question-circle"></i>
             <span>Department</span>
         </a>
-    </li>
-
-    
+    </li>  
 
     <li class="nav-item @yield('model')">
       <a class="nav-link" href="{{ route('model') }}">
@@ -46,7 +43,6 @@
         <span>User Management</span>
       </a>
     </li>
-
 
     <li class="nav-item @yield('chatbox')">
       <a class="nav-link collapsed" href="{{ route('chatbox') }}">

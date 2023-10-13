@@ -1,4 +1,4 @@
-<div>
+
     <div class="web-sized">
         <main class="computer-science-facts-blog-he-parent" id="main-panel">
           <<img class="computer-science-facts-blog-he-icon" alt="" src="{{ asset('assets/images/computersciencefactsblogheader-1@2x.png') }}">
@@ -127,8 +127,8 @@
                 </svg>
             </button>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="{{ asset('assets/js/chat.js') }}"></script>
     </div>
 
 
-  <!-- ............................................. -->
-</div>
