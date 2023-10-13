@@ -60,7 +60,7 @@
       </a>
     </li>
     <li class="nav-item bottom-0">
-      <a class="nav-link" href="pages-login.html">
+      <a class="nav-link" href="{{route('logout')}}">
         <i class="bi bi-box-arrow-in-right"></i>
         <span>Logout</span>
       </a>
