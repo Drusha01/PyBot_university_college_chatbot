@@ -1,7 +1,8 @@
 @extends('layout.app')
 @section('title', 'Pybot | College of Computing Studies') <!-- Set the page title -->
 
-@section('csc', 'active')
+@section('ccs', 'active')
+@section('colleges', 'active')
 
 @section('content')
 
@@ -12,7 +13,7 @@
                 <nav>
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-                    <li class="breadcrumb-item active">CSC</li>
+                    <li class="breadcrumb-item active">College of Computing Studies</li>
                     </ol>
                 </nav>
                 </div><!-- End Page Title -->

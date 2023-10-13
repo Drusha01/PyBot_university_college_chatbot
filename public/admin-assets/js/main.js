@@ -57,6 +57,7 @@
   }
 
 
+
   /**
    * /Datatables rendering
    */
@@ -76,6 +77,7 @@
                 target: 'tr'
             }
         },
+        responsive: true,
         columnDefs: [
             {
                 className: 'dtr-control',
@@ -165,11 +167,22 @@
     onscroll(document, toggleBacktotop)
   }
   
-
-})();
-
-
   /**
    * Perfect ScrollBar
    */
   new SimpleBar(document.querySelector('.scrollbar-y'));
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  })();

@@ -16,7 +16,6 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <h1>profile</h1>
 
   </main><!-- End #main -->
 

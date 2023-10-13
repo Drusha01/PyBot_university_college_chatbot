@@ -33,7 +33,7 @@
          <!-- Tab Content -->
         <div class="tab-content">
             <!-- College Management tab -->
-            <div class="tab-pane fade show active " id="admin-management-tab">
+            <div class="tab-pane fade show active" id="admin-management-tab">
                 <div class="container-fluid mt-4 mb-2">
                     <!-- Admin Table -->
                     <div class="table-responsive">
@@ -53,7 +53,7 @@
                                     <td>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
                                         <button class="btn btn-danger">Delete</button>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">View</button>
+                                        <a class="btn btn-primary" href="{{ route('ccs') }}">View</a>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->

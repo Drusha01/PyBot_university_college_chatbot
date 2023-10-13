@@ -68,12 +68,9 @@
     <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
 
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('admin-assets/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-
     <!-- CDN inject tables with childrows, bootstrap etc. -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
 

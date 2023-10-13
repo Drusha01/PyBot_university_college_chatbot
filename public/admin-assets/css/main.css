@@ -195,6 +195,9 @@
   .dropdown-menu .dropdown-item:hover {
     background-color: #f6f9ff;
   }
+  .dropdown-menu.show {
+    inset: 28% auto auto !important;
+  }
   
   @media (min-width: 768px) {
     .dropdown-menu-arrow::before {
@@ -359,6 +362,7 @@
   .breadcrumb a {
     color: #899bbd;
     transition: 0.3s;
+    text-decoration: none;
   }
   
   .breadcrumb a:hover {
@@ -388,6 +392,9 @@
   .nav-tabs-bordered .nav-link:hover,
   .nav-tabs-bordered .nav-link:focus {
     color: #4154f1;
+  }
+  .nav-link:focus, .nav-link:hover {
+      color: #d6d6ff;
   }
   
   .nav-tabs-bordered .nav-link.active {
@@ -426,7 +433,7 @@
     z-index: 997;
     height: 70px;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-    background: linear-gradient(-111deg, rgb(11 90 93) 11%, rgb(24 118 121) 22%, rgb(11 88 91) 38%, rgb(12 89 85) 57%, rgb(27 73 61 / 96%) 73%, rgb(26 64 56) 89%, rgb(29 69 60) 100%);
+    background: linear-gradient(-111deg, rgb(11 90 93) 11%, rgb(24 118 121) 22%, rgb(17 95 98) 38%, rgb(12 89 85) 57%, rgb(27 73 61 / 96%) 73%, rgb(26 64 56) 89%, rgb(29 69 60) 100%);
     padding-left: 20px;
     /* Toggle Sidebar Button */
     /* Search Bar */
@@ -540,7 +547,7 @@
   }
   
   .header-nav .notifications {
-    inset: 8px -15px auto auto !important;
+    inset: 18% auto auto 35% !important
   }
   
   .header-nav .notifications .notification-item {
@@ -673,7 +680,7 @@
   .sidebar::-webkit-scrollbar-thumb {
     background-color: #4a4172;
   }
-  
+
   @media (min-width: 1200px) {
   
     #main,
@@ -728,7 +735,19 @@
     color: #ffffff;
     text-shadow: 0px -0.3px 2px #206433;
   }
-  
+  .sidebar-nav span.bi.bi-chevron-down {
+    float: right;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: inherit;
+    color: #000000;
+  }
+  .active a span.bi {
+    text-align: right !important;
+    margin-right: 4px;
+  }
   .sidebar-nav .nav-heading {
     font-size: 11px;
     text-transform: uppercase;
@@ -1563,6 +1582,12 @@ time {
     z-index: 90;
     right: 1px;
 }
+.slimScrollDiv {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: auto!important;
+}
 .theme-primary .bg-primary {
   background-color: #6993ff !important;
   color: #ffffff;
@@ -1657,7 +1682,6 @@ time {
 .waves-block {
   display: block; }
 
-/* Firefox Bug: link not triggered */
 .waves-effect .waves-ripple {
   z-index: -1; }
 
@@ -1713,67 +1737,104 @@ time {
   
   .chat-box-six .rt-bx {
     direction: rtl; }
-    .chat-box-six .rt-bx .chat-comment {
-      direction: ltr;
-      text-align: right; }
-    .chat-box-six .rt-bx p {
-      direction: ltr;
-      text-align: right; }
+  .chat-box-six .rt-bx .chat-comment {
+    direction: ltr;
+    text-align: right; }
+  .chat-box-six .rt-bx p {
+    direction: ltr;
+    text-align: right; }
   .chat-box-six .spt-line {
     text-align: center; }
-    .chat-box-six .spt-line p::after {
-      content: "";
-      width: 100%;
-      background: #d5dfea;
-      height: 1px;
-      display: block;
-      bottom: 11px;
-      position: relative; }
-    .chat-box-six .spt-line p span {
-      position: relative;
-      z-index: 1;
-      padding: 5px 30px; }
+  .chat-box-six .spt-line p::after {
+    content: "";
+    width: 100%;
+    background: #d5dfea;
+    height: 1px;
+    display: block;
+    bottom: 11px;
+    position: relative; 
+  }
+  .chat-box-six .spt-line p span {
+    position: relative;
+    z-index: 1;
+    padding: 5px 30px; 
+  }
   
   .dash-tag .bootstrap-tagsinput {
     background: transparent;
     border: 0;
     padding: 0;
     box-shadow: none; }
-    .dash-tag .bootstrap-tagsinput .tag {
-      background-color: #f1f2f4 !important;
-      color: #475f7b;
-      padding: 8px 5px 8px 15px;
-      font-size: 14px;
-      margin-bottom: 5px;
-      display: inline-table; }
-      .dash-tag .bootstrap-tagsinput .tag [data-role="remove"] {
-        background: #c5ccd4;
-        border-radius: 2px;
-        padding: 0px 5px; }
-        .box-shadowed:hover {
-          -webkit-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
-          -moz-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
-          box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
-      }
-     .bg-primary {
-        background-color: #6993ff !important;
-        color: #ffffff !important;
-    }
-      .avr-round {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-    }
+  .dash-tag .bootstrap-tagsinput .tag {
+    background-color: #f1f2f4 !important;
+    color: #475f7b;
+    padding: 8px 5px 8px 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-table; }
+  .dash-tag .bootstrap-tagsinput .tag [data-role="remove"] {
+    background: #c5ccd4;
+    border-radius: 2px;
+    padding: 0px 5px; }
+  .box-shadowed:hover {
+    -webkit-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+    -moz-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+  }
+  .bg-primary {
+    background-color: #6993ff !important;
+    color: #ffffff !important;
+  }
+  .avr-round {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
 
-    .scrollbar-y {
-      max-height: 400px; /* Set a maximum height for the chat box */
-      position: relative;
-      overflow-x: hidden;
-      overflow-y: auto; /* Add vertical scrollbar */
-    }
-    .scrollbar-x {
-      max-height: 400px; /* Set a maximum height for the chat box */
-      position: relative;
-      overflow-y: hidden;
-      overflow-x: auto; /* Add vertical scrollbar */
-    }
+  .scrollbar-y {
+    max-height: 400px; /* Set a maximum height for the chat box */
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto; /* Add vertical scrollbar */
+  }
+  .scrollbar-x {
+    max-height: 400px; /* Set a maximum height for the chat box */
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: auto; /* Add vertical scrollbar */
+  }
+
+  
+  #sidebar-nav .nav-item.active #sub-menu {
+    display: block;
+  }
+  #sub-menu {
+    display: none;
+  }
+    
+  .sub-nav {
+    padding: 10px 8px;
+    font-size: 14px!important;
+    background: rgba(19, 39, 26, 0.3)!important;
+  }
+  .sub-nav-link {
+    text-decoration: none;
+    color: #fff!important;
+    font-weight: 500;
+    padding: 15px 8px;
+    font-size: 13px!important;
+    margin-left: 27px;
+  }
+  .sub-nav-link:focus, .sub-nav-link:hover {
+    color: #fff!important;
+  }
+  .sub-nav .nav-item.active {
+    color: #ffffff;
+    text-shadow: 0px -0.3px 2px #206433;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    background: none;
+  }
+
+  

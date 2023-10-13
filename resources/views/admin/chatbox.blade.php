@@ -182,7 +182,7 @@
                                         </div>								             
                                     </div>
 
-                                    <div class="box-body mb-30">
+                                    <div class="box-body mb-10">
                                         <div class="scrollbar-y chat-box-six">
                                             <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                                 <div>

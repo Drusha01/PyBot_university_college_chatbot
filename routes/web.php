@@ -82,9 +82,9 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/department', function () {
             return view('admin.department');
         })->name('department');
-        Route::get('/csc', function () {
-            return view('admin.csc');
-        })->name('csc');
+        Route::get('/ccs', function () {
+            return view('admin.ccs');
+        })->name('ccs');
         Route::get('/model', function () {
             return view('admin.model');
         })->name('model');
