@@ -23,12 +23,14 @@
         </a>
     </li>
 
+
     <li class="nav-item">
         <a class="nav-link collapsed {{ request()->is('admin/csc') ? 'active' : '' }}" href="{{ route('csc') }}">
             <i class="bi bi-question-circle"></i>
             <span>CSC</span>
         </a>
     </li><!-- End F.A.Q Page Nav -->
+
 
 
     <li class="nav-item ">
@@ -44,15 +46,8 @@
         <span>User Management</span>
       </a>
     </li>
-
-
-<<<<<<< Updated upstream
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="pages-error-404.html">
-=======
     <li class="nav-item @yield('chatbox')">
       <a class="nav-link collapsed" href="{{ route('chatbox') }}">
->>>>>>> Stashed changes
         <i class="bi bi-dash-circle"></i>
         <span>Chat box Management</span>
       </a>
