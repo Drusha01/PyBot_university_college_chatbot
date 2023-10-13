@@ -66,6 +66,7 @@ Route::get('/chat-live', function () {
     return view('chat-live');
 });
 
+
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
 
@@ -81,17 +82,26 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/department', function () {
             return view('admin.department');
         })->name('department');
-        Route::get('/csc', function () {
-            return view('admin.csc');
-        })->name('csc');
+        Route::get('/ccs', function () {
+            return view('admin.ccs');
+        })->name('ccs');
+        Route::get('/model', function () {
+            return view('admin.model');
+        })->name('model');
         Route::get('/chatbox', function () {
             return view('admin.chatbox');
         })->name('chatbox');
         Route::get('/user-management', function () {
             return view('admin.user-management');
         })->name('user-management');
-        Route::get('/admin-setting', function () {
-            return view('admin.admin-setting');
-        })->name('admin-setting');
+        Route::get('/setting', function () {
+            return view('admin.setting');
+        })->name('setting');
+        Route::get('/profile', function () {
+            return view('admin.profile');
+        })->name('profile');
+        Route::get('/notification', function () {
+            return view('admin.notification');
+        })->name('notification');
     });
 });

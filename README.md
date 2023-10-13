@@ -2,7 +2,6 @@ Users:
   Super Admin, College admin, Department admin, Department sub-admin, Authenticated user or Unauthenticated user (Students)
 
 <!-- Q U E U E   T A S K -->
-# TO DO LIST
 **Make chat interface (Bootstrap, JavaScript)**
 - Text input set font style; family Sans, 16
 - Responsiveness:
@@ -11,14 +10,6 @@ Users:
   - Desktop (1200px)
 - Transitions
 - Functional responses using JavaScript by IDs
-
-**Import admin & subadmin template (meet requirements)**
-- ~~Must have tabs with sub-tabs...~~
-- Mailing template
-- Full settings
-- Latest data tables and jquery plugins *in progress*
-- Adaptable forms (smart inputs or auto-fills)
-- Optional light and dark mode
 
 **Sidebar Navigation**
 - College tab
@@ -31,11 +22,8 @@ Users:
 - Admin/Heads Management to access roles/activation/inactivity
 - Settings
 
-
-
 **Color Scheme list**
 - #0DCF7E,#1c4533
-
 - Modified whitesmoke "≈ Alto"
   - `#2596be`
   - rgb(222, 222, 222)
