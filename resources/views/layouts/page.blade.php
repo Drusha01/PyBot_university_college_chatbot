@@ -19,8 +19,7 @@
 
     <!-- injects:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ asset('assets/js/chat.js') }}"></script>
+    
     @livewireStyles
     </head>
     <div class="glass-back-drop"><img src="" alt="" srcset=""></div>

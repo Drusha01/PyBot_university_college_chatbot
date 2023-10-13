@@ -127,5 +127,8 @@
                 </svg>
             </button>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="{{ asset('assets/js/chat.js') }}"></script>
     </div>
+
 
