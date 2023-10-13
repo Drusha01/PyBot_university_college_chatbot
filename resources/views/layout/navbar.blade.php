@@ -7,12 +7,6 @@
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
-<div class="d-flex align-items-center justify-content-between">
-  <a href="dashboard" class="dasboard-logo d-flex align-items-center logo">
-  <img src="{{ asset('admin-assets/media/logo.svg') }}" alt="">
-  </a>
-  <i class="bi bi-list toggle-sidebar-btn"></i>
-</div><!-- End Logo -->
 
   <div class="search-bar">
     <form class="search-form d-flex align-items-center" method="POST" action="#">
