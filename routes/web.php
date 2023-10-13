@@ -87,5 +87,11 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/chatbox', function () {
             return view('admin.chatbox');
         })->name('chatbox');
+        Route::get('/user-management', function () {
+            return view('admin.user-management');
+        })->name('user-management');
+        Route::get('/admin-setting', function () {
+            return view('admin.admin-setting');
+        })->name('admin-setting');
     });
 });
