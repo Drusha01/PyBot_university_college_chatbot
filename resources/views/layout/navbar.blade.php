@@ -3,7 +3,7 @@
 
   <div class="d-flex align-items-center justify-content-between">
     <a href="dashboard" class="dasboard-logo d-flex align-items-center logo">
-    <img src="{{ asset('admin-assets/logo.svg') }}" alt="">
+    <img src="{{ asset('admin-assets/media/logo.svg') }}" alt="">
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
