@@ -1,4 +1,4 @@
-<div>
+
     <div class="web-sized">
         <main class="computer-science-facts-blog-he-parent" id="main-panel">
           <<img class="computer-science-facts-blog-he-icon" alt="" src="{{ asset('assets/images/computersciencefactsblogheader-1@2x.png') }}">
@@ -129,6 +129,3 @@
         </div>
     </div>
 
-
-  <!-- ............................................. -->
-</div>
