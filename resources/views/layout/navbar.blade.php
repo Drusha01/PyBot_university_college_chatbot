@@ -24,31 +24,31 @@
     </li><!-- End Search Icon-->
 
     <li class="nav-item dropdown">
-        <a class="nav-link nav-icon text-white mt-3 mr-4" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">1</span>
-        </a><!-- End Notification Icon -->
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-                You have 4 new notifications
-                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-                <a href="notification">Show all notifications</a>
-            </li>
-        </ul><!-- End Notification Dropdown Items -->
-    </li><!-- End Notification Nav -->
+          <a class="nav-link nav-icon text-white mt-3 mr-4" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">1</span>
+          </a><!-- End Notification Icon -->
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+              <li class="dropdown-footer">
+                  <a href="notification">Show all notifications</a>
+              </li>
+          </ul><!-- End Notification Dropdown Items -->
+      </li><!-- End Notification Nav -->
 
         <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
               <img src="{{ asset('admin-assets/avatar/avatar-1.png') }}" alt="Profile" class="rounded-circle me-3">
-                <span class="d-none d-md-block">Matt Luna</span>
+                <span class="d-none d-md-block">Steffi Wong</span>
             </a>
             <!-- Add the dropdown menu here -->
             <ul class="dropdown-menu">
