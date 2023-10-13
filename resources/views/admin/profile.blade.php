@@ -1,13 +1,9 @@
-@include('layout.header')
+@extends('layout.app')
+@section('title', 'Pybot | Profile') <!-- Set the page title -->
 
+@section('profile', 'active')
 
-<body class="admin-dashboard">
-
-  <!-- ======= Navbar ======= -->
-  @include('layout.navbar')
-
-  <!-- ======= Sidebar ======= -->
-  @include('layout.sidebar')
+@section('content')
 
   <main id="main" class="main">
 
@@ -25,9 +21,4 @@
   </main><!-- End #main -->
 
 
-  <!-- ======= Footer ======= -->
-  @include('layout.footer')
-
-</body>
-
-</html>
+@endsection

@@ -168,3 +168,8 @@
 
 })();
 
+
+  /**
+   * Perfect ScrollBar
+   */
+  new SimpleBar(document.querySelector('.scrollbar-y'));

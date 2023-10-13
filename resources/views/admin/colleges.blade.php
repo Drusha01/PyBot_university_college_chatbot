@@ -319,6 +319,6 @@
 
                     </div>
 
-                </main><!-- End #main -->
+    </main><!-- End #main -->
 
 @endsection

@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Pybot | Department') <!-- Set the page title -->
+@section('title', 'Pybot | Departments') <!-- Set the page title -->
 
 @section('department', 'active')
 

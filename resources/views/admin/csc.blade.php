@@ -1,19 +1,9 @@
-@include('layout.header')
+@extends('layout.app')
+@section('title', 'Pybot | College of Computing Studies') <!-- Set the page title -->
 
+@section('csc', 'active')
 
-    <body class="admin-dashboard">
-
-        <!-- ======= Navbar ======= -->
-        @include('layout.navbar')
-
-        <!-- ======= Sidebar ======= -->
-        @include('layout.sidebar')
-
-            <!-- ======= Navbar ======= -->
-            @include('layout.navbar')
-
-            <!-- ======= Sidebar ======= -->
-            @include('layout.sidebar')
+@section('content')
 
             <main id="main" class="main">
 
@@ -28,9 +18,5 @@
                 </div><!-- End Page Title -->
 
         </main><!-- End #main -->
-        <!-- ======= Footer ======= -->
-        @include('layout.footer')
 
-    </body>
-
-</html>
+@endsection
