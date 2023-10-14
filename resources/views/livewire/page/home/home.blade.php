@@ -1,31 +1,30 @@
     <div class="web-sized">
-    <header class="p-3 text-bg-dark">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-        </a>
+      <header class="p-3 text-bg-dark">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+            </a>
+          </div>
+          <ul class="nav">
+            <li><a href="{{ Route('page.home') }}" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="{{ url('about') }}" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="{{ url('faq') }}" class="nav-link px-2 text-white">FAQs</a></li>
+          </ul>
+          <div>
+            <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Sign In</a>
+          </div>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        </ul>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Sign In</button>
         </div>
-      </div>
+      </header>
     </div>
-  </header>
         <main class="computer-science-facts-blog-he-parent" id="main-panel">
-          <<img class="computer-science-facts-blog-he-icon" alt="" src="{{ asset('assets/images/computersciencefactsblogheader-1@2x.png') }}">
+          <<img class="computer-science-facts-blog-he-icon " alt="" src="{{ asset('assets/images/computersciencefactsblogheader-1@2x.png') }}">
           <section class="frame-child" id="section"></section>
      <!-- walang file   <img class="frame-item" alt="" src="{{ asset('images/frame.svg') }}"> -->
-
         </main>
         <div class="frame-parent" style="position: fixed; top: 20%;">
-
           <div class="wmsu-logo-1-parent">
           <img class="wmsu-logo-1" alt="" src="{{ asset('assets/images/wmsu-logo-1@2x.png') }}">
           
