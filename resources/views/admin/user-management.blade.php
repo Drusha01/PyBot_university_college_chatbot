@@ -10,9 +10,9 @@
         <div class="pagetitle">
             <h1>Account management</h1>
             <nav>
-                <ol class="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Account management</li>
+                    <li class="breadcrumb-item active" aria-current="page">Account management</li>
                 </ol>
             </nav>
         </div><!-- End Right side columns -->
@@ -38,12 +38,13 @@
 
 
                 <!-- Add Admin Button (Opens Add Modal) -->
-                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>      
+                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
                 <!-- Admin Table -->
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table id="example1" class="display responsive nowrap" style="min-width:100%">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>Username</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -54,6 +55,7 @@
                         <tbody>
                             <!-- Add your table rows dynamically using server-side data or JavaScript -->
                             <tr>
+                                <td></td>
                                 <td>1</td>
                                 <td>Admin 1</td>
                                 <td>admin1@example.com</td>
@@ -64,6 +66,7 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td>2</td>
                                 <td>Admin 2</td>
                                 <td>admin2@example.com</td>
@@ -175,14 +178,15 @@
         <!-- End Edit Admin Modal -->
         <!-- User Management tab -->
         <div class="tab-pane fade" id="user-management-tab">
-            <div class="container-fluid">  
+            <div class="container-fluid">
                 <!-- Add user Button (Opens Add user Modal) -->
-                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>            
+                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
                 <!-- User Table -->
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table id="example2" class="display responsive nowrap" style="min-width:100%">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>Username</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -194,6 +198,7 @@
                         <tbody>
                             <!--  table -->
                             <tr>
+                                <td></td>
                                 <td>1</td>
                                 <td>User 1</td>
                                 <td>user1@example.com</td>
@@ -202,9 +207,10 @@
                                 <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
-                                </td> 
+                                </td>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td>2</td>
                                 <td>User 2</td>
                                 <td>user2@example.com</td>
@@ -321,12 +327,13 @@
             <!--
             <p>This section enables you to manage user roles and permissions.</p>
             <p>You can define different roles, assign permissions to each role, and allocate roles to users.</p> -->
-                
+
                 <!-- Role Table -->
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-2">
+                <div class="table-responsive mt-30">
+                    <table id="example3" class="display responsive nowrap" style="min-width:100%">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>Username</th>
                                 <th>Role Name</th>
                                 <th>Description</th>
@@ -337,6 +344,7 @@
                         <tbody>
                             <!-- Add your table rows dynamically using server-side data or JavaScript -->
                             <tr>
+                                <td></td>
                                 <td>1</td>
                                 <td>Administrator</td>
                                 <td>Full access</td>
@@ -344,9 +352,10 @@
                                 <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#editRoleModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
-                                </td> 
+                                </td>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td>2</td>
                                 <td>Editor</td>
                                 <td>Modify content</td>
@@ -354,7 +363,7 @@
                                 <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#editRoleModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
-                                </td> 
+                                </td>
                             </tr>
                             <!-- Add more rows as needed -->
                         </tbody>

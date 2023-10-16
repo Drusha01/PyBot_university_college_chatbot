@@ -3,14 +3,21 @@ body {
   background-color: #d0d0ce;
   min-height: 100vh; }
 .container{
-  max-width: 850px; /* Adjust the width as needed */
+  max-width: 890px; /* Adjust the width as needed */
       margin: auto;
       padding: 15px;
 }
 .brand-wrapper {
   margin-bottom: 19px; }
   .brand-wrapper .logo {
-    height: 100px; }
+    height: 48px; }
+    .backdrop {
+      background: url('../assets/images/bg.png');
+      background-size: cover;
+      backdrop-filter: blur(5px); /* You can adjust the blur value as needed */
+    }
+
+
 
 .login-card {
   border: 0;
@@ -22,8 +29,8 @@ body {
     position: absolute;
     width: 115%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover; 
+    object-fit: none;
+    filter: brightness(0.94);
       }
   .login-card .card-body {
     padding: 35px 47px 37px 90px; }
@@ -36,7 +43,7 @@ body {
     font-weight: normal;
     margin-bottom: 23px; }
   .login-card form {
-    max-width: 326px; }
+    max-width: 100%; }
   .login-card .form-control {
     border: 1px solid #d5dae2;
     padding: 15px 25px;
@@ -55,19 +62,22 @@ body {
       color: #919aa3; }
     .login-card .form-control::placeholder {
       color: #919aa3; }
-  .login-card .login-btn {
-    padding: 13px 20px 12px;
-    background-color: #a20202;
-    border-radius: 4px;
-    font-size: 17px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #fff;
-    margin-bottom: 24px; }
+    .login-card .login-btn {
+      padding: 13px 20px 12px;
+      background-color: #135a23;
+      border-radius: 4px;
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 20px;
+      color: #fff;
+      margin-bottom: 24px;
+    }
     .login-card .login-btn:hover {
       border: 1px solid #000;
-      background-color: transparent;
-      color: #000; }
+      background-color: #157d3b;
+      color: #fff;
+      font-weight: 800;
+    }
   .login-card .forgot-password-link {
     font-size: 14px;
     color: #919aa3;
@@ -82,7 +92,7 @@ body {
   .login-card-footer-nav a {
     font-size: 14px;
     color: #919aa3; }
-  
+
 .text-center{
   color: red;
 }
@@ -168,10 +178,10 @@ width: 10px;
 }
 .btn-register {
   background-color: #a20202;
-  color: white; 
-  border: none; 
-  padding: 10px 20px; 
-  border-radius: 5px; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   padding: 15px 20px 15px 20px;
   font-weight: 500;
   font-size: 17px;
@@ -182,7 +192,7 @@ width: 10px;
   background-color: transparent;
   color: black;
   border: #000 solid 1px;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 
@@ -191,5 +201,5 @@ width: 10px;
 }
 
 .login-card-footer-text {
-  margin: 15px 0; 
+  margin: 15px 0;
 }

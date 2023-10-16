@@ -8,16 +8,16 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Model</h1>
       <nav>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb breadcrumb-custom">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-          <li class="breadcrumb-item active">Model</li>
+          <li class="breadcrumb-item active" aria-current="page">Model</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
- 
+
 
   </main><!-- End #main -->
 

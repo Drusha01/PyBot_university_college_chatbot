@@ -9,17 +9,15 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Chat Management</h1>
             <nav>
-                <ol class="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item active">Chatbox</li>
+                <li class="breadcrumb-item active" aria-current="page">Chat Messages</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
             <div class="container-full">
                 <!-- Main content -->
                 <section class="content">
@@ -43,71 +41,71 @@
                                                 </div>
                                             </div>
                                             <div class="scrollbar-y chat-box-six2">
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Mical Clark</strong></a>
                                                         <p class="mb-0">Hi, are you there?</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">10:00 PM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">10:00 PM</span>
                                                     <span class="badge badge-primary">2</span>
                                                     </div>
                                                 </div>
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-danger avatar avatar-lg" href="#"><img class="bg-success-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-2.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Joanna Henna</strong></a>
                                                         <p class="mb-0">Looking for some help..anyone?</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">1:00 PM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">1:00 PM</span>
                                                     </div>
                                                 </div>
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-warning avatar avatar-lg" href="#"><img class="bg-warning-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-3.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Hanna Garski</strong></a>
                                                         <p class="mb-0">Are you still alive.</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">1:20 PM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">1:20 PM</span>
                                                     <span class="badge badge-primary">1</span>
                                                     </div>
                                                 </div>
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-danger-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-4.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Johen Doe</strong></a>
                                                         <p class="mb-0">Selling New car</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">12:00 PM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">12:00 PM</span>
                                                     </div>
                                                 </div>
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-info-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-5.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Jane Orchard</strong></a>
                                                         <p class="mb-0">How are you today?</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">1:15 AM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">1:15 AM</span>
                                                     </div>
-                                                </div>								
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane" id="contacts" role="tabpanel">									
+                                        <div class="tab-pane" id="contacts" role="tabpanel">
                                             <div class="p-2 py-10 bg-light rounded search-bar">
                                                 <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -116,47 +114,47 @@
                                                 <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2" class="form-control border-0 bg-light">
                                                 </div>
                                             </div>
-                                            <div class="scrollbar-y chat-box-six2">										
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                            <div class="scrollbar-y chat-box-six2">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-danger avatar avatar-lg" href="#"><img class="bg-success-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-6.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Abdullah</strong></a>
                                                         <p class="mb-0">Hi, are you there?</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">1:15 AM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">1:15 AM</span>
                                                     <span class="badge badge-primary">5</span>
                                                     </div>
                                                 </div>
-                                                <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-warning avatar avatar-lg" href="#"><img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-7.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Robert Albert</strong></a>
                                                         <p class="mb-0">going to help you with new products.</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">9:00 AM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">9:00 AM</span>
                                                     </div>
                                                 </div>
                                                 <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                    <div class="d-flex align-items-center">
+                                                    <div class="d-flex align-items-center w-100 pr-10">
                                                         <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-warning-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-8.png') }}" alt="..."></a>
-                                                        <div>
+                                                        <div class="w-100">
                                                         <a class="hover-primary mb-5" href="#"><strong>Maisha</strong></a>
                                                         <p class="mb-0">Hi, are you there?</p>
                                                         </div>
                                                     </div>
                                                     <div class="text-end">
-                                                    <span class="d-block mb-5 fs-12">2:00 PM</span>
+                                                    <span class="d-block mb-5 fs-12 text-nowrap">2:00 PM</span>
                                                     <span class="badge badge-primary">1</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>								
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +165,7 @@
                                     <div class="box">
                                     <div class="box-body px-20 py-10 bb-1 bbsr-0 bber-0">
                                         <div class="d-md-flex d-block justify-content-between align-items-center w-p100">
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex align-items-center w-100 pr-10">
                                                 <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
                                                 <div>
                                                 <a class="hover-primary mb-5" href="#"><strong>Mical Clark</strong></a>
@@ -175,14 +173,14 @@
                                                 </div>
                                             </div>
                                             <div class="mt-15 mt-md-0 d-flex align-items-center gap-2">
-            
+
                                                 <a href="#" class="hover-primary"><i class='bx bx-dots-vertical-rounded' ></i></a>
                                             </div>
-                                            
-                                        </div>								             
+
+                                        </div>
                                     </div>
 
-                                    <div class="box-body mb-10">
+                                    <div class="box-body">
                                         <div class="scrollbar-y chat-box-six">
                                             <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                                 <div>
@@ -198,7 +196,7 @@
                                                     <p class="text-muted mb-15">2 minutes ago</p>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="rt-bx mb-30 d-flex align-items-start w-p100">
                                                 <div>
                                                     <a class="ms-15 status-success avatar avatar-lg" href="#"><img class="bg-danger-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-2.png') }}" alt="..."></a>
@@ -210,7 +208,7 @@
                                                     <p class="text-muted mb-15">2 minutes ago</p>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                                 <div>
                                                     <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
@@ -225,11 +223,11 @@
                                                     <p class="text-muted mb-15">2 minutes ago</p>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="spt-line mb-30">
                                                 <p class="mb-0 text-fade"><span class="bg-white">New Messages</span></p>
                                             </div>
-                                            
+
                                             <div class="rt-bx mb-30 d-flex align-items-start w-p100">
                                                 <div>
                                                     <a class="ms-15 status-success avatar avatar-lg" href="#"><img class="bg-danger-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-2.png') }}" alt="..."></a>
@@ -244,7 +242,7 @@
                                                     <p class="text-muted mb-15">2 minutes ago</p>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                                 <div>
                                                     <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
@@ -252,11 +250,11 @@
                                                 <div>
                                                     <div class="chat-comment box-shadowed d-table max-w-p70 bg-primary mb-15 px-15 py-10 rounded10 btsr-0">
                                                         <p class="mb-0 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                                    </div>											
+                                                    </div>
                                                     <p class="text-muted mb-15">2 minutes ago</p>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="box-footer">
                                             <div class="d-md-flex d-block justify-content-between align-items-center">
@@ -295,7 +293,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body pt-0 bg-white">
-                            <div class="media-list media-list-divided">						  
+                            <div class="media-list media-list-divided">
                                 <div>
                                     <div class="text-center mb-20">
                                         <a href="#"><img class="w-80 h-80 mb-15 bg-primary-light rounded10" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
@@ -357,7 +355,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             <!-- /.modal -->
         </div>
     </div>
