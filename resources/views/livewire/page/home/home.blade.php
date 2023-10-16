@@ -1,6 +1,6 @@
     <div class="web-sized">
     <div class="container">
-      <header class="p-3 text-bg-dark">
+      <header class="p-3 text-bg-transparent">
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <a href="/" class="d-flex align-items-center text-white text-decoration-none">
