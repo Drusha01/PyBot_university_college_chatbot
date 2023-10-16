@@ -23,6 +23,12 @@ use App\Http\Livewire\Authentication\AccountInactive;
 
 // page
 use App\Http\Livewire\Page\Home\Home;
+use App\Http\Livewire\Page\profile\Profile;
+use App\Http\Livewire\Page\AboutUs\AboutUs;
+use App\Http\Livewire\Page\Academic\Academic;
+use App\Http\Livewire\Page\Admission\Admission;
+use App\Http\Livewire\Page\Forums\Forums;
+use App\Http\Livewire\Page\usersetting\Usersetting;
 
 
 // python executioner
@@ -49,19 +55,21 @@ Route::middleware([Unauthenticated::class,AccountisValid::class])->group(functio
     Route::get('/account/recovery/{hash}', AccountRecovery::class)->name('account-recovery');
 });
 
-
 // account disabled
 Route::middleware([Authenticated::class])->group(function () {
     Route::get('/deleted', AccountDeleted::class)->name('account.deleted');
     Route::get('/inactive', AccountInactive::class)->name('account.inactive');
 });
 
-
 // page
-Route::middleware([Authenticated::class,AccountisValid::class,AccountisAdmin::class])->group(function () {
-    Route::get('/',Home::class)->name('page.home');
+Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::class])->group(function () {
+    Route::get('/', Home::class)->name('page.home');
+    Route::get('/AboutUs', AboutUs::class)->name('page.AboutUs');
+    Route::get('/profile', Profile::class)->name('page.profile');
+    Route::get('/academic', Academic::class)->name('page.academic');
+    Route::get('/admission', admission::class)->name('page.admission');
+    Route::get('/forums', Forums::class)->name('page.forums');
 });
-
 
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
