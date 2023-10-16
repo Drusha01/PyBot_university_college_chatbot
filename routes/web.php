@@ -23,7 +23,7 @@ use App\Http\Livewire\Authentication\AccountInactive;
 
 // page
 use App\Http\Livewire\Page\Home\Home;
-
+use App\Http\Livewire\Page\Profile\Profile;
 
 // python executioner
 use App\Http\Controllers\Python_executioner;
@@ -60,11 +60,19 @@ Route::middleware([Authenticated::class])->group(function () {
 // page
 Route::middleware([Authenticated::class,AccountisValid::class,AccountisAdmin::class])->group(function () {
     Route::get('/',Home::class)->name('page.home');
+ //   Route::get('/',Home::class)->name('page.about');
+  //  Route::get('/',Home::class)->name('page.faq');
+    Route::get('/profile',Profile::class)->name('page.profile');
+   // Route::get('/',Home::class)->name('page.setting');
+
+
 });
+
 
 Route::get('/chat-live', function () {
     return view('chat-live');
 });
+
 
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
