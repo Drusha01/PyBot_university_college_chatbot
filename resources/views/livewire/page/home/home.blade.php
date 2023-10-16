@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{{route ('page.home')}}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About Us</a>
@@ -151,7 +151,7 @@
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
-          <img src="../img/faculty/go.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <img src="{{ ('img/faculty/go.png') }}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3>Dr. Roderick P. Go</h3>
           <h4>Dean</h4>
         </div><!-- /.col-lg-4 -->
