@@ -6,6 +6,14 @@
 
 
 @section('content')
+@extends('layout.app')
+@section('title', 'Pybot | Colleges') <!-- Set the page title -->
+
+@section('colleges', 'active')
+
+
+
+@section('content')
 
     <!-- Main Content -->
     <main id="main" class="main">
