@@ -17,7 +17,6 @@
 <body>
     {{ $slot }}
 
-
     @livewireScripts
     <script>
          window.addEventListener('swal:message', event => {

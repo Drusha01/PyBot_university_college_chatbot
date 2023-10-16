@@ -7,23 +7,25 @@
     <meta name="Chat Interface" content="PyBot">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- styled css -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/chat.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/vertical-light.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
+
     <!-- inject:Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"/>
 
     <!-- injects:css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
+    <link href="{{ asset('admin-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+
     @livewireStyles
     </head>
-    <div class="glass-back-drop"><img src="" alt="" srcset=""></div>
     <body>
     {{ $slot }}
 
@@ -145,13 +147,13 @@
             });
         });
     </script>
-    <!-- Include Bootstrap 5 JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    
-    <!-- Include your custom scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="{{ asset('assets/js/chat.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
