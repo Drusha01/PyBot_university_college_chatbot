@@ -11,7 +11,7 @@ class Login extends Component
 {
     public $title;
     public $active;
-    
+
     public $username;
     public $password;
 
@@ -30,7 +30,7 @@ class Login extends Component
 
     public function login(Request $request){
         $data = $request->session()->all();
-        if(!isset($data['user_id'])){ 
+        if(!isset($data['user_id'])){
            $user_details =DB::table('users as u')
                 ->join('user_status as us', 'u.user_status_id', '=', 'us.user_status_id')
                 ->join('user_sex as usex', 'u.user_sex_id', '=', 'usex.user_sex_id')
@@ -49,14 +49,14 @@ class Login extends Component
 
                 $request->session()->put('user_id', $user_details->user_id);
                 $request->session()->put('user_status_id', $user_details->user_status_id);
-                $request->session()->put('user_status_details', $user_details->user_status_details); 
+                $request->session()->put('user_status_details', $user_details->user_status_details);
                 $request->session()->put('user_sex_id', $user_details->user_sex_id);
                 $request->session()->put('user_sex_details', $user_details->user_sex_details);
                 $request->session()->put('user_gender_id', $user_details->user_gender_id);
                 $request->session()->put('user_gender_details', $user_details->user_gender_details);
                 $request->session()->put('user_role_id', $user_details->user_role_id);
                 $request->session()->put('user_role_details', $user_details->user_role_details);
-                
+
                 $request->session()->put('user_name', $user_details->user_name);
                 $request->session()->put('user_email', $user_details->user_email);
                 $request->session()->put('user_phone', $user_details->user_phone);
@@ -76,12 +76,12 @@ class Login extends Component
                 $request->session()->put('user_formal_id', $user_details->user_formal_id);
                 $request->session()->put('date_created', $user_details->date_created);
                 $request->session()->put('date_updated', $user_details->date_updated);
-                
+
                 //append it to session
                 $this->dispatchBrowserEvent('swal:redirect',[
                     'position'          									=> 'center',
                     'icon'              									=> 'success',
-                    'title'             									=> 'Welcome back crimson!',
+                    'title'             									=> 'Welcome back python!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1500',
                     'link'              									=> '/'
@@ -96,9 +96,9 @@ class Login extends Component
                     'link'              									=> '#'
                 ]);
             }
-            
+
 
         }
-        
+
     }
 }

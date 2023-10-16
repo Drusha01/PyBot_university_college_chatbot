@@ -62,10 +62,6 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisAdmin::cl
     Route::get('/',Home::class)->name('page.home');
 });
 
-Route::get('/chat-live', function () {
-    return view('chat-live');
-});
-
 
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');

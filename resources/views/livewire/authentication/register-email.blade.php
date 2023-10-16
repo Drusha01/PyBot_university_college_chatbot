@@ -1,18 +1,21 @@
-<div>
+<div class="backdrop">
     <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
         <div class="container">
         <div class="card login-card">
             <div class="row no-gutters">
             <div class="col-md-5">
-                <img src="{{ asset('assets\images\wmsu-logo-1@2x.png') }}" alt="login" class="login-card-img">
+                <img src="{{ asset('assets/images/CCS_building.png') }}" alt="login" class="login-card-img">
             </div>
             <div class="col-md-7">
                 <div class="card-body">
-                <div class="brand-wrapper">
-                    <img src="{{ asset('assets\images\ccs-logo@2x.png') }}" alt="logo" class="logo">
+                <div class="brand-wrapper justify-content-between">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="logo">
+                <img src="{{ asset('images/logo/ccs-logo@2x.png') }}" alt="ccs" class="logo">
+                <a href="{{ route('login') }}" class="float-right forgot-password-link">Back to Login</a>
+
                 </div>
                 <p class="login-card-description">Register an Account Using your Email</p>
-                
+
                 @if(!$sign_up)
                     @if($email_send)
                         <form wire:submit.prevent="send_verification_code()" >
@@ -22,12 +25,12 @@
                             <input type="email"  wire:model="email" class="form-control" placeholder="Email address" required>
                         </div>
                         <button type="submit"   class="btn btn-block login-btn mb-4 button-color">Send Verification Code</button>
-                        <a href="{{ route('login') }}" class="forgot-password-link">Back to Login</a>
+
                        </form>
                     @else
                         <form wire:submit.prevent="verify_code()" >
                             @csrf
-                            <div class="form-group">    
+                            <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
                                 <input type="number"  wire:model="code" class="form-control" placeholder="Enter code" min="100000" max="999999" required>
                             </div>
@@ -79,12 +82,13 @@
                     </form>
                 </div>
                 @endif
+                <!-- Add the back to homepage button -->
+                <a href="{{ route('page.home') }}" class="mt-3">Back to Homepage</a>
+
                 <nav class="login-card-footer-nav">
                     <a href="#!">Terms of use.</a>
                     <a href="#!">Privacy policy</a>
                 </nav>
-                <!-- Add the back to homepage button -->
-                <a href="{{ route('page.home') }}" class="btn btn-block btn-outline-primary mt-3">Back to Homepage</a>
                 </div>
             </div>
             </div>
