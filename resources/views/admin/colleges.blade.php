@@ -6,20 +6,28 @@
 
 
 @section('content')
+@extends('layout.app')
+@section('title', 'Pybot | Colleges') <!-- Set the page title -->
+
+@section('colleges', 'active')
+
+
+
+@section('content')
 
     <!-- Main Content -->
     <main id="main" class="main">
         <div class="pagetitle">
             <h1>College Management</h1>
             <nav>
-                <ol class="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom">
                     <li class="breadcrumb-item"><a href="{{ url('admin-dashboard') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Manage Colleges</li>
+                    <li class="breadcrumb-item active" aria-current="page">Manage Colleges</li>
                 </ol>
             </nav>
         </div>
 
- 
+
         <!-- Tab Navigation -->
         <ul class="nav nav-tabs" id="adminTabs">
             <li class="nav-item">
@@ -40,12 +48,12 @@
             <div class="tab-pane fade show active " id="admin-management-tab">
                 <div class="container-fluid">
                     <!-- Add Admin Button (Opens Add Modal) -->
-                    <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>      
+                    <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>
 
                     <!-- Admin Table -->
                     <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
+                        <table id="example1" class="display responsive nowrap" style="min-width:100%">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th>College Name</th>
                                     <th>Description </th>
@@ -60,7 +68,7 @@
                                     <td>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
                                         <button class="btn btn-danger">Delete</button>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">View</button>
+                                        <a class="btn btn-primary" href="{{ route('ccs') }}">View</a>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
@@ -142,17 +150,18 @@
 
             <!-- Q&A ------------------------------------------------------------------------------------------ tab -->
             <div class="tab-pane fade" id="user-management-tab">
-                <div class="container-fluid">  
+                <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
                     <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#AddUserModal">Add Q&A</button>
                     <!-- User Table -->
                     <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
+                        <table id="example2" class="display responsive nowrap" style="min-width:100%">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th>Questions</th>
                                     <th>Tags</th>
                                     <th>Answers</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -167,7 +176,7 @@
                                     <td>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
                                         <button class="btn btn-danger">Delete</button>
-                                    </td> 
+                                    </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
                             </tbody>
