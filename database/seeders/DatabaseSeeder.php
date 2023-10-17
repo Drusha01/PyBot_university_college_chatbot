@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             userGenders::class,
             userSex::class,
             userStatus::class,
-            
+            qAndASeeders::class,
+            qestionSeeders::class,
+            answersSeeders::class,
         ]);
     }
 }

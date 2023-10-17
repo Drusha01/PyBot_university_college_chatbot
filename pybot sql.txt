@@ -1,0 +1,5 @@
+pybot sql
+
+
+SELECT * FROM `q_and_a`  
+inner join questions on questions.question_q_and_a_id = q_and_a.q_and_a_id

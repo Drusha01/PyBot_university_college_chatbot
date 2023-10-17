@@ -80,6 +80,7 @@ Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::
 
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
+Route::get('/create_new_intents', [Python_executioner::class, 'create_new_intent'])->name('python.create-new-intent');
 
 // admmin
 Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::class])->group(function () {
