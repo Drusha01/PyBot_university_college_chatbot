@@ -36,7 +36,6 @@
 
          <!-- Tab Content -->
         <div class="tab-content">
-
             <!-- College Management tab -->
             <div class="tab-pane fade show active " id="admin-management-tab">
                 <div class="container-fluid">
@@ -59,8 +58,8 @@
                                     <td>CCS</td>
                                     <td>College of Computing Studies</td>
                                     <td>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                         <a class="btn btn-primary" href="{{ route('ccs') }}">View</a>
                                     </td>
                                 </tr>
@@ -71,6 +70,7 @@
                     <!-- End Admin Table -->
                 </div>
             </div>
+
 
             <!-- Add college Modal -->
             <div class="modal fade" id="adminAddModal" tabindex="-1" role="dialog" aria-labelledby="adminAddModalLabel" aria-hidden="true">
@@ -167,8 +167,8 @@
                                         <li>answer 2</li>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->

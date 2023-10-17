@@ -1,3 +1,4 @@
+
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center pl-3">
         <a class="navbar-brand brand-logo mr-5" href="{{ route('dashboard') }}">
@@ -9,110 +10,76 @@
         </a>
     </div>
 
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center toggle-sidebar" id="sidebar-toggle" type="button" data-toggle="minimize">
-          <span class="bi bi-list"></span>
+            <span class="bi bi-list"></span>
         </button>
 
         <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" data-toggle="dropdown">
-            <i class='bi bi-bell mx-0'></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">You have 4 new notifications
-                <a href="notification"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-success">
-                    <i class="bi bi-info-circle-fill mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="bi bi-gear mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          <div class="text-light px-2">
-            <li class="nav-item nav-profile dropdown">
-              <div>
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
-                  <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" data-toggle="dropdown">
+                    <i class='bi bi-bell mx-0'></i>
+                    <span class="count"></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                  <a class="dropdown-item">
-                    Profile
-                  </a>
-                  <a class="dropdown-item">
-                    Settings
-                  </a>
-                  <a class="dropdown-item">
-                    Logout
-                  </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                    <p class="mb-0 font-weight-normal float-left dropdown-header">You have 4 new notifications
+                        <a href="notification"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></p>
+                    <a class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-success">
+                                <i class="bi bi-info-circle-fill mx-0"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                            <p class="font-weight-light small-text mb-0 text-muted">
+                                Just now
+                            </p>
+                        </div>
+                    </a>
+                    <a class a="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-warning">
+                                <i class="bi bi-gear mx-0"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <h6 class="preview-subject font-weight-normal">Settings</h6>
+                            <p class="font-weight-light small-text mb-0 text-muted">
+                                Private message
+                            </p>
+                        </div>
+                    </a>
                 </div>
-              </div>
-              <div class="card-body">
-                <h6 class="font-weight-normal mb-0">Matt Luna</h6>
-              </div>
             </li>
-          </div>
+            <div class="text-light px-2">
+                <li class="nav-item nav-profile dropdown">
+                    <div>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
+                            <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                Profile
+                            </a>
+                            <a class="dropdown-item">
+                                Settings
+                            </a>
+                            <a class="dropdown-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="font-weight-normal mb-0">Matt Luna</h6>
+                    </div>
+                </li>
+            </div>
         </ul>
 
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="bi bi-list"></span>
+            <span class="bi bi-list"></span>
         </button>
-      </div>
-    </nav>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const body = document.body;
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-
-    // Restore the sidebar state from localStorage
-    const sidebarState = localStorage.getItem('sidebarState');
-    if (sidebarState === 'maximize') {
-      body.classList.add('sidebar-mini', 'sidebar-icon-only');
-      sidebarToggle.setAttribute('data-toggle', 'maximize');
-    }
-
-    document.addEventListener('click', function (event) {
-      const target = event.target;
-      const isSidebarToggle = target === sidebarToggle || target.closest('#sidebar-toggle');
-
-      if (isSidebarToggle) {
-        const dataToggle = sidebarToggle.getAttribute('data-toggle');
-
-        if (dataToggle === 'minimize') {
-          body.classList.add('sidebar-mini', 'sidebar-icon-only');
-          sidebarToggle.setAttribute('data-toggle', 'maximize');
-          localStorage.setItem('sidebarState', 'maximize'); // Save the state to localStorage
-        } else {
-          body.classList.remove('sidebar-mini', 'sidebar-icon-only');
-          sidebarToggle.setAttribute('data-toggle', 'minimize');
-          localStorage.removeItem('sidebarState'); // Remove the state from localStorage
-        }
-      }
-    });
-  });
-</script>
+    </div>
+</nav>

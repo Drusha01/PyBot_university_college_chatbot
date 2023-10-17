@@ -43,7 +43,6 @@
                     <caption>These data can be modified and structured before calling as a function in the model</caption>
                     <thead class="thead-dark">
                         <tr>
-                            <th></th>
                             <th>Questions</th>
                             <th>Tags</th>
                             <th>Responses</th>
@@ -53,7 +52,6 @@
                     <tbody>
                         <!-- Add your table rows dynamically using server-side data or JavaScript -->
                         <tr>
-                            <td></td>
                             <td>How can I view the class schedule?</td>
                             <td>Specific</td>
                             <td class="response-column">
@@ -67,7 +65,6 @@
                             </td>
                         </tr>
                         <tr>
-                        <td></td>
                             <td>What documents do I need for enrollment?</td>
                             <td>General</td>
                             <td class="response-column">
@@ -86,6 +83,7 @@
                 </div>
           </div>
         </div>
+    </div>
 
         <!-- CS Management Tab -->
         <div class="tab-pane fade" id="CS-management-tab">
@@ -96,7 +94,6 @@
                     <caption>These data can be modified and structured before calling as a function in the model</caption>
                     <thead class="thead-dark">
                         <tr>
-                        <th></th>
                             <th>Questions</th>
                             <th>Tags</th>
                             <th>Responses</th>
@@ -106,7 +103,6 @@
                     <tbody>
                         <!-- Add your table rows dynamically using server-side data or JavaScript -->
                         <tr>
-                        <td></td>
                             <td>How can I view the class schedule?</td>
                             <td>Specific</td>
                             <td class="response-column">
@@ -115,12 +111,11 @@
                             <p>Login to your university credentials and extract from the 'Schedule' menu</p>
                             </td>
                             <td class="text-center">
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
-                            <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
-                        <td></td>
                             <td>What documents do I need for enrollment?</td>
                             <td>General</td>
                             <td class="response-column">
@@ -129,8 +124,8 @@
                             <p>Answer 3</p>
                             </td>
                             <td class="text-center">
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
-                            <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                             </td>
                         </tr>
                         <!-- Add more rows as needed -->
@@ -149,7 +144,6 @@
                   <caption>These data can be modified and structured before calling as a function in the model</caption>
                   <thead class="thead-dark">
                       <tr>
-                        <th></th>
                           <th>Questions</th>
                           <th>Tags</th>
                           <th>Responses</th>
@@ -159,7 +153,6 @@
                   <tbody>
                       <!-- Add your table rows dynamically using server-side data or JavaScript -->
                       <tr>
-                        <td></td>
                           <td>How can I view the class schedule?</td>
                           <td>Specific</td>
                           <td class="response-column">
@@ -173,7 +166,6 @@
                           </td>
                       </tr>
                       <tr>
-                      <td></td>
                           <td>What documents do I need for enrollment?</td>
                           <td>General</td>
                           <td class="response-column">
@@ -192,6 +184,7 @@
             </div>
           </div>
         </div>
+
           <div class="modal modal-lg fade" id="ITModal" tabindex="-1" role="dialog" aria-labelledby="adminAddModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -306,7 +299,7 @@
                 </div>
             </div>
           </div>
-
+</div>
     </main><!-- End #main -->
 
 @endsection
