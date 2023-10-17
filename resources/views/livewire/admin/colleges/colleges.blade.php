@@ -1,15 +1,6 @@
-@section('content')
-@extends('layout.app')
-@section('title', 'Pybot | Colleges') <!-- Set the page title -->
-
-@section('colleges', 'active')
-
-
-
-@section('content')
-
-    <!-- Main Content -->
-    <main id="main" class="main">
+<div>
+     <!-- Main Content -->
+     <main id="main" class="main">
         <div class="pagetitle">
             <h1>College Management</h1>
             <nav>
@@ -313,5 +304,4 @@
         </div>
 
     </main><!-- End #main -->
-
-@endsection
+</div>

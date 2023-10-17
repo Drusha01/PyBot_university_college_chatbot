@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Dashboard;
+namespace App\Http\Livewire\Admin\Department;
 
 use Livewire\Component;
 
-class Dashboard extends Component
+class Department extends Component
 {
     public function mount(){
-        $this->title = 'Dashboard';
+        $this->title = 'Department';
     }
     public function render()
     {
-        return view('livewire.admin.dashboard.dashboard',[
+        return view('livewire.admin.department.department',[
             ])
             ->layout('layouts.page',[
                 'title'=>$this->title]);

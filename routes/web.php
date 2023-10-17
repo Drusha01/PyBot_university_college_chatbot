@@ -34,6 +34,13 @@ use App\Http\Livewire\Page\usersetting\Usersetting;
 // python executioner
 use App\Http\Controllers\Python_executioner;
 
+// admin
+use App\Http\Livewire\Admin\Dashboard\Dashboard;
+use App\Http\Livewire\Admin\Colleges\Colleges;
+use App\Http\Livewire\Admin\Department\Department;
+use App\Http\Livewire\Admin\Usermanagement\Usermanagement;
+use App\Http\Livewire\Admin\Chatbox\Chatbox;
+use App\Http\Livewire\Admin\Setting\Setting;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,33 +81,22 @@ Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
 
-
+// admmin
 Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::class])->group(function () {
     Route::prefix('/admin')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
-        Route::get('/colleges', function () {
-            return view('admin.colleges');
-        })->name('colleges');
-        Route::get('/department', function () {
-            return view('admin.department');
-        })->name('department');
+        Route::get('/dashboard', Dashboard::class)->name('admin.dashboard');
+        Route::get('/colleges', Colleges::class)->name('admin.colleges');
+        Route::get('/department', Department::class)->name('admin.department');
+        Route::get('/usermanagement', Usermanagement::class)->name('admin.usermanagement');
+        Route::get('/chatbox', Chatbox::class)->name('admin.chatbox');
+        Route::get('/setting', Setting::class)->name('admin.setting');
+
         Route::get('/ccs', function () {
             return view('admin.ccs');
         })->name('ccs');
         Route::get('/model', function () {
             return view('admin.model');
         })->name('model');
-        Route::get('/chatbox', function () {
-            return view('admin.chatbox');
-        })->name('chatbox');
-        Route::get('/user-management', function () {
-            return view('admin.user-management');
-        })->name('user-management');
-        Route::get('/setting', function () {
-            return view('admin.setting');
-        })->name('setting');
         Route::get('/profile', function () {
             return view('admin.profile');
         })->name('profile');
