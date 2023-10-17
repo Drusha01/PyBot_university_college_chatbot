@@ -1,0 +1,9 @@
+$num: 2; // Starting font size in pixels
+
+@while $num <= 48 { // Loop until the desired maximum font size
+  .fs-#{$num} {
+    font-size: #{$num}px !important;
+  }
+
+  $num: $num + 2; // Increase the font size by 2 pixels in each iteration
+}

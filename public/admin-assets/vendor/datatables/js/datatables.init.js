@@ -55,7 +55,7 @@
             }
         ],
         order: [1, 'desc'],
-        
+
 
     });
     // Enable child rows for Example 1
@@ -150,5 +150,14 @@
         order: [1, 'desc'],
 
     });
+    $('a[data-toggle="tab"]').on('.show.active', function (event) {
+        var tabID = $(event.target).attr('data-target');
+        if ( tabID === '#CS-management-tab' ) {
+          table2.columns.adjust().responsive.recalc();
+        }
+        if ( tabID === '#ACT-management-tab' ) {
+            table3.columns.adjust().responsive.recalc();
+          }
+      } );
 
 })(jQuery);

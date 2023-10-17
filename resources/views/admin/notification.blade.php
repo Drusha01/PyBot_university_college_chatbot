@@ -45,7 +45,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="display no wrap" style="min-width:100%">
+                        <table id="example" class="display no wrap" style="width:100%">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>

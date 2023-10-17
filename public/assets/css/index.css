@@ -17,7 +17,7 @@
 
 /* Style for the top navigation bar */
 #top-nav {
-  background: linear-gradient(135deg, #044f48, #2a7561); /* Background color */
+  background: linear-gradient(-111deg, rgb(16 73 55), rgb(20 73 51), rgb(41 89 70)); /* Background color */
   border-bottom: 1px solid #ccc; /* Add a border at the bottom */
   padding: 10px 0; /* Add some padding */
 }

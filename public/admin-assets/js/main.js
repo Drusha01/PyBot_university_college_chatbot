@@ -176,20 +176,24 @@
       $('.sidebar-offcanvas').toggleClass('active');
     });
 
-    // Open submenu on hover in compact sidebar mode and horizontal menu mode
     $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function (ev) {
+      // Check if the body element has certain classes
       var sidebarIconOnly = body.hasClass("sidebar-icon-only");
       var sidebarFixed = body.hasClass("sidebar-fixed");
       var $menuItem = $(this);
 
       if (!('ontouchstart' in document.documentElement) && sidebarIconOnly) {
+        // If it's not a touch device and the sidebar is in icon-only mode
         if (sidebarFixed && ev.type === 'mouseenter') {
+          // If the sidebar is fixed and the mouse enters the element
           body.removeClass('sidebar-icon-only');
         } else {
+          // Otherwise, toggle the 'hover-open' class based on mouseenter/mouseleave
           $menuItem.toggleClass('hover-open', ev.type === 'mouseenter');
         }
       }
     });
+
 
     // Toggle sidebar visibility
     $('[data-toggle="minimize"]').on("click", function () {
@@ -200,9 +204,6 @@
       }
     });
   });
-
-
-
 
 
 })();

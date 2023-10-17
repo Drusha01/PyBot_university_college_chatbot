@@ -38,10 +38,10 @@
 
 
                 <!-- Add Admin Button (Opens Add Modal) -->
-                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
+                <button class="btn btn-success mt-2 mb-2 float-right" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
                 <!-- Admin Table -->
                 <div class="table-responsive">
-                    <table id="example1" class="display responsive nowrap" style="min-width:100%">
+                    <table id="example1" class="display responsive nowrap" style="width:100%">
                         <thead>
                             <tr>
                                 <th></th>
@@ -60,9 +60,9 @@
                                 <td>Admin 1</td>
                                 <td>admin1@example.com</td>
                                 <td>Administrator</td>
-                                <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -71,9 +71,9 @@
                                 <td>Admin 2</td>
                                 <td>admin2@example.com</td>
                                 <td>Administrator</td>
-                                <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                 </td>
                             </tr>
                             <!-- Add more rows as needed -->
@@ -180,10 +180,10 @@
         <div class="tab-pane fade" id="user-management-tab">
             <div class="container-fluid">
                 <!-- Add user Button (Opens Add user Modal) -->
-                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
+                <button class="btn btn-success mt-2 mb-2 float-right" data-toggle="modal" data-target="#AddUserModal">Add User</button>
                 <!-- User Table -->
                 <div class="table-responsive">
-                    <table id="example2" class="display responsive nowrap" style="min-width:100%">
+                    <table id="example2" class="display responsive nowrap" style="width:100%">
                         <thead>
                             <tr>
                                 <th></th>
@@ -216,9 +216,9 @@
                                 <td>user2@example.com</td>
                                 <td>Applicant</td>
                                 <td>Inactive</td>
-                                <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                 </td>
                             </tr>
                             <!-- Add more rows as needed -->
@@ -330,7 +330,7 @@
 
                 <!-- Role Table -->
                 <div class="table-responsive mt-30">
-                    <table id="example3" class="display responsive nowrap" style="min-width:100%">
+                    <table id="example3" class="display responsive nowrap" style="width:100%">
                         <thead>
                             <tr>
                                 <th></th>
@@ -349,9 +349,9 @@
                                 <td>Administrator</td>
                                 <td>Full access</td>
                                 <td>Edit, Delete, Create</td>
-                                <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editRoleModal">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -360,9 +360,9 @@
                                 <td>Editor</td>
                                 <td>Modify content</td>
                                 <td>Edit, Create</td>
-                                <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editRoleModal">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                 </td>
                             </tr>
                             <!-- Add more rows as needed -->

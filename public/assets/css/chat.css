@@ -20,6 +20,10 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 1.3;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .bg {
@@ -166,6 +170,7 @@ Messages
   text-align: right;
   background: linear-gradient(120deg, #248A52, #257287);
   border-radius: 10px 10px 0 10px;
+  margin: 0 8px;
 }
 .messages .message.message-personal::before {
   left: auto;
@@ -417,7 +422,7 @@ Bounce
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background: #296b5b;
+  background: #063d2ffa;
   width: 70px;
   height: 70px;
   border-radius: 50%;
