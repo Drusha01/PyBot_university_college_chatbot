@@ -121,4 +121,16 @@ class Python_executioner extends Controller
         fclose($intent_file);
         return ($intent_file_name);
     }
+
+    public function intents_list(){
+        $file_path  = dirname(__FILE__,4);
+        $intent_file_path = '/core/intents/';
+        $dir = $file_path.$intent_file_path;
+        $intents_list = scandir($dir);
+        $intent_length = count($intents_list);
+        for ($i=2; $i < $intent_length; $i++) { 
+            echo $intents_list[$i].'<br>';
+        }
+      
+    }
 }
