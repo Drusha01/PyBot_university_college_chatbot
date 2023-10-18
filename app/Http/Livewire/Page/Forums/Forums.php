@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Dashboard;
+namespace App\Http\Livewire\Page\Forums;
 
 use Livewire\Component;
 
-class Dashboard extends Component
+class Forums extends Component
 {
     public function mount(){
-        $this->title = 'Dashboard';
+        $this->title = 'Forums';
     }
     public function render()
     {
-        return view('livewire.admin.dashboard.dashboard',[
+        return view('livewire.page.forums.forums',[
             ])
             ->layout('layouts.page',[
                 'title'=>$this->title]);

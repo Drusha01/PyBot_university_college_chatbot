@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Dashboard;
+namespace App\Http\Livewire\Admin\Chatbox;
 
 use Livewire\Component;
 
-class Dashboard extends Component
+class Chatbox extends Component
 {
     public function mount(){
-        $this->title = 'Dashboard';
+        $this->title = 'Chatbox';
     }
     public function render()
     {
-        return view('livewire.admin.dashboard.dashboard',[
+        return view('livewire.admin.chatbox.chatbox',[
             ])
             ->layout('layouts.page',[
                 'title'=>$this->title]);

@@ -8,22 +8,37 @@
 
       <!-- Navigation links -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{{route ('page.home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="{{route ('page.AboutUs')}}">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Academic</a>
+            <a class="nav-link" href="{{route ('page.academic')}}">Academic</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Admission</a>
+            <a class="nav-link" href="{{route ('page.admission')}}">Admission</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">FAQs/Forums</a>
+            <a class="nav-link" href="{{route ('page.forums')}}">FAQs/Forums</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 30px; height: 30px; margin-right: 8px;">Kai kai
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="{{route ('page.profile') }}">
+                <i class="bi bi-person-fill"></i> Profile
+                </a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ route('logout')}}">
+                <i class="bi bi-box-arrow-right"></i> Sign Out
+                </a>
+            </div>
+            </li>
         </ul>
 
         <!-- Icon links (if needed) -->
@@ -65,8 +80,8 @@
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item banner-1 active">
+      <div class="carousel-inner ">
+        <div class="carousel-item banner-1 active ">
           <div class="container">
             <div class="carousel-caption">
               <h1>Student-Centered College.</h1>
@@ -77,14 +92,14 @@
         </div>
         <div class="carousel-item banner-2">
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption ">
               <h1>Innovative and Supportive Faculty and Staff.</h1>
               <p>The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
               <p><a class="btn btn-lg btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
         </div>
-        <div class="carousel-item banner-3">
+        <div class="carousel-item banner-3 ">
           <div class="container">
             <div class="carousel-caption">
               <h1>Convenient Facilities.</h1>
@@ -96,11 +111,11 @@
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden ">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden ">Next</span>
       </button>
     </div>
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="academics">
@@ -151,7 +166,7 @@
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
-          <img src="../img/faculty/go.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <img src="{{ ('img/faculty/go.png') }}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3>Dr. Roderick P. Go</h3>
           <h4>Dean</h4>
         </div><!-- /.col-lg-4 -->

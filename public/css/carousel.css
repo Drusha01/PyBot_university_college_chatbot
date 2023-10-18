@@ -6,7 +6,7 @@ body#home-page {
     padding-top: 3rem;
     color: #5a5a5a;
   }
-  
+
   
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -14,6 +14,7 @@ body#home-page {
   /* Carousel base class */
   .carousel {
     margin-bottom: 4rem;
+
   }
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
@@ -32,7 +33,6 @@ body#home-page {
     min-width: 100%;
     height: 32rem;
   }
-  
   
   /* MARKETING CONTENT
   -------------------------------------------------- */

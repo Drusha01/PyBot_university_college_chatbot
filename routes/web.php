@@ -23,11 +23,24 @@ use App\Http\Livewire\Authentication\AccountInactive;
 
 // page
 use App\Http\Livewire\Page\Home\Home;
+use App\Http\Livewire\Page\profile\Profile;
+use App\Http\Livewire\Page\AboutUs\AboutUs;
+use App\Http\Livewire\Page\Academic\Academic;
+use App\Http\Livewire\Page\Admission\Admission;
+use App\Http\Livewire\Page\Forums\Forums;
+use App\Http\Livewire\Page\usersetting\Usersetting;
 
 
 // python executioner
 use App\Http\Controllers\Python_executioner;
 
+// admin
+use App\Http\Livewire\Admin\Dashboard\Dashboard;
+use App\Http\Livewire\Admin\Colleges\Colleges;
+use App\Http\Livewire\Admin\Department\Department;
+use App\Http\Livewire\Admin\Usermanagement\Usermanagement;
+use App\Http\Livewire\Admin\Chatbox\Chatbox;
+use App\Http\Livewire\Admin\Setting\Setting;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,50 +62,41 @@ Route::middleware([Unauthenticated::class,AccountisValid::class])->group(functio
     Route::get('/account/recovery/{hash}', AccountRecovery::class)->name('account-recovery');
 });
 
-
 // account disabled
 Route::middleware([Authenticated::class])->group(function () {
     Route::get('/deleted', AccountDeleted::class)->name('account.deleted');
     Route::get('/inactive', AccountInactive::class)->name('account.inactive');
 });
 
-
 // page
-Route::middleware([Authenticated::class,AccountisValid::class,AccountisAdmin::class])->group(function () {
-    Route::get('/',Home::class)->name('page.home');
+Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::class])->group(function () {
+    Route::get('/', Home::class)->name('page.home');
+    Route::get('/AboutUs', AboutUs::class)->name('page.AboutUs');
+    Route::get('/profile', Profile::class)->name('page.profile');
+    Route::get('/academic', Academic::class)->name('page.academic');
+    Route::get('/admission', admission::class)->name('page.admission');
+    Route::get('/forums', Forums::class)->name('page.forums');
 });
-
 
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
 
-
+// admmin
 Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::class])->group(function () {
     Route::prefix('/admin')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
-        Route::get('/colleges', function () {
-            return view('admin.colleges');
-        })->name('colleges');
-        Route::get('/department', function () {
-            return view('admin.department');
-        })->name('department');
+        Route::get('/dashboard', Dashboard::class)->name('admin.dashboard');
+        Route::get('/colleges', Colleges::class)->name('admin.colleges');
+        Route::get('/department', Department::class)->name('admin.department');
+        Route::get('/usermanagement', Usermanagement::class)->name('admin.usermanagement');
+        Route::get('/chatbox', Chatbox::class)->name('admin.chatbox');
+        Route::get('/setting', Setting::class)->name('admin.setting');
+
         Route::get('/ccs', function () {
             return view('admin.ccs');
         })->name('ccs');
         Route::get('/model', function () {
             return view('admin.model');
         })->name('model');
-        Route::get('/chatbox', function () {
-            return view('admin.chatbox');
-        })->name('chatbox');
-        Route::get('/user-management', function () {
-            return view('admin.user-management');
-        })->name('user-management');
-        Route::get('/setting', function () {
-            return view('admin.setting');
-        })->name('setting');
         Route::get('/profile', function () {
             return view('admin.profile');
         })->name('profile');
