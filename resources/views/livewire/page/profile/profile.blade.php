@@ -34,7 +34,7 @@
                     <i class="bi bi-person-fill"></i> Profile
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{route ('logout')}}">
                     <i class="bi bi-box-arrow-right"></i> Sign Out
                     </a>
                 </div>
