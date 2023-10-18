@@ -23,11 +23,7 @@
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
     </li>
-    <div class="d-flex position-absolute" style="right: 3%">
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create</button>
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Deploy</button>
-    </div>
+
 </ul>
 
 <div class="row">
@@ -37,14 +33,16 @@
             <!-- Data tab -->
             <div class="tab-pane fade show active" id="data-tab">
                 <div class="container-fluid">
+                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create</button>
                     <!-- Admin Table -->
                     <div class="table-responsive">
                         <table id="example1" class="display responsive nowrap" style="width:100%" cellspacing="0">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr>
                                     <th></th>
                                     <th>#</th>
                                     <th>Intents</th>
+                                    <th>Version</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,6 +51,7 @@
                                     <th></th>
                                     <td>1</td>
                                     <td>intents_v1</td>
+                                    <td>Version 1</td>
                                 </tr>
                                 <!-- Add more rows as needed -->
                             </tbody>
@@ -63,10 +62,11 @@
             <!-- Build tab -->
             <div class="tab-pane fade" id="build-tab">
                 <div class="container-fluid">
+                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
                     <!-- Admin Table -->
                     <div class="table-responsive">
                         <table id="example2" class="display responsive nowrap" style="width:100%">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr>
                                     <th></th>
                                     <th>Information</th>
@@ -102,10 +102,11 @@
             <!-- Deploy tab -->
             <div class="tab-pane fade" id="deploy-tab">
                 <div class="container-fluid">
+                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Deploy</button>
                     <!-- Admin Table -->
                     <div class="table-responsive">
                         <table id="example3" class="display responsive nowrap" style="width:100%">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr>
                                     <th></th>
                                     <th>Information</th>

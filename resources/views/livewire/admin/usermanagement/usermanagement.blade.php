@@ -39,7 +39,7 @@
                 <!-- Admin Table -->
                 <div class="table-responsive">
                     <table id="example1" class="display responsive nowrap" style="min-width:100%">
-                        <thead>
+                        <thead class="thead-dark">
                             <tr>
                                 <th></th>
                                 <th>Username</th>
@@ -181,7 +181,7 @@
                 <!-- User Table -->
                 <div class="table-responsive">
                     <table id="example2" class="display responsive nowrap" style="min-width:100%">
-                        <thead>
+                        <thead class="thead-dark">
                             <tr>
                                 <th></th>
                                 <th>Username</th>
