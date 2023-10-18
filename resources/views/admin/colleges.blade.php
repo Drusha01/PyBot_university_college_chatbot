@@ -60,7 +60,7 @@
                                     <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                                     <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                        <a class="btn btn-primary" href="{{ route('ccs') }}">View</a>
+                                        <a class="btn btn-primary" href="{{ route('csc') }}">View</a>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->

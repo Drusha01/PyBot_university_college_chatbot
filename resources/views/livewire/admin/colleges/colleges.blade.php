@@ -52,7 +52,7 @@
                                     <td>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
                                         <button class="btn btn-danger">Delete</button>
-                                        <a class="btn btn-primary" href="{{ route('ccs') }}">View</a>
+                                        <a class="btn btn-primary" href="{{ route('csc') }}">View</a>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
