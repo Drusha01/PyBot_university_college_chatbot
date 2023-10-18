@@ -13,7 +13,7 @@ class Model extends Component
     {
         return view('livewire.admin.model.model',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }
