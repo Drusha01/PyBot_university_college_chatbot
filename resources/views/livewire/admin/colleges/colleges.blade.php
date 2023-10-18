@@ -139,7 +139,7 @@
             <div class="tab-pane fade" id="user-management-tab">
                 <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-success float-right mt-4 mb-2" data-toggle="modal" data-target="#AddUserModal">Add Q&A</button>
+                    <button class="btn btn-success float-right mt-4 mb-2" data-toggle="modal" data-target="#AddModal">Add Q&A</button>
                     <!-- User Table -->
                     <div class="table-responsive">
                         <table id="example2" class="display responsive nowrap" style="min-width:100%">
@@ -161,7 +161,7 @@
                                         <li>answer 2</li>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit</button>
                                         <button class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
@@ -174,78 +174,176 @@
             </div>
 
             <!-- Add Q AND A modal -->
-            <div class="modal fade" id="AddUserModal" tabindex="-1" role="dialog" aria-labelledby="AddUserModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="AddUserModalLabel">Add Q&A</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Add User form -->
-                            <form>
-                                <div class="form-group">
-                                    <label for="AddUserFirstName">Question</label>
-                                    <input type="text" class="form-control" id="AddUserFirstName" placeholder=" Input Question">
+            <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Add</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body cqh-50">
+                <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
+                <form>
+                    <div class="form-group-row">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="add-container">
+                                    <div class="form-group">
+                                        <label for="addquestion">Question/s</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="AddUserMiddleName">Tags</label>
-                                    <input type="text" class="form-control" id="AddUserMiddleName" placeholder="Input Tags">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="add-container2">
+                                    <div class="form-group">
+                                        <label for="addresponse">Responses</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="AddUserLastName">Answer</label>
-                                    <input type="text" class="form-control" id="AddUserLastName" placeholder="Input Answer">
+                                    <label for="addtag" class="form-label">Tag</label>
+                                    <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                 </div>
-                            </form>
-                            <!-- End Add User  -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Add Q&A</button>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span>For
+                                    <div class="">
+                                            <label>
+                                                <input type="checkbox" class="flat" checked="checked"  value="IT"> IT
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat" value="CS"> CS
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat" value="ACT"> ACT
+                                            </label>
+                                    </div>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
+                <!-- End Add Admin  -->
             </div>
-
-
-            <!-- Edit User Modal -->
-            <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editUserModalLabel">Edit Q&A</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- User Edit Form -->
-                            <form>
-                                <div class="form-group">
-                                    <label for="editUserFirstName">Question</label>
-                                    <input type="text" class="form-control" id="editUserFirstName" placeholder="Edit Questions">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body cqh-50">
+                <button id="edit_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
+                <form>
+                    <div class="form-group-row">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="edit-container">
+                                    <div class="form-group">
+                                        <label for="addquestion">Question/s</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="editUserMiddleName">Tags</label>
-                                    <input type="text" class="form-control" id="editUserMiddleName" placeholder="Edit Tags">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edit-container2">
+                                    <div class="form-group">
+                                        <label for="addresponse">Responses</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="editUserLastName">Answer</label>
-                                    <input type="text" class="form-control" id="editUserLastName" placeholder="Edit Answers">
+                                    <label for="addtag" class="form-label">Tag</label>
+                                    <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                 </div>
-                            </form>
-                            <!-- End User Edit Form -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save Changes</button>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span>For
+                                    <div class="">
+                                            <label>
+                                                <input type="checkbox" class="flat" checked="checked"  value="IT"> IT
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat" value="CS"> CS
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" class="flat" value="ACT"> ACT
+                                            </label>
+                                    </div>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
+                <!-- End Add Admin  -->
             </div>
-            <!-- End Edit User Modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+<script>
+$('#add_data').on('click', function() {
+    var newIntent = `
+            <div class="form-group">
+                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+            </div>
+
+    `;
+    var newIntent2 = `
+            <div class="form-group">
+                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+            </div>
+
+    `;
+    $('.add-container').append(newIntent);
+    $('.add-container2').append(newIntent2);
+
+
+});
+$('#edit_data').on('click', function() {
+    var newIntent = `
+            <div class="form-group">
+                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+            </div>
+
+    `;
+    var newIntent2 = `
+            <div class="form-group">
+                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+            </div>
+
+    `;
+    $('.edit-container').append(newIntent);
+    $('.edit-container2').append(newIntent2);
+
+
+});
+</script>
 
 
 

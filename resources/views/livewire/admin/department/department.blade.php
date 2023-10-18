@@ -318,7 +318,6 @@
     </div>
   </div>
 
-</main><!-- End #main -->
 
 <script>
 $('#add_data').on('click', function() {
