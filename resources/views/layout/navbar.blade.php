@@ -66,7 +66,7 @@
                             <a class="dropdown-item" href="{{route ('setting')}}">
                                 Settings
                             </a>
-                            <a class="dropdown-item" href="{route('logout')}}">
+                            <a class="dropdown-item" href="{{route('logout')}}">
                                 Logout
                             </a>
                         </div>
