@@ -1137,3 +1137,7 @@ span.tag a {
 .modal-open .modal {
  overflow: hidden!important;
 }
+
+thead.thead-dark {
+  background: #337c60de;
+}

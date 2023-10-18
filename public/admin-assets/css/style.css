@@ -26208,6 +26208,8 @@ body.avgrund-active {
 
 .dataTables_wrapper .dataTable thead th {
   border-bottom-width: 0;
+  font-weight: 900;
+  font-size: 15px;
 }
 
 .dataTables_wrapper .dataTable thead .sorting:before, .dataTables_wrapper .dataTable thead .sorting:after,
