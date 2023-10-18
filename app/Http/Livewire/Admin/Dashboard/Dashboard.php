@@ -13,7 +13,7 @@ class Dashboard extends Component
     {
         return view('livewire.admin.dashboard.dashboard',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }

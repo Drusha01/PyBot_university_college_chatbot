@@ -13,7 +13,7 @@ class Setting extends Component
     {
         return view('livewire.admin.setting.setting',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }

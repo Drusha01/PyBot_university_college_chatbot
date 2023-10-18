@@ -13,7 +13,7 @@ class Chatbox extends Component
     {
         return view('livewire.admin.chatbox.chatbox',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }

@@ -13,7 +13,7 @@ class Usermanagement extends Component
     {
         return view('livewire.admin.usermanagement.usermanagement',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }

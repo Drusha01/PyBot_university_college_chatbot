@@ -85,16 +85,16 @@ Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->na
 // admmin
 Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::class])->group(function () {
     Route::prefix('/admin')->group(function () {
-        Route::get('/dashboard', Dashboard::class)->name('admin.dashboard');
-        Route::get('/colleges', Colleges::class)->name('admin.colleges');
-        Route::get('/department', Department::class)->name('admin.department');
-        Route::get('/usermanagement', Usermanagement::class)->name('admin.usermanagement');
-        Route::get('/chatbox', Chatbox::class)->name('admin.chatbox');
-        Route::get('/setting', Setting::class)->name('admin.setting');
-        Route::get('/model', Model::class)->name('admin.model');
+        Route::get('/dashboard', Dashboard::class)->name('dashboard');
+        Route::get('/colleges', Colleges::class)->name('colleges');
+        Route::get('/department', Department::class)->name('department');
+        Route::get('/usermanagement', Usermanagement::class)->name('user-management');
+        Route::get('/chatbox', Chatbox::class)->name('chatbox');
+        Route::get('/setting', Setting::class)->name('setting');
+        Route::get('/model', Model::class)->name('model');
 
         Route::get('/ccs', function () {
-            return view('admin.ccs');
+            return view('ccs');
         })->name('ccs');
         Route::get('/profile', function () {
             return view('admin.profile');

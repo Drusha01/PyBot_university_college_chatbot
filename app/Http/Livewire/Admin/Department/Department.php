@@ -13,7 +13,7 @@ class Department extends Component
     {
         return view('livewire.admin.department.department',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }

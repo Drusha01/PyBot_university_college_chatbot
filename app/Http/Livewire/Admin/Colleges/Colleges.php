@@ -13,7 +13,7 @@ class Colleges extends Component
     {
         return view('livewire.admin.colleges.colleges',[
             ])
-            ->layout('layouts.page',[
+            ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
 }
