@@ -24,9 +24,9 @@
         <a class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
     </li>
     <div class="d-flex position-absolute" style="right: 3%">
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#addModal">Add Intents</button>
+        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create</button>
         <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#publishModal">Publish</button>
+        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Deploy</button>
     </div>
 </ul>
 
@@ -39,22 +39,20 @@
                 <div class="container-fluid">
                     <!-- Admin Table -->
                     <div class="table-responsive">
-                        <table id="dataTable" class="display responsive nowrap" style="width:100%">
+                        <table id="example1" class="display responsive nowrap" style="width:100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th class="checkbox"></th>
                                     <th></th>
                                     <th>#</th>
-                                    <th>Data</th>
+                                    <th>Intents</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Add your table rows dynamically using server-side data or JavaScript -->
                                 <tr>
-                                    <th class="checkbox"></th>
-                                    <td></td>
+                                    <th></th>
                                     <td>1</td>
-                                    <td>Version 1</td>
+                                    <td>intents_v1</td>
                                 </tr>
                                 <!-- Add more rows as needed -->
                             </tbody>
@@ -67,14 +65,12 @@
                 <div class="container-fluid">
                     <!-- Admin Table -->
                     <div class="table-responsive">
-                        <table id="buildTable" class="display responsive nowrap" style="width:100%">
+                        <table id="example2" class="display responsive nowrap" style="width:100%">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>Information</th>
-                                    <th>Title</th>
                                     <th>Version</th>
-                                    <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -83,22 +79,16 @@
                                 <tr>
                                     <td></td>
                                     <td>New File</td>
-                                    <td>Announcements</td>
-                                    <td>trainingv1.2023-10-16</td>
-                                    <td>10/16/2023</td>
+                                    <td>intents_v1</td>
                                     <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td>Updated File</td>
-                                    <td>Programs</td>
-                                    <td>trainingv0.2023-10-15</td>
-                                    <td>10/15/2023</td>
+                                    <td>intents_v2</td>
                                     <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
@@ -114,40 +104,25 @@
                 <div class="container-fluid">
                     <!-- Admin Table -->
                     <div class="table-responsive">
-                        <table id="deployTable" class="display responsive nowrap" style="width:100%">
+                        <table id="example3" class="display responsive nowrap" style="width:100%">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>Information</th>
-                                    <th>Title</th>
                                     <th>Version</th>
-                                    <th>Date</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Add your table rows dynamically using server-side data or JavaScript -->
                                 <tr>
                                     <td></td>
-                                    <td>New File</td>
-                                    <td>Announcements</td>
+                                    <td>Current</td>
                                     <td>trainingv1.2023-10-16</td>
-                                    <td>10/16/2023</td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                    </td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>Updated File</td>
-                                    <td>Programs</td>
+                                    <td></td>
                                     <td>trainingv0.2023-10-15</td>
-                                    <td>10/15/2023</td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                    </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
                             </tbody>
@@ -164,7 +139,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Add</h5>
+                        <h5 class="modal-title" id="editModalLabel">Create</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -172,7 +147,7 @@
                     <div class="modal-body cqh-50">
                         <form>
                         <div class="form-group">
-                            <label for="trainingData">Training Data:</label>
+                            <label for="trainingData">Intents File:</label>
                             <input type="file" class="form-control" id="trainingData">
                         </div>
                         </form>
@@ -218,22 +193,22 @@
 
 
 
-<!-- Publish Modal -->
-<div class="modal modal-xl fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel" aria-hidden="true">
+<!-- deploy Modal -->
+<div class="modal modal-xl fade" id="deployModal" tabindex="-1" role="dialog" aria-labelledby="deployModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="publishModalLabel">Publish</h5>
+                <h5 class="modal-title" id="deployModalLabel">Deploy</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body cqh-50">
-                <!-- Add content for the "Publish" modal here -->
+                <!-- Add content for the "deploy" modal here -->
                 <form>
                     <div class="form-group">
-                        <label for="publishedVersion">Select Version:</label>
-                        <select class="form-control" id="publishedVersion">
+                        <label for="deployedVersion">Select Version:</label>
+                        <select class="form-control" id="deployedVersion">
                             <option value="version1">Version 1</option>
                             <option value="version2">Version 2</option>
                             <!-- Add more options if needed -->
@@ -244,7 +219,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Publish</button>
+                <button type="button" class="btn btn-primary">Deploy</button>
             </div>
         </div>
     </div>

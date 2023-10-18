@@ -22,3 +22,7 @@ pip3 install tensorflow
 pip3 install keras
 
 
+create-intents > data intent version select
+select from table > intent
+deployment > no delete, select version deploy, display table
+
