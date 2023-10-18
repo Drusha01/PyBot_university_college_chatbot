@@ -1,8 +1,11 @@
+@section('title', 'Pybot | College Student Council') <!-- Set the page title -->
+
+@section('csc', 'active')
 <div>
 <main id="main" class="main">
 
 <div class="pagetitle">
-    <h1>College of Computing Studies</h1>
+    <h1>College Student Council</h1>
     <nav>
         <ol class="breadcrumb breadcrumb-custom">
         <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
@@ -32,7 +35,7 @@
 <!-- IT Management Tab -->
 <div class="tab-pane fade show active" id="IT-management-tab">
   <div class="container-fluid">
-        <div class="table-responsive m-3">
+        <div class="table-responsive">
             <table id="example1" class="display responsive nowrap" style="width:100%">
             <caption>These data can be modified and structured before calling as a function in the model</caption>
             <thead class="thead-dark">
@@ -84,7 +87,7 @@
 <!-- CS Management Tab -->
 <div class="tab-pane fade" id="CS-management-tab">
   <div class="container-fluid">
-    <div class="table-responsive m-3">
+    <div class="table-responsive">
         <table id="example2" class="display responsive nowrap" style="width:100%">
             <caption>These data can be modified and structured before calling as a function in the model</caption>
             <thead class="thead-dark">
@@ -136,7 +139,7 @@
 <!-- ACT Management Tab -->
 <div class="tab-pane fade" id="ACT-management-tab">
   <div class="container-fluid">
-    <div class="table-responsive m-3">
+    <div class="table-responsive">
         <table id="example3" class="display responsive nowrap" style="width:100%">
           <caption>These data can be modified and structured before calling as a function in the model</caption>
           <thead class="thead-dark">
@@ -249,6 +252,7 @@
             </div>
         </div>
     </div>
+</div>
     <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -259,12 +263,12 @@
                 </button>
             </div>
             <div class="modal-body cqh-50">
-                <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
+                <button id="edit_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
                 <form>
                     <div class="form-group-row">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <div class="add-container">
+                                <div class="edit-container">
                                     <div class="form-group">
                                         <label for="addquestion">Question/s</label>
                                         <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
@@ -272,7 +276,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="add-container2">
+                                <div class="edit-container2">
                                     <div class="form-group">
                                         <label for="addresponse">Responses</label>
                                         <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
@@ -333,6 +337,24 @@ $('#add_data').on('click', function() {
     `;
     $('.add-container').append(newIntent);
     $('.add-container2').append(newIntent2);
+
+
+});
+$('#edit_data').on('click', function() {
+    var newIntent = `
+            <div class="form-group">
+                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+            </div>
+
+    `;
+    var newIntent2 = `
+            <div class="form-group">
+                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+            </div>
+
+    `;
+    $('.edit-container').append(newIntent);
+    $('.edit-container2').append(newIntent2);
 
 
 });

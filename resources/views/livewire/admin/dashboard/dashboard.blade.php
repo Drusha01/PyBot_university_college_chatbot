@@ -1,3 +1,6 @@
+@section('title', 'Pybot | Dashboard') <!-- Set the page title -->
+
+@section('dashboard', 'active')
 <div>
 <main id="main" class="main">
 

@@ -14,8 +14,8 @@
       </a>
       <div class="collapse" id="sub-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item @yield('ccs')">
-            <a class="nav-link" href="{{ route('csc') }}"> College of Computing Studies</a>
+          <li class="nav-item @yield('csc')">
+            <a class="nav-link" href="{{ route('csc') }}">College Student Council</a>
           </li>
         </ul>
       </div>
@@ -66,6 +66,9 @@
 </nav>
 
 <script>
+    /**
+   * Sidebar-Icon-Only
+   */
   $(document).ready(function () {
     var body = $('body');
 
@@ -76,26 +79,6 @@
     $('[data-toggle="offcanvas"]').on("click", function () {
       $('.sidebar-offcanvas').toggleClass('active');
     });
-
-    // Prevent default behavior of "Colleges" link
-    $('#colleges-link').on('click', function (e) {
-      e.preventDefault();
-    });
-    // Open submenu on hover in compact sidebar mode and horizontal menu mode
-    $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function (ev) {
-      var sidebarIconOnly = body.hasClass("sidebar-icon-only");
-      var sidebarFixed = body.hasClass("sidebar-fixed");
-      var $menuItem = $(this);
-
-      if (!('ontouchstart' in document.documentElement) && sidebarIconOnly) {
-        if (sidebarFixed && ev.type === 'mouseenter') {
-          body.removeClass('sidebar-icon-only');
-        } else {
-          $menuItem.toggleClass('hover-open', ev.type === 'mouseenter');
-        }
-      }
-    });
-
     // Toggle sidebar visibility
     $('[data-toggle="minimize"]').on("click", function () {
       if (body.hasClass('sidebar-toggle-display') || body.hasClass('sidebar-absolute')) {
@@ -104,6 +87,25 @@
         body.toggleClass('sidebar-icon-only');
       }
     });
+
+    $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function (ev) {
+      // Check if the body element has certain classes
+      var sidebarIconOnly = body.hasClass("sidebar-icon-only");
+      var sidebarFixed = body.hasClass("sidebar-fixed");
+      var $menuItem = $(this);
+
+      if (!('ontouchstart' in document.documentElement) && sidebarIconOnly) {
+        // If it's not a touch device and the sidebar is in icon-only mode
+        if (sidebarFixed && ev.type === 'mouseenter') {
+          // If the sidebar is fixed and the mouse enters the element
+          body.removeClass('sidebar-icon-only');
+        } else {
+          // Otherwise, toggle the 'hover-open' class based on mouseenter/mouseleave
+          $menuItem.toggleClass('hover-open', ev.type === 'mouseenter');
+        }
+      }
+    });
+
   });
 
 </script>
