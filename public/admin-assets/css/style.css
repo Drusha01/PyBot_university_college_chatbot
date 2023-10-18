@@ -19686,7 +19686,7 @@ address p {
 /* Miscellanoeous */
 body,
 html {
-  overflow: hidden;
+  overflow: auto;
   padding-right: 0 !important;
 }
 
