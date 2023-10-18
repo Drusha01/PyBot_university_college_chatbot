@@ -93,7 +93,7 @@
     <div class="container-scroller">
         <!-- ======= Navbar ======= -->
         @include('layout.navbar')
-    <div class="container-fluid page-body-wrapper">
+    <div class="page-body-wrapper">
         <!-- ======= Sidebar ======= -->
         @include('layout.sidebar')
 
@@ -352,21 +352,22 @@
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ asset('assets/js/chat.js') }}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ asset('assets/js/chat.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="{{ asset('admin-assets/vendor/datatables/js/datatables.init.js') }}"></script>
     <script src="{{ asset('admin-assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin-assets/vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- === Template Main JS File === -->
+    <script src="{{ asset('admin-assets/js/main.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/template.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ asset('assets/js/chat.js') }}"></script>
+    <script src="{{ asset('admin-assets/vendors/iCheck/icheck.min.js') }}"></script>
+	<script src="{{ asset('admin-assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js') }}"></script>
 
     <!-- === Template Mai
 </body>

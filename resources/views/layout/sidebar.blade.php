@@ -14,8 +14,8 @@
       </a>
       <div class="collapse" id="sub-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item @yield('ccs')">
-            <a class="nav-link" href="{{ route('csc') }}"> College of Computing Studies</a>
+          <li class="nav-item @yield('csc')">
+            <a class="nav-link" href="{{ route('csc') }}">College Student Council</a>
           </li>
         </ul>
       </div>

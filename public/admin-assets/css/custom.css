@@ -1129,3 +1129,7 @@ span.tag a {
     width: 100%;
     height: 0px
 }
+
+.float-start {
+  float: right !important;
+}

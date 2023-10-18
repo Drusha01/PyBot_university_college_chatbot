@@ -28,8 +28,8 @@
             <!-- IT Management Tab -->
             <div class="tab-pane fade show active" id="IT-management-tab">
                 <div class="container-fluid">
-                    <div class="table-responsive m-3">
-                        <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#ITModal">Add Data</button>
+                    <div class="table-responsive">
+                        <button class="btn btn-success float-right m-2" data-toggle="modal" data-target="#ITModal">Add Data</button>
                         <table id="example1" class="display responsive nowrap" style="min-width:100%">
                         <caption>These data can be modified and structured before calling as a function in the model</caption>
                         <thead class="thead-dark">
@@ -81,8 +81,8 @@
             <!-- CS Management Tab -->
             <div class="tab-pane fade" id="CS-management-tab">
             <div class="container-fluid">
-                <div class="table-responsive m-3">
-                    <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#CSModal">Add Data</button>
+                <div class="table-responsive">
+                    <button class="btn btn-success float-right m-2" data-toggle="modal" data-target="#CSModal">Add Data</button>
                     <table id="example2" class="display responsive nowrap" style="min-width:100%">
                         <caption>These data can be modified and structured before calling as a function in the model</caption>
                         <thead class="thead-dark">
@@ -134,8 +134,8 @@
             <!-- ACT Management Tab -->
             <div class="tab-pane fade" id="ACT-management-tab">
             <div class="container-fluid">
-                <div class="table-responsive m-3">
-                    <button class="btn btn-success float-start m-2" data-toggle="modal" data-target="#ACTModal">Add Data</button>
+                <div class="table-responsive">
+                    <button class="btn btn-success float-right m-2" data-toggle="modal" data-target="#ACTModal">Add Data</button>
                     <table id="example3" class="display responsive nowrap" style="min-width:100%">
                     <caption>These data can be modified and structured before calling as a function in the model</caption>
                     <thead class="thead-dark">

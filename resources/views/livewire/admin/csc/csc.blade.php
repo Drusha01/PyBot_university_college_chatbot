@@ -2,7 +2,7 @@
 <main id="main" class="main">
 
 <div class="pagetitle">
-    <h1>College of Computing Studies</h1>
+    <h1>College Student Council</h1>
     <nav>
         <ol class="breadcrumb breadcrumb-custom">
         <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
@@ -32,7 +32,7 @@
 <!-- IT Management Tab -->
 <div class="tab-pane fade show active" id="IT-management-tab">
   <div class="container-fluid">
-        <div class="table-responsive m-3">
+        <div class="table-responsive">
             <table id="example1" class="display responsive nowrap" style="width:100%">
             <caption>These data can be modified and structured before calling as a function in the model</caption>
             <thead class="thead-dark">
@@ -84,7 +84,7 @@
 <!-- CS Management Tab -->
 <div class="tab-pane fade" id="CS-management-tab">
   <div class="container-fluid">
-    <div class="table-responsive m-3">
+    <div class="table-responsive">
         <table id="example2" class="display responsive nowrap" style="width:100%">
             <caption>These data can be modified and structured before calling as a function in the model</caption>
             <thead class="thead-dark">
@@ -136,7 +136,7 @@
 <!-- ACT Management Tab -->
 <div class="tab-pane fade" id="ACT-management-tab">
   <div class="container-fluid">
-    <div class="table-responsive m-3">
+    <div class="table-responsive">
         <table id="example3" class="display responsive nowrap" style="width:100%">
           <caption>These data can be modified and structured before calling as a function in the model</caption>
           <thead class="thead-dark">

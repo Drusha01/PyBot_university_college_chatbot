@@ -32,7 +32,7 @@
             <div class="tab-pane fade show active " id="admin-management-tab">
                 <div class="container-fluid">
                     <!-- Add Admin Button (Opens Add Modal) -->
-                    <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>
+                    <button class="btn btn-success float-right mt-4 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>
 
                     <!-- Admin Table -->
                     <div class="table-responsive">
@@ -136,7 +136,7 @@
             <div class="tab-pane fade" id="user-management-tab">
                 <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#AddUserModal">Add Q&A</button>
+                    <button class="btn btn-success float-right mt-4 mb-2" data-toggle="modal" data-target="#AddUserModal">Add Q&A</button>
                     <!-- User Table -->
                     <div class="table-responsive">
                         <table id="example2" class="display responsive nowrap" style="min-width:100%">
