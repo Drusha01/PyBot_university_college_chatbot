@@ -24,7 +24,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                     <p class="mb-0 font-weight-normal float-left dropdown-header">You have 4 new notifications
-                        <a href="notification"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></p>
+                        <a href="{{route ('admin-notification')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></p>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-success">
@@ -60,10 +60,10 @@
                             <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item" href="profile">
+                            <a class="dropdown-item" href="{{route ('admin-profile') }}">
                                 Profile
                             </a>
-                            <a class="dropdown-item" href="setting">
+                            <a class="dropdown-item" href="{{route ('setting')}}">
                                 Settings
                             </a>
                             <a class="dropdown-item" href="logout">

@@ -43,6 +43,8 @@ use App\Http\Livewire\Admin\Chatbox\Chatbox;
 use App\Http\Livewire\Admin\Setting\Setting;
 use App\Http\Livewire\Admin\Model\Model;
 use App\Http\Livewire\Admin\Csc\Csc;
+use App\Http\Livewire\Admin\AdminProfile\AdminProfile;
+use App\Http\Livewire\Admin\AdminNotification\AdminNotification;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,12 +98,8 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/setting', Setting::class)->name('setting');
         Route::get('/model', Model::class)->name('model');
         Route::get('/csc', Csc::class)->name('csc');
-
-        Route::get('/profile', function () {
-            return view('admin.profile');
-        })->name('profile');
-        Route::get('/notification', function () {
-            return view('admin.notification');
-        })->name('notification');
+        Route::get('/admin-profile', AdminProfile::class)->name('admin-profile');
+        Route::get('/admin-notification', AdminNotification::class)->name('admin-notification');
+        
     });
 });
