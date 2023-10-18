@@ -1,3 +1,4 @@
+@section('content')
 @extends('layout.app')
 @section('title', 'Pybot | Colleges') <!-- Set the page title -->
 
@@ -35,19 +36,17 @@
 
          <!-- Tab Content -->
         <div class="tab-content">
-
             <!-- College Management tab -->
             <div class="tab-pane fade show active " id="admin-management-tab">
                 <div class="container-fluid">
                     <!-- Add Admin Button (Opens Add Modal) -->
-                    <button class="btn btn-success mt-2 mb-2 float-right" data-toggle="modal" data-target="#adminAddModal">Add College</button>
+                    <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>
 
                     <!-- Admin Table -->
                     <div class="table-responsive">
-                        <table id="example1" class="display responsive nowrap" style="width:100%">
+                        <table id="example1" class="display responsive nowrap" style="min-width:100%">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th></th>
                                     <th>College Name</th>
                                     <th>Description </th>
                                     <th>Action</th>
@@ -56,13 +55,12 @@
                             <tbody>
                                 <!-- Add your table rows dynamically using server-side data or JavaScript -->
                                 <tr>
-                                    <td></td>
                                     <td>CCS</td>
                                     <td>College of Computing Studies</td>
-                                    <td class="text-center">
-                                        <button class="btn btn-info"><i class="bi bi-eye-fill"></i></button>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
-                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                    <td>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                        <a class="btn btn-primary" href="{{ route('ccs') }}">View</a>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
@@ -73,45 +71,6 @@
                 </div>
             </div>
 
-            <!-- Q&A ------------------------------------------------------------------------------------------ tab -->
-            <div class="tab-pane fade" id="user-management-tab">
-                <div class="container-fluid">
-                    <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-success mt-2 mb-2 float-right" data-toggle="modal" data-target="#AddUserModal">Add Q&A</button>
-                    <!-- User Table -->
-                    <div class="table-responsive">
-                        <table id="example2" class="display responsive nowrap" style="width:100%">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th></th>
-                                    <th>Questions</th>
-                                    <th>Tags</th>
-                                    <th>Answers</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--  table -->
-                                <tr>
-                                    <td></td>
-                                    <td>What is CCS?</td>
-                                    <td>information question</td>
-                                    <td class="response-column">
-                                        <p>Answer 1</p>
-                                        <p>Answer 2</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
-                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                    </td>
-                                </tr>
-                                <!-- Add more rows as needed -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- End User Table -->
-                </div>
-            </div>
 
             <!-- Add college Modal -->
             <div class="modal fade" id="adminAddModal" tabindex="-1" role="dialog" aria-labelledby="adminAddModalLabel" aria-hidden="true">
@@ -178,6 +137,47 @@
                 </div>
             </div>
             <!-- End add College Modal -->
+
+
+
+
+            <!-- Q&A ------------------------------------------------------------------------------------------ tab -->
+            <div class="tab-pane fade" id="user-management-tab">
+                <div class="container-fluid">
+                    <!-- Add user Button (Opens Add user Modal) -->
+                    <button class="btn btn-success mt-4 mb-2" data-toggle="modal" data-target="#AddUserModal">Add Q&A</button>
+                    <!-- User Table -->
+                    <div class="table-responsive">
+                        <table id="example2" class="display responsive nowrap" style="min-width:100%">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Questions</th>
+                                    <th>Tags</th>
+                                    <th>Answers</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--  table -->
+                                <tr>
+                                    <td>What is CCS?</td>
+                                    <td>information question</td>
+                                    <td>
+                                        <li>answer 1</li>
+                                        <li>answer 2</li>
+                                    </td>
+                                    <td>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- End User Table -->
+                </div>
+            </div>
 
             <!-- Add Q AND A modal -->
             <div class="modal fade" id="AddUserModal" tabindex="-1" role="dialog" aria-labelledby="AddUserModal" aria-hidden="true">
