@@ -41,6 +41,7 @@ use App\Http\Livewire\Admin\Department\Department;
 use App\Http\Livewire\Admin\Usermanagement\Usermanagement;
 use App\Http\Livewire\Admin\Chatbox\Chatbox;
 use App\Http\Livewire\Admin\Setting\Setting;
+use App\Http\Livewire\Admin\Model\Model;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,13 +91,11 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/usermanagement', Usermanagement::class)->name('admin.usermanagement');
         Route::get('/chatbox', Chatbox::class)->name('admin.chatbox');
         Route::get('/setting', Setting::class)->name('admin.setting');
+        Route::get('/model', Model::class)->name('admin.model');
 
         Route::get('/ccs', function () {
             return view('admin.ccs');
         })->name('ccs');
-        Route::get('/model', function () {
-            return view('admin.model');
-        })->name('model');
         Route::get('/profile', function () {
             return view('admin.profile');
         })->name('profile');
