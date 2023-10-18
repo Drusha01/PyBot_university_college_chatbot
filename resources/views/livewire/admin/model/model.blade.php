@@ -259,5 +259,66 @@
                 </div>
             </div>
         </div>
+
+        <!-- Train Modal -->
+<div class="modal modal-xl fade" id="trainModal" tabindex="-1" role="dialog" aria-labelledby="trainModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="trainModalLabel">Train</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body cqh-50">
+                <!-- Add content for the "Train" modal here -->
+                <form>
+                    <div class="form-group">
+                        <label for="trainingData">Training Data:</label>
+                        <input type="file" class="form-control" id="trainingData">
+                    </div>
+                    <!-- Add more form fields or content as needed -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Train</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Publish Modal -->
+<div class="modal modal-xl fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="publishModalLabel">Publish</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body cqh-50">
+                <!-- Add content for the "Publish" modal here -->
+                <form>
+                    <div class="form-group">
+                        <label for="publishedVersion">Select Version:</label>
+                        <select class="form-control" id="publishedVersion">
+                            <option value="version1">Version 1</option>
+                            <option value="version2">Version 2</option>
+                            <!-- Add more options if needed -->
+                        </select>
+                    </div>
+                    <!-- Add more form fields or content as needed -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Publish</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     </main><!-- End #main -->
 </div>
