@@ -19686,7 +19686,7 @@ address p {
 /* Miscellanoeous */
 body,
 html {
-  overflow: auto;
+  overflow: hidden;
   padding-right: 0 !important;
 }
 
@@ -28468,8 +28468,7 @@ div.tagsinput span.tag a {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
-  flex-direction: column;.
-  overflow: auto;
+  flex-direction: column;
 }
 
 @media (max-width: 991px) {

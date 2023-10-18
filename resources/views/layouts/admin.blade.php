@@ -54,15 +54,17 @@
     <div class="container-scroller">
         <!-- ======= Navbar ======= -->
         @include('layout.navbar')
-    <div class="page-body-wrapper">
-        <!-- ======= Sidebar ======= -->
-        @include('layout.sidebar')
+        <div class="page-body-wrapper">
+            <!-- ======= Sidebar ======= -->
+            @include('layout.sidebar')
 
 
-    <!-- ========== Main Content ========== -->
-    <div class="main-panel">
-        <div class="content-wrapper" id="content">
-        {{ $slot }}
+            <!-- ========== Main Content ========== -->
+            <div class="main-panel">
+                <div class="content-wrapper" id="content">
+                {{ $slot }}
+                </div>
+            </div>
         </div>
     </div>
 
