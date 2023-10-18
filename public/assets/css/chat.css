@@ -47,7 +47,7 @@ Chat
   transform: translate(-5%, -5%);
   width: 300px;
   height: 80vh;
-  max-height: 500px;
+  max-height: 355px;
   z-index: 2;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.815);
@@ -127,7 +127,7 @@ Messages
   border-radius: 10px 10px 10px 0;
   background: rgb(5 138 143 / 35%);
   margin: 8px 0;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.4;
   margin-left: 10px;
   position: relative;
@@ -136,7 +136,7 @@ Messages
 .messages .message .timestamp {
   position: absolute;
   bottom: -15px;
-  font-size: 9px;
+  font-size: 11px;
   color: rgb(0 0 0 / 33%);
 }
 .messages .message::before {
@@ -269,7 +269,7 @@ Message Box
   outline: none !important;
   resize: none;
   color: rgb(0 0 0);
-  font-size: 11px;
+  font-size: 14px;
   height: 17px;
   margin: 0;
   padding-right: 20px;

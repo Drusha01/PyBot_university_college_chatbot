@@ -23,8 +23,10 @@
                     <span class="count"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">You have 4 new notifications
-                        <a href="{{route ('admin-notification')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></p>
+                    <div>
+                        <p class="mb-0 font-weight-normal float-left dropdown-header border-bottom">You have 4 new notifications</p>
+                    </div>
+                <div>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-success">
@@ -38,19 +40,10 @@
                             </p>
                         </div>
                     </a>
-                    <a class a="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-warning">
-                                <i class="bi bi-gear mx-0"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <h6 class="preview-subject font-weight-normal">Settings</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                Private message
-                            </p>
-                        </div>
-                    </a>
+                    <div class="border-top">
+                    <a href="{{route ('admin-notification')}}"><span class="p-2 ms-2">View all</span></a></p>
+                    </div>
+                </div>
                 </div>
             </li>
             <div class="text-light px-2">
