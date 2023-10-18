@@ -11,11 +11,11 @@
     },
     {"tag": "3",
       "patterns": ["Where can I learn to code?", "Best way to learn to code", "How can I learn programming", "Good programming resources", "Can you recommend good coding resources?"],
-      "responses": ["Check out the NeuralNine YouTube channel and The Python Bible series (7 in 1)."],
+      "responses": ["Check out my lessons"],
       "context_set": ""
     },
     {"tag": "4",
-      "patterns": [ "What is Information Technology","what is IT", "what does information technology offers"],
+      "patterns": [ "What is Information Technology","What is IT", "what does information technology offers"],
       "responses": ["BSIT"],
       "context_set": ""
     },
