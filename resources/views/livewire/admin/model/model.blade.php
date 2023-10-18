@@ -24,9 +24,9 @@
         <a class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
     </li>
     <div class="d-flex position-absolute" style="right: 3%">
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create</button>
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Deploy</button>
+   
+        <button class="btn btn-outline-success mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
+        <button class="btn btn-outline-success mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Deploy</button>
     </div>
 </ul>
 
@@ -38,8 +38,9 @@
             <div class="tab-pane fade show active" id="data-tab">
                 <div class="container-fluid">
                     <!-- Admin Table -->
-                    <div class="table-responsive">
-                        <table id="example1" class="display responsive nowrap" style="width:100%" cellspacing="0">
+                    <div class="table-responsive mt-5">
+                    <button class="btn btn-outline-success mt-2 mb-2" data-toggle="modal" data-target="#addModal">Add Data</button>
+                        <table id="example1" class="display responsive nowrap " style="width:100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -60,6 +61,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Build tab -->
             <div class="tab-pane fade" id="build-tab">
                 <div class="container-fluid">
@@ -155,7 +157,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add</button>
+                        <button type="button" class="btn btn-primary">Add Data</button>
                     </div>
                 </div>
             </div>
