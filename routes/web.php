@@ -42,7 +42,7 @@ use App\Http\Livewire\Admin\Usermanagement\Usermanagement;
 use App\Http\Livewire\Admin\Chatbox\Chatbox;
 use App\Http\Livewire\Admin\Setting\Setting;
 use App\Http\Livewire\Admin\Model\Model;
-
+use App\Http\Livewire\Admin\Csc\Csc;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,10 +92,8 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/chatbox', Chatbox::class)->name('chatbox');
         Route::get('/setting', Setting::class)->name('setting');
         Route::get('/model', Model::class)->name('model');
+        Route::get('/csc', Csc::class)->name('csc');
 
-        Route::get('/ccs', function () {
-            return view('ccs');
-        })->name('ccs');
         Route::get('/profile', function () {
             return view('admin.profile');
         })->name('profile');
