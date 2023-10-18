@@ -1133,3 +1133,7 @@ span.tag a {
 .float-start {
   float: right !important;
 }
+
+.modal-open .modal {
+ overflow: hidden!important;
+}

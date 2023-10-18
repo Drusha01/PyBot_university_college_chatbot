@@ -21,10 +21,10 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
         </li>
-        <div class="row position-absolute">
+        <div class="d-flex position-absolute" style="right: 3%">
             <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#addModal">Add Intents</button>
             <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
-            <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Publish</button>
+            <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#publishModal">Publish</button>
         </div>
     </ul>
     <div class="row">
