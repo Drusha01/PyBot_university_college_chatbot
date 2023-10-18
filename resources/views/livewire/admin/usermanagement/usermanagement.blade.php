@@ -1,3 +1,6 @@
+@section('title', 'Pybot | User Management') <!-- Set the page title -->
+
+@section('user-management', 'active')
 <div>
         <!-- ======= Main Content ======= -->
         <main id="main" class="main">

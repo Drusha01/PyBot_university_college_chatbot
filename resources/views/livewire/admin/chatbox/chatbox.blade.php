@@ -1,3 +1,6 @@
+@section('title', 'Pybot | Chat Management') <!-- Set the page title -->
+
+@section('chatbox', 'active')
 <div>
 <main id="main" class="main">
 
@@ -33,7 +36,7 @@
                                         <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2" class="form-control border-0 bg-light">
                                         </div>
                                     </div>
-                                    <div class="scrollbar-y chat-box-six2">
+                                    <div class="scrollbar-y chat-box-six2 cqh-40">
                                         <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
                                             <div class="d-flex align-items-center w-100 pr-10">
                                                 <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
@@ -107,7 +110,7 @@
                                         <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2" class="form-control border-0 bg-light">
                                         </div>
                                     </div>
-                                    <div class="scrollbar-y chat-box-six2">
+                                    <div class="scrollbar-y chat-box-six2 cqh-40">
                                         <div class="p-15 bb-1 d-flex align-items-center justify-content-between pull-up">
                                             <div class="d-flex align-items-center w-100 pr-10">
                                                 <a class="me-15 status-danger avatar avatar-lg" href="#"><img class="bg-success-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-6.png') }}" alt="..."></a>
@@ -174,7 +177,7 @@
                             </div>
 
                             <div class="box-body">
-                                <div class="scrollbar-y chat-box-six">
+                                <div class="scrollbar-y chat-box-six cqh-41">
                                     <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                         <div>
                                             <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>

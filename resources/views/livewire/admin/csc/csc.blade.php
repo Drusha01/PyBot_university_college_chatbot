@@ -1,3 +1,6 @@
+@section('title', 'Pybot | College Student Council') <!-- Set the page title -->
+
+@section('csc', 'active')
 <div>
 <main id="main" class="main">
 

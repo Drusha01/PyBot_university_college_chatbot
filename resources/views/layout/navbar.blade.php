@@ -60,13 +60,13 @@
                             <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" href="profile">
                                 Profile
                             </a>
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" href="setting">
                                 Settings
                             </a>
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" href="logout">
                                 Logout
                             </a>
                         </div>
