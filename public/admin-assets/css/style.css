@@ -28597,7 +28597,7 @@ div.tagsinput span.tag a {
 .sidebar .nav .nav-item .nav-link .menu-title {
   color: inherit;
   display: inline-block;
-  font-size: 1.0874rem;
+  font-size: 0.9rem;
   line-height: 1;
   vertical-align: middle;
 }
@@ -30128,7 +30128,7 @@ div.tagsinput span.tag a {
     border-radius: 0;
   }
   .sidebar-icon-only .sidebar .nav.sub-menu {
-    padding: 0 0 0 1.5rem;
+    padding: 3px;
   }
   .sidebar-dark.sidebar-icon-only .sidebar .nav.sub-menu {
     background: #232227;

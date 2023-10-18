@@ -131,127 +131,21 @@
 
             </div>
         </div>
-
-        <div class="modal modal-xl fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal modal-xl fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addModalLabel">Add</h5>
+                        <h5 class="modal-title" id="editModalLabel">Add</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body cqh-50">
-                        <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
                         <form>
-                            <div class="form-group-row">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="add-container">
-                                            <div class="form-group">
-                                                <label for="addquestion">Question/s</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="add-container2">
-                                            <div class="form-group">
-                                                <label for="addresponse">Responses</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="addtag" class="form-label">Tag</label>
-                                            <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <span>For
-                                            <div class="">
-                                                    <label>
-                                                        <input type="checkbox" class="flat" checked="checked"  value="IT"> IT
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox" class="flat" value="CS"> CS
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox" class="flat" value="ACT"> ACT
-                                                    </label>
-                                            </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- End Add Admin  -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body cqh-50">
-                        <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
-                        <form>
-                            <div class="form-group-row">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="add-container">
-                                            <div class="form-group">
-                                                <label for="addquestion">Question/s</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="add-container2">
-                                            <div class="form-group">
-                                                <label for="addresponse">Responses</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="addtag" class="form-label">Tag</label>
-                                            <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <span>For
-                                            <div class="">
-                                                    <label>
-                                                        <input type="checkbox" class="flat" checked="checked"  value="IT"> IT
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox" class="flat" value="CS"> CS
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox" class="flat" value="ACT"> ACT
-                                                    </label>
-                                            </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="trainingData">Training Data:</label>
+                            <input type="file" class="form-control" id="trainingData">
+                        </div>
                         </form>
                         <!-- End Add Admin  -->
                     </div>
