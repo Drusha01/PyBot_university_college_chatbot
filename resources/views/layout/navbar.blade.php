@@ -23,10 +23,8 @@
                     <span class="count"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                    <div>
-                        <p class="mb-0 font-weight-normal float-left dropdown-header border-bottom">You have 4 new notifications</p>
-                    </div>
-                    <div>
+                    <p class="mb-0 font-weight-normal float-left dropdown-header">You have 4 new notifications
+                        <a href="{{route ('admin-notification')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></p>
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-success">
@@ -40,10 +38,19 @@
                             </p>
                         </div>
                     </a>
-                    </div>
-                    <div class="text-center border-top">
-                        <a href="notification"><span class="p-2 ms-2">View all</span></a>
-                    </div>
+                    <a class a="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-warning">
+                                <i class="bi bi-gear mx-0"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <h6 class="preview-subject font-weight-normal">Settings</h6>
+                            <p class="font-weight-light small-text mb-0 text-muted">
+                                Private message
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </li>
             <div class="text-light px-2">
@@ -53,13 +60,13 @@
                             <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item" href="profile">
+                            <a class="dropdown-item" href="{{route ('admin-profile') }}">
                                 Profile
                             </a>
-                            <a class="dropdown-item" href="setting">
+                            <a class="dropdown-item" href="{{route ('setting')}}">
                                 Settings
                             </a>
-                            <a class="dropdown-item" href="logout">
+                            <a class="dropdown-item" href="{{route('logout')}}">
                                 Logout
                             </a>
                         </div>
