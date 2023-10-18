@@ -49,7 +49,7 @@
 </head>
 
 
-<body>
+<body class="sidebar-icon-only">
 
     <div class="container-scroller">
         <!-- ======= Navbar ======= -->
