@@ -1,4 +1,3 @@
-
 {
     "delay":"5", 
     "iteration":"5",
@@ -7,7 +6,7 @@
     "path_to_asnwers":"C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\deployment\\answers\\",
     "path":"C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\",
     "model":"pybot_model_v1.h5",
-    "intents":"intents_v1.json",
+    "intents":"intent_v1.json",
     "words":"words_v1.pk1",
     "classes":"classes_v1.pk1"
 }

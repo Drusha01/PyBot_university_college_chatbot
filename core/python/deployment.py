@@ -1,3 +1,4 @@
+import os
 from os.path import exists
 
 
@@ -123,10 +124,25 @@ if(exists(path+'deployment\\config\\deployment_config.json')):
             config_delay = config_delay/1000
             
             # read question file
-            # parse data
-            # get answer
-            # write answer into answer folder
-            # delay for some time
+            content_list = os.listdir(path+'deployment\\questions\\')
+            for item in content_list:
+                print(item)
+                # read file
+                file_content = json.loads(open(path+'deployment\\questions\\'+str(item)).read())
+                question = file_content['question']
+                ints = predict_class(question)
+                answer = get_response(ints, intents)
+
+                json_content = {
+                    "question": question,
+                    "answer": answer
+                }
+                json_object = json.dumps(json_content, indent=4)
+                with open(path+'deployment\\answers\\'+item, "w") as outfile:
+                    outfile.write(json_object)
+                # delete file
+                os.remove(path+'deployment\\questions\\'+str(item))
+
             time.sleep(config_delay)
             print('running '+str(counter))
         else:

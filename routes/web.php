@@ -85,6 +85,9 @@ Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
 Route::get('/train_model', [Python_executioner::class, 'train_model'])->name('python.training');
 Route::get('/create_new_intents', [Python_executioner::class, 'create_new_intent'])->name('python.create-new-intent');
 Route::get('/get_intents_list', [Python_executioner::class, 'intents_list'])->name('python.intents-list');
+Route::get('/pychat', [Python_executioner::class, 'pychat'])->name('pychat.chat');
+Route::get('/model_list', [Python_executioner::class, 'model_list'])->name('python.models_list');
+Route::get('/deploy_model', [Python_executioner::class, 'deploy_model'])->name('python.deploy_model');
 
 
 // admmin
