@@ -82,7 +82,7 @@ Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::
 });
 
 Route::get('/test', [Python_executioner::class, 'test'])->name('python.test');
-Route::get('/execute_script', [Python_executioner::class, 'execute_script'])->name('python.training');
+Route::get('/train_model', [Python_executioner::class, 'train_model'])->name('python.training');
 Route::get('/create_new_intents', [Python_executioner::class, 'create_new_intent'])->name('python.create-new-intent');
 Route::get('/get_intents_list', [Python_executioner::class, 'intents_list'])->name('python.intents-list');
 

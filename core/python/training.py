@@ -24,10 +24,10 @@ if len(sys.argv) > 1:
     path = sys.argv[2]+'\\core'
     model_name =  sys.argv[3]
 else:
-    iteration = '0'
+    iteration = '1'
     path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core'
     model_name =  'pybot_model'
-    max_epoch =1000
+    max_epoch =250
     model_lr = 0.001
 
 
@@ -36,7 +36,7 @@ else:
 lemmatizer = WordNetLemmatizer()
 
 
-intents = json.loads(open(path+'\\intents\\intents_v'+iteration+'.json').read())
+intents = json.loads(open(path+'\\intents\\intent_v'+iteration+'.json').read())
 
 words =[]
 classes = []

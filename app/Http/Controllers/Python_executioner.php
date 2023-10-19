@@ -23,7 +23,7 @@ class Python_executioner extends Controller
         return shell_exec("$python $pyscript $iteration $path");
     }
 
-    public function execute_script(){
+    public function train_model(){
 
         // rewrite this to take in a intent file name
         {
@@ -46,12 +46,11 @@ class Python_executioner extends Controller
             $python = "C:\\Python_3.6\\python.exe";
 
             $output = 'niuce';
-            $iteration = 1;
+            $iteration = 678;
             $model_name = 'pybot_model';
 
             return shell_exec("$python $pyscript $iteration $path $model_name");
         }
-       
     }
 
     public function create_new_intent(Request $request){
