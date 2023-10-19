@@ -20,15 +20,6 @@ from keras.models import load_model
 
 
 
-if len(sys.argv) > 1:
-    iteration = sys.argv[1]
-    path = sys.argv[2]+'\\core\\'
-    model_name =  sys.argv[3]
-else:
-    iteration = '1'
-    path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
-    model_name =  'pybot_model'
-    threshhold = .25
 
 
 
@@ -77,82 +68,90 @@ def get_response(intent_list, intents_json):
 
 
 
-word_folder = 'words\\'
-classes_folder = 'classes\\'
-model_folder = 'models\\'
 
-
-
+if len(sys.argv) > 1:
+    json_config_path = sys.argv[1]
+else:
+    exit(0)
 #load model for deployment
-if(exists(path+'deployment\\config\\deployment_config.json')):
-    config = json.loads(open(path+'deployment\\config\\deployment_config.json').read())
+while(exists(json_config_path)):
+    
+    config = json.loads(open(json_config_path).read())
 
+    config_delay = config['threshold']
     config_delay = config['delay']
     config_iteration = config['iteration']
     config_run = config['run']
     config_path_to_questions = config['path_to_questions']
-    config_path_to_answers = config['path_to_asnwers']
+    config_path_to_answers = config['path_to_answers']
     config_path = config['path']
-    config_model = config['model']
-    config_intents = config['intents']
-    config_words = config['words']
-    config_classes = config['classes']
+    config_model_folder = config['model_folder']
     
-    intents = json.loads(open(config_path+'intents\\'+config_intents).read())
-    words = pickle.load( open(config_path+'words\\'+config_words,'rb'))
-    classes  = pickle.load(open(config_path+'classes\\'+config_classes,'rb'))
-    model = load_model(config_path+'models\\'+config_model)
+    if(exists(config_path+'models')):
+        intents = json.loads(open(config_path+'models\\'+config_model_folder+'\\intent.json').read())
+        words = pickle.load( open(config_path+'models\\'+config_model_folder+'\\words.pk1','rb'))
+        classes  = pickle.load(open(config_path+'models\\'+config_model_folder+'\\classes.pk1','rb'))
+        
+        model = load_model(config_path+'models\\'+config_model_folder+'\\'+config_model_folder+'.h5')
+    else:
+        print('cannot find model folder')
+        exit(0)
 
     # read config
     counter = 1
-    while(exists(path+'deployment\\config\\deployment_config.json')):
-        config = json.loads(open(path+'deployment\\config\\deployment_config.json').read())
+    while(exists(json_config_path)):
+        config = json.loads(open(json_config_path).read())
+
+        config_delay = config['threshold']
         config_delay = config['delay']
         config_iteration = config['iteration']
         config_run = config['run']
         config_path_to_questions = config['path_to_questions']
-        config_path_to_answers = config['path_to_asnwers']
+        config_path_to_answers = config['path_to_answers']
+        config_path = config['path']
+        config_model_folder = config['model_folder']
+        
+        
+        
+        config_iteration = int(config_iteration)
+        config_delay = int(config_delay)
+       
+        if(config_iteration<=0):
+            config_iteration = 1
+        if(config_delay<=0):
+            config_delay = 50 # 50 milliseconds
+        # milli seconds to seconds
+        config_delay = config_delay/1000
+        
+        # read question file
+        content_list = os.listdir(config_path_to_questions)
+        for item in content_list:
+            # read file
+            file_content = json.loads(open(config_path_to_questions+str(item)).read())
+            question = file_content['question']
+            ints = predict_class(question)
+            answer = get_response(ints, intents)
+    
+            json_content = {
+                "question": question,
+                "answer": answer
+            }
+            json_object = json.dumps(json_content, indent=4)
+            with open(config_path_to_answers+item, "w") as outfile:
+                outfile.write(json_object)
+            # delete file
+            os.remove(config_path_to_questions+str(item))
 
-        if(config_run):
-            config_iteration = int(config_iteration)
-            config_delay = int(config_delay)
-            if(config_iteration<=0):
-                config_iteration = 1
-            if(config_delay<=0):
-                config_delay = 50 # 50 milliseconds
-            # milli seconds to seconds
-            config_delay = config_delay/1000
-            
-            # read question file
-            content_list = os.listdir(path+'deployment\\questions\\')
-            for item in content_list:
-                print(item)
-                # read file
-                file_content = json.loads(open(path+'deployment\\questions\\'+str(item)).read())
-                question = file_content['question']
-                ints = predict_class(question)
-                answer = get_response(ints, intents)
-
-                json_content = {
-                    "question": question,
-                    "answer": answer
-                }
-                json_object = json.dumps(json_content, indent=4)
-                with open(path+'deployment\\answers\\'+item, "w") as outfile:
-                    outfile.write(json_object)
-                # delete file
-                os.remove(path+'deployment\\questions\\'+str(item))
-
-            time.sleep(config_delay)
-            print('running '+str(counter))
-        else:
-            exit('program ends here bye')
+        time.sleep(config_delay)
+        print('running '+str(counter))
         counter+=1
     
-else:
-    exit('error loading config file')
 
-print('great job')
+    
+
+exit('error loading config file')
+
+
 
 
 

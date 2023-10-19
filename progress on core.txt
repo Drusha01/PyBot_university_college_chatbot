@@ -1,5 +1,5 @@
 deployment using php 			on going	path	(rewriting??)
-retraining 				done		path	http://pybot/train_model?data=C:\wamp64\www\PyBot_university_college_chatbot/core/intents/intent_v1.json&model_name=model_v2&max_epoch=250&model_lr=0.001
+retraining 				done		path	http://pybot/train_model?data=C:\wamp64\www\PyBot_university_college_chatbot/core/intents/intent_v1.json&model_name=model_v2&max_epoch=250&model_lr=0.01
 pybot chat through web			done		path 	http://pybot/pychat?chat=ncie
 creation of intents			done		path 	http://pybot/
 pybot deployment python script		done		N/A

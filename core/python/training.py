@@ -31,16 +31,26 @@ if len(sys.argv) > 1:
     path = sys.argv[1]
     model_name =  sys.argv[2]
     intent_file_and_path =  sys.argv[3]
-    max_epoch =  sys.argv[4]
-    model_lr =  sys.argv[5]
+    intent_file_name = sys.argv[4]
+    max_epoch =  sys.argv[5]
+    model_lr =  sys.argv[6]
+
 else:
     intent_file_and_path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\intents\\intent_v1.json'
-    model_name = 'model_0'
+    intent_file_name = 'intent_v1.json'
+    model_name = 'model_v1'
     path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
+# create directory
+if(not(os.path.isdir(path+'models\\'+model_name))):
+    os.mkdir(path+'models\\'+model_name)
 
 lemmatizer = WordNetLemmatizer()
 if(exists(intent_file_and_path)):
     intents = json.loads(open(intent_file_and_path).read())
+
+    json_object = json.dumps(intents, indent=4)
+    with open(path+'models\\'+model_name+'\\intent.json', "w") as outfile:
+        outfile.write(json_object)
 else:
     print('data is not found')
     print('-1')
@@ -63,10 +73,6 @@ words = [lemmatizer.lemmatize(word) for word in words if word not in ignmore_let
 words = sorted(set(words))
 classes = sorted(set(classes))
 
-
-# create directory
-if(not(os.path.isdir(path+'models\\'+model_name))):
-    os.mkdir(path+'models\\'+model_name)
 
 pickle.dump(words, open(path+'models\\'+model_name+'\\words.pk1','wb'))
 pickle.dump(classes, open(path+'models\\'+model_name+'\\classes.pk1','wb'))
@@ -100,8 +106,8 @@ model.add(Dropout(0.5))
 
 model.add(Dense(len(train_y[0]),activation='softmax'))
 
-sgd = SGD(lr=0.01,decay=1e-6,momentum=0.9,nesterov=True)
+sgd = SGD(lr=float(model_lr),decay=1e-6,momentum=0.9,nesterov=True)
 model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
-hist = model.fit(np.array(train_x),np.array(train_y), epochs=200,batch_size=5,verbose=1)
+hist = model.fit(np.array(train_x),np.array(train_y), epochs=int(max_epoch),batch_size=5,verbose=1)
 model.save(path+'models\\'+model_name+'\\'+model_name+'.h5',hist)
 

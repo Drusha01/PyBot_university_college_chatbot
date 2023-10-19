@@ -10,11 +10,12 @@ use Illuminate\Support\Facades\Storage;
 class Python_executioner extends Controller
 {
     //
+    public $python = "C:\\Python_3.6\\python.exe";
     public $q_and_a_list;
     public function test(){
         $path = dirname(__FILE__,4);
         $pyscript = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\python\\python_test.py';
-        $python = "C:\\Python_3.6\\python.exe";
+        $python = $this->python;
 
         $output;
 
@@ -25,7 +26,7 @@ class Python_executioner extends Controller
 
     public function train_model_v0(){
         $pyscript = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\python\\training_v0.py';
-        $python = "C:\\Python_3.6\\python.exe";
+        $python = $this->python;
 
         $output;
 
@@ -38,6 +39,7 @@ class Python_executioner extends Controller
 
         $intent_path_and_file = $request->input('data');
         $model_name = $request->input('model_name');
+        $intent_name = $request->input('intent_name');
         $max_epoch = $request->input('max_epoch');
         $model_lr = $request->input('model_lr');
 
@@ -54,10 +56,10 @@ class Python_executioner extends Controller
         }
 
         $pyscript = $path.'python\\training.py';
-        $python = "C:\\Python_3.6\\python.exe";
+        $python = $this->python;
 
 
-        return shell_exec("$python $pyscript $path $model_name $intent_path_and_file $max_epoch $model_lr");
+        return shell_exec("$python $pyscript $path $model_name $intent_path_and_file $intent_name $max_epoch $model_lr");
     }
 
     public function create_new_intent(Request $request){
@@ -180,7 +182,7 @@ class Python_executioner extends Controller
             }
             
             // read json file
-            $answer = readfile($file_path.$answer_file_path.$question_file_name);
+            $answer = json_decode(file_get_contents($file_path.'\\deployment\\config\\deployment_config.json'),true);
             unlink($file_path.$answer_file_path.$question_file_name);
             print_r($answer);
            
@@ -204,13 +206,62 @@ class Python_executioner extends Controller
     public function deploy_model(Request $request){
         // check admin detals and restriction
         $model_folder = $request->input('model_name');
-        $file_path  = dirname(__FILE__,4);
-        if(is_dir($file_path.'\\core\\models\\'.$model_folder)){
-            // write to config file
+        $file_path  = dirname(__FILE__,4).'\\core\\';
+        if(is_dir($file_path.'models\\'.$model_folder)){
 
-            // wait 2-5 seconds
+            if(!is_dir($file_path.'\\deployment')){
+                mkdir($file_path.'\\deployment');
+            }
+            if(!is_dir($file_path.'\\deployment\\questions')){
+                mkdir($file_path.'\\deployment\\questions');
+            }
+            if(!is_dir($file_path.'\\deployment\\answers')){
+                mkdir($file_path.'\\deployment\\answers');
+            }
+            if(!is_dir($file_path.'\\deployment\\config')){
+                mkdir($file_path.'\\deployment\\config');
+            }
+            
+            $is_running = false;
+            if(file_exists($file_path.'\\deployment\\config\\deployment_config.json')){
+                $config_file = json_decode(file_get_contents($file_path.'\\deployment\\config\\deployment_config.json'),true);
+                $config_file['run'] = 0;
+                $is_running = true;
+            }else{
+                $config_file = array(
+                    'delay'=>5,
+                    'threshold'=>.25,
+                    'iteration'=>5,
+                    'run'=>1,
+                    'path_to_questions'=>$file_path.'\\deployment\\questions\\',
+                    'path_to_answers'=>$file_path.'\\deployment\\answers\\',
+                    'path'=>$file_path,
+                    'model_folder'=>$model_folder
+                );
+            }
 
-            // rewrite the config file
+            if($is_running){
+                $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
+                fwrite($question_file, json_encode($config_file));
+                fclose($question_file);
+                // wait 2-5 seconds
+                sleep(3);
+                $config_file['run'] = 1;
+                $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
+                fwrite($question_file, json_encode($config_file));
+                fclose($question_file);
+                // rewrite the config file
+            }else{
+                $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
+                fwrite($question_file, json_encode($config_file));
+                fclose($question_file);
+                sleep(1);
+                $pyscript = $file_path.'python\\deployment.py';
+                $python = $this->python;
+    
+                $config_path = $file_path.'deployment\\config\\deployment_config.json';
+                return exec("$python $pyscript $config_path");
+            }
         }else{
             echo 'file does not exist';
             return -1;
