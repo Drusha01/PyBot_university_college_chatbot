@@ -23,6 +23,15 @@ class Python_executioner extends Controller
         return shell_exec("$python $pyscript $iteration $path");
     }
 
+    public function train_model_v0(){
+        $pyscript = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\python\\training_v0.py';
+        $python = "C:\\Python_3.6\\python.exe";
+
+        $output;
+
+        return exec("$python $pyscript",$output);
+    }
+
     public function train_model(Request $request){
 
         // check admin detals and restriction
