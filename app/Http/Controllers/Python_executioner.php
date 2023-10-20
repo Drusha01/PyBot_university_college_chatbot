@@ -57,8 +57,6 @@ class Python_executioner extends Controller
 
         $pyscript = $path.'python\\training.py';
         $python = $this->python;
-
-
         return shell_exec("$python $pyscript $path $model_name $intent_path_and_file $intent_name $max_epoch $model_lr");
     }
 
@@ -154,6 +152,7 @@ class Python_executioner extends Controller
 
         // write to question folder
         if(strlen($question)>0){
+            
             $file_path  = dirname(__FILE__,4);
             $question_file_path = '/core/deployment/questions/';
             $answer_file_path = '/core/deployment/answers/';
@@ -161,6 +160,7 @@ class Python_executioner extends Controller
 
 
             $question_file_name = $session['_token'].'.json';
+            
             $sleep_miliseconds = 50;
             $micro_seconds = $sleep_miliseconds * 1000;
             while(file_exists($file_path.$question_file_path.$question_file_name)){
@@ -182,7 +182,7 @@ class Python_executioner extends Controller
             }
             
             // read json file
-            $answer = json_decode(file_get_contents($file_path.'\\deployment\\config\\deployment_config.json'),true);
+            $answer = json_decode(file_get_contents($file_path.$answer_file_path.$question_file_name),true);
             unlink($file_path.$answer_file_path.$question_file_name);
             print_r($answer);
            
@@ -232,7 +232,7 @@ class Python_executioner extends Controller
                     'delay'=>5,
                     'threshold'=>.25,
                     'iteration'=>5,
-                    'run'=>1,
+                    'run'=>0,
                     'path_to_questions'=>$file_path.'\\deployment\\questions\\',
                     'path_to_answers'=>$file_path.'\\deployment\\answers\\',
                     'path'=>$file_path,
@@ -246,10 +246,10 @@ class Python_executioner extends Controller
                 fclose($question_file);
                 // wait 2-5 seconds
                 sleep(3);
-                $config_file['run'] = 1;
-                $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
-                fwrite($question_file, json_encode($config_file));
-                fclose($question_file);
+                // $config_file['run'] = 1;
+                // $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
+                // fwrite($question_file, json_encode($config_file));
+                // fclose($question_file);
                 // rewrite the config file
             }else{
                 $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");

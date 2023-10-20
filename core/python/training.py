@@ -41,6 +41,7 @@ else:
     model_name = 'model_v1'
     path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
 # create directory
+
 if(not(os.path.isdir(path+'models\\'+model_name))):
     os.mkdir(path+'models\\'+model_name)
 
