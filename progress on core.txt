@@ -1,6 +1,7 @@
-deployment using php 			on going	path	(rewriting??)
-retraining 				done		path	http://pybot/train_model?data=C:\wamp64\www\PyBot_university_college_chatbot/core/intents/intent_v1.json&model_name=model_v2&max_epoch=250&model_lr=0.01
+deployment using php 			on going	path	http://pybot/deploy_model?model_name=model_v1		(rewriting??)
+retraining 				fixing		path	http://pybot/train_model?data=C:\wamp64\www\PyBot_university_college_chatbot/core/intents/intent_v3.json&model_name=model_v1&intent_name=intent_v3.json&model_lr=0.01&max_epoch=250
 pybot chat through web			done		path 	http://pybot/pychat?chat=ncie
-creation of intents			done		path 	http://pybot/
+creation of intents			done		path 	http://pybot/create_new_intents?version=3
 pybot deployment python script		done		N/A
 list of models				done		path	http://pybot/model_list
+list of intents				done		path 	http://pybot/get_intents_list
