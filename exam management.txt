@@ -1,0 +1,26 @@
+SELECT 
+	count(*) as school_room_applicant_number ,
+	school_room_id,
+	(school_room_capacity - count(*)) as school_room_slot,
+	school_room_capacity,	
+	school_room_college_name,
+	school_room_college_abr,
+	school_room_venue,school_room_name,
+	school_room_test_center,
+	school_room_test_date,
+	school_room_test_time_start,
+	school_room_test_time_end,
+	school_room_description
+FROM `test_applications` as ta
+INNER JOIN school_rooms	as sr on sr.school_room_id = ta.t_a_school_room_id
+WHERE t_a_school_room_id is not null AND
+t_a_proctor_user_id is null
+group by t_a_school_room_id
+
+
+SELECT count(*) as school_room_applicant_number ,school_room_id,(school_room_capacity - count(*)) as school_room_slot,school_room_capacity,	school_room_college_name,	school_room_college_abr,school_room_venue,school_room_name,	school_room_test_center,school_room_test_date,school_room_test_time_start,school_room_test_time_end,school_room_description
+FROM `test_applications` as ta
+INNER JOIN school_rooms	as sr on sr.school_room_id = ta.t_a_school_room_id
+WHERE t_a_school_room_id is not null AND
+t_a_proctor_user_id is null
+group by t_a_school_room_id

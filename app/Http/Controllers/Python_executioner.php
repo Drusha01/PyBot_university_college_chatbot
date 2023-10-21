@@ -221,6 +221,8 @@ class Python_executioner extends Controller
             if(!is_dir($file_path.'\\deployment\\config')){
                 mkdir($file_path.'\\deployment\\config');
             }
+
+            // delete deployment folder
             
             $is_running = false;
             if(file_exists($file_path.'\\deployment\\config\\deployment_config.json')){
