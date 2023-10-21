@@ -32,7 +32,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -57,32 +57,36 @@
   }
 
 
+
   /**
    * /Datatables rendering
    */
 
   function initializeDataTable(tableId) {
     var table = $(tableId).DataTable({
-        responsive: {
-            breakpoints: [
-                { name: 'desktop-large', width: Infinity },
-                { name: 'desktop', width: 1200 },
-                { name: 'tablet', width: 992 },
-                { name: 'phone-large', width: 768 },
-                { name: 'phone', width: 576 }
-            ],
-            details: {
-                type: 'column',
-                target: 'tr'
-            }
-        },
-        columnDefs: [
-            {
-                className: 'dtr-control',
-                orderable: false,
-                targets: 0
-            }
+      responsive: {
+        // Control responsive breakpoints
+        breakpoints: [
+            { name: 'desktop-large', width: Infinity },
+            { name: 'desktop', width: 1200 },
+            { name: 'tablet', width: 992 },
+            { name: 'phone-large', width: 768 },
+            { name: 'phone', width: 576 }
         ],
+        // Set non-responsive columns (columns you want to be always visible)
+        details: {
+            type: 'column',
+            target: 'tr'
+        }
+
+      },
+      columnDefs: [
+          {
+              className: 'dtr-control',
+              orderable: false,
+              target: 0
+          }
+      ],                 //Disabled if False
         info: true,           // Disable the "Showing X of Y entries" information
         ordering: true,       // Disable column sorting
         paging: true,         // Disable pagination (previous and next buttons)
@@ -91,25 +95,13 @@
         order: [1, 'desc'],
     });
 
-    $(tableId).on('click', 'td.dt-control', function (e) {
-        let tr = e.target.closest('tr');
-        let row = table.row(tr);
-
-        if (row.child.isShown()) {
-            // This row is already open - close it
-            row.child.hide();
-        }
-        else {
-            // Open this row
-            row.child(format(row.data())).show();
-        }
-    });
-}
+  }
     // Initialize DataTable for table with ID 'example'
+    initializeDataTable('#example');
     initializeDataTable('#example1');
     initializeDataTable('#example2');
     initializeDataTable('#example3');
-  
+
 
   /**
    * Navbar links active state on scroll
@@ -130,6 +122,7 @@
   }
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
+
 
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
@@ -162,6 +155,57 @@
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
   }
+
+  /**
+   * Perfect ScrollBar
+   */
+  new SimpleBar(document.querySelector('.scrollbar-y'));
+
+
+  /**
+   * Sidebar-Icon-Only
+   */
+  $(document).ready(function () {
+    var body = $('body');
+
+    // Initialize tooltips for elements with data-toggle="tooltip"
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Handle sidebar toggle
+    $('[data-toggle="offcanvas"]').on("click", function () {
+      $('.sidebar-offcanvas').toggleClass('active');
+    });
+
+    $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function (ev) {
+      // Check if the body element has certain classes
+      var sidebarIconOnly = body.hasClass("sidebar-icon-only");
+      var sidebarFixed = body.hasClass("sidebar-fixed");
+      var $menuItem = $(this);
+
+      if (!('ontouchstart' in document.documentElement) && sidebarIconOnly) {
+        // If it's not a touch device and the sidebar is in icon-only mode
+        if (sidebarFixed && ev.type === 'mouseenter') {
+          // If the sidebar is fixed and the mouse enters the element
+          body.removeClass('sidebar-icon-only');
+        } else {
+          // Otherwise, toggle the 'hover-open' class based on mouseenter/mouseleave
+          $menuItem.toggleClass('hover-open', ev.type === 'mouseenter');
+        }
+      }
+    });
+
+
+    // Toggle sidebar visibility
+    $('[data-toggle="minimize"]').on("click", function () {
+      if (body.hasClass('sidebar-toggle-display') || body.hasClass('sidebar-absolute')) {
+        body.toggleClass('sidebar-hidden');
+      } else {
+        body.toggleClass('sidebar-icon-only');
+      }
+    });
+  });
+
   
+
 
 })();
