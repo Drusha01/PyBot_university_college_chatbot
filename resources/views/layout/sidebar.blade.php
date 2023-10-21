@@ -56,7 +56,7 @@
     </li>
 
     <li class="nav-item logout">
-      <a class="nav-link" href="{{route('logout') }}">
+      <a class="nav-link" href="{{ route('logout') }}">
       <i class='bi bi-box-arrow-in-right menu-icon'></i>
         <span class="menu-title">Logout</span>
       </a>

@@ -1,12 +1,10 @@
 {
-    "delay":"5", 
-    "iteration":"5",
-    "run":1,
-    "path_to_questions":"C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\deployment\\questions\\",
-    "path_to_asnwers":"C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\deployment\\answers\\",
-    "path":"C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\",
-    "model":"pybot_model_v1.h5",
-    "intents":"intent_v1.json",
-    "words":"words_v1.pk1",
-    "classes":"classes_v1.pk1"
+    "delay": 5,
+    "threshold": 0.25,
+    "iteration": 5,
+    "run": 1,
+    "path_to_questions": "C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\\\deployment\\questions\\",
+    "path_to_answers": "C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\\\deployment\\answers\\",
+    "path": "C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\",
+    "model_folder": "model_v3001"
 }

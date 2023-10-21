@@ -1,0 +1,7 @@
+http://pybot/get_intents_list			get intent list
+http://pybot/create_new_intents?version=1	create intents
+http://pybot/train_model?data=C:\wamp64\www\PyBot_university_college_chatbot/core/intents/intent_v3.json&model_name=model_v1&intent_name=intent_v3.json&model_lr=0.01&max_epoch=250
+						train model  model with the appropriate intent
+http://pybot/model_list				get models list
+http://pybot/deploy_model?model_name=model_v3001
+http://pybot/pychat?chat=ncie

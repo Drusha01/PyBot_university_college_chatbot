@@ -34,7 +34,7 @@
                     <i class="bi bi-person-fill"></i> Profile
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{route ('logout')}}">
+                    <a class="dropdown-item" href="#">
                     <i class="bi bi-box-arrow-right"></i> Sign Out
                     </a>
                 </div>
@@ -75,7 +75,6 @@
     <div class="container rounded">
     <!-- User Profile Content -->
     <section class="py-5" style="margin-top: 5rem;">
-
         <div class="row">
             <!-- Left Column -->
             <div class="col-lg-4">
@@ -83,11 +82,9 @@
                     <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 150px; height: 150px;">
                     <h3>User Name: Kai kai</h3>
                     <p>Email: useremail@example.com</p>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#changeProfileModal">Change Profile</button>
+                    <!-- Add more user profile information as needed -->
+                </div>
             </div>
-            </div>
-
-
 
 
             <!-- Right Column -->
@@ -111,42 +108,8 @@
                 </div>
             </div>
         </div>
-
     </section>
 </div>
-
-
-<!-- Change profile Modal -->
-<div class="modal fade" id="changeProfileModal" tabindex="-1" role="dialog" aria-labelledby="changeProfileModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="changeProfileModal">Change Password</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Add form fields for changing the password here -->
-                <form>
-                <div class="mb-3">
-                <label for="formFileSm" class="form-label">Profile Picture</label>
-                <input class="form-control form-control-sm" id="formFileSm" type="file">
-                </div>
-                <button type="button" class="btn btn-primary">Upload Profile</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
 <!-- Change Password Modal -->
 <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -181,7 +144,6 @@
         </div>
     </div>
 </div>
-
 <!-- Edit Profile Modal -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

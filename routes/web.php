@@ -88,6 +88,9 @@ Route::get('/get_intents_list', [Python_executioner::class, 'intents_list'])->na
 Route::get('/pychat', [Python_executioner::class, 'pychat'])->name('pychat.chat');
 Route::get('/model_list', [Python_executioner::class, 'model_list'])->name('python.models_list');
 Route::get('/deploy_model', [Python_executioner::class, 'deploy_model'])->name('python.deploy_model');
+Route::get('/train_model_v0', [Python_executioner::class, 'train_model_v0'])->name('python.train_model_v0');
+
+
 
 
 // admmin

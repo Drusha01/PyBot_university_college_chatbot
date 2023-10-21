@@ -81,8 +81,8 @@
         <div class="p-3 pb-md-4 mx-auto text-center">
           <div class="row justify-content-xl-center">
             <div class="p-3 pb-md-4 mx-auto text-center">
-              <h2 class="p-3 pb-md-6 mx-auto text-center">Abous Us</h2>
-              <p class="lead fs-4 text-secondary p-3 pb-md-4 mx-auto text-center">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
+              <h2 class="p-3 pb-md-6 mx-auto text-center">About Us</h2>
+              <p class="lead fs-4 text-secondary p-3 pb-md-4 mx-auto text-center">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
               <p class="mb-5">Nullam gravida orci ac luctus molestie. Fusce finibus congue erat, non aliquam magna tincidunt at. Aenean lacinia arcu ex, sed pharetra nibh porta a. Curabitur vel consequat nibh, ac interdum nisl. Nunc pulvinar nec massa vitae sollicitudin.</p>
               <div class="row gy-4 gy-md-0 gx-xxl-5X">
                 <div class="col-12 col-md-6">
@@ -93,8 +93,8 @@
                       </svg>
                     </div>
                     <div>
-                      <h4 class="mb-3">Versatile Brand</h4>
-                      <p class="text-secondary mb-0">We are crafting a digital method that subsists life across all mediums.</p>
+                      <h4 class="mb-3">Instant Answers</h4>
+                      <p class="text-secondary mb-0">Have a question? PyBOT is here to provide quick and accurate answers 24/7. Whether you need information on courses, campus facilities, or academic deadlines, PyBOT has got you covered.</p>
                     </div>
                   </div>
                 </div>
@@ -106,8 +106,12 @@
                       </svg>
                     </div>
                     <div>
-                      <h4 class="mb-3">Digital Agency</h4>
-                      <p class="text-secondary mb-0">We believe in innovation by merging primary with elaborate ideas.</p>
+                      <h4 class="mb-3">Events and Activities</h4>
+                      <p class="text-secondary mb-0">Stay updated with the latest university events, clubs, and extracurricular activities. PyBOT will keep you informed about exciting opportunities to enrich your college experience.</p>
+                    </div>
+                    <div>
+                      <h4 class="mb-3">Registration and Enrollment</h4>
+                      <p class="text-secondary mb-0">Easily access information about registration deadlines, enrollment procedures, and tuition payment. The chatbot simplifies administrative tasks, making your life as a student more manageable.</p>
                     </div>
                   </div>
                 </div>

@@ -13,7 +13,7 @@
                 </ol>
             </nav>
         </div>
-        <button class="btn btn-success float-right m-2" data-toggle="modal" data-target="#AddModal">Add Data</button>
+        <button class="btn btn-success float-right pb-2" data-toggle="modal" data-target="#AddModal">Add Data</button>
 
 
 <!-- Tab Navigation -->
@@ -205,7 +205,7 @@
                                 <div class="add-container">
                                     <div class="form-group">
                                         <label for="addquestion">Question/s</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@
                                 <div class="add-container2">
                                     <div class="form-group">
                                         <label for="addresponse">Responses</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@
                                 <div class="edit-container">
                                     <div class="form-group">
                                         <label for="addquestion">Question/s</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +278,7 @@
                                 <div class="edit-container2">
                                     <div class="form-group">
                                         <label for="addresponse">Responses</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -323,13 +323,13 @@
 $('#add_data').on('click', function() {
     var newIntent = `
             <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
             </div>
 
     `;
     var newIntent2 = `
             <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
             </div>
 
     `;
@@ -341,13 +341,13 @@ $('#add_data').on('click', function() {
 $('#edit_data').on('click', function() {
     var newIntent = `
             <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
             </div>
 
     `;
     var newIntent2 = `
             <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
             </div>
 
     `;

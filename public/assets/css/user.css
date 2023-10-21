@@ -2,7 +2,7 @@
   * Version: v1.3.1
   * Author: ILIASH HOSAIN.
   * Copyright: Themeyn 2023.
-  * URI: https://themeforest.net/user/themeyn 
+  * URI: https://themeforest.net/user/themeyn
 
 ----------------------
 ## Table Contents ##
@@ -1703,6 +1703,31 @@ li.lk {
 /* Style the chat icons (you can customize these styles) */
 .tyn-list-links svg {
   margin-right: 10px; /* Adjust the spacing between icon and text */
+}
+
+.chat-box-six .rt-bx {
+  direction: rtl; }
+.chat-box-six .rt-bx .chat-comment {
+  direction: ltr;
+  text-align: right; }
+.chat-box-six .rt-bx p {
+  direction: ltr;
+  text-align: right; }
+.chat-box-six .spt-line {
+  text-align: center; }
+.chat-box-six .spt-line p::after {
+  content: "";
+  width: 100%;
+  background: #d5dfea;
+  height: 1px;
+  display: block;
+  bottom: 11px;
+  position: relative;
+}
+.chat-box-six .spt-line p span {
+  position: relative;
+  z-index: 1;
+  padding: 5px 30px;
 }
 
 
