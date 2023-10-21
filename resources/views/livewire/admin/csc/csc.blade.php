@@ -14,7 +14,7 @@
         </ol>
     </nav>
 </div><!-- End Page Title -->
-<button class="btn btn-success float-right m-2" data-toggle="modal" data-target="#AddModal">Add Data</button>
+<button class="btn btn-success float-right pb-2" data-toggle="modal" data-target="#AddModal">Add Data</button>
 
 
 <!-- Tab Navigation -->

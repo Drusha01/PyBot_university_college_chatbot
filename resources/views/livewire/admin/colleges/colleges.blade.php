@@ -53,9 +53,9 @@
                                     <td>CCS</td>
                                     <td>College of Computing Studies</td>
                                     <td>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                        <a class="btn btn-primary" href="{{ route('csc') }}">View</a>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                        <button class="btn btn-info" onclick="window.location.href='ccs'"><i class="bi bi-eye-fill"></i></button>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="AddAdminMiddleName">Description </label>
-                                    <input type="text" class="form-control" id="AddAdminMiddleName" placeholder="Description">
+                                    <textarea class="form-control" id="AddAdminMiddleName" placeholder="Description"></textarea>
                                 </div>
                             </form>
                             <!-- End Add Admin  -->
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="editAdminMiddleName">Description</label>
-                                    <input type="text" class="form-control" id="editAdminMiddleName" placeholder="Edit Description ">
+                                    <textarea class="form-control" id="editAdminMiddleName" placeholder="Edit Description "></textarea>
                                 </div>
                                 <!-- insert more -->
                             </form>
@@ -161,8 +161,8 @@
                                         <li>answer 2</li>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
@@ -383,7 +383,7 @@ $('#edit_data').on('click', function() {
                                 </div>
                                 <div class="form-group">
                                     <label for="editDescription">Description</label>
-                                    <input type="text" class="form-control" id="editDescription" placeholder="Edit Description">
+                                    <textarea class="form-control" id="editDescription" placeholder="Edit Description"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="editPermission">Permission</label>

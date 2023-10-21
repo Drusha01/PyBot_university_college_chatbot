@@ -566,16 +566,15 @@ a.sub-menu.nav-item.active.nav-link:hover {
 
 /* Scrollbar OVERFLOW Y */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #0043359e;
+    background-color: rgb(3 94 75 / 11%);
     border-radius: 7px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   }
   ::-webkit-scrollbar-track {
-    background-color: #e5e5e5;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: rgb(229 229 229 / 11%);
   }
 
   /* Buttons */
@@ -589,13 +588,13 @@ a.sub-menu.nav-item.active.nav-link:hover {
   /* Up arrow */
   ::-webkit-scrollbar-button:single-button:vertical:decrement {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="%236d9dc5"><path d="M5 3L1 7h8L5 3z"/></svg>');
-    height: 10px;
+    height: 6px;
   }
 
   /* Down arrow */
   ::-webkit-scrollbar-button:single-button:vertical:increment {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="%236d9dc5"><path d="M5 7L1 3h8L5 7z"/></svg>');
-    height: 10px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-button:single-button:hover {
@@ -604,25 +603,24 @@ a.sub-menu.nav-item.active.nav-link:hover {
 
   /* Scrollbar OVERFLOW X */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #0043359e;
+    background-color: rgb(3 94 75 / 11%);
     border-radius: 7px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #e5e5e5;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: rgb(229 229 229 / 11%);
   }
 
   /* Buttons */
   ::-webkit-scrollbar-button:single-button {
     background-color: #ece4e4;
-    display: block;
+    display: none;
     background-size: 10px;
     background-repeat: no-repeat;
   }
@@ -659,7 +657,7 @@ Chat
     height: 70vh;
     max-width: 100%;
     max-height: 400px;
-    z-index: 1;
+    z-index: 99;
     overflow: hidden;
     box-shadow: 0 2px 12px -5px rgb(0 0 0 / 68%);
     background: rgb(0 0 0 / 62%);
