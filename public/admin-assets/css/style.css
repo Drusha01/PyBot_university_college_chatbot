@@ -28541,7 +28541,7 @@ div.tagsinput span.tag a {
   align-items: center;
   white-space: nowrap;
   padding: 0.1875rem 0.063000000000002rem 0.1875rem 1rem;
-  color: #135229;
+  color: #a4aca7;
   border-radius: 8px;
   -webkit-transition-duration: 0.45s;
   -moz-transition-duration: 0.45s;
@@ -28560,7 +28560,7 @@ div.tagsinput span.tag a {
   font-size: 1.7rem;
   line-height: 1.5;
   margin-right: 1rem;
-  color: #135229;
+  color: #a4aca7;
 }
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
@@ -28577,7 +28577,7 @@ div.tagsinput span.tag a {
   -moz-osx-font-smoothing: grayscale;
   margin-left: auto;
   margin-right: 0;
-  color: #135229;
+  color: #a4aca7;
 }
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-arrow {
