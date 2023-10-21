@@ -11,6 +11,7 @@ from tensorflow import keras
 from keras import layers,models
 from keras.models import load_model
 
+
 if len(sys.argv) > 1:
     iteration = sys.argv[1]
     path = sys.argv[2]+'\\core\\'
@@ -20,6 +21,9 @@ else:
     path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
     model_name =  'pybot_model'
     threshhold = .25
+
+
+
 
 lemmatizer = WordNetLemmatizer()
 
@@ -74,6 +78,9 @@ def get_response(intent_list, intents_json):
     return result
 
 print('NICE pybot is running')
+
+
+
 while True:
     message = input(" ")
     ints = predict_class(message)

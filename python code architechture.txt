@@ -1,0 +1,24 @@
+python code architechture:
+	
+	# every loop we read the config file 
+	# config file haves configuration regarding the file running code, e.i it will terminate, proceed, delay and other
+
+	while (read(config_file)):
+		read(path_to_input_files)
+		read(input_files)
+		get_answer()
+		write_to_path_to_answer(answer_files)
+		delay(100 ms)
+
+	# here we iterate 5 times before reading the config file
+
+	while (read(config_file)):
+		for i=0;i<5;i++	:
+			read(path_to_input_files)
+			read(input_files)
+			get_answer()
+			write_to_path_to_answer(answer_files)
+			delay(100 ms)
+
+		
+		
