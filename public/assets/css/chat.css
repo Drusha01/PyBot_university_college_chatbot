@@ -48,7 +48,7 @@ Chat
   width: 300px;
   height: 80vh;
   max-height: 355px;
-  z-index: 2;
+  z-index: 99;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.815);
   background: rgba(0, 0, 0, 0.5);
@@ -450,4 +450,28 @@ Bounce
 }
 .icon {
   width: 100%;
+}
+.chat-box-six .rt-bx {
+  direction: rtl; }
+.chat-box-six .rt-bx .chat-comment {
+  direction: ltr;
+  text-align: right; }
+.chat-box-six .rt-bx p {
+  direction: ltr;
+  text-align: right; }
+.chat-box-six .spt-line {
+  text-align: center; }
+.chat-box-six .spt-line p::after {
+  content: "";
+  width: 100%;
+  background: #d5dfea;
+  height: 1px;
+  display: block;
+  bottom: 11px;
+  position: relative;
+}
+.chat-box-six .spt-line p span {
+  position: relative;
+  z-index: 1;
+  padding: 5px 30px;
 }

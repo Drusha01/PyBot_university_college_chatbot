@@ -16,7 +16,7 @@
     },
     {"tag": "4",
       "patterns": ["What is Information Technology","What is IT","What is BSIT","What does information technology means"],
-      "responses": ["BSIT"],
+      "responses": ["BSIT12312123"],
       "context_set": ""
     },
     {"tag": "5",
@@ -46,7 +46,7 @@
     },
     {"tag": "10",
       "patterns": ["What is CS department?","CS department meeans?","What does the CS stands for?","CS department?"],
-      "responses": ["CS stands for Computer Science, CS offer a theoretical approach in solving a real world problems via computing"],
+      "responses": ["asdkfhasdklfhasdflkadsh"],
       "context_set": ""
     }  
   ]
