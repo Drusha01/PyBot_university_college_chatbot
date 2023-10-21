@@ -28447,14 +28447,14 @@ div.tagsinput span.tag a {
 }
 
 .page-body-wrapper {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 50px);
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
   padding-left: 0;
   padding-right: 0;
-  padding-top: 60px;
+  padding-top: 50px;
   overflow: auto;
 }
 
@@ -28499,8 +28499,8 @@ div.tagsinput span.tag a {
 
 /* Sidebar */
 .sidebar {
-  min-height: calc(100vh - 60px);
-  background: linear-gradient(261deg, #1e4539, #3b665c);
+  min-height: calc(100vh - 50px);
+  background: linear-gradient(261deg, #1e3e34, #132a25);
   font-family: "Nunito", sans-serif;
   font-weight: 500;
   padding: 0;
@@ -28541,7 +28541,7 @@ div.tagsinput span.tag a {
   align-items: center;
   white-space: nowrap;
   padding: 0.1875rem 0.063000000000002rem 0.1875rem 1rem;
-  color: #135229;
+  color: #a4aca7;
   border-radius: 8px;
   -webkit-transition-duration: 0.45s;
   -moz-transition-duration: 0.45s;
@@ -28557,10 +28557,10 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item .nav-link i.menu-icon {
-  font-size: 1.7rem;
+  font-size: 1.44rem;
   line-height: 1.5;
   margin-right: 1rem;
-  color: #135229;
+  color: #a4aca7;
 }
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
@@ -28577,7 +28577,7 @@ div.tagsinput span.tag a {
   -moz-osx-font-smoothing: grayscale;
   margin-left: auto;
   margin-right: 0;
-  color: #135229;
+  color: #a4aca7;
 }
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-arrow {
@@ -28629,7 +28629,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background-color: #135229;
+  background-color: #062410;
   position: relative;
 }
 
@@ -28660,11 +28660,11 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item {
-  margin-top: .2rem;
+  margin-top: 0;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
-  background: #135229;
+  background: #062410;
   color: #fff;
   border-radius: 8px 8px 0px 0px ;
 }
@@ -28675,12 +28675,12 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
   border-radius: 8px 8px 0 0;
-  background: #135229;
+  background: #062410;
   color: #fff;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
-  background: #135229;
+  background: #062410;
 }
 
 .sidebar .nav.sub-menu {
@@ -28688,7 +28688,7 @@ div.tagsinput span.tag a {
   margin-top: 0;
   list-style: none;
   padding: 0.25rem 0 0 3.07rem;
-  background: #135229;
+  background: #4a8ea5fa;
   padding-bottom: 12px;
 }
 
@@ -28829,13 +28829,13 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper {
-  background: linear-gradient(220deg, #08382a, #3f615a);
+  background: linear-gradient(220deg, #254137, #1c372f);
   transition:width 0.25s cubic-bezier(0, 1.24, 0, 1.23), background 0.25s;
   -webkit-transition: width 0.25s cubic-bezier(0, 1.24, 0, 1.23), background 0.25s;
   -moz-transition: width 0.25s cubic-bezier(0, 1.24, 0, 1.23), background 0.25s;
   -ms-transition: width 0.25s cubic-bezier(0, 1.24, 0, 1.23), background 0.25s;
   width: 235px;
-  height: 60px;
+  height: 51px;
 }
 
 .sidebar-dark .navbar .navbar-brand-wrapper {
@@ -28871,7 +28871,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper .brand-logo-mini img {
-  width: calc(70px - 30px);
+  width: calc(60px - 22px);
   max-width: 100%;
   margin: auto;
 }
@@ -28884,12 +28884,12 @@ div.tagsinput span.tag a {
   -moz-transition: width 0.25s cubic-bezier(0, 1.24, 0, 1.23), background 0.25s;
   -ms-transition: width 0.25s cubic-bezier(0, 1.24, 0, 1.23), background 0.25s;
   -webkit-box-shadow: 0px 5px 20px 0px #888888eb;
-    -moz-box-shadow: 0px 5px 20px 0px #888888eb;
-    box-shadow: 0px 5px 20px 0px #888888eb;
+  -moz-box-shadow: 0px 5px 20px 0px #888888eb;
+  box-shadow: 0px 5px 20px 0px #888888eb;
   padding-right: 2.375rem;
   padding-left: 2.375rem;
   width: calc(100% - 235px);
-  height: 60px;
+  height: 50px;
 }
 
 @media (max-width: 991px) {
@@ -29049,8 +29049,8 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 100%;
 }
 
@@ -29135,20 +29135,20 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .count-indicator i {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-right: 0;
   vertical-align: middle;
-  color: white;
+  color: #0a3118;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .count-indicator .count {
   position: absolute;
-  left: 50%;
-  width: 11px;
-  height: 11px;
+  left: 65%;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
   background-color: #83b99b;
-  top: 1px;
+  top: 2px;
   color: white;
 }
 
@@ -30002,7 +30002,7 @@ div.tagsinput span.tag a {
 
 @media (min-width: 992px) {
   .sidebar-icon-only .navbar .navbar-brand-wrapper {
-    width: 70px;
+    width: 60px;
   }
   .sidebar-icon-only .navbar .navbar-brand-wrapper .brand-logo {
     display: none;
@@ -30011,30 +30011,35 @@ div.tagsinput span.tag a {
     display: inline-block;
   }
   .sidebar-icon-only .navbar .navbar-menu-wrapper {
-    width: calc(100% - 70px);
+    width: calc(100% - 60px);
   }
   .sidebar-icon-only .sidebar {
-    width: 70px;
+    width: 60px;
     position: fixed;
   }
   .sidebar-icon-only .sidebar .nav {
     overflow: visible;
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    gap: 5px;
   }
   .sidebar-icon-only .sidebar .nav .nav-item {
     position: relative;
+    border-radius: 6px;
   }
 
 .sidebar-icon-only .sidebar .nav .nav-item.logout {
-    width: 70px;
+    width: 60px;
+    position: relative;
+    left: 0;
 }
   .sidebar-icon-only .sidebar .nav .nav-item .nav-link {
     display: block;
-    padding-left: .5rem;
-    padding-right: .5rem;
     text-align: center;
     position: static;
+    padding: 0.12rem;
+    border-radius: 6px;
   }
   .sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-title,
   .sidebar-icon-only .sidebar .nav .nav-item .nav-link .badge, .sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-sub-title {
@@ -30069,9 +30074,9 @@ div.tagsinput span.tag a {
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    background: #135229;
+    background: #062410;
     padding: 0.5rem 1.4rem;
-    left: 70px;
+    left: 64.35px;
     position: absolute;
     text-align: left;
     top: 0;
@@ -30099,8 +30104,8 @@ div.tagsinput span.tag a {
     display: none;
   }
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
-    background: #135229;
-    font-size: 14px;
+    /* background: #062410; */
+    font-size: 12px;
   }
   .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
     background: #232227;
@@ -30108,7 +30113,7 @@ div.tagsinput span.tag a {
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapse,
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
     display: block;
-    background: #fff;
+    background: #3f5860fa;
     border-radius: 0 0 5px 0;
     position: absolute;
     left: 70px;
@@ -30127,13 +30132,17 @@ div.tagsinput span.tag a {
     box-shadow: -4px 4px 7px 0px rgba(182, 185, 189, 0.25);
   }
   .sidebar-icon-only .sidebar .nav:not(.sub-menu) .nav-item.active {
-    border-radius: 0;
+    border-radius: 6px;
   }
   .sidebar-icon-only .sidebar .nav:not(.sub-menu) .nav-item:hover .nav-link {
-    border-radius: 0;
+    border-radius: 6px;
+    font-size: 11px;
   }
   .sidebar-icon-only .sidebar .nav.sub-menu {
     padding: 3px;
+    margin-top: 0;
+    font-size: 14px;
+    background: none!important;
   }
   .sidebar-dark.sidebar-icon-only .sidebar .nav.sub-menu {
     background: #232227;
@@ -30143,8 +30152,8 @@ div.tagsinput span.tag a {
     padding-left: 20px;
   }
   .sidebar-icon-only .main-panel {
-    width: calc(100% - 70px);
-    margin-left: 70px;
+    width: calc(100% - 60px);
+    margin-left: 60px;
   }
   li.nav-item.logout {
     width: 228.6px;
@@ -30646,7 +30655,7 @@ div.tagsinput span.tag a {
 }
 
 .bi.bi-list {
-  color: white;
+  color: #0a3118;
   font-size: 2rem;
 }
 

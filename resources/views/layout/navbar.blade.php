@@ -46,7 +46,7 @@
                 </div>
                 </div>
             </li>
-            <div class="text-light px-2">
+            <div class="text-dark px-2">
                 <li class="nav-item nav-profile dropdown">
                     <div>
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
