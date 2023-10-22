@@ -1,3 +1,6 @@
+@section('title', 'Pybot | User Profile') <!-- Set the page title -->
+
+@section('setting', 'active')
 <div>
 <main id="main" class="main">
 
@@ -10,6 +13,6 @@
     </ol>
   </nav>
 </div><!-- End Page Title -->
-<h1>admin profile dito</h1>
+<h1></h1>
 </main><!-- End #main -->
 </div>

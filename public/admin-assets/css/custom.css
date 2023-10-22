@@ -546,6 +546,9 @@ a.sub-menu.nav-item.active.nav-link:hover {
     padding: .3rem;
     background: #3f5860fa;
 }
+.sidebar-icon-only .sidebar .nav .nav-item .nav-link i.menu-icon {
+  padding-right: 35px;
+}
 @media screen and (max-width: 991px) {
 .sidebar-offcanvas .nav:not(.sub-menu) .nav-item.active.hover-open #sub-menu {
     display: block;

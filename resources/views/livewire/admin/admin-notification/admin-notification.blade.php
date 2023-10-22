@@ -1,3 +1,6 @@
+@section('title', 'Pybot | Notification') <!-- Set the page title -->
+
+@section('setting', 'active')
 <div>
 <style>
     /* Custom CSS for the table header */
