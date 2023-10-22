@@ -10,36 +10,45 @@ $(window).load(function() {
 });
 
 function updateScrollbar() {
-  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
-    scrollInertia: 10,
-    timeout: 0
-  });
+  
 }
 
 function setDate(){
+  
+}
+
+
+
+$('.message-submit').click(function() {
+  msg = $('.message-input').val();
+  if ($.trim(msg) == '') {
+    return false;
+  }
+
+  // set date
   d = new Date()
   if (m != d.getMinutes()) {
     m = d.getMinutes();
     $('<div class="timestamp">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
   }
-}
 
-function insertMessage() {
-  msg = $('.message-input').val();
-  if ($.trim(msg) == '') {
-    return false;
-  }
+  // append message into div
   $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
-  setDate();
-  $('.message-input').val(null);
-  updateScrollbar();
-  setTimeout(function() {
-    fakeMessage();
-  }, 1000 + (Math.random() * 20) * 100);
-}
 
-$('.message-submit').click(function() {
-  insertMessage();
+  // update scroll bar
+  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+    scrollInertia: 10,
+    timeout: 0
+  });
+
+  $('.message-input').val(null);
+
+   // jquery call api here  
+  
+  // setTimeout(function() {
+  //   fakeMessage();
+  // }, 1000 + (Math.random() * 20) * 100);
+
 });
 
 $(window).on('keydown', function(e) {
