@@ -674,6 +674,7 @@ class ComposerStaticInitc61ff82cbf0142a401a48a8161e1595a
         'Database\\Seeders\\UserRoleSeeder' => __DIR__ . '/../..' . '/database/seeders/UserRoleSeeder.php',
         'Database\\Seeders\\answersSeeders' => __DIR__ . '/../..' . '/database/seeders/answersSeeders.php',
         'Database\\Seeders\\qAndASeeders' => __DIR__ . '/../..' . '/database/seeders/qAndASeeders.php',
+        'Database\\Seeders\\q_and_a_types_seeder' => __DIR__ . '/../..' . '/database/seeders/q_and_a_types_seeder.php',
         'Database\\Seeders\\qestionSeeders' => __DIR__ . '/../..' . '/database/seeders/qestionSeeders.php',
         'Database\\Seeders\\userDefaults' => __DIR__ . '/../..' . '/database/seeders/userDefaults.php',
         'Database\\Seeders\\userGenders' => __DIR__ . '/../..' . '/database/seeders/userGenders.php',

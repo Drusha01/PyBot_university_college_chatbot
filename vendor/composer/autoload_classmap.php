@@ -172,6 +172,7 @@ return array(
     'Database\\Seeders\\UserRoleSeeder' => $baseDir . '/database/seeders/UserRoleSeeder.php',
     'Database\\Seeders\\answersSeeders' => $baseDir . '/database/seeders/answersSeeders.php',
     'Database\\Seeders\\qAndASeeders' => $baseDir . '/database/seeders/qAndASeeders.php',
+    'Database\\Seeders\\q_and_a_types_seeder' => $baseDir . '/database/seeders/q_and_a_types_seeder.php',
     'Database\\Seeders\\qestionSeeders' => $baseDir . '/database/seeders/qestionSeeders.php',
     'Database\\Seeders\\userDefaults' => $baseDir . '/database/seeders/userDefaults.php',
     'Database\\Seeders\\userGenders' => $baseDir . '/database/seeders/userGenders.php',
