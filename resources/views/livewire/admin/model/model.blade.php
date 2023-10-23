@@ -142,32 +142,13 @@
                 <!-- Deploy tab -->
                 <div class="tab-pane fade" id="deploy-tab">
                     <div class="container-fluid">
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#deployModal">Deploy</button>
+                    
+                    <button class="btn btn-success float-right mt-2 mb-2 mx-1" data-toggle="modal" data-target="#deployModal">Deploy</button>
+                    <button class="btn btn-warning float-right mt-2 mb-2 mx-1" wire:click="restart_deployment()" >Restart</button>
+                    <button class="btn btn-danger float-right mt-2 mb-2 mx-1" wire:click="end_deployment()" >End</button>
                         <!-- Admin Table -->
                         <div class="table-responsive">
-                            <table id="example3" class="display responsive nowrap" style="width:100%">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th></th>
-                                        <th>Information</th>
-                                        <th>Version</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Add your table rows dynamically using server-side data or JavaScript -->
-                                    <tr>
-                                        <td></td>
-                                        <td>Current</td>
-                                        <td>trainingv1.2023-10-16</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>trainingv0.2023-10-15</td>
-                                    </tr>
-                                    <!-- Add more rows as needed -->
-                                </tbody>
-                            </table>
+                            <div class="text-center"> Currently deployed: {{$selected_model}} </div>
                         </div>
                         <!-- End Admin Table -->
                     </div>
@@ -248,6 +229,7 @@
                     <!-- Add content for the "deploy" modal here -->
                     <h5>Currently deployed model: model xx</h5>
                     <select wire:model.defer="selected_model" class="form-control">
+                        <option value="-1"> Select model </option>
                     @forelse ($model_list as $item => $value)
                         <option value="{{$loop->index}}">{{ $value['model_name'] }}</option>
                     @empty
@@ -258,7 +240,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Deploy</button>
+                    <button type="button" class="btn btn-primary" wire:click="deploy_model()">Deploy</button>
                 </div>
             </div>
         </div>

@@ -120,7 +120,7 @@
                         </td>
                     </tr>
                     @empty
-                    <td>NO RECORDS</td>
+                    <td >NO RECORDS</td>
                     @endforelse
                 <!-- Add more rows as needed -->
             </tbody>
@@ -218,7 +218,7 @@
                                     <div class="form-group">
                                         <span>For
                                         <div class="">
-                                                <select wire:model.defer="qa_for" class="form-control">
+                                                <select wire:model="qa_for" class="form-control">
                                                     <option value="0">Select item</option>
                                                 @foreach($qa_type as $item => $value)
                                                     <option value="{{$value->q_and_a_type_id}}">{{$value->q_and_a_type_details}}</option>

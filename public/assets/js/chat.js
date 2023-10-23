@@ -43,7 +43,7 @@ $('.message-submit').click(function() {
 
   $('<div class="message loading new"><span></span></div>').appendTo($('.mCSB_container'));
 
-  $.ajax({url: "/pybot/public/pychat?chat=?"+msg
+  $.ajax({url: "/pychat?chat="+msg
   
   
   ,success: function(result){
