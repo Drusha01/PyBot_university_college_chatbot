@@ -36,7 +36,7 @@ classes_folder = 'classes\\'
 words = pickle.load( open(path+word_folder+'words_v'+iteration+'.pk1','rb'))
 classes  = pickle.load(open(path+classes_folder+'classes_v'+iteration+'.pk1','rb'))
 
-model_folder = 'models\\'
+model_folder = 'model\\'
 model = load_model(path+model_folder+model_name+'_v'+iteration+'.h5')
 
 def clean_up_sentence(sentence):
