@@ -88,11 +88,11 @@ while(exists(json_config_path)):
     config_model_folder = config['model_folder']
 
 
-    if(not(bool(config_run)) & exists(config_path+'models')):
-        intents = json.loads(open(config_path+'models\\'+config_model_folder+'\\intent.json').read())
-        words = pickle.load( open(config_path+'models\\'+config_model_folder+'\\words.pk1','rb'))
-        classes  = pickle.load(open(config_path+'models\\'+config_model_folder+'\\classes.pk1','rb'))
-        model = load_model(config_path+'models\\'+config_model_folder+'\\'+config_model_folder+'.h5')
+    if(not(bool(config_run)) & exists(config_path+'model_list')):
+        intents = json.loads(open(config_path+'model_list\\'+config_model_folder+'\\intent.json').read())
+        words = pickle.load( open(config_path+'model_list\\'+config_model_folder+'\\words.pk1','rb'))
+        classes  = pickle.load(open(config_path+'model_list\\'+config_model_folder+'\\classes.pk1','rb'))
+        model = load_model(config_path+'model_list\\'+config_model_folder+'\\'+config_model_folder+'.h5')
 
         config['run'] = 1
         json_object = json.dumps(config, indent=4)

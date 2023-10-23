@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
     <link href="{{ asset('admin-assets/vendor/jquery-datatables-checkboxes-1.2.12/css/dataTables.checkboxes.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-assets/vendor/jquery-datatables-checkboxes-1.2.12/css/datatables.min.css') }}" rel="stylesheet">
+        
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </head>
@@ -188,23 +190,8 @@
                 window.close();
             });
         });
-    </script>
-        <script>
-         window.addEventListener('swal:message', event => {
-            Swal.fire({
-                position: event.detail.position,
-                icon: event.detail.icon,
-                title: event.detail.title,
-                text: event.detail.text,
-                showConfirmButton: false,
-                timer: event.detail.timer,
-                timerProgressBar: true,
-                allowOutsideClick: false,
-                allowEscapeKey: false
-            })
-        });
 
-        window.addEventListener('swal:redirect', event => {
+        window.addEventListener('swal:remove_backdrop', event => {
             Swal.fire({
                     position: event.detail.position,
                     icon: event.detail.icon,
@@ -216,94 +203,18 @@
                     allowOutsideClick: false,
                     allowEscapeKey: false
                     })
+                
                 .then(function() {
+                    $('div.modal-backdrop').remove();
                     window.location.href = `${event.detail.link}`
                 });
         });
 
-        window.addEventListener('swal:confirm', event => {
-            Swal.fire({
-                    position: event.detail.position,
-                    icon: event.detail.icon,
-                    title: event.detail.title,
-                    text: event.detail.text,
-                    showConfirmButton: true,
-                    })
-                .then(function() {
-                    window.location.href = `${event.detail.link}`
-                });
-        });
+        window.addEventListener('openModal', function(modal_id){
+            // alert(modal_id.detail)
+            $('#'+modal_id.detail).modal('toggle');
+        }); 
 
-        window.addEventListener('swal:accessrole', event => {
-            Swal.fire({
-                position: event.detail.position,
-                icon: event.detail.icon,
-                title: event.detail.title,
-                html: event.detail.html,
-                timer: event.detail.timer
-            })
-        });
-
-        window.addEventListener('swal:redirect-link', event => {
-            Swal.fire({
-                    position: event.detail.position,
-                    icon: event.detail.icon,
-                    title: event.detail.title,
-                    html: event.detail.html,
-                    timer: event.detail.timer
-                })
-                .then(function() {
-                    window.location.href = `${event.detail.link}`
-                });
-        });
-
-        window.addEventListener('swal:refresh', event => {
-            Swal.fire({
-                    position: event.detail.position,
-                    icon: event.detail.icon,
-                    title: event.detail.title,
-                    text: event.detail.text,
-                    showConfirmButton: false,
-                    timer: event.detail.timer,
-                    timerProgressBar: true,
-                    allowOutsideClick: false,
-                    allowEscapeKey: false
-                })
-                .then(function() {
-                    location.reload();
-                });
-        });
-
-
-        window.addEventListener('swal:confirmation', event => {
-            Swal.fire({
-                position: event.detail.position,
-                icon: event.detail.icon,
-                title: event.detail.title,
-                text: event.detail.text,
-                showDenyButton: event.detail.showDenyButton,
-                showCancelButton: event.detail.showCancelButton,
-                confirmButtonText: event.detail.confirmButtonText,
-                denyButtonText: event.detail.denyButtonText
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.livewire.emit('confirm');
-                } else if (result.isDenied) {
-                    Swal.fire(event.detail.fail_message);
-                }
-            })
-        });
-
-        window.addEventListener('swal:close-current-tab', event => {
-            Swal.fire({
-                position: event.detail.position,
-                icon: event.detail.icon,
-                title: event.detail.title,
-                timer: event.detail.timer
-            }).then(function() {
-                window.close();
-            });
-        });
     </script>
 
     <!-- CDN inject tables with childrows, bootstrap etc. -->

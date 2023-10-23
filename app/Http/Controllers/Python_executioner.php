@@ -140,9 +140,25 @@ class Python_executioner extends Controller
         $dir = $file_path.$intent_file_path;
         $intents_list = scandir($dir);
         $intent_length = count($intents_list);
+        $intent_lists =[];
         for ($i=2; $i < $intent_length; $i++) { 
-            echo $dir.$intents_list[$i].'<br>';
+    
+            $file_creation_date =  date('Y-m-d H:i:s', filectime($dir.$intents_list[$i]));
+            array_push($intent_lists,[
+                'intent_name'=>$intents_list[$i],
+                'directory_path'=>$dir.$intents_list[$i],
+                'date_create' =>$file_creation_date ]
+            );
+           
         }
+        print_r($intent_lists);
+
+    }
+
+    public function intents_list_ui(){
+        // check admin detals and restriction
+
+        
     }
 
     public function pychat(Request $request){
@@ -184,7 +200,7 @@ class Python_executioner extends Controller
             // read json file
             $answer = json_decode(file_get_contents($file_path.$answer_file_path.$question_file_name),true);
             unlink($file_path.$answer_file_path.$question_file_name);
-            print_r($answer);
+            print_r(json_encode($answer));
            
         }
         

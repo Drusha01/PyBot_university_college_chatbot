@@ -41,16 +41,17 @@ else:
     model_name = 'model_v1'
     path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
 # create directory
-
-if(not(os.path.isdir(path+'models\\'+model_name))):
-    os.mkdir(path+'models\\'+model_name)
+if(not(os.path.isdir(path+'model_list\\'))):
+    os.mkdir(path+'model_list\\')
+if(not(os.path.isdir(path+'model_list\\'+model_name))):
+    os.mkdir(path+'model_list\\'+model_name)
 
 lemmatizer = WordNetLemmatizer()
 if(exists(intent_file_and_path)):
     intents = json.loads(open(intent_file_and_path).read())
 
     json_object = json.dumps(intents, indent=4)
-    with open(path+'models\\'+model_name+'\\intent.json', "w") as outfile:
+    with open(path+'model_list\\'+model_name+'\\intent.json', "w") as outfile:
         outfile.write(json_object)
 else:
     print('data is not found')
@@ -75,8 +76,8 @@ words = sorted(set(words))
 classes = sorted(set(classes))
 
 
-pickle.dump(words, open(path+'models\\'+model_name+'\\words.pk1','wb'))
-pickle.dump(classes, open(path+'models\\'+model_name+'\\classes.pk1','wb'))
+pickle.dump(words, open(path+'model_list\\'+model_name+'\\words.pk1','wb'))
+pickle.dump(classes, open(path+'model_list\\'+model_name+'\\classes.pk1','wb'))
 
 training = []
 output_empty = [0] * len(classes)
@@ -110,5 +111,5 @@ model.add(Dense(len(train_y[0]),activation='softmax'))
 sgd = SGD(lr=float(model_lr),decay=1e-6,momentum=0.9,nesterov=True)
 model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
 hist = model.fit(np.array(train_x),np.array(train_y), epochs=int(max_epoch),batch_size=5,verbose=1)
-model.save(path+'models\\'+model_name+'\\'+model_name+'.h5',hist)
+model.save(path+'model_list\\'+model_name+'\\'+model_name+'.h5',hist)
 
