@@ -41,6 +41,21 @@ $('.message-submit').click(function() {
     timeout: 0
   });
 
+  $('<div class="message loading new"><span></span></div>').appendTo($('.mCSB_container'));
+
+  $.ajax({url: "/pychat?chat=?"+msg
+  
+  
+  ,success: function(result){
+      var response = JSON.parse(result);
+      
+      $('.message.loading').remove();
+      updateScrollbar();
+      $('<div class="message new">' + response.answer + '</div>').appendTo($('.mCSB_container')).addClass('new');
+      setDate();
+      updateScrollbar();
+  }
+  });
   $('.message-input').val(null);
 
    // jquery call api here  

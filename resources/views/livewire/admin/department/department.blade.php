@@ -187,59 +187,57 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body cqh-50">
-                <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
-                <form>
-                    <div class="form-group-row">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="add-container">
+            <form>
+                <div class="modal-body cqh-50">
+                    <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
+                        <div class="form-group-row">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="add-container">
+                                        <div class="form-group">
+                                            <label for="addquestion">Question/s</label>
+                                            <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="add-container2">
+                                        <div class="form-group">
+                                            <label for="addresponse">Responses</label>
+                                            <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="addquestion">Question/s</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
+                                        <label for="addtag" class="form-label">Tag</label>
+                                        <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="add-container2">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="addresponse">Responses</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
+                                        <span>For
+                                        <div class="">
+                                                <select wire:model.defer="qa_for" class="form-control">
+                                                    <option value="0">Select item</option>
+                                                @foreach($qa_type as $item => $value)
+                                                    <option value="{{$value->q_and_a_type_id}}">{{$value->q_and_a_type_details}}</option>
+                                                @endforeach 
+                                                </select>
+                                        </div>
+                                        </span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="addtag" class="form-label">Tag</label>
-                                    <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <span>For
-                                    <div class="">
-                                            <label>
-                                                <input type="checkbox" class="flat" checked="checked"  value="IT"> IT
-                                            </label>
-                                            <label>
-                                                <input type="checkbox" class="flat" value="CS"> CS
-                                            </label>
-                                            <label>
-                                                <input type="checkbox" class="flat" value="ACT"> ACT
-                                            </label>
-                                    </div>
-                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
-                <!-- End Add Admin  -->
-            </div>
+            
+                    <!-- End Add Admin  -->
+                </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Add</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

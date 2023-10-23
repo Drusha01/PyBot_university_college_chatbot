@@ -34,6 +34,12 @@ class q_and_a_types_seeder extends Seeder
         );');
         DB::statement('INSERT INTO q_and_a_types VALUES(
             NULL,
+            "ACT",
+            NOW(),
+            NOW()
+        );');
+        DB::statement('INSERT INTO q_and_a_types VALUES(
+            NULL,
             "CSC",
             NOW(),
             NOW()
