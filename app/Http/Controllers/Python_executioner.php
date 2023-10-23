@@ -200,7 +200,7 @@ class Python_executioner extends Controller
             // read json file
             $answer = json_decode(file_get_contents($file_path.$answer_file_path.$question_file_name),true);
             unlink($file_path.$answer_file_path.$question_file_name);
-            print_r($answer);
+            print_r(json_encode($answer));
            
         }
         
