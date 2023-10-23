@@ -17,11 +17,7 @@ function setDate(){
   
 }
 
-$(".message-input").keyup(function(event) {
-  if (event.keyCode === 13) {
-      $('.message-submit').click();
-  }
-});
+
 
 $('.message-submit').click(function() {
   msg = $('.message-input').val();
