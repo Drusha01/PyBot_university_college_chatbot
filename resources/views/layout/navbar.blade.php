@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h6 class="font-weight-normal mb-0">Matt Luna</h6>
+                        <h6 class="font-weight-normal mb-0">Admin Pybot</h6>
                     </div>
                 </li>
             </div>

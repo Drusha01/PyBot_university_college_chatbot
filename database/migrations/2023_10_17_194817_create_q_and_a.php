@@ -18,6 +18,7 @@ class CreateQAndA extends Migration
             q_and_a_tag VARCHAR(50) ,
 
             -- q and a category
+            q_and_a_type_id INT,
             -- check before sending a response to users / guests
             -- add privacy here
             -- user target here
@@ -29,7 +30,7 @@ class CreateQAndA extends Migration
         );');
 
         // DB::statement('CREATE INDEX idx_q_and_a_question_id ON q_and_a(q_and_a_question_id);');
-        // DB::statement('CREATE INDEX idx_q_and_a_answer_id ON q_and_a(q_and_a_answer_id);');
+        DB::statement('CREATE INDEX idx_q_and_a_type_id ON q_and_a(q_and_a_type_id);');
     }
 
     /**

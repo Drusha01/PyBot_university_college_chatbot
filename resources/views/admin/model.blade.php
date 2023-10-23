@@ -8,7 +8,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Model</h1>
+      <h1>Model asdfs</h1>
       <nav>
         <ol class="breadcrumb breadcrumb-custom">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
@@ -21,7 +21,7 @@
 
     <!-- Tab Navigation -->
     <ul class="nav nav-tabs" id="adminTabs">
-            <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#build-tab">Builds</a>
         </li>
         <li class="nav-item">
@@ -200,6 +200,7 @@
                 </div>
             </div>
         </div>
+
         <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">

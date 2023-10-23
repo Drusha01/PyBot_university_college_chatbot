@@ -92,7 +92,7 @@ class answersSeeders extends Seeder
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
                 6,
-                "College of Computing Studies provides three (3) courses mainly BSCS, BSIT, MIT",
+                "College of Computing Studies provides three (3) courses mainly BSCS, BSIT, ACT",
                 NOW(),
                 NOW()
             );');
