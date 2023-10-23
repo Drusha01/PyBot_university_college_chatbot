@@ -78,7 +78,7 @@ class ForgotPassword extends Component
                     'title'             									=> 'Link has been emailed!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1500',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
             }else{
                 sleep(5);
@@ -88,7 +88,7 @@ class ForgotPassword extends Component
                     'title'             									=> 'Link has been emailed!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1500',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
             }
         }

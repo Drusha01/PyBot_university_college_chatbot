@@ -66,7 +66,7 @@ class RegisterEmail extends Component
                     'title'             									=> 'User Exist!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1000',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
             }else{
                 // send code
@@ -94,7 +94,7 @@ class RegisterEmail extends Component
                     'title'             									=> 'Code has been sent to your email address!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
                 $this->error ="";
             }
@@ -125,7 +125,7 @@ class RegisterEmail extends Component
                             'title'             									=> 'Too many tries, code expires!',
                             'showConfirmButton' 									=> 'true',
                             'timer'             									=> '1000',
-                            'link'              									=> '#'
+                            'link'              									=> env('app_url').'#'
                         ]);
                         $deleted = DB::table('user_activations')
                         ->where('user_activation_email', '=', $this->email)
@@ -141,7 +141,7 @@ class RegisterEmail extends Component
                             'title'             									=> 'Invalid code, you have '.(5-$activation_details->user_activation_count-1).' tries!',
                             'showConfirmButton' 									=> 'true',
                             'timer'             									=> '1000',
-                            'link'              									=> '#'
+                            'link'              									=> env('app_url').'#'
                         ]);
                         $updated = DB::table('user_activations')
                         ->where('user_activation_id', $activation_details->user_activation_id)
@@ -153,7 +153,7 @@ class RegisterEmail extends Component
                             'title'             									=> 'Too many tries, code expires!',
                             'showConfirmButton' 									=> 'true',
                             'timer'             									=> '1000',
-                            'link'              									=> '#'
+                            'link'              									=> env('app_url').'#'
                         ]);
                         $deleted = DB::table('user_activations')
                         ->where('user_activation_email', '=', $this->email)
@@ -168,7 +168,7 @@ class RegisterEmail extends Component
                     'title'             									=> 'Code expires!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1000',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
                 $deleted = DB::table('user_activations')
                     ->where('user_activation_email', '=', $this->email)
@@ -425,7 +425,7 @@ class RegisterEmail extends Component
                     'title'             									=> 'Successfully signed up!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1500',
-                    'link'              									=> '/'
+                    'link'              									=> env('app_url').'/'
                 ]);
             }else{
                 $this->dispatchBrowserEvent('swal:redirect',[
@@ -434,7 +434,7 @@ class RegisterEmail extends Component
                     'title'             									=> 'Unable to sign up!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
             }
 

@@ -109,7 +109,7 @@ class AccountRecovery extends Component
                     'title'             									=> 'Invalid token!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '/login'
+                    'link'              									=> env('app_url').'/login'
                 ]);      
             }
         }else{
@@ -119,7 +119,7 @@ class AccountRecovery extends Component
                 'title'             									=> 'Invalid token!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '2000',
-                'link'              									=> '/login'
+                'link'              									=> env('app_url').'/login'
             ]);   
         }
         
@@ -171,7 +171,7 @@ class AccountRecovery extends Component
                     'title'             									=> 'Invalid token!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '/login'
+                    'link'              									=> env('app_url').'/login'
                 ]);      
             }
         }else{
@@ -181,7 +181,7 @@ class AccountRecovery extends Component
                 'title'             									=> 'Invalid token!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '2000',
-                'link'              									=> '/login'
+                'link'              									=> env('app_url').'/login'
             ]);   
         }
     }
@@ -232,7 +232,7 @@ class AccountRecovery extends Component
                         'title'             									=> 'Password should not be the same as your old password!',
                         'showConfirmButton' 									=> 'true',
                         'timer'             									=> '2000',
-                        'link'              									=> '#'
+                        'link'              									=> env('app_url').'#'
                     ]);
                 }else{
                     $this->password = password_hash($this->password, PASSWORD_ARGON2I);
@@ -249,7 +249,7 @@ class AccountRecovery extends Component
                         'title'             									=> 'Successfully changed your password!',
                         'showConfirmButton' 									=> 'true',
                         'timer'             									=> '2000',
-                        'link'              									=> '/login'
+                        'link'              									=> env('app_url').'/login'
                     ]);
                 }
             }else{
@@ -263,7 +263,7 @@ class AccountRecovery extends Component
                     'title'             									=> 'Invalid token!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '/login'
+                    'link'              									=> env('app_url').'/login'
                 ]);   
             }
         }else{
@@ -273,7 +273,7 @@ class AccountRecovery extends Component
                 'title'             									=> 'Invalid token!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '2000',
-                'link'              									=> '/login'
+                'link'              									=> env('app_url').'/login'
             ]);   
         }
     }

@@ -84,7 +84,7 @@ class Login extends Component
                     'title'             									=> 'Welcome back python!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1500',
-                    'link'              									=> '/'
+                    'link'              									=> env('app_url').'/'
                 ]);
             }else{
                 $this->dispatchBrowserEvent('swal:redirect',[
@@ -93,7 +93,7 @@ class Login extends Component
                     'title'             									=> 'Invalid credentials!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1000',
-                    'link'              									=> '#'
+                    'link'              									=> env('app_url').'#'
                 ]);
             }
 
