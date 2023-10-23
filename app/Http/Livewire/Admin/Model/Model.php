@@ -19,6 +19,8 @@ class Model extends Component
 
     public $selected_model;
 
+    public $currently_deployed;
+
 
 
     public function mount(){
@@ -84,6 +86,18 @@ class Model extends Component
             'model'=>true,
             'date_created'=>true
         ];
+
+        $file_path  = dirname(__FILE__,6);
+        $deployment_file = $file_path .'/core/deployment/config/deployment_config.json';
+        if(file_exists($deployment_file)){
+            // read the deployment config
+            $config_data = json_decode(file_get_contents($deployment_file),true);
+            
+            $this->selected_model = $config_data['model_folder'];
+            // dd($this->selected_model);
+            
+            // dd('dbfisadf');
+        }
 
         // dd($this->model_list);
     }
@@ -243,7 +257,7 @@ class Model extends Component
             $dir = $file_path.$models_file_path;
             $models_list = scandir($dir);
             $model_length = count($models_list);
-            $this->model_list= [];
+            $this->model_list = [];
     
             for ($i=2; $i < $model_length; $i++) { 
         
@@ -288,4 +302,149 @@ class Model extends Component
         }
         
     }
+    public function rrmdir($src){
+        $dir = opendir($src);
+        while(false !== ( $file = readdir($dir)) ) {
+            if (( $file != '.' ) && ( $file != '..' )) {
+                $full = $src . '/' . $file;
+                if ( is_dir($full) ) {
+                    self::rrmdir($full);
+                }
+                else {
+                    unlink($full);
+                }
+            }
+        }
+        closedir($dir);
+        rmdir($src);
+    }
+
+    public function end_deployment(){
+        
+        $file_path  = dirname(__FILE__,6);
+
+        $deployment_file = $file_path .'/core/deployment/config/deployment_config.json';
+        if(file_exists($deployment_file)){
+            // delete folder
+            $dir = $file_path.'/core/deployment';
+            self::rrmdir($dir);
+            $this->dispatchBrowserEvent('swal:remove_backdrop',[
+                'position'          									=> 'center',
+                'icon'                                                  => 'success',
+                'title'             									=> 'Successfully ended!',
+                'showConfirmButton' 									=> 'true',
+                'timer'             									=> '1000',
+                'link'              									=> '#'
+            ]);
+        }else{
+            $this->dispatchBrowserEvent('swal:remove_backdrop',[
+                'position'          									=> 'center',
+                'icon'                                                  => 'success',
+                'title'             									=> 'Successfully ended!',
+                'showConfirmButton' 									=> 'true',
+                'timer'             									=> '1000',
+                'link'              									=> '#'
+            ]);
+        }
+    }
+
+    public function deploy_model(){
+        if($this->selected_model >=0){
+            $file_path  = dirname(__FILE__,6);
+            $models_file_path = '/core/model_list/';
+            if(!is_dir($file_path.$models_file_path)){
+                mkdir($file_path.$models_file_path);
+            }
+            $dir = $file_path.$models_file_path;
+            $models_list = scandir($dir);
+            $model_length = count($models_list);
+
+    
+            for ($i=2; $i < $model_length; $i++) { 
+                if($this->selected_model+2 == $i){
+                    // dd($models_list[$i]);
+                    $model_folder = $models_list[$i];
+                    $file_path  = dirname(__FILE__,6).'\\core\\';
+                    if(is_dir($file_path.'model_list\\'.$model_folder)){
+
+                        
+
+                        // delete deployment folder
+                        
+                        $is_running = false;
+                        if(file_exists($file_path.'\\deployment\\config\\deployment_config.json')){
+                            
+                            $dir = $file_path.'deployment';
+                            self::rrmdir($dir);
+                        }
+                        $config_file = array(
+                            'delay'=>5,
+                            'threshold'=>.25,
+                            'iteration'=>5,
+                            'run'=>0,
+                            'path_to_questions'=>$file_path.'\\deployment\\questions\\',
+                            'path_to_answers'=>$file_path.'\\deployment\\answers\\',
+                            'path'=>$file_path,
+                            'model_folder'=>$model_folder
+                        );
+
+                        if(!is_dir($file_path.'\\deployment')){
+                            mkdir($file_path.'\\deployment');
+                        }
+                        if(!is_dir($file_path.'\\deployment\\questions')){
+                            mkdir($file_path.'\\deployment\\questions');
+                        }
+                        if(!is_dir($file_path.'\\deployment\\answers')){
+                            mkdir($file_path.'\\deployment\\answers');
+                        }
+                        if(!is_dir($file_path.'\\deployment\\config')){
+                            mkdir($file_path.'\\deployment\\config');
+                        }
+
+                        if(file_exists($file_path.'deployment\\config\\deployment_config.json')){
+                            $question_file = fopen($file_path.'\\deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
+                            fwrite($question_file, json_encode($config_file));
+                            fclose($question_file);
+                            // wait 2-5 seconds
+                            
+                            sleep(1);
+                            $pyscript = $file_path.'python\\deployment.py';
+                            $python = $this->python;
+                
+                            $config_path = $file_path.'deployment\\config\\deployment_config.json';
+                            return exec("$python $pyscript $config_path");
+                        }else{
+                            $question_file = fopen($file_path.'deployment\\config\\deployment_config.json','w') or die("Unable to open file!");
+                            fwrite($question_file, json_encode($config_file));
+                            fclose($question_file);
+                            sleep(1);
+                            $pyscript = $file_path.'python\\deployment.py';
+                            $python = $this->python;
+                
+                            $config_path = $file_path.'deployment\\config\\deployment_config.json';
+                            $this->dispatchBrowserEvent('swal:remove_backdrop',[
+                                'position'          									=> 'center',
+                                'icon'                                                  => 'success',
+                                'title'             									=> 'Successfully deployed!',
+                                'showConfirmButton' 									=> 'true',
+                                'timer'             									=> '1000',
+                                'link'              									=> '#'
+                            ]);
+                            $output = exec("$python $pyscript $config_path");
+                        }
+                        $this->selected_model = -1;
+                        
+                        
+                    }else{
+                        echo 'file does not exist';
+                        return -1;
+                    }
+
+                }
+                
+            }
+        }
+    } 
+
+
 }
