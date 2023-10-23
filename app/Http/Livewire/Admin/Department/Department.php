@@ -17,6 +17,28 @@ class Department extends Component
     public $act_data;
     public $act_q_and_a_data;
 
+    public $questions_array = [];
+    public $answers_array =[];
+    public $question_tag;
+
+    public $qa_for =0;
+    public $qa_type;
+
+    public function hydrate(){
+        $this->qa_type = DB::table('q_and_a_types as qt')
+            ->orWhere([
+                'qt.q_and_a_type_details'=>'CS'
+                ])
+            ->orWhere([
+                'qt.q_and_a_type_details'=>'IT'
+                ])
+            ->orWhere([
+                'qt.q_and_a_type_details'=>'ACT'
+                ])
+            ->get()
+            ->toArray();
+    }
+
     public function mount(){
 
         $this->title = 'Department';
@@ -144,7 +166,22 @@ class Department extends Component
             'answers'=>$answers_data]);
         }
 
-        // dd($this->it_q_and_a_data);
+        $this->qa_type = DB::table('q_and_a_types as qt')
+            ->orWhere([
+                'qt.q_and_a_type_details'=>'CS'
+                ])
+            ->orWhere([
+                'qt.q_and_a_type_details'=>'IT'
+                ])
+            ->orWhere([
+                'qt.q_and_a_type_details'=>'ACT'
+                ])
+            ->get()
+            ->toArray();
+
+
+            $questions_array = [];
+            $answers_array = [];
     }
     public function render()
     {
@@ -153,4 +190,6 @@ class Department extends Component
             ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
+
+
 }
