@@ -1,5 +1,5 @@
 @section('title', 'Pybot | College Student Council') <!-- Set the page title -->
-
+@section('college', 'active')
 @section('csc', 'active')
 <div>
 <main id="main" class="main">
@@ -10,7 +10,7 @@
         <ol class="breadcrumb breadcrumb-custom">
         <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
         <li class="breadcrumb-item"><a href="colleges">Colleges</a></li>
-        <li class="breadcrumb-item active"aria-current="page">CCS</li>
+        <li class="breadcrumb-item active"aria-current="page">CSC</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
