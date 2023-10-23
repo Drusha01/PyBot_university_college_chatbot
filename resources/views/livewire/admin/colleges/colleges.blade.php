@@ -21,7 +21,7 @@
                 <a class="nav-link active show" data-toggle="tab" href="#admin-management-tab">College Management</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#user-management-tab">Q&A Management</a>
+                <a class="nav-link" data-toggle="tab" href="#user-management-tab">College Q&A Management</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#role-management-tab">TBD</a>
@@ -142,29 +142,44 @@
                     <button class="btn btn-success float-right mt-4 mb-2" data-toggle="modal" data-target="#AddModal">Add Q&A</button>
                     <!-- User Table -->
                     <div class="table-responsive">
-                        <table id="example2" class="display responsive nowrap" style="min-width:100%">
+                        <table id="example2" class="display responsive nowrap" style="width:100%">
+                            <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Questions</th>
-                                    <th>Tags</th>
-                                    <th>Answers</th>
-                                    <th>Action</th>
+                                    @foreach ($ccs_q_and_a_filter as $item => $value)
+                                        @if ($loop->first && $value)
+                                            <th>{{$item}}</th> 
+                                        @elseif($value)
+                                            <th>{{$item}}</th>
+                                        @endif
+                                    @endforeach
                                 </tr>
                             </thead>
                             <tbody>
-                                <!--  table -->
+                                <!-- Add your table rows dynamically using server-side data or JavaScript -->
+                                
+                                @forelse ($ccs_q_and_a_data as $item => $value)
                                 <tr>
-                                    <td>What is CCS?</td>
-                                    <td>information question</td>
+                                    <td></td>
+                                    <td>{{$loop->index+1 }}</td>
                                     <td>
-                                        <li>answer 1</li>
-                                        <li>answer 2</li>
+                                        @foreach($ccs_q_and_a_data[$item]['questions'] as $q_item => $q_value)
+                                            <p>{{($q_item+1).'. '. $q_value}}</p>
+                                        @endforeach
                                     </td>
+                                    <td>{{$value['tags']}}</td>
                                     <td>
+                                    @foreach($ccs_q_and_a_data[$item]['answers'] as $a_item => $a_value)
+                                        <p>{{($a_item+1).'. '. $a_value}}</p>
+                                    @endforeach
+                                    </td>
+                                    <td class="text-center">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
+                                @empty
+                                @endforelse
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>

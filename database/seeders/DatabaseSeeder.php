@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             qestionSeeders::class,
             answersSeeders::class,
             userDefaults::class,
+            q_and_a_types_seeder::class,
         ]);
     }
 }
