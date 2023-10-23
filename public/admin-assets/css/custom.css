@@ -540,9 +540,14 @@ a.sub-menu.nav-item.active.nav-link:hover {
 .sidebar-icon-only .sidebar .nav:not(.sub-menu) .nav-item.active.hover-open #sub-menu {
     display: block;
     position: absolute;
-    left: 70px;
+    left: 64.35px;
     width: 190px;
-    background: #063d2ffa;
+    font-size: 14px;
+    padding: .3rem;
+    background: #3f5860fa;
+}
+.sidebar-icon-only .sidebar .nav .nav-item .nav-link i.menu-icon {
+  padding-right: 35px;
 }
 @media screen and (max-width: 991px) {
 .sidebar-offcanvas .nav:not(.sub-menu) .nav-item.active.hover-open #sub-menu {
@@ -559,7 +564,7 @@ a.sub-menu.nav-item.active.nav-link:hover {
 .sidebar .nav-item:visited .collapse:not(.show),
 .sidebar .nav-item:target .collapse:not(.show) {
     display: block;
-    background: #176F73;
+    background: #265d6ffa;
     border-radius: 0px 0px 8px 8px;
 }
 

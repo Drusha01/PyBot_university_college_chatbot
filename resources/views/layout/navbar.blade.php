@@ -11,9 +11,7 @@
     </div>
 
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center toggle-sidebar" id="sidebar-toggle" type="button" data-toggle="minimize">
-            <span class="bi bi-list"></span>
-        </button>
+
 
         <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
@@ -24,7 +22,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                     <div>
-                        <p class="mb-0 font-weight-normal float-left dropdown-header border-bottom">You have 4 new notifications</p>
+                        <p class="mb-0 font-weight-normal text-center float-left dropdown-header border-bottom">You have 4 new notifications</p>
                     </div>
                 <div>
                     <a class="dropdown-item preview-item">
@@ -40,13 +38,13 @@
                             </p>
                         </div>
                     </a>
-                    <div class="border-top">
+                    <div class="border-top text-center">
                     <a href="{{route ('admin-notification')}}"><span class="p-2 ms-2">View all</span></a></p>
                     </div>
                 </div>
                 </div>
             </li>
-            <div class="text-light px-2">
+            <div class="text-dark px-2">
                 <li class="nav-item nav-profile dropdown">
                     <div>
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">

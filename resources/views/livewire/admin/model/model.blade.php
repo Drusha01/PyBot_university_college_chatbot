@@ -1,3 +1,6 @@
+@section('title', 'Pybot | Model') <!-- Set the page title -->
+
+@section('model', 'active')
 <div>
 <main id="main" class="main">
 
