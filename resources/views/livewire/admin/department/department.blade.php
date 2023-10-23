@@ -36,48 +36,45 @@
   <div class="container-fluid">
         <div class="table-responsive">
             <table id="example1" class="display responsive nowrap" style="width:100%">
-            <caption>These data can be modified and structured before calling as a function in the model</caption>
-            <thead class="thead-dark">
-                <tr>
-                    <th></th>
-                    <th>Questions</th>
-                    <th>Tags</th>
-                    <th>Responses</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Add your table rows dynamically using server-side data or JavaScript -->
-                <tr>
-                    <td></td>
-                    <td>How can I view the class schedule?</td>
-                    <td>Specific</td>
-                    <td class="response-column">
-                        <p>Check and extract your associated class pdf file from the official page of...</p>
-                        <p>If you're already enroll there would be an email with your schedule attached</p>
-                        <p>Login to your university credentials and extract from the 'Schedule' menu</p>
-                    </td>
-                    <td class="text-center">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                    </td>
-                </tr>
-                <tr>
-                <td></td>
-                    <td>What documents do I need for enrollment?</td>
-                    <td>General</td>
-                    <td class="response-column">
-                        <p>Answer 1</p>
-                        <p>Answer 2</p>
-                        <p>Answer 3</p>
-                    </td>
-                    <td class="text-center">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                    </td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
+                <caption>These data can be modified and structured before calling as a function in the model</caption>
+                <thead class="thead-dark">
+                    <tr>
+                    @foreach ($it_q_and_a_data_filter as $item => $value)
+                        @if ($loop->first && $value)
+                            <th>{{$item}}</th> 
+                        @elseif($value)
+                            <th>{{$item}}</th>
+                        @endif
+                    @endforeach
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add your table rows dynamically using server-side data or JavaScript -->
+                    @forelse ($it_data as $item => $value)
+                    <tr>
+                        <td></td>
+                        <td>{{$loop->index+1 }}</td>
+                        <td>
+                            @foreach($it_data[$item]['questions'] as $q_item => $q_value)
+                                <p>{{($item+1).'. '. $q_value}}</p>
+                            @endforeach
+                        </td>
+                        <td>{{$value['tags']}}</td>
+                        <td>
+                        @foreach($it_data[$item]['answers'] as $a_item => $a_value)
+                            <p>{{($a_item+1).'. '. $a_value}}</p>
+                        @endforeach
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                            <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                        </td>
+                    </tr>
+                    @empty
+                    <td>NO RECORDS</td>
+                    @endforelse
+                    <!-- Add more rows as needed -->
+                </tbody>
             </table>
         </div>
   </div>
@@ -91,43 +88,40 @@
             <caption>These data can be modified and structured before calling as a function in the model</caption>
             <thead class="thead-dark">
                 <tr>
-                <th></th>
-                    <th>Questions</th>
-                    <th>Tags</th>
-                    <th>Responses</th>
-                    <th>Action</th>
+                @foreach ($cs_q_and_a_data_filter as $item => $value)
+                    @if ($loop->first && $value)
+                        <th>{{$item}}</th> 
+                    @elseif($value)
+                        <th>{{$item}}</th>
+                    @endif
+                @endforeach
                 </tr>
             </thead>
             <tbody>
                 <!-- Add your table rows dynamically using server-side data or JavaScript -->
-                <tr>
-                <td></td>
-                    <td>How can I view the class schedule?</td>
-                    <td>Specific</td>
-                    <td class="response-column">
-                    <p>Check and extract your associated class pdf file from the official page of...</p>
-                    <p>If you're already enroll there would be an email with your schedule attached</p>
-                    <p>Login to your university credentials and extract from the 'Schedule' menu</p>
-                    </td>
-                    <td class="text-center">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                    </td>
-                </tr>
-                <tr>
-                <td></td>
-                    <td>What documents do I need for enrollment?</td>
-                    <td>General</td>
-                    <td class="response-column">
-                    <p>Answer 1</p>
-                    <p>Answer 2</p>
-                    <p>Answer 3</p>
-                    </td>
-                    <td class="text-center">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                    </td>
-                </tr>
+                @forelse ($cs_data as $item => $value)
+                    <tr>
+                        <td></td>
+                        <td>{{$loop->index+1 }}</td>
+                        <td>
+                            @foreach($cs_data[$item]['questions'] as $q_item => $q_value)
+                                <p>{{($item+1).'. '. $q_value}}</p>
+                            @endforeach
+                        </td>
+                        <td>{{$value['tags']}}</td>
+                        <td>
+                        @foreach($cs_data[$item]['answers'] as $a_item => $a_value)
+                            <p>{{($a_item+1).'. '. $a_value}}</p>
+                        @endforeach
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                            <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                        </td>
+                    </tr>
+                    @empty
+                    <td>NO RECORDS</td>
+                    @endforelse
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
@@ -143,43 +137,40 @@
           <caption>These data can be modified and structured before calling as a function in the model</caption>
           <thead class="thead-dark">
               <tr>
-                <th></th>
-                  <th>Questions</th>
-                  <th>Tags</th>
-                  <th>Responses</th>
-                  <th>Action</th>
+              @foreach ($act_q_and_a_data_filter as $item => $value)
+                    @if ($loop->first && $value)
+                        <th>{{$item}}</th> 
+                    @elseif($value)
+                        <th>{{$item}}</th>
+                    @endif
+                @endforeach
               </tr>
           </thead>
           <tbody>
               <!-- Add your table rows dynamically using server-side data or JavaScript -->
-              <tr>
-                <td></td>
-                  <td>How can I view the class schedule?</td>
-                  <td>Specific</td>
-                  <td class="response-column">
-                    <p>Check and extract your associated class pdf file from the official page of...</p>
-                    <p>If you're already enroll there would be an email with your schedule attached</p>
-                    <p>Login to your university credentials and extract from the 'Schedule' menu</p>
-                  </td>
-                    <td class="text-center">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                    </td>
-              </tr>
-              <tr>
-              <td></td>
-                  <td>What documents do I need for enrollment?</td>
-                  <td>General</td>
-                  <td class="response-column">
-                    <p>Answer 1</p>
-                    <p>Answer 2</p>
-                    <p>Answer 3</p>
-                  </td>
-                  <td class="text-center">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
-                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                  </td>
-              </tr>
+              @forelse ($act_data as $item => $value)
+                    <tr>
+                        <td></td>
+                        <td>{{$loop->index+1 }}</td>
+                        <td>
+                            @foreach($act_data[$item]['questions'] as $q_item => $q_value)
+                                <p>{{($item+1).'. '. $q_value}}</p>
+                            @endforeach
+                        </td>
+                        <td>{{$value['tags']}}</td>
+                        <td>
+                        @foreach($act_data[$item]['answers'] as $a_item => $a_value)
+                            <p>{{($a_item+1).'. '. $a_value}}</p>
+                        @endforeach
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                            <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr><td>NO RECORDS</td></tr>
+                    @endforelse
               <!-- Add more rows as needed -->
           </tbody>
         </table>
