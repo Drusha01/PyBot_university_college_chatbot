@@ -20,12 +20,11 @@ class Colleges extends Component
         $this->title = 'Colleges';
 
         $this->ccs_q_and_a_filter = [
-            'Select all' => true,
             '#' => true,
             'Questions' => true,
             'Tags'=> true,
-            'Responses'=> true,						
-            'Actions'	=> true					
+            'Responses'=> true,
+            'Actions'	=> true
         ];
         $this->ccs_data = DB::table('q_and_a as qa')
         ->select('q_and_a_id','q_and_a_tag')

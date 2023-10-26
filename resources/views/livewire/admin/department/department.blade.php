@@ -41,7 +41,7 @@
                     <tr>
                     @foreach ($it_q_and_a_data_filter as $item => $value)
                         @if ($loop->first && $value)
-                            <th>{{$item}}</th> 
+                            <th>{{$item}}</th>
                         @elseif($value)
                             <th>{{$item}}</th>
                         @endif
@@ -52,7 +52,6 @@
                     <!-- Add your table rows dynamically using server-side data or JavaScript -->
                     @forelse ($it_data as $item => $value)
                     <tr>
-                        <td></td>
                         <td>{{$loop->index+1 }}</td>
                         <td>
                             @foreach($it_data[$item]['questions'] as $q_item => $q_value)
@@ -90,7 +89,7 @@
                 <tr>
                 @foreach ($cs_q_and_a_data_filter as $item => $value)
                     @if ($loop->first && $value)
-                        <th>{{$item}}</th> 
+                        <th>{{$item}}</th>
                     @elseif($value)
                         <th>{{$item}}</th>
                     @endif
@@ -101,7 +100,6 @@
                 <!-- Add your table rows dynamically using server-side data or JavaScript -->
                 @forelse ($cs_data as $item => $value)
                     <tr>
-                        <td></td>
                         <td>{{$loop->index+1 }}</td>
                         <td>
                             @foreach($cs_data[$item]['questions'] as $q_item => $q_value)
@@ -139,7 +137,7 @@
               <tr>
               @foreach ($act_q_and_a_data_filter as $item => $value)
                     @if ($loop->first && $value)
-                        <th>{{$item}}</th> 
+                        <th>{{$item}}</th>
                     @elseif($value)
                         <th>{{$item}}</th>
                     @endif
@@ -150,7 +148,6 @@
               <!-- Add your table rows dynamically using server-side data or JavaScript -->
               @forelse ($act_data as $item => $value)
                     <tr>
-                        <td></td>
                         <td>{{$loop->index+1 }}</td>
                         <td>
                             @foreach($act_data[$item]['questions'] as $q_item => $q_value)
@@ -222,7 +219,7 @@
                                                     <option value="0">Select item</option>
                                                 @foreach($qa_type as $item => $value)
                                                     <option value="{{$value->q_and_a_type_id}}">{{$value->q_and_a_type_details}}</option>
-                                                @endforeach 
+                                                @endforeach
                                                 </select>
                                         </div>
                                         </span>
@@ -230,7 +227,7 @@
                                 </div>
                             </div>
                         </div>
-            
+
                     <!-- End Add Admin  -->
                 </div>
             <div class="modal-footer">

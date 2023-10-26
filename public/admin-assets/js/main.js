@@ -205,7 +205,31 @@
     });
   });
 
-  
+  //tags input
+  function init_TagsInput() {
+
+    if (typeof $.fn.tagsInput !== 'undefined') {
+
+        $('#tags_1').tagsInput({
+            width: 'auto'
+        });
+
+    }
+    $("input").tagsinput('items')
+
+  };
+  init_TagsInput();
+  /* INPUT MASK */
+
+  function init_InputMask() {
+
+    if (typeof ($.fn.inputmask) === 'undefined') { return; }
+    console.log('init_InputMask');
+
+    $(":input").inputmask();
+
+  };
+  init_InputMask();
 
 
 })();
