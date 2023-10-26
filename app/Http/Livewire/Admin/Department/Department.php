@@ -44,28 +44,25 @@ class Department extends Component
         $this->title = 'Department';
 
         $this->it_q_and_a_data_filter = [
-            'Select all' => true,
             '#' => true,
             'Questions' => true,
             'Tags'=> true,
-            'Responses'=> true,						
-            'Actions'	=> true					
+            'Responses'=> true,
+            'Actions'	=> true
         ];
         $this->cs_q_and_a_data_filter = [
-            'Select all' => true,
             '#' => true,
             'Questions' => true,
             'Tags'=> true,
-            'Responses'=> true,						
-            'Actions'	=> true					
+            'Responses'=> true,
+            'Actions'	=> true
         ];
         $this->act_q_and_a_data_filter = [
-            'Select all' => true,
             '#' => true,
             'Questions' => true,
             'Tags'=> true,
-            'Responses'=> true,						
-            'Actions'	=> true					
+            'Responses'=> true,
+            'Actions'	=> true
         ];
 
         $this->it_data = DB::table('q_and_a as qa')

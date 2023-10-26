@@ -16,8 +16,8 @@ $num: 50;
   $num: $num + 100;
 }
 
-$container_width: 9.7px; // Adjust this to your container's width
-$container_height: 9.7px; // Adjust this to your container's height
+$container_width: 15px; // Adjust this to your container's width
+$container_height: 15px; // Adjust this to your container's height
 $min_cqw: 1; // Minimum value for cqw
 $max_cqw: 100; // Maximum value for cqw
 $min_cqh: 1; // Minimum value for cqh
@@ -36,16 +36,55 @@ $max_cqh: 100; // Maximum value for cqh
 }
 
 // Dynamic media queries
-$mobile_width: 12px;
-$mobile_height: 12px;
+$mobile_width: 16.5px;
+$mobile_height: 16.5px;
 
-$tablets_width: 14px;
-$tablets_height: 14px;
+$tablets_width: 20px;
+$tablets_height: 20px;
 
 $laptop_width: 9.5px;
 $laptop_height: 9.5px;
 
-@media screen and (max-width: 480px) {
+$desktop_width: 14px;
+$desktop_height: 14px;
+
+@media screen and (max-width: 1440px) and (max-height: 768px) {
+  @for $num from $min_cqw through $max_cqw {
+    .cqw-#{$num} {
+      max-width: calc(#{$num} * #{$desktop_width}) !important;
+    }
+  }
+  @for $num from $min_cqh through $max_cqh {
+    .cqh-#{$num} {
+      max-height: calc(#{$num} * #{$desktop_height}) !important;
+    }
+  }
+}
+@media screen and (max-width: 1025px) and (max-height: 620px) {
+  @for $num from $min_cqw through $max_cqw {
+    .cqw-#{$num} {
+      max-width: calc(#{$num} * #{$laptop_width}) !important;
+    }
+  }
+  @for $num from $min_cqh through $max_cqh {
+    .cqh-#{$num} {
+      max-height: calc(#{$num} * #{$laptop_height}) !important;
+    }
+  }
+}
+@media screen and (max-width: 768px) and (max-height: 1024px) {
+  @for $num from $min_cqw through $max_cqw {
+    .cqw-#{$num} {
+      max-width: calc(#{$num} * #{$tablets_width}) !important;
+    }
+  }
+  @for $num from $min_cqh through $max_cqh {
+    .cqh-#{$num} {
+      max-height: calc(#{$num} * #{$tablets_height}) !important;
+    }
+  }
+}
+@media screen and (max-width: 480px) and (max-height: 800px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
       max-width: calc(#{$num} * #{$mobile_width}) !important;
@@ -58,31 +97,8 @@ $laptop_height: 9.5px;
   }
 }
 
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-  @for $num from $min_cqw through $max_cqw {
-    .cqw-#{$num} {
-      max-width: calc(#{$num} * #{$tablets_width}) !important;
-    }
-  }
-  @for $num from $min_cqh through $max_cqh {
-    .cqh-#{$num} {
-      max-height: calc(#{$num} * #{$tablets_height}) !important;
-    }
-  }
-}
 
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
-  @for $num from $min_cqw through $max_cqw {
-    .cqw-#{$num} {
-      max-width: calc(#{$num} * #{$laptop_width}) !important;
-    }
-  }
-  @for $num from $min_cqh through $max_cqh {
-    .cqh-#{$num} {
-      max-height: calc(#{$num} * #{$laptop_height}) !important;
-    }
-  }
-}
+
 
 
 

@@ -42,9 +42,11 @@
     <!-- injects:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
-    <link href="{{ asset('admin-assets/vendor/jquery-datatables-checkboxes-1.2.12/css/dataTables.checkboxes.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin-assets/vendor/jquery-datatables-checkboxes-1.2.12/css/datatables.min.css') }}" rel="stylesheet">
-        
+
+    <!-- === Datatables === -->
+    <link href="{{ asset('admin-assets/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-assets/vendor/datatables/css/responsive.dataTables.min.css') }}" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -203,7 +205,7 @@
                     allowOutsideClick: false,
                     allowEscapeKey: false
                     })
-                
+
                 .then(function() {
                     $('div.modal-backdrop').remove();
                     window.location.href = `${event.detail.link}`
@@ -213,13 +215,12 @@
         window.addEventListener('openModal', function(modal_id){
             // alert(modal_id.detail)
             $('#'+modal_id.detail).modal('toggle');
-        }); 
+        });
 
     </script>
 
     <!-- CDN inject tables with childrows, bootstrap etc. -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <!-- <script src="{{ asset('admin-assets/vendor/datatables/js/datatables.init.js') }}"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 
     <!-- === Template Main JS File === -->
@@ -230,109 +231,58 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="{{ asset('assets/js/chat.js') }}"></script>
+
     <script src="{{ asset('admin-assets/vendors/iCheck/icheck.min.js') }}"></script>
 	<script src="{{ asset('admin-assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js') }}"></script>
 
-    <script src="{{ asset('admin-assets/vendor/jquery-datatables-checkboxes-1.2.12/js/datatables.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/vendor/jquery-datatables-checkboxes-1.2.12/js/datatables.checkboxes.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
+
     <script>
     $(document).ready(function() {
         // Enable child rows for default
-        var table = $('#example').DataTable({
-        /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-        'columnDefs': [
-            {
-                'targets': 0,
-                'checkboxes': {
-                'selectRow': true
-                }
-            }
-        ],
-        'select': {
-            'style': 'multi'
-        },
-        lengthChange: false,   // Disable the "Show X entries" dropdown
-        'order': [[1, 'asc']]
-        });
-        // Enable child rows for Example 1
-        var table1 = $('#example1').DataTable({
-            /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-        'columnDefs': [
-            {
-                'targets': 0,
-                'checkboxes': {
-                'selectRow': true
-                }
-            }
-        ],
-        'select': {
-            'style': 'multi'
-        },
-        lengthChange: false,   // Disable the "Show X entries" dropdown
-        'order': [[1, 'asc']]
-        });
-        // Enable child rows for Example 1
-        var table2 = $('#example2').DataTable({
-            /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-        'columnDefs': [
-            {
-                'targets': 0,
-                'checkboxes': {
-                'selectRow': true
-                }
-            }
-        ],
-        'select': {
-            'style': 'multi'
-        },
-        lengthChange: false,   // Disable the "Show X entries" dropdown
-        'order': [[1, 'asc']]
-        });
+        var table = $('table.display').DataTable({
+            responsive: {
+            // Control responsive breakpoints
+            breakpoints: [
+                { name: 'desktop-large', width: Infinity },
+                { name: 'desktop', width: 1200 },
+                { name: 'tablet', width: 992 },
+                { name: 'phone-large', width: 768 },
+                { name: 'phone', width: 576 }
+            ],
 
-
-
-        // Enable child rows for Example 2
-        var table3 = $('#example3').DataTable({
-            /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-        'columnDefs': [
-            {
-                'targets': 0,
-                'checkboxes': {
-                'selectRow': true
-                }
-            }
-        ],
-        'select': {
-            'style': 'multi'
         },
-        lengthChange: false,   // Disable the "Show X entries" dropdown
-        'order': [[1, 'asc']]
-        });
-
-        // Enable child rows for No table
-        var notable = $('#notable').DataTable({
-            /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-        'columnDefs': [
-            {
-                'targets': 0,
-                'checkboxes': {
-                'selectRow': true
-                }
-            }
-        ],
-        'select': {
-            'style': 'multi'
-        },
-            info: false,           // Disable the "Showing X of Y entries" information
-            ordering: false,       // Disable column sorting
-            paging: false,         // Disable pagination (previous and next buttons)
-            lengthChange: false,   // Disable the "Show X entries" dropdown
-            searching: false,      // Disable the search bar
-
             order: [1, 'desc'],
-
+            lengthChange: false,   // Disable the "Show X entries" dropdown
         });
     });
+
+    //tags input
+    function init_TagsInput() {
+
+    if (typeof $.fn.tagsInput !== 'undefined') {
+
+        $('#tags_1').tagsInput({
+            width: 'auto'
+        });
+
+    }
+    $("input").tagsinput('items')
+
+    };
+    init_TagsInput();
+    /* INPUT MASK */
+
+    function init_InputMask() {
+
+    if (typeof ($.fn.inputmask) === 'undefined') { return; }
+    console.log('init_InputMask');
+
+    $(":input").inputmask();
+
+    };
+    init_InputMask();
     </script>
 
 </body>
