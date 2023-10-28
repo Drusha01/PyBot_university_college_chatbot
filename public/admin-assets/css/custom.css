@@ -1146,3 +1146,63 @@ span.tag a {
 thead.thead-dark {
   background: #337c60de;
 }
+.search-input{
+  position: relative;
+  min-width: 30%;
+  margin-right: 134px;
+}
+.search-input input{
+  height: 30px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  padding: 0 50px 0 42px;
+  font-size: 14px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+.search-input .icon{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 15px;
+  color: #135229;
+  cursor: pointer;
+}
+.search-input ::placeholder {
+  color: #001b074e;
+  font-size: 12px !important;
+}
