@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Csc;
+namespace App\Http\Livewire\Admin\Ccs;
 
 use Livewire\Component;
 
-class Csc extends Component
+class Ccs extends Component
 {
     public function mount(){
-        $this->title = 'csc';
+        $this->title = 'ccs';
     }
     public function render()
     {
-        return view('livewire.admin.csc.csc',[
+        return view('livewire.admin.ccs.ccs',[
             ])
             ->layout('layouts.admin',[
                 'title'=>$this->title]);

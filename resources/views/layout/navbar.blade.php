@@ -1,6 +1,6 @@
 
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center pl-3">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center pl-10">
         <a class="navbar-brand brand-logo mr-5" href="{{ route('dashboard') }}">
             <img src="{{ asset('admin-assets/media/pybot_icon.svg') }}" class="mr-2" alt="logo">
             <img src="{{ asset('admin-assets/media/logo.svg') }}" alt="name">
@@ -10,8 +10,15 @@
         </a>
     </div>
 
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+        
+        <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Type to search..">
+            <div class="autocom-box">
+            </div>
+            <div class="icon"><i class="bi bi-search"></i></div>
+        </div>
 
         <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
@@ -44,8 +51,7 @@
                 </div>
                 </div>
             </li>
-            <div class="text-dark px-2">
-                <li class="nav-item nav-profile dropdown">
+                <li class="nav-item nav-profile dropdown text-dark px-2">
                     <div>
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
                             <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
@@ -66,7 +72,6 @@
                         <h6 class="font-weight-normal mb-0">Admin Pybot</h6>
                     </div>
                 </li>
-            </div>
         </ul>
 
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

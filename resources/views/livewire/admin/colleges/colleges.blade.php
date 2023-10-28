@@ -197,44 +197,43 @@
                     <div class="table-responsive">
                         <table id="example1" class="display responsive nowrap" style="width:100%">
                         <caption>These data can be modified and structured before calling as a function in the model</caption>
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Questions</th>
-                                <th>Tags</th>
-                                <th>Responses</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Add your table rows dynamically using server-side data or JavaScript -->
-                            <tr>
-                                <td>How can I view the class schedule?</td>
-                                <td>Specific</td>
-                                <td class="response-column">
-                                    <p>Check and extract your associated class pdf file from the official page of...</p>
-                                    <p>If you're already enroll there would be an email with your schedule attached</p>
-                                    <p>Login to your university credentials and extract from the 'Schedule' menu</p>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editCSC"><i class='bx bxs-edit'></i></button>
-                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>What documents do I need for enrollment?</td>
-                                <td>General</td>
-                                <td class="response-column">
-                                    <p>Answer 1</p>
-                                    <p>Answer 2</p>
-                                    <p>Answer 3</p>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editCSC"><i class='bx bxs-edit'></i></button>
-                                    <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                </td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
+                            <thead class="thead-dark">
+                                <tr>
+                                    @foreach ($ccs_q_and_a_filter as $item => $value)
+                                        @if ($loop->first && $value)
+                                            <th>{{$item}}</th>
+                                        @elseif($value)
+                                            <th>{{$item}}</th>
+                                        @endif
+                                    @endforeach
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add your table rows dynamically using server-side data or JavaScript -->
+
+                                @forelse ($ccs_q_and_a_data as $item => $value)
+                                <tr>
+                                    <td>{{$loop->index+1 }}</td>
+                                    <td>
+                                        @foreach($ccs_q_and_a_data[$item]['questions'] as $q_item => $q_value)
+                                            <p>{{($q_item+1).'. '. $q_value}}</p>
+                                        @endforeach
+                                    </td>
+                                    <td>{{$value['tags']}}</td>
+                                    <td>
+                                    @foreach($ccs_q_and_a_data[$item]['answers'] as $a_item => $a_value)
+                                        <p>{{($a_item+1).'. '. $a_value}}</p>
+                                    @endforeach
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                    </td>
+                                </tr>
+                                @empty
+                                @endforelse
+                                <!-- Add more rows as needed -->
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -528,7 +527,7 @@
     </div>
   </div>
 
-<script>
+<script>/* Wont run unless on the same page */
 /*
     <Add Q AND A modal>
  */
@@ -621,12 +620,12 @@ $('#csc_data').on('click', function() {
     $('#tbd-container2').append(newResponse);
 });
 
-$('#csc_data').on('click', function() {
+$('#removecsc_data').on('click', function() {
     // Remove the last added question and response fields
     $('#tbd-container textarea:last').remove();
     $('#tbd-container2 textarea:last').remove();
 });
- $('#editCSC').on('click', function() {
+ $('#editcsc_data').on('click', function() {
     questionCounter++;
     responseCounter++;
 
