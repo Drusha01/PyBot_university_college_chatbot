@@ -175,174 +175,147 @@
   </div>
 </div>
 
-  <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Add</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form>
-                <div class="modal-body cqh-50">
-                    <button id="add_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
+    <!-- Add Q AND A modal -->
+    <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Add</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body cqh-30">
+                    <form>
                         <div class="form-group-row">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <div class="add-container">
-                                        <div class="form-group">
-                                            <label for="addquestion">Question/s</label>
-                                            <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="addquestion">Question/s</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
                                     </div>
+                                    <div id="add-container"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="add-container2">
-                                        <div class="form-group">
-                                            <label for="addresponse">Responses</label>
-                                            <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="addresponse">Responses</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
                                     </div>
+                                    <div id="add-container2"></div>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center mb-3">
+                                    <button id="add_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="addtag" class="form-label">Tag</label>
-                                        <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                        <input type="text" name="addtag" id="addtag2" class="tags form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <span>For
-                                        <div class="">
-                                                <select wire:model="qa_for" class="form-control">
-                                                    <option value="0">Select item</option>
-                                                @foreach($qa_type as $item => $value)
-                                                    <option value="{{$value->q_and_a_type_id}}">{{$value->q_and_a_type_details}}</option>
-                                                @endforeach
-                                                </select>
+                                    <div class="d-grid gap-3">
+                                        <label class="form-label">For</label>
+                                        <div class="col d-inline-flex"> 
+                                            <div class="col-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                                </label>
+                                            </div>
+                                            <div class="col-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="CS"> CS
+                                                </label>
+                                            </div>
+                                            <div class="col-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                                </label>
+                                            </div>
                                         </div>
-                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    </form>
                     <!-- End Add Admin  -->
                 </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
             </div>
-            </form>
         </div>
     </div>
-</div>
     <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body cqh-50">
-                <button id="edit_data" class="btn btn-success btn-rounded btn-icon float-right"  type="button"><i class="bi bi-plus-circle-dotted"></i></button>
-                <form>
-                    <div class="form-group-row">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="edit-container">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body cqh-30">
+                    <form>
+                        <div class="form-group-row">
+                            <div class="row g-3">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="addquestion">Question/s</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
+                                        <label for="editquestion">Question/s</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="editquestion" name="editquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
                                     </div>
+                                    <div id="edit-container"></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="edit-container2">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="addresponse">Responses</label>
-                                        <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
+                                        <label for="editresponse">Responses</label>
+                                        <textarea class="form-control form-control-sm" rows="3" id="editresponse" name="editresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                    </div>
+                                    <div id="edit-container2"></div>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center mb-3">
+                                    <button id="edit_data" class="btn btn-success btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="edittag" class="form-label">Tag</label>
+                                        <input type="text" name="edittag" id="edittag2" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="addtag" class="form-label">Tag</label>
-                                    <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <span>For
-                                    <div class="">
-                                            <label>
-                                                <input type="checkbox" class="flat" checked="checked"  value="IT"> IT
-                                            </label>
-                                            <label>
-                                                <input type="checkbox" class="flat" value="CS"> CS
-                                            </label>
-                                            <label>
-                                                <input type="checkbox" class="flat" value="ACT"> ACT
-                                            </label>
+                                <div class="col-md-12">
+                                    <div class="d-grid gap-3">
+                                        <label class="form-label">For</label>
+                                        <div class="col d-inline-flex"> 
+                                            <div class="col-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                                </label>
+                                            </div>
+                                            <div class="col-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="CS"> CS
+                                                </label>
+                                            </div>
+                                            <div class="col-2">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
-                <!-- End Add Admin  -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+                    </form>
+                    <!-- End Add Admin  -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Edit</button>
+                </div>
             </div>
         </div>
     </div>
-  </div>
-
-
-<script>
-$('#add_data').on('click', function() {
-    var newIntent = `
-            <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
-            </div>
-
-    `;
-    var newIntent2 = `
-            <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
-            </div>
-
-    `;
-    $('.add-container').append(newIntent);
-    $('.add-container2').append(newIntent2);
-
-
-});
-$('#edit_data').on('click', function() {
-    var newIntent = `
-            <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]"  placeholder="Type Question"></textarea>
-            </div>
-
-    `;
-    var newIntent2 = `
-            <div class="form-group">
-                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]"  placeholder="Type desire response.."></textarea>
-            </div>
-
-    `;
-    $('.edit-container').append(newIntent);
-    $('.edit-container2').append(newIntent2);
-
-
-});
-</script>
 
     </main><!-- End #main -->
 </div>

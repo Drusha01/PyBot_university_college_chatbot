@@ -1,100 +1,30 @@
 (function($) {
     "use strict";
+    function initializeDataTable(tableId) {
+      if ($.fn.DataTable.isDataTable(`#${tableId}`)) {
+          // Check if the DataTable is already initialized
+          $(`#${tableId}`).DataTable().destroy(); // Destroy the existing DataTable
+      }
+      // Initialize DataTable for the specified table
+      $(`#${tableId}`).DataTable({
+         responsive: {
+            // Control responsive breakpoints
+            breakpoints: [
+                { name: 'desktop-large', width: Infinity },
+                { name: 'desktop', width: 1200 },
+                { name: 'tablet', width: 992 },
+                { name: 'phone-large', width: 768 },
+                { name: 'phone', width: 576 }
+            ],
+            "stateSave": true,
 
-// Enable child rows for default
-var table = $('#example').DataTable({
-    /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-    'columnDefs': [
-       {
-          'targets': 0,
-          'checkboxes': {
-             'selectRow': true
-          }
-       }
-    ],
-    'select': {
-       'style': 'multi'
-    },
-    lengthChange: false,   // Disable the "Show X entries" dropdown
-    'order': [[1, 'asc']]
-  });
-  // Enable child rows for Example 1
-  var table1 = $('#example1').DataTable({
-      /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-    'columnDefs': [
-       {
-          'targets': 0,
-          'checkboxes': {
-             'selectRow': true
-          }
-       }
-    ],
-    'select': {
-       'style': 'multi'
-    },
-    lengthChange: false,   // Disable the "Show X entries" dropdown
-    'order': [[1, 'asc']]
-  });
-  // Enable child rows for Example 1
-  var table2 = $('#example2').DataTable({
-      /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-    'columnDefs': [
-       {
-          'targets': 0,
-          'checkboxes': {
-             'selectRow': true
-          }
-       }
-    ],
-    'select': {
-       'style': 'multi'
-    },
-    lengthChange: false,   // Disable the "Show X entries" dropdown
-    'order': [[1, 'asc']]
-  });
-
-
-
-  // Enable child rows for Example 2
-  var table3 = $('#example3').DataTable({
-      /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-    'columnDefs': [
-       {
-          'targets': 0,
-          'checkboxes': {
-             'selectRow': true
-          }
-       }
-    ],
-    'select': {
-       'style': 'multi'
-    },
-    lengthChange: false,   // Disable the "Show X entries" dropdown
-    'order': [[1, 'asc']]
-  });
-
-  // Enable child rows for No table
-  var notable = $('#notable').DataTable({
-      /* 'ajax': 'https://gyrocode.github.io/files/jquery-datatables/arrays_id.json', */
-    'columnDefs': [
-       {
-          'targets': 0,
-          'checkboxes': {
-             'selectRow': true
-          }
-       }
-    ],
-    'select': {
-       'style': 'multi'
-    },
-      info: false,           // Disable the "Showing X of Y entries" information
-      ordering: false,       // Disable column sorting
-      paging: false,         // Disable pagination (previous and next buttons)
-      lengthChange: false,   // Disable the "Show X entries" dropdown
-      searching: false,      // Disable the search bar
-
-      order: [1, 'desc'],
-
-  });
+        },
+            order: [1, 'desc'],
+            lengthChange: false,   // Disable the "Show X entries" dropdown
+      });
+  }
+initializeDataTable('example1');  
+initializeDataTable('example2');
+initializeDataTable('example3');
 
 })(jQuery);

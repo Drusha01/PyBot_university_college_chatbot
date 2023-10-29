@@ -35,13 +35,12 @@
 
 
                 <!-- Add Admin Button (Opens Add Modal) -->
-                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
+                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
                 <!-- Admin Table -->
                 <div class="table-responsive">
                     <table id="example1" class="display responsive nowrap" style="min-width:100%">
                         <thead class="thead-dark">
                             <tr>
-                                <th></th>
                                 <th>Username</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -52,7 +51,6 @@
                         <tbody>
                             <!-- Add your table rows dynamically using server-side data or JavaScript -->
                             <tr>
-                                <td></td>
                                 <td>1</td>
                                 <td>Admin 1</td>
                                 <td>admin1@example.com</td>
@@ -63,7 +61,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>2</td>
                                 <td>Admin 2</td>
                                 <td>admin2@example.com</td>
@@ -82,7 +79,7 @@
         </div>
         <!-- Add Admin Modal -->
         <div class="modal fade" id="adminAddModal" tabindex="-1" role="dialog" aria-labelledby="adminAddModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="adminAdminModalLabel">Add Admin</h5>
@@ -90,31 +87,43 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body cqh-30">
                         <!-- Add Admin form -->
                         <form>
-                            <div class="form-group">
-                                <label for="AddAdminFirstName">First Name</label>
-                                <input type="text" class="form-control" id="AddAdminFirstName" placeholder="Enter First Name">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="AddAdminFirstName">First Name</label>
+                                        <input type="text" class="form-control" id="AddAdminFirstName" placeholder="Enter First Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="AddAdminMiddleName">Midlle Name</label>
+                                        <input type="text" class="form-control" id="AddAdminMiddleName" placeholder="Enter Middle Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="AddAdminLastName">Last Name</label>
+                                        <input type="text" class="form-control" id="AddAdminLastName" placeholder="Enter Last Name">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="AddAdminMiddleName">Midlle Name</label>
-                                <input type="text" class="form-control" id="AddAdminMiddleName" placeholder="Enter Middle Name">
+                            <div class="col-md-11 p-0">
+                                <div class="form-group">
+                                    <label for="AddAdminEmail">Email</label>
+                                    <input type="email" class="form-control" id="AddAdminEmail" placeholder="Enter Email">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="AddAdminLastName">Last Name</label>
-                                <input type="text" class="form-control" id="AddAdminLastName" placeholder="Enter Last Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="AddAdminEmail">Email</label>
-                                <input type="email" class="form-control" id="AddAdminEmail" placeholder="Enter Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="AddAdminRole">Role</label>
-                                <select class="form-control" id="AddAdminRole">
-                                    <option value="admin">Administrator</option>
-                                    <option value="moderator">Moderator</option>
-                                </select>
+                            <div class="col-md-11 p-0">
+                                <div class="form-group">
+                                    <label for="AddAdminRole">Role</label>
+                                    <select class="form-control" id="AddAdminRole">
+                                        <option value="admin">Administrator</option>
+                                        <option value="moderator">Moderator</option>
+                                    </select>
+                                </div>
                             </div>
                         </form>
                         <!-- End Add Admin  -->
@@ -128,7 +137,7 @@
         </div>
         <!-- Edit Admin Modal -->
         <div class="modal fade" id="editAdminModal" tabindex="-1" role="dialog" aria-labelledby="editAdminModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editAdminModalLabel">Edit Admin</h5>
@@ -136,31 +145,43 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body cqh-30">
                         <!-- Admin Edit Form -->
                         <form>
-                            <div class="form-group">
-                                <label for="editAdminFirstName">First Name</label>
-                                <input type="text" class="form-control" id="editAdminFirstName" placeholder="Edit First name">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="editAdminFirstName">First Name</label>
+                                        <input type="text" class="form-control" id="editAdminFirstName" placeholder="Edit First name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="editAdminMiddleName">Middle Name</label>
+                                        <input type="text" class="form-control" id="editAdminMiddleName" placeholder="Edit Middle Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="editAdminLastName">Last Name</label>
+                                        <input type="text" class="form-control" id="editAdminLastName" placeholder="Edit Last Name">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="editAdminMiddleName">Middle Name</label>
-                                <input type="text" class="form-control" id="editAdminMiddleName" placeholder="Edit Middle Name">
+                            <div class="col-md-11 p-0">
+                                <div class="form-group">
+                                    <label for="editAdminEmail">Email</label>
+                                    <input type="email" class="form-control" id="editAdminEmail" placeholder="Enter new Email">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="editAdminLastName">Last Name</label>
-                                <input type="text" class="form-control" id="editAdminLastName" placeholder="Edit Last Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="editAdminEmail">Email</label>
-                                <input type="email" class="form-control" id="editAdminEmail" placeholder="Enter new Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="editAdminRole">Role</label>
-                                <select class="form-control" id="editAdminRole">
-                                    <option value="admin">Administrator</option>
-                                    <option value="moderator">Moderator</option>
-                                </select>
+                            <div class="col-md-11 p-0">
+                                <div class="form-group">
+                                    <label for="editAdminRole">Role</label>
+                                    <select class="form-control" id="editAdminRole">
+                                        <option value="admin">Administrator</option>
+                                        <option value="moderator">Moderator</option>
+                                    </select>
+                                </div>
                             </div>
                         </form>
                         <!-- End Admin Edit Form -->
@@ -177,13 +198,12 @@
         <div class="tab-pane fade" id="user-management-tab">
             <div class="container-fluid">
                 <!-- Add user Button (Opens Add user Modal) -->
-                <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
+                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
                 <!-- User Table -->
                 <div class="table-responsive">
                     <table id="example2" class="display responsive nowrap" style="min-width:100%">
                         <thead class="thead-dark">
                             <tr>
-                                <th></th>
                                 <th>Username</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -195,7 +215,6 @@
                         <tbody>
                             <!--  table -->
                             <tr>
-                                <td></td>
                                 <td>1</td>
                                 <td>User 1</td>
                                 <td>user1@example.com</td>
@@ -207,7 +226,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>2</td>
                                 <td>User 2</td>
                                 <td>user2@example.com</td>
@@ -227,7 +245,7 @@
         </div>
         <!-- Add User Modal -->
         <div class="modal fade" id="AddUserModal" tabindex="-1" role="dialog" aria-labelledby="AddUserModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="AddUserModalLabel">Add User</h5>
@@ -235,7 +253,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body cqh-30">
                         <!-- Add User form -->
                         <form>
                             <div class="form-group">
@@ -273,7 +291,7 @@
         </div>
         <!-- Edit User Modal -->
         <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
@@ -281,7 +299,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body cqh-30">
                         <!-- User Edit Form -->
                         <form>
                             <div class="form-group">
@@ -328,9 +346,8 @@
                 <!-- Role Table -->
                 <div class="table-responsive mt-30">
                     <table id="example3" class="display responsive nowrap" style="min-width:100%">
-                        <thead>
+                        <thead class="thead-dark">
                             <tr>
-                                <th></th>
                                 <th>Username</th>
                                 <th>Role Name</th>
                                 <th>Description</th>
@@ -341,7 +358,6 @@
                         <tbody>
                             <!-- Add your table rows dynamically using server-side data or JavaScript -->
                             <tr>
-                                <td></td>
                                 <td>1</td>
                                 <td>Administrator</td>
                                 <td>Full access</td>
@@ -352,7 +368,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>2</td>
                                 <td>Editor</td>
                                 <td>Modify content</td>
@@ -371,7 +386,7 @@
         </div>
         <!-- Edit role Modal -->
         <div class="modal fade" id="editRoleModal" tabindex="-1" role="dialog" aria-labelledby="editRoleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editRoleModalLabel">Edit Role</h5>
@@ -379,7 +394,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body cqh-30">
                         <!-- User role Form -->
                         <form>
                             <div class="form-group">

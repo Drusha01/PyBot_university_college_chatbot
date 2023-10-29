@@ -2,13 +2,15 @@ $num: 0;
 // Gap utility classes
 $minGap: 1;        // Minimum value for gap
 $maxGap: 50;        // Maximum value for gap
-$gapUnit: 10px;    // Adjust this to your gap unit
+$gapUnit: 2px;    // Adjust this to your gap unit
 
 @for $num from $minGap through $maxGap {
   .gap-#{$num} {
-    margin: #{$num * $gapUnit / 2} !important;
+    // Perform division without the math module
+    margin: calc($num * $gapUnit / 2) !important;
   }
 }
+
 
 // Display utility classes
 .d-flex {

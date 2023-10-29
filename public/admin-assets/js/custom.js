@@ -100,10 +100,7 @@ countChecked();
   };
   init_InputMask();
 
-
-
-
-let suggestions = [
+  let suggestions = [
     "Dashboard",
     "Colleges",
     "Departments",
@@ -177,3 +174,8 @@ function showSuggestions(list){
     }
     suggBox.innerHTML = listData;
 }
+
+
+
+
+
