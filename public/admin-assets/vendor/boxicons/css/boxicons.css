@@ -20,7 +20,7 @@
     line-height: 1;
     text-rendering: auto;
     display: inline-block;
-
+    margin: auto;
     text-transform: none;
 
     speak: none;

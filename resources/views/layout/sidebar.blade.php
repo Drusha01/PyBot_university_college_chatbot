@@ -12,13 +12,7 @@
         <i class='bi bi-person menu-icon'></i>
         <span class="menu-title">Colleges</span>
       </a>
-      <!-- <div class="collapse" id="sub-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item @yield('csc')">
-            <a class="nav-link" href="{{ route('csc') }}">College Student Council</a>
-          </li>
-        </ul>
-      </div> -->
+
     </li>
 
     <li class="nav-item @yield('department')">

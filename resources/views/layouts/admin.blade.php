@@ -29,8 +29,8 @@
     <script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
 
     <!-- Tags Input -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css') }}"/>
+    <script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
 
     <!-- === Main JS === -->
     <script src="{{ asset('admin-assets/js/main.js') }}"></script>
@@ -231,47 +231,52 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="{{ asset('assets/js/chat.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/forms.js') }}"></script>
 
     <script src="{{ asset('admin-assets/vendors/iCheck/icheck.min.js') }}"></script>
-	<script src="{{ asset('admin-assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js') }}"></script>
+	<script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
 
     <script src="{{ asset('admin-assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin-assets/vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
+    <!-- <script src="{{ asset('admin-assets/vendor/datatables/js/datatables.init.js') }}"></script> -->
 
     <script>
     $(document).ready(function() {
         // Enable child rows for default
         var table = $('table.display').DataTable({
             responsive: {
-            // Control responsive breakpoints
-            breakpoints: [
-                { name: 'desktop-large', width: Infinity },
-                { name: 'desktop', width: 1200 },
-                { name: 'tablet', width: 992 },
-                { name: 'phone-large', width: 768 },
-                { name: 'phone', width: 576 }
-            ],
-
-        },
+                // Control responsive breakpoints
+                breakpoints: [
+                    { name: 'desktop-large', width: Infinity },
+                    { name: 'desktop', width: 1200 },
+                    { name: 'tablet', width: 992 },
+                    { name: 'phone-large', width: 768 },
+                    { name: 'phone', width: 576 }
+                ],
+            },
+            "stateSave": true,
             order: [1, 'desc'],
             lengthChange: false,   // Disable the "Show X entries" dropdown
         });
     });
 
     //tags input
-    function init_TagsInput() {
-
-    if (typeof $.fn.tagsInput !== 'undefined') {
-
-        $('#tags_1').tagsInput({
-            width: 'auto'
+    function init_TagsInput(elementId) {
+        $(elementId).tagsinput({
+            itemValue: 'value',
+            itemText: 'text',
+            typeahead: {
+                source: function(query) {
+                    return $.getJSON('cities.json');
+                }
+            }
         });
-
     }
-    $("input").tagsinput('items')
-
-    };
-    init_TagsInput();
+    // Initialize TagsInput for specific elements
+    init_TagsInput('#addtag');
+    init_TagsInput('#edittag'); 
+    init_TagsInput('#addtag2');
+    init_TagsInput('#edittag2');
     /* INPUT MASK */
 
     function init_InputMask() {

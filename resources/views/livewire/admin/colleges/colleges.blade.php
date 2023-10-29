@@ -68,7 +68,7 @@
 
             <!-- Add college Modal -->
             <div class="modal fade" id="adminAddModal" tabindex="-1" role="dialog" aria-labelledby="adminAddModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="adminAdminModalLabel">Add Colleges</h5>
@@ -76,7 +76,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body cqh-30">
                             <!-- Add college form -->
                             <form>
                                 <div class="form-group">
@@ -100,7 +100,7 @@
 
             <!-- Edit  college -->
             <div class="modal fade" id="editAdminModal" tabindex="-1" role="dialog" aria-labelledby="editAdminModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="editAdminModalLabel">Edit College</h5>
@@ -108,7 +108,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body cqh-30">
                             <!-- Admin Edit Form -->
                             <form>
                                 <div class="form-group">
@@ -194,8 +194,9 @@
             <div class="tab-pane fade" id="csc-management-tab">
                 <div class="container-fluid">
                     <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddCSC">Add Q&A</button>
+                    <!-- Role Table -->
                     <div class="table-responsive">
-                        <table id="example1" class="display responsive nowrap" style="width:100%">
+                        <table id="example3" class="display responsive nowrap" style="width:100%">
                         <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -244,7 +245,7 @@
 </div>
             <!-- TBD add Modal -->
             <div class="modal fade" id="AddCSC" tabindex="-1" role="dialog" aria-labelledby="addRoleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addRoleModalLabel">Edit</h5>
@@ -252,7 +253,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body cqh-31">
+                        <div class="modal-body cqh-30">
                 <form>
                     <div class="form-group-row">
                         <div class="row g-3">
@@ -270,7 +271,7 @@
                                 </div>
                                 <div id="tbd-container2"></div>
                             </div>
-                            <div class="col-md-12 d-flex justify-content-center">
+                            <div class="col-md-12 d-flex justify-content-center mb-3">
                                 <button id="csc_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
                                 <button id="removecsc_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
                             </div>
@@ -283,20 +284,22 @@
                             <div class="col-md-12">
                                 <div class="d-grid gap-3">
                                     <label class="form-label">For</label>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="CS"> CS
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                        </label>
+                                    <div class="col d-inline-flex"> 
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="CS"> CS
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +319,7 @@
 
             <!-- TBD edit Modal -->
             <div class="modal fade" id="editCSC" tabindex="-1" role="dialog" aria-labelledby="editRoleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="editRoleModalLabel">Edit</h5>
@@ -324,7 +327,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body cqh-31">
+                        <div class="modal-body cqh-30">
                 <form>
                     <div class="form-group-row">
                         <div class="row g-3">
@@ -342,7 +345,7 @@
                                 </div>
                                 <div id="edittbd-container2"></div>
                             </div>
-                            <div class="col-md-12 d-flex justify-content-center">
+                            <div class="col-md-12 d-flex justify-content-center mb-3">
                                 <button id="editcsc_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
                                 <button id="editremovecsc_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
                             </div>
@@ -355,20 +358,22 @@
                             <div class="col-md-12">
                                 <div class="d-grid gap-3">
                                     <label class="form-label">For</label>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="CS"> CS
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                        </label>
+                                    <div class="col d-inline-flex"> 
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="CS"> CS
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -389,7 +394,7 @@
 
 <!-- Add Q AND A modal -->
 <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addModalLabel">Add</h5>
@@ -397,7 +402,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body cqh-31">
+            <div class="modal-body cqh-30">
                 <form>
                     <div class="form-group-row">
                         <div class="row g-3">
@@ -415,33 +420,34 @@
                                 </div>
                                 <div id="add-container2"></div>
                             </div>
-                            <div class="col-md-12 d-flex justify-content-center">
+                            <div class="col-md-12 d-flex justify-content-center mb-3">
                                 <button id="add_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                <button id="remove_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="addtag" class="form-label">Tag</label>
-                                    <input type="text" id="addtag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                    <input type="text" name="addtag" id="addtag" class="tags form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="d-grid gap-3">
                                     <label class="form-label">For</label>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="CS"> CS
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                        </label>
+                                    <div class="col d-inline-flex"> 
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="CS"> CS
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -458,7 +464,7 @@
     </div>
 </div>
     <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel">Edit</h5>
@@ -466,7 +472,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body cqh-31">
+            <div class="modal-body cqh-30">
                 <form>
                     <div class="form-group-row">
                         <div class="row g-3">
@@ -484,33 +490,34 @@
                                 </div>
                                 <div id="edit-container2"></div>
                             </div>
-                            <div class="col-md-12 d-flex justify-content-center">
+                            <div class="col-md-12 d-flex justify-content-center mb-3">
                                 <button id="edit_data" class="btn btn-success btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                <button id="editremove_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="edittag" class="form-label">Tag</label>
-                                    <input type="text" id="edittag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                    <input type="text" name="edittag" id="edittag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="d-grid gap-3">
                                     <label class="form-label">For</label>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="CS"> CS
-                                        </label>
-                                    </div>
-                                    <div class="col-sm">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                        </label>
+                                    <div class="col d-inline-flex"> 
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="CS"> CS
+                                            </label>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -527,134 +534,3 @@
     </div>
   </div>
 
-<script>/* Wont run unless on the same page */
-/*
-    <Add Q AND A modal>
- */
-var questionCounter = 0;
-var responseCounter = 0;
-
-$('#add_data').on('click', function() {
-    questionCounter++;
-    responseCounter++;
-
-    var newQuestionId = "question_" + questionCounter;
-    var newResponseId = "response_" + responseCounter;
-
-    var newQuestion = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-        </div>
-    `;
-
-    var newResponse = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-        </div>
-    `;
-
-    $('#add-container').append(newQuestion);
-    $('#add-container2').append(newResponse);
-});
-
-$('#remove_data').on('click', function() {
-    // Remove the last added question and response fields
-    $('#add-container textarea:last').remove();
-    $('#add-container2 textarea:last').remove();
-});
-
-$('#edit_data').on('click', function() {
-    questionCounter++;
-    responseCounter++;
-
-    var newQuestionId = "question_" + questionCounter;
-    var newResponseId = "response_" + responseCounter;
-
-    var newQuestion = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="editquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-        </div>
-    `;
-
-    var newResponse = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="editresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-        </div>
-    `;
-
-    $('#edit-container').append(newQuestion);
-    $('#edit-container2').append(newResponse);
-});
-
-$('#editremove_data').on('click', function() {
-    // Remove the last added question and response fields
-    $('#edit-container textarea:last').remove();
-    $('#edit-container2 textarea:last').remove();
-});
-/*
-    </Add Q AND A modal>
- */
-/*
-    <CSC modal>
- */
-$('#csc_data').on('click', function() {
-    questionCounter++;
-    responseCounter++;
-
-    var newQuestionId = "question_" + questionCounter;
-    var newResponseId = "response_" + responseCounter;
-
-    var newQuestion = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="cscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-        </div>
-    `;
-
-    var newResponse = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="cscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-        </div>
-    `;
-
-    $('#tbd-container').append(newQuestion);
-    $('#tbd-container2').append(newResponse);
-});
-
-$('#removecsc_data').on('click', function() {
-    // Remove the last added question and response fields
-    $('#tbd-container textarea:last').remove();
-    $('#tbd-container2 textarea:last').remove();
-});
- $('#editcsc_data').on('click', function() {
-    questionCounter++;
-    responseCounter++;
-
-    var newQuestionId = "question_" + questionCounter;
-    var newResponseId = "response_" + responseCounter;
-
-    var newQuestion = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="editcscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-        </div>
-    `;
-
-    var newResponse = `
-        <div class="form-group">
-            <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="editcscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-        </div>
-    `;
-
-    $('#edittbd-container').append(newQuestion);
-    $('#edittbd-container2').append(newResponse);
-});
-
-$('#editremovecsc_data').on('click', function() {
-    // Remove the last added question and response fields
-    $('#edittbd-container textarea:last').remove();
-    $('#edittbd-container2 textarea:last').remove();
-});
-/*
-    </CSC modal>
- */
-
-</script>
