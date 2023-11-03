@@ -2,6 +2,8 @@
 @import url("padding-margin.css");
 @import url("width-height.css");
 @import url("display-spacing.css");
+@import url("radio-switch.css");
+@import url("accordion.css");
 
 
 .max-w-15 {
@@ -492,6 +494,10 @@ border: 1px solid #3e557f !important; }
     -webkit-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
     -moz-box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
     box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
+}
+#v-tabs-tabContent {
+  padding-top: 35px;
+  box-shadow: 19px 9px 20px 0px rgba(0,0,0,0.2);
 }
 .bg-primary {
     background-color: #6993ff !important;

@@ -6,7 +6,6 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Model</h1>
         <nav>
             <ol class="breadcrumb breadcrumb-custom">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
@@ -166,7 +165,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body cqh-50">
+                <div class="modal-body cqh-25">
                 <p class="text-center">Are you sure you want to retrain the current data?</p>
                 <p class="text-center">Note! this may take some time...</p>
                     
@@ -191,7 +190,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body cqh-50">
+                <div class="modal-body cqh-25">
                     <!-- Add content for the "Train" modal here -->
                     <label for="trainingData">Select data to train:</label>
                     <br>
@@ -225,7 +224,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body cqh-50">
+                <div class="modal-body cqh-25">
                     <!-- Add content for the "deploy" modal here -->
                     <h5>Currently deployed model: model xx</h5>
                     <select wire:model.defer="selected_model" class="form-control">

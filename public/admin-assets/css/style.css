@@ -8638,7 +8638,7 @@
 
 /*-------------------------------------------------------------------*/
 /* === Boostrap Main SCSS === */
-/*!
+/*
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -8896,7 +8896,7 @@ select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
+  font-family: inherit !important;
   font-size: inherit;
   line-height: inherit;
 }
@@ -8945,6 +8945,23 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  float: right;
+  background: none;
+  border:1px groove rgba(219, 219, 219, 0.839);
+  content: "\271A";
+}
+input[type="file"]::-webkit-file-upload-text {
+  position: absolute;
+  left: 0;
+}
+input[type="file"]:hover::before {
+  border-color: black;
+}
+input[type="file"]:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
 textarea {
@@ -13380,7 +13397,8 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #1F1F1F;
+  color: #135229;
+  font-weight: 600;
   background-color: #ffffff;
   border-color: #ebedf2 #ebedf2 #ffffff;
 }
@@ -20608,6 +20626,8 @@ code {
   content: "\e64b";
 }
 
+
+
 /* Badges */
 .badge {
   border-radius: 20px;
@@ -24698,10 +24718,9 @@ dl li {
 }
 
 .nav-tabs .nav-link {
-  background: #fdfeff;
-  color: #000000;
+  background: #f0f0f0;
+  color: #13522961;
   border-radius: 0;
-  border: 1px solid #CED4DA;
   padding: .75rem 1.5rem;
 }
 
@@ -24720,6 +24739,7 @@ dl li {
 }
 
 .nav-tabs.nav-tabs-vertical, .nav-tabs.nav-tabs-vertical-custom {
+  background: #f2f2f2;
   border-bottom: 0;
 }
 
@@ -24741,16 +24761,18 @@ dl li {
 }
 
 .nav-tabs.nav-tabs-vertical-custom .nav-link {
-  background: transparent;
+  background: #fafafacc;
   border-color: rgba(255, 255, 255, 0.2);
-  color: #1c1b41;
+  color: #002f0042;
   font-weight: 600;
-  padding: 1.75rem;
+  padding: 0.8rem;
 }
 
 .nav-tabs.nav-tabs-vertical-custom .nav-link.active {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #ffff;
+  color: #135229;
+  border-color: rgb(192 192 192) rgb(201 201 201 / 0%) rgb(219 219 219);
+  box-shadow: -5px 3px 15px -10px;
 }
 
 .nav-pills {

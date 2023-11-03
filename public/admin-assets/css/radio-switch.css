@@ -1,0 +1,137 @@
+@charset "UTF-8";
+.radio-switch input[type=radio] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -9999px;
+  right: -9999px;
+  overflow: hidden;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.radio-switch {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-bottom: 0.5rem;
+}
+.radio-switch:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.radio-switch .radio-right {
+  float: right;
+}
+.radio-switch legend {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  margin-bottom: 0.5 rem;
+}
+.radio-switch legend.legend-left {
+  margin: 0 0.5rem 0 0;
+  float: left;
+}
+.radio-switch input[type=radio] + label {
+  user-select: none;
+  line-height: 0.9rem;
+}
+.radio-switch input[type=radio] + label:before {
+  width: 2rem;
+  height: 0.9rem;
+  font-family: Arial, sans-serif;
+  display: inline-block;
+  content: "•";
+  transition: all 0.1s cubic-bezier(0, 1.1, 0, 1.38);
+  text-align: left;
+  font-size: 2.25rem;
+  line-height: 0.68rem;
+  float: left;
+  overflow: hidden;
+  color: white;
+  border: 0.149994231rem solid rgba(163, 164, 165, 0.3411764706);
+  background: rgba(163, 164, 165, 0.3411764706);
+  border-radius: 0.45rem;
+  margin: auto 0;
+}
+@media screen and (min-width: 25rem) {
+  .radio-switch input[type=radio] + label:before {
+    margin-right: 0.5rem;
+  }
+}
+.radio-switch input[type=radio] + label:after {
+  display: none;
+}
+@media screen and (min-width: 25rem) {
+  .radio-switch input[type=radio] + label:after {
+    width: 1.75rem;
+    display: inline-block;
+  }
+}
+.radio-switch input[type=radio]:checked + label:before {
+  border-color: #767676;
+  background: #767676;
+  text-align: right;
+  color: white;
+}
+.radio-switch input[type=radio] + label:active:before, .radio-switch input[type=radio]:checked + label:active:before {
+  border-color: rgba(163, 164, 165, 0.3411764706);
+  background: rgba(163, 164, 165, 0.3411764706);
+  color: white;
+}
+
+:root {
+  font-size: 16px;
+  line-height: 0.5;
+  font-family: Open sans, sans-serif;
+  color: black;
+}
+@media screen and (min-width: 25rem) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding: 1rem;
+}
+fieldset legend {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  transition: all 0.1s cubic-bezier(0, 1.1, 0, 1.38);
+}
+a:hover {
+  text-decoration: underline;
+  color: #767676;
+}
+
+small.cretits {
+  margin-top: 0.25 rem;
+  display: block;
+  font-size: 0.75rem;
+  display: block;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*# sourceMappingURL=radio-switch.css.map */

@@ -267,7 +267,7 @@
             itemText: 'text',
             typeahead: {
                 source: function(query) {
-                    return $.getJSON('cities.json');
+                    return $.getJSON('tag.json');
                 }
             }
         });
@@ -277,6 +277,25 @@
     init_TagsInput('#edittag'); 
     init_TagsInput('#addtag2');
     init_TagsInput('#edittag2');
+    init_TagsInput('#depttag');
+    init_TagsInput('#deptedittag'); 
+
+    /* Initialize image preview */
+    function previewImage(input, image) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                image.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            // If no file is chosen, set the image's src to the default
+            image.src = "{{ asset('admin-assets/media/defaults/default-image.png') }}";
+        }
+    }
+
     /* INPUT MASK */
 
     function init_InputMask() {
