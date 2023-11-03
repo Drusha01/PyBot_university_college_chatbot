@@ -5,7 +5,6 @@
         <!-- ======= Main Content ======= -->
         <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Account management</h1>
             <nav>
                 <ol class="breadcrumb breadcrumb-custom">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
@@ -110,13 +109,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-11 p-0">
+                            <div class="col-md-8 p-0">
                                 <div class="form-group">
                                     <label for="AddAdminEmail">Email</label>
                                     <input type="email" class="form-control" id="AddAdminEmail" placeholder="Enter Email">
                                 </div>
                             </div>
-                            <div class="col-md-11 p-0">
+                            <div class="col-md-3 p-0">
                                 <div class="form-group">
                                     <label for="AddAdminRole">Role</label>
                                     <select class="form-control" id="AddAdminRole">
@@ -168,13 +167,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-11 p-0">
+                            <div class="col-md-8 p-0">
                                 <div class="form-group">
                                     <label for="editAdminEmail">Email</label>
                                     <input type="email" class="form-control" id="editAdminEmail" placeholder="Enter new Email">
                                 </div>
                             </div>
-                            <div class="col-md-11 p-0">
+                            <div class="col-md-3 p-0">
                                 <div class="form-group">
                                     <label for="editAdminRole">Role</label>
                                     <select class="form-control" id="editAdminRole">
@@ -256,28 +255,40 @@
                     <div class="modal-body cqh-30">
                         <!-- Add User form -->
                         <form>
-                            <div class="form-group">
-                                <label for="AddUserFirstName">First Name</label>
-                                <input type="text" class="form-control" id="AddUserFirstName" placeholder="Enter First Name">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="AddUserFirstName">First Name</label>
+                                        <input type="text" class="form-control" id="AddUserFirstName" placeholder="Enter First Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="AddUserMiddleName">Midlle Name</label>
+                                        <input type="text" class="form-control" id="AddUserMiddleName" placeholder="Enter Middle Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="AddUserLastName">Last Name</label>
+                                        <input type="text" class="form-control" id="AddUserLastName" placeholder="Enter Last Name">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="AddUserMiddleName">Midlle Name</label>
-                                <input type="text" class="form-control" id="AddUserMiddleName" placeholder="Enter Middle Name">
+                            <div class="col-md-8 p-0">
+                                <div class="form-group">
+                                    <label for="AddUserEmail">Email</label>
+                                    <input type="email" class="form-control" id="AddUserEmail" placeholder="Enter Email">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="AddUserLastName">Last Name</label>
-                                <input type="text" class="form-control" id="AddUserLastName" placeholder="Enter Last Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="AddUserEmail">Email</label>
-                                <input type="email" class="form-control" id="AddUserEmail" placeholder="Enter Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="AddUserRole">Role</label>
-                                <select class="form-control" id="AddUserRole">
-                                    <option value="user">User</option>
-                                    <option value="TBD">TBD</option>
-                                </select>
+                            <div class="col-md-3 p-0">
+                                <div class="form-group">
+                                    <label for="AddUserRole">Role</label>
+                                    <select class="form-control" id="AddUserRole">
+                                        <option value="user">User</option>
+                                        <option value="TBD">TBD</option>
+                                    </select>
+                                </div>
                             </div>
                         </form>
                         <!-- End Add User  -->
@@ -302,28 +313,40 @@
                     <div class="modal-body cqh-30">
                         <!-- User Edit Form -->
                         <form>
-                            <div class="form-group">
-                                <label for="editUserFirstName">First Name</label>
-                                <input type="text" class="form-control" id="editUserFirstName" placeholder="Edit First name">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="editUserFirstName">First Name</label>
+                                        <input type="text" class="form-control" id="editUserFirstName" placeholder="Edit First name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="editUserMiddleName">Middle Name</label>
+                                        <input type="text" class="form-control" id="editUserMiddleName" placeholder="Edit Middle Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="editUserLastName">Last Name</label>
+                                        <input type="text" class="form-control" id="editUserLastName" placeholder="Edit Last Name">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="editUserMiddleName">Middle Name</label>
-                                <input type="text" class="form-control" id="editUserMiddleName" placeholder="Edit Middle Name">
+                            <div class="col-md-8 p-0">
+                                <div class="form-group">
+                                    <label for="editUserEmail">Email</label>
+                                    <input type="email" class="form-control" id="editUserEmail" placeholder="Enter new Email">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="editUserLastName">Last Name</label>
-                                <input type="text" class="form-control" id="editUserLastName" placeholder="Edit Last Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="editUserEmail">Email</label>
-                                <input type="email" class="form-control" id="editUserEmail" placeholder="Enter new Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="editUserRole">Role</label>
-                                <select class="form-control" id="editUserRole">
-                                    <option value="user">Applicant</option>
-                                    <option value="moderator">TBD</option>
-                                </select>
+                            <div class="col-md-3 p-0">
+                                <div class="form-group">
+                                    <label for="editUserRole">Role</label>
+                                    <select class="form-control" id="editUserRole">
+                                        <option value="user">Applicant</option>
+                                        <option value="moderator">TBD</option>
+                                    </select>
+                                </div>
                             </div>
                         </form>
                         <!-- End User Edit Form -->

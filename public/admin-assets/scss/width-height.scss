@@ -1,19 +1,24 @@
-$num: 50;
-@while $num <= 100 {
-  .w-#{$num} {
+$num: 0;
+@for $num from 0 through 800 {
+  .custw-#{$num} {
     width: #{$num}px !important;
   }
-  .mw-#{$num} {
+  .custminw-#{$num} {
+    min-width: #{$num}px !important;
+  }
+  .custmaxw-#{$num} {
     max-width: #{$num}px !important;
   }
-  .h-#{$num} {
+  .custh-#{$num} {
     height: #{$num}px !important;
   }
-  .mh-#{$num} {
+  .custminh-#{$num} {
+    min-height: #{$num}px !important;
+  }
+  .custmaxh-#{$num} {
     max-height: #{$num}px !important;
   }
 
-  $num: $num + 100;
 }
 
 $container_width: 15px; // Adjust this to your container's width
@@ -25,13 +30,13 @@ $max_cqh: 100; // Maximum value for cqh
 
 @for $num from $min_cqw through $max_cqw {
   .cqw-#{$num} {
-    max-width: calc(#{$num} * #{$container_width}) !important;
+    width: calc(#{$num} * #{$container_width}) !important;
   }
 }
 
 @for $num from $min_cqh through $max_cqh {
   .cqh-#{$num} {
-    max-height: calc(#{$num} * #{$container_height}) !important;
+    height: calc(#{$num} * #{$container_height}) !important;
   }
 }
 
