@@ -184,64 +184,7 @@
                     </div>
                     <!-- End User Table -->
                 </div>
-            </div>
-
-
-
-
-            <!-- CSC ----------------------------------------------------------------------------------------------------- tab -->
-            <div class="tab-pane fade" id="csc-management-tab">
-                <div class="container-fluid">
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddCSC">Add Q&A</button>
-                    <!-- Role Table -->
-                    <div class="table-responsive">
-                        <table id="example3" class="display responsive nowrap" style="width:100%">
-                        <caption>These data can be modified and structured before calling as a function in the model</caption>
-                            <thead class="thead-dark">
-                                <tr>
-                                    @foreach ($ccs_q_and_a_filter as $item => $value)
-                                        @if ($loop->first && $value)
-                                            <th>{{$item}}</th>
-                                        @elseif($value)
-                                            <th>{{$item}}</th>
-                                        @endif
-                                    @endforeach
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Add your table rows dynamically using server-side data or JavaScript -->
-
-                                @forelse ($ccs_q_and_a_data as $item => $value)
-                                <tr>
-                                    <td>{{$loop->index+1 }}</td>
-                                    <td>
-                                        @foreach($ccs_q_and_a_data[$item]['questions'] as $q_item => $q_value)
-                                            <p>{{($q_item+1).'. '. $q_value}}</p>
-                                        @endforeach
-                                    </td>
-                                    <td>{{$value['tags']}}</td>
-                                    <td>
-                                    @foreach($ccs_q_and_a_data[$item]['answers'] as $a_item => $a_value)
-                                        <p>{{($a_item+1).'. '. $a_value}}</p>
-                                    @endforeach
-                                    </td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editCSCModal"><i class='bx bxs-edit'></i></button>
-                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                    </td>
-                                </tr>
-                                @empty
-                                @endforelse
-                                <!-- Add more rows as needed -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Add Q AND A modal -->
+                            <!-- Add Q AND A modal -->
             <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -381,8 +324,60 @@
                     </div>
                 </div>
             </div>
+            </div>
 
-            <!-- TBD add Modal -->
+
+
+
+            <!-- CSC ----------------------------------------------------------------------------------------------------- tab -->
+            <div class="tab-pane fade" id="csc-management-tab">
+                <div class="container-fluid">
+                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddCSC">Add Q&A</button>
+                    <!-- Role Table -->
+                    <div class="table-responsive">
+                        <table id="example3" class="display responsive nowrap" style="width:100%">
+                        <caption>These data can be modified and structured before calling as a function in the model</caption>
+                            <thead class="thead-dark">
+                                <tr>
+                                    @foreach ($ccs_q_and_a_filter as $item => $value)
+                                        @if ($loop->first && $value)
+                                            <th>{{$item}}</th>
+                                        @elseif($value)
+                                            <th>{{$item}}</th>
+                                        @endif
+                                    @endforeach
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add your table rows dynamically using server-side data or JavaScript -->
+
+                                @forelse ($ccs_q_and_a_data as $item => $value)
+                                <tr>
+                                    <td>{{$loop->index+1 }}</td>
+                                    <td>
+                                        @foreach($ccs_q_and_a_data[$item]['questions'] as $q_item => $q_value)
+                                            <p>{{($q_item+1).'. '. $q_value}}</p>
+                                        @endforeach
+                                    </td>
+                                    <td>{{$value['tags']}}</td>
+                                    <td>
+                                    @foreach($ccs_q_and_a_data[$item]['answers'] as $a_item => $a_value)
+                                        <p>{{($a_item+1).'. '. $a_value}}</p>
+                                    @endforeach
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editCSCModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
+                                    </td>
+                                </tr>
+                                @empty
+                                @endforelse
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                            <!-- TBD add Modal -->
             <div class="modal fade" id="AddCSC" tabindex="-1" role="dialog" aria-labelledby="addRoleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -432,8 +427,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Add User Modal -->
-
+            
             <!-- TBD edit Modal -->
             <div class="modal fade" id="editCSCModal" tabindex="-1" role="dialog" aria-labelledby="editRoleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
@@ -484,6 +478,15 @@
                     </div>
                 </div>
             </div>
+            </div>
+
+
+
+
+
+
+            <!-- End Add User Modal -->
+
             <!-- End Edit User Modal -->
         </div>
 
