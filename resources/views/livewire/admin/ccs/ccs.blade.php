@@ -2,6 +2,8 @@
 
 @section('colleges', 'active')
 <div>
+<link href="{{ asset('admin-assets/css/dashboard.css') }}" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" rel="stylesheet" type="text/css">
      <!-- Main Content -->
      <main id="main" class="main">
         <div class="pagetitle">
@@ -178,6 +180,35 @@
 </div>
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script>
+      //bar chart
+      var bar = document.getElementById('graph_bar');
+      bar.height = 400
+      var barConfig = new Chart(bar, {
+          type: 'verticalBar',
+          data: {
+              labels: ['data-1', 'data-2', 'data-3', 'data-4', 'data-5', 'data-6', 'data-7'],
+              datasets: [{
+                  label: '# of data',
+                  data: [30, 25, 20, 15, 11, 4, 2],
+                  backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(225, 50, 64, 1)', 'rgba(64, 159, 64, 1)'],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              },
+              responsive: true, // Instruct chart js to respond nicely.
+              maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+          }
+      })
+    </script>
 
     </main><!-- End #main -->
 </div>
