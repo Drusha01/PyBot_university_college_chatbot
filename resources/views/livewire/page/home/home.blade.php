@@ -48,40 +48,47 @@
       </div>
     </div>
   </nav><!-- End Top Navigation -->
+  
   <div id="chat-circle" class="btn btn-raised">
     <img src="{{ asset('admin-assets/media/icon.png') }}" class="icon" alt="logo">
     <div id="chat-overlay"></div>
 	</div>
 
-
-    <!-- Chatbot Elements -->
-    <div id="chat-circle" class="btn btn-raised">
-      <img src="{{ asset('admin-assets/media/icon.png') }}" class="icon" alt="logo">
-      <div id="chat-overlay"></div>
+  <!-- Chatbot Elements -->
+  <div id="chat-circle" class="btn btn-raised">
+    <img src="{{ asset('admin-assets/media/icon.png') }}" class="icon" alt="logo">
+    <div id="chat-overlay"></div>
+  </div>
+  <div class="chat">
+    <!-- Chatbot Title and Status -->
+    <div class="chat-title">
+      <figure class="avatar">
+        <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" />
+      </figure>
+      <div>
+        <h1>PyBot</h1>
+        <h2>ACTIVE</h2>
+      </div>
+      <!-- User Preference Dropdown -->
+      <div class="user-preference">
+        <select id="pybot-option">
+          <option value="pybot">PyBot AI</option>
+          <option value="real-person">Real Person</option>
+        </select>
+      </div>
+      <span class="chat-box-toggle"><i class="bi bi-x"></i></span>
     </div>
-    <div class="chat">
-      <div class="chat-title">
-        <!-- Chatbot Title and Status -->
-        <div>
-          <h1>PyBot</h1>
-          <h2>ACTIVE</h2>
-        </div>
-        <figure class="avatar">
-          <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" />
-        </figure>
-        <span class="chat-box-toggle"><i class="bi bi-x"></i></span>
-      </div>
-      <div class="messages">
-        <div class="messages-content"></div>
-          <!-- Chatbot messages go here -->
 
-      </div>
-      
-      <div class="message-box">
-        <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-        <button type="submit" class="message-submit">Send</button>
-      </div>
+    <div class="messages">
+      <div class="messages-content"></div>
+      <!-- Chatbot messages go here -->
     </div>
+
+    <div class="message-box">
+      <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+      <button type="submit" class="message-submit">Send</button>
+    </div>
+  </div>
 
 
 
