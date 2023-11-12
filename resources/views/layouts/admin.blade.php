@@ -57,10 +57,10 @@
 
     <div class="container-scroller">
         <!-- ======= Navbar ======= -->
-        @include('layout.navbar')
-        <div class="page-body-wrapper">
-            <!-- ======= Sidebar ======= -->
-            @include('layout.sidebar')
+        @livewire('components.navigation.admin-navigation')
+            <div class="page-body-wrapper">
+                <!-- ======= Sidebar ======= -->
+                @livewire('components.sidebar.admin-sidebar')
 
 
             <!-- ========== Main Content ========== -->
@@ -215,7 +215,11 @@
         window.addEventListener('openModal', function(modal_id){
             // alert(modal_id.detail)
             $('#'+modal_id.detail).modal('toggle');
-        });
+        }); 
+        window.addEventListener('closeModal', function(modal_id){
+            // alert(modal_id.detail)
+            $('#'+modal_id.detail).modal('toggle');
+        }); 
 
     </script>
 
