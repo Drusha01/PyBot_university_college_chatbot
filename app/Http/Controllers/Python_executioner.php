@@ -208,14 +208,14 @@ class Python_executioner extends Controller
             }else if($pybot_response['target_type_details'] == 'student'){
                 // check if we are logged in
                 $this->user_details = $request->session()->all();
-                if(isset($data['user_id'])){
+                if(isset($this->user_details['user_id'])){
                     print_r(json_encode($pybot_response['answer_details']));
                 }else{
-                    print_r('I\'m sorry, the response is only intented to signed up user please sign up');
+                    print_r('I\'m sorry, the response is only intented to signed up user please sign up asdfs');
                 }
             }else if ($pybot_response['target_type_details'] == 'admin'){
                 $this->user_details = $request->session()->all();
-                if(isset($data['user_id'])){
+                if(isset($this->user_details['user_id'])){
                     print_r(json_encode($pybot_response['answer_details']));
                 }else{
                     print_r('I\'m sorry, the response is only intented to signed up user please sign up');
