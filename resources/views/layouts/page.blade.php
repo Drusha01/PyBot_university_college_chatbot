@@ -37,6 +37,8 @@
     @livewireStyles
     </head>
     <body>
+    @livewire('components.navigation.navigation')
+    @livewire('components.chat.chat')
     {{ $slot }}
     @yield('content')
 
@@ -156,6 +158,14 @@
                 window.close();
             });
         });
+        window.addEventListener('openModal', function(modal_id){
+            // alert(modal_id.detail)
+            $('#'+modal_id.detail).modal('toggle');
+        }); 
+        window.addEventListener('closeModal', function(modal_id){
+            // alert(modal_id.detail)
+            $('#'+modal_id.detail).modal('toggle');
+        }); 
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>

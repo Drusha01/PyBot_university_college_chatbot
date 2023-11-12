@@ -1,0 +1,57 @@
+<div>
+    <nav id="top-nav" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="http://pybot/admin-assets/media/pybot_icon.svg" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
+            <span class="logo">Pybot</span>
+        </a>
+
+        <!-- Navigation links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route ('page.home')}}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route ('page.AboutUs')}}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route ('page.academic')}}">Academic</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route ('page.admission')}}">Admission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route ('page.forums')}}">FAQs/Forums</a>
+                </li>
+                
+                @if(!isset($user_details['user_id']))
+                <li class="nav-item dropdown">
+                <a class="nav-link" href="{{route ('login')}}">Sign in</a>
+                </li>      
+                @else 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 30px; height: 30px; margin-right: 8px;">Kai kai
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="{{route ('page.profile') }}">
+                            <i class="bi bi-person-fill"></i> Profile
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/logout">
+                            <i class="bi bi-box-arrow-right"></i> Sign Out sd
+                            </a>
+                        </div>
+                    </li>
+                @endif
+                
+            </ul>
+            <!-- Icon links (if needed) -->
+            <div class="top-nav-icons">
+            <!-- Add your icon links here if needed -->
+            </div>
+        </div>
+        </div>
+    </nav><!-- End Top Navigation -->
+</div>
