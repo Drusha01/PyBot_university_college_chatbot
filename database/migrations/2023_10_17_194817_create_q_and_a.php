@@ -21,6 +21,7 @@ class CreateQAndA extends Migration
             q_and_a_type_id INT,
             -- check before sending a response to users / guests
             -- add privacy here
+            q_and_a_target_type_id INT DEFAULT 1,
             -- user target here
             -- restriction here
             -- etc 

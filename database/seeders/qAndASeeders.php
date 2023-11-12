@@ -18,12 +18,45 @@ class qAndASeeders extends Seeder
             NULL,
             "",
             1,
+            1,
             NOW(),
             NOW()
         );');
         DB::statement('INSERT INTO q_and_a VALUES(
             NULL,
             "",
+            1,
+            1,
+            NOW(),
+            NOW()
+        );');DB::statement('INSERT INTO q_and_a VALUES(
+
+            NULL,
+            "",
+            1,
+            1,
+            NOW(),
+            NOW()
+        );');
+        DB::statement('INSERT INTO q_and_a VALUES(
+            NULL,
+            "",
+            1,
+            1,
+            NOW(),
+            NOW()
+        );');
+        DB::statement('INSERT INTO q_and_a VALUES(
+            NULL,
+            "",
+            1,
+            2,
+            NOW(),
+            NOW()
+        );');DB::statement('INSERT INTO q_and_a VALUES(
+            NULL,
+            "",
+            1,
             1,
             NOW(),
             NOW()
@@ -31,12 +64,6 @@ class qAndASeeders extends Seeder
             NULL,
             "",
             1,
-            NOW(),
-            NOW()
-        );');
-        DB::statement('INSERT INTO q_and_a VALUES(
-            NULL,
-            "",
             1,
             NOW(),
             NOW()
@@ -45,17 +72,6 @@ class qAndASeeders extends Seeder
             NULL,
             "",
             1,
-            NOW(),
-            NOW()
-        );');DB::statement('INSERT INTO q_and_a VALUES(
-            NULL,
-            "",
-            1,
-            NOW(),
-            NOW()
-        );');DB::statement('INSERT INTO q_and_a VALUES(
-            NULL,
-            "",
             1,
             NOW(),
             NOW()
@@ -64,12 +80,6 @@ class qAndASeeders extends Seeder
             NULL,
             "",
             1,
-            NOW(),
-            NOW()
-        );');
-        DB::statement('INSERT INTO q_and_a VALUES(
-            NULL,
-            "",
             1,
             NOW(),
             NOW()
@@ -77,6 +87,7 @@ class qAndASeeders extends Seeder
         DB::statement('INSERT INTO q_and_a VALUES(
             NULL,
             "",
+            1,
             1,
             NOW(),
             NOW()

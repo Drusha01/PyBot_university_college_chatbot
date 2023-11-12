@@ -173,7 +173,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" wire:click="create_new_intent()">Create</button>
+                    <button type="button" class="btn btn-primary" wire:click="create_new_intent_2()">Create</button>
                 </div>
             </div>
         </div>

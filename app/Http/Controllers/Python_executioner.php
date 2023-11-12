@@ -200,7 +200,28 @@ class Python_executioner extends Controller
             // read json file
             $answer = json_decode(file_get_contents($file_path.$answer_file_path.$question_file_name),true);
             unlink($file_path.$answer_file_path.$question_file_name);
-            print_r(json_encode($answer));
+            $question = $answer['question'];
+            $pybot_response = $answer['answer'];
+           
+            if($pybot_response['target_type_details'] == 'public'){
+                print_r(json_encode($pybot_response['answer_details']));
+            }else if($pybot_response['target_type_details'] == 'student'){
+                // check if we are logged in
+                $this->user_details = $request->session()->all();
+                if(isset($data['user_id'])){
+                    print_r(json_encode($pybot_response['answer_details']));
+                }else{
+                    print_r('I\'m sorry, the response is only intented to signed up user please sign up');
+                }
+            }else if ($pybot_response['target_type_details'] == 'admin'){
+                $this->user_details = $request->session()->all();
+                if(isset($data['user_id'])){
+                    print_r(json_encode($pybot_response['answer_details']));
+                }else{
+                    print_r('I\'m sorry, the response is only intented to signed up user please sign up');
+                }
+            }
+            
            
         }
         
