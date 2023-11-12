@@ -498,8 +498,8 @@ class Model extends Component
                             self::rrmdir($dir);
                         }
                         $config_file = array(
-                            'delay'=>5,
-                            'threshold'=>.25,
+                            'delay'=>25,
+                            'threshold'=>.025,
                             'iteration'=>5,
                             'run'=>0,
                             'path_to_questions'=>$file_path.'\\deployment\\questions\\',
