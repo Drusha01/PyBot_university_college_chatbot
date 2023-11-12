@@ -207,10 +207,10 @@ class Colleges extends Component
                 'target_type_id'=> $q_and_a->target_type_id,
                 'target_type_details'=>$q_and_a->target_type_details
             ];
-            $this->dispatchBrowserEvent('openModal','editCollegeModal');
+            $this->dispatchBrowserEvent('openModal','editModal');
         }
     }
-    public function add_q_and_a(){
+    public function add_q_and_a($q_and_a_type_id){
         $questions_list = [];
         array_push($questions_list,[
             'question_details'=>NULL,
@@ -233,8 +233,8 @@ class Colleges extends Component
             }
         }
 
-        $q_and_a_type_id =DB::table('q_and_a_types')
-            ->where('q_and_a_type_details','=','CCS')
+        $q_and_a_type_id = DB::table('q_and_a_types')
+            ->where('q_and_a_type_details','=',$q_and_a_type_id)
             ->first()->q_and_a_type_id;
 
         $this->q_and_a = [
@@ -248,7 +248,7 @@ class Colleges extends Component
             'target_type_details'=>NULL
         ];
 
-        $this->dispatchBrowserEvent('openModal','AddCollegeModal');
+        $this->dispatchBrowserEvent('openModal','AddModal');
     }
     public function save_add_q_and_a(){
         if(isset($this->q_and_a['q_and_a_id'])){
@@ -300,7 +300,7 @@ class Colleges extends Component
                 }
                 self::update_data();
            
-                $this->dispatchBrowserEvent('openModal','AddCollegeModal');
+                $this->dispatchBrowserEvent('openModal','AddModal');
                 $this->dispatchBrowserEvent('swal:redirect',[
                     'position'          									=> 'center',
                     'icon'              									=> 'success',
@@ -373,7 +373,7 @@ class Colleges extends Component
 
             self::update_data();
            
-            $this->dispatchBrowserEvent('openModal','editCollegeModal');
+            $this->dispatchBrowserEvent('openModal','editModal');
             $this->dispatchBrowserEvent('swal:redirect',[
                 'position'          									=> 'center',
                 'icon'              									=> 'success',
@@ -467,7 +467,7 @@ class Colleges extends Component
                 'target_type_id'=> $q_and_a->target_type_id,
                 'target_type_details'=>$q_and_a->target_type_details
             ];
-            $this->dispatchBrowserEvent('openModal','DeletecollegeModal');
+            $this->dispatchBrowserEvent('openModal','DeleteModal');
         }
     }
     public function save_delete_q_and_a($q_and_a_id){
@@ -485,7 +485,7 @@ class Colleges extends Component
 
         self::update_data();
         
-        $this->dispatchBrowserEvent('openModal','DeletecollegeModal');
+        $this->dispatchBrowserEvent('openModal','DeleteModal');
         $this->dispatchBrowserEvent('swal:redirect',[
             'position'          									=> 'center',
             'icon'              									=> 'success',
