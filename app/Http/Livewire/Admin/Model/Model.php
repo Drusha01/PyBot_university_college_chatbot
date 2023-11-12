@@ -246,7 +246,7 @@ class Model extends Component
                 fwrite($intent_file, "      \"patterns\": [");
                 $question_list = DB::table('q_and_a as qa')
                     ->join('questions as q', 'q.question_q_and_a_id', '=', 'qa.q_and_a_id')
-                    ->where('qa.q_and_a_id','=',($key+1))
+                    ->where('qa.q_and_a_id','=',($value->q_and_a_id))
                     ->get()
                     ->toArray();
                 $question_length = count($question_list);
@@ -280,7 +280,7 @@ class Model extends Component
                     ->join('answers as a', 'a.answer_q_and_a_id', '=', 'qa.q_and_a_id')
                     ->join('q_and_a_types as t', 't.q_and_a_type_id', '=', 'qa.q_and_a_type_id')
                     ->join('target_types as tt', 'tt.target_type_id', '=', 'qa.q_and_a_target_type_id')
-                    ->where('qa.q_and_a_id','=',($key+1))
+                    ->where('qa.q_and_a_id','=',($value->q_and_a_id))
                     ->get()
                     ->toArray();
                 $answer_length = count($answers_list);
