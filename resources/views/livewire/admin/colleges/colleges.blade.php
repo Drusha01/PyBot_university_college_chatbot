@@ -158,7 +158,7 @@
                                 <!-- Add your table rows dynamically using server-side data or JavaScript -->
 
                                 @forelse ($ccs_q_and_a_data as $item => $value)
-                                <tr>
+                                <tr wire:key="{{$item}}">
                                     <td>{{$loop->index+1 }}</td>
                                     <td>
                                         @foreach($ccs_q_and_a_data[$item]['questions'] as $q_item => $q_value)

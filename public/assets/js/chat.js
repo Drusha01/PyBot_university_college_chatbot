@@ -47,11 +47,11 @@ $('.message-submit').click(function() {
   
   
   ,success: function(result){
-      var response = JSON.parse(result);
+      // var response = JSON.parse(result);
       
       $('.message.loading').remove();
       updateScrollbar();
-      $('<div class="message new">' + response.answer + '</div>').appendTo($('.mCSB_container')).addClass('new');
+      $('<div class="message new">' + result + '</div>').appendTo($('.mCSB_container')).addClass('new');
       setDate();
       updateScrollbar();
   }

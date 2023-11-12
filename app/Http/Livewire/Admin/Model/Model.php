@@ -51,7 +51,7 @@ class Model extends Component
         }
 
         $this->intent_data_filter = [
-            'select'=> true,
+            'select'=> false,
             '#'=>true,
             'path'=>false ,
             'version'=>true,
@@ -80,7 +80,7 @@ class Model extends Component
         }
 
         $this->model_list_filter = [
-            'select'=> true,
+            'select'=> false,
             '#'=>true,
             'path'=>false ,
             'model'=>true,
@@ -166,6 +166,126 @@ class Model extends Component
                 $answer_length = count($answers_list);
                 foreach ($answers_list as $answer_key => $answer_value) {
                     fwrite($intent_file, "\"".$answer_value->answer_details."\"");
+                    if($answer_key != $answer_length-1){
+                        fwrite($intent_file, ",");
+                    }
+                }
+                fwrite($intent_file, "],\n");
+                fwrite($intent_file, "      \"context_set\": \"\"");
+                if($key == $len-1){
+                    fwrite($intent_file, "\n    }");
+                }else{
+                    fwrite($intent_file, "\n    },\n");
+                }
+                // break;
+            }
+        fwrite($intent_file, "  \n  ]\n}");
+        fclose($intent_file);
+
+        $file_path  = dirname(__FILE__,6);
+        $intent_file_path = '/core/intent_list/';
+        if(!is_dir($file_path.$intent_file_path)){
+            mkdir($file_path.$intent_file_path);
+        }
+        $dir = $file_path.$intent_file_path;
+        $intents_list = scandir($dir);
+        $intent_length = count($intents_list);
+        $this->intent_lists=[];
+        for ($i=2; $i < $intent_length; $i++) { 
+    
+            $file_creation_date =  date('Y-m-d H:i:s', filectime($dir.$intents_list[$i]));
+            array_push($this->intent_lists,[
+                'intent_name'=>$intents_list[$i],
+                'directory_path'=>$dir.$intents_list[$i],
+                'date_created' =>$file_creation_date ]
+            );
+        }
+
+        $this->dispatchBrowserEvent('swal:redirect',[
+            'position'          									=> 'center',
+            'icon'                                                  => 'success',
+            'title'             									=> 'Successfully created an intent data!',
+            'showConfirmButton' 									=> 'true',
+            'timer'             									=> '1000',
+            'link'              									=> '/admin/model'
+        ]);
+    }
+    public function create_new_intent_2(){
+        $file_path  = dirname(__FILE__,6);
+        $intent_file_path = '/core/intent_list/';
+        $dir = $file_path.$intent_file_path;
+        $intents_list = scandir($dir);
+        $intent_length = count($intents_list);
+
+        $version =  $intent_length-2+1;
+
+        
+ 
+        $list_of_questions =DB::table('q_and_a as qa')
+            ->get()
+            ->toArray();
+
+        // fetch from db to what is the current version
+        
+        
+        $file_path  = dirname(__FILE__,6);
+        $intent_file_path = '/core/intent_list/';
+        $intent_file_name = 'intent_v'.$version.'.json';
+        $intent_file = fopen($file_path.$intent_file_path.$intent_file_name,'w') or die("Unable to open file!");
+
+        
+        fwrite($intent_file, "{\"intents\": [\n");
+            $len = count($list_of_questions);
+            foreach ($list_of_questions as $key => $value) {
+                if($key!=0){
+                    fwrite($intent_file, "    {\"tag\": \"".($key+1)."\",\n");
+                }else{
+                    fwrite($intent_file, "    {\"tag\": \"".($key+1)."\",\n");
+                }
+                
+                fwrite($intent_file, "      \"patterns\": [");
+                $question_list = DB::table('q_and_a as qa')
+                    ->join('questions as q', 'q.question_q_and_a_id', '=', 'qa.q_and_a_id')
+                    ->where('qa.q_and_a_id','=',($key+1))
+                    ->get()
+                    ->toArray();
+                $question_length = count($question_list);
+                foreach ($question_list as $question_key => $question_value) {
+                    fwrite($intent_file, "\"".$question_value->question_details."\"");
+                    if($question_key != $question_length-1){
+                        fwrite($intent_file, ",");
+                    }
+                }
+                fwrite($intent_file, "],\n");
+                // {
+                //     "q_and_a_id":5,
+                //     "q_and_a_tag":"",
+                //     "q_and_a_type_id":1,
+                //     "q_and_a_target_type_id":1,
+                //     "date_created":"2023-11-12 13:56:31",
+                //     "date_updated":"2023-11-12 13:56:31",
+                //     "answer_id":9,
+                //     "answer_q_and_a_id":5,
+                //     "answer_details":"Here are your stocks!",
+                //     "target_type_id":1,
+                //     "target_type_details":"public"}
+                fwrite($intent_file, "      \"responses\": [");
+                $answers_list = DB::table('q_and_a as qa')
+                    ->select(
+                        'answer_id',
+                        'q_and_a_type_details',
+                        'answer_id',
+                        'answer_details',
+                        'target_type_details')
+                    ->join('answers as a', 'a.answer_q_and_a_id', '=', 'qa.q_and_a_id')
+                    ->join('q_and_a_types as t', 't.q_and_a_type_id', '=', 'qa.q_and_a_type_id')
+                    ->join('target_types as tt', 'tt.target_type_id', '=', 'qa.q_and_a_target_type_id')
+                    ->where('qa.q_and_a_id','=',($key+1))
+                    ->get()
+                    ->toArray();
+                $answer_length = count($answers_list);
+                foreach ($answers_list as $answer_key => $answer_value) {
+                    fwrite($intent_file, json_encode($answer_value,JSON_FORCE_OBJECT));
                     if($answer_key != $answer_length-1){
                         fwrite($intent_file, ",");
                     }
@@ -439,12 +559,8 @@ class Model extends Component
                         echo 'file does not exist';
                         return -1;
                     }
-
                 }
-                
             }
         }
     } 
-
-
 }
