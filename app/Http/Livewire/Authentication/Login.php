@@ -86,6 +86,10 @@ class Login extends Component
                     'timer'             									=> '1500',
                     'link'              									=> '/'
                 ]);
+                $data = $request->session()->all();
+                if(isset($data['user_role_details']) && $data['user_role_details'] == 'admin'){
+                    return redirect('/admin/dashboard');
+                }
             }else{
                 $this->dispatchBrowserEvent('swal:redirect',[
                     'position'          									=> 'center',

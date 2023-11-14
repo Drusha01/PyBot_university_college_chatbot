@@ -1,0 +1,4 @@
+{"intents": [
+    {"tag": "1",
+      "patterns": ["Hi","How are you","Is anyone there?","Hello","Good day","Hey","greetings"],
+      "responses": [

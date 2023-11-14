@@ -73,6 +73,10 @@ Route::middleware([Authenticated::class])->group(function () {
 
 // page
 Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::class])->group(function () {
+    Route::get('/profile', Profile::class)->name('page.profile');
+});
+
+Route::prefix('/')->group(function () {
     Route::get('/', Home::class)->name('page.home');
     Route::get('/AboutUs', AboutUs::class)->name('page.AboutUs');
     Route::get('/profile', Profile::class)->name('page.profile');
