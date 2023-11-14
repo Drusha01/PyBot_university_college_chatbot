@@ -12,7 +12,7 @@
                 </ol>
             </nav>
         </div>
-        <button class="btn btn-success float-right pb-2" data-toggle="modal" data-target="#AddModal">Add Data</button>
+        <button class="btn btn-primary float-right pb-2" data-toggle="modal" data-target="#AddModal">Add Data</button>
         <!-- Tab Navigation -->
         <ul class="nav nav-tabs" id="DeptTabs">
             <li class="nav-item">
@@ -32,7 +32,7 @@
             <div class="tab-pane fade show active" id="IT-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <table id="example1" class="display responsive nowrap" style="width:100%">
+                        <table id="example1" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -62,7 +62,7 @@
                                     @endforeach
                                     </td>
                                     <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
@@ -73,6 +73,7 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
             </div>
 
 
@@ -80,7 +81,7 @@
             <div class="tab-pane fade" id="CS-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <table id="example2" class="display responsive nowrap" style="width:100%">
+                        <table id="example2" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -110,7 +111,7 @@
                                         @endforeach
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                                            <button class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                         </td>
                                     </tr>
@@ -128,7 +129,7 @@
             <div class="tab-pane fade" id="ACT-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <table id="example3" class="display responsive nowrap" style="width:100%">
+                        <table id="example3" class="table table-hover table-bordered" style="width:100%">
                         <caption>These data can be modified and structured before calling as a function in the model</caption>
                         <thead class="thead-dark">
                             <tr>
@@ -158,7 +159,7 @@
                                         @endforeach
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                                            <button class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                             <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                         </td>
                                     </tr>
@@ -171,77 +172,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Add Q AND A modal -->
-            <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="addModalLabel">Add</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body cqh-30">
-                            <form>
-                                <div class="form-group-row">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="addquestion">Question/s</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-                                            </div>
-                                            <div id="add-container"></div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="addresponse">Responses</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-                                            </div>
-                                            <div id="add-container2"></div>
-                                        </div>
-                                        <div class="col-md-12 d-flex justify-content-center mb-3">
-                                            <button id="add_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="depttag" class="">Tag</label>
-                                                <input type="text" id="depttag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="d-grid gap-3">
-                                                <label class="form-label">For</label>
-                                                <div class="col d-inline-flex"> 
-                                                    <div class="col-2">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" value="CS"> CS
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- End Add Admin  -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Add</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -307,12 +238,82 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-success">Edit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <!-- Add Q AND A modal -->
+        <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Add</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body cqh-30">
+                        <form>
+                            <div class="form-group-row">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="addquestion">Question/s</label>
+                                            <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                        </div>
+                                        <div id="add-container"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="addresponse">Responses</label>
+                                            <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                        </div>
+                                        <div id="add-container2"></div>
+                                    </div>
+                                    <div class="col-md-12 d-flex justify-content-center mb-3">
+                                        <button id="add_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="depttag" class="">Tag</label>
+                                            <input type="text" id="depttag" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="d-grid gap-3">
+                                            <label class="form-label">For</label>
+                                            <div class="col d-inline-flex"> 
+                                                <div class="col-2">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                                    </label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="CS"> CS
+                                                    </label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End Add Admin  -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main><!-- End #main -->
 </div>

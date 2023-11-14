@@ -3,7 +3,7 @@
 // Variables
 $golden-ratio: 0.5;
 
-$radio-config: (
+$checkbox-config: (
   height: 0.9rem,
   width: 2rem,
   color: #ffff,
@@ -16,7 +16,7 @@ $radio-config: (
 
 // Functions
 @function check-config($key) {
-  @return map-get($radio-config, $key);
+  @return map-get($checkbox-config, $key);
 }
 
 
@@ -85,13 +85,13 @@ $radio-config: (
   box-sizing: border-box; 
 }
 
-// radio STYLES
-.radio-switch {
+// checkbox STYLES
+.checkbox-switch {
   @include clearfix;
   @include reset-space(true);
   margin-bottom: $golden-ratio * 1rem;
   
-  .radio-right {
+  .checkbox-right {
     float: right;
   }
   
@@ -109,7 +109,7 @@ $radio-config: (
     }
   }
   
-  input[type="radio"] {
+  input[type="checkbox"] {
     @extend %hide-fake;
     
     & + label {
@@ -195,6 +195,7 @@ fieldset {
 
 a {
   text-decoration: none;
+  font-size: smaller;
   font-weight: 500;
   color: inherit;
   transition: check-config(transition);

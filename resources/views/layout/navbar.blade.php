@@ -24,8 +24,8 @@
 
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" data-toggle="dropdown">
-                    <i class='bi bi-bell mx-0'></i>
-                    <span class="count"></span>
+                    <i class='bi bi-bell fs-20 mx-0'></i>
+                    <span class="count">4</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                     <div>
@@ -54,7 +54,13 @@
                 <li class="nav-item nav-profile dropdown text-dark px-2">
                     <div>
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
-                            <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
+                            <div class="d-flex">
+                                <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
+                                <div class="text-center my-auto">
+                                    <h6 class="font-weight-normal px-2 mb-0">Admin Pybot</h6>
+                                </div>
+                                <div class=""><i class="fs-10 bi bi-chevron-down"></i></div>
+                            </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             <a class="dropdown-item" href="{{route ('admin-profile') }}">
@@ -68,9 +74,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h6 class="font-weight-normal mb-0">Admin Pybot</h6>
-                    </div>
+                    
                 </li>
         </ul>
 

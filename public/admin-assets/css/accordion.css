@@ -1,10 +1,9 @@
-@charset "UTF-8";
 /*  Accordions Custom  */
 details {
   margin: 1rem auto;
-  background-color: rgba(231, 231, 231, 0.6588235294);
-  border-radius: 0.5rem;
-  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0px 2px 0px -1px rgba(0, 0, 0, 0.1);
 }
 details:not([open]) {
   animation-name: fold-in;
@@ -15,7 +14,7 @@ details summary {
   align-items: center;
   justify-content: space-between;
   font-weight: 600;
-  padding: 0.7rem;
+  padding: 0.4rem;
 }
 details summary::-webkit-details-marker,
 details summary::marker {
@@ -23,19 +22,21 @@ details summary::marker {
   display: none;
 }
 details summary::after {
-  content: "+";
-  font-size: 1.5rem;
+  content: "\f282";
+  font-family: "bootstrap-icons";
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1;
   margin-right: 1rem;
   cursor: pointer;
 }
 details .content {
-  padding: 0 1.5rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.5rem;
 }
 
 details[open] summary::after {
-  content: "−";
+  content: "\f286";
+  font-family: "bootstrap-icons";
 }
 details[open] .content {
   animation-name: fold-out;
