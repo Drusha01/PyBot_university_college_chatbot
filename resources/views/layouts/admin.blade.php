@@ -40,7 +40,7 @@
     <script src="{{ asset('admin-assets/js/custom.js') }}"></script>
 
     <!-- injects:css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
 
     <!-- === Datatables === -->
@@ -240,74 +240,7 @@
     <script src="{{ asset('admin-assets/vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
     <!-- <script src="{{ asset('admin-assets/vendor/datatables/js/datatables.init.js') }}"></script> -->
 
-    <script>
-    $(document).ready(function() {
-        // Enable child rows for default
-        var table = $('table.display').DataTable({
-            responsive: {
-                // Control responsive breakpoints
-                breakpoints: [
-                    { name: 'desktop-large', width: Infinity },
-                    { name: 'desktop', width: 1200 },
-                    { name: 'tablet', width: 992 },
-                    { name: 'phone-large', width: 768 },
-                    { name: 'phone', width: 576 }
-                ],
-            },
-            "stateSave": true,
-            order: [1, 'desc'],
-            lengthChange: false,   // Disable the "Show X entries" dropdown
-        });
-    });
 
-    //tags input
-    function init_TagsInput(elementId) {
-        $(elementId).tagsinput({
-            itemValue: 'value',
-            itemText: 'text',
-            typeahead: {
-                source: function(query) {
-                    return $.getJSON('tag.json');
-                }
-            }
-        });
-    }
-    // Initialize TagsInput for specific elements
-    init_TagsInput('#addtag');
-    init_TagsInput('#edittag'); 
-    init_TagsInput('#addtag2');
-    init_TagsInput('#edittag2');
-    init_TagsInput('#depttag');
-    init_TagsInput('#deptedittag'); 
-
-    /* Initialize image preview */
-    function previewImage(input, image) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                image.src = e.target.result;
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        } else {
-            // If no file is chosen, set the image's src to the default
-            image.src = "{{ asset('admin-assets/media/defaults/default-image.png') }}";
-        }
-    }
-
-    /* INPUT MASK */
-
-    function init_InputMask() {
-
-    if (typeof ($.fn.inputmask) === 'undefined') { return; }
-    console.log('init_InputMask');
-
-    $(":input").inputmask();
-
-    };
-    init_InputMask();
-    </script>
 
 </body>
 </html>

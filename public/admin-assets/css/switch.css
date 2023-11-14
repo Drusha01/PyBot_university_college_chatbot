@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.radio-switch input[type=radio] {
+.checkbox-switch input[type=checkbox] {
   width: 0;
   height: 0;
   position: absolute;
@@ -12,21 +12,21 @@
   box-sizing: border-box;
 }
 
-.radio-switch {
+.checkbox-switch {
   margin: 0;
   padding: 0;
   border: 0;
   margin-bottom: 0.5rem;
 }
-.radio-switch:after {
+.checkbox-switch:after {
   content: "";
   display: table;
   clear: both;
 }
-.radio-switch .radio-right {
+.checkbox-switch .checkbox-right {
   float: right;
 }
-.radio-switch legend {
+.checkbox-switch legend {
   margin: 0;
   padding: 0;
   display: block;
@@ -35,15 +35,15 @@
   line-height: 0.9rem;
   margin-bottom: 0.5 rem;
 }
-.radio-switch legend.legend-left {
+.checkbox-switch legend.legend-left {
   margin: 0 0.5rem 0 0;
   float: left;
 }
-.radio-switch input[type=radio] + label {
+.checkbox-switch input[type=checkbox] + label {
   user-select: none;
   line-height: 0.9rem;
 }
-.radio-switch input[type=radio] + label:before {
+.checkbox-switch input[type=checkbox] + label:before {
   width: 2rem;
   height: 0.9rem;
   font-family: Arial, sans-serif;
@@ -62,26 +62,26 @@
   margin: auto 0;
 }
 @media screen and (min-width: 25rem) {
-  .radio-switch input[type=radio] + label:before {
+  .checkbox-switch input[type=checkbox] + label:before {
     margin-right: 0.5rem;
   }
 }
-.radio-switch input[type=radio] + label:after {
+.checkbox-switch input[type=checkbox] + label:after {
   display: none;
 }
 @media screen and (min-width: 25rem) {
-  .radio-switch input[type=radio] + label:after {
+  .checkbox-switch input[type=checkbox] + label:after {
     width: 1.75rem;
     display: inline-block;
   }
 }
-.radio-switch input[type=radio]:checked + label:before {
+.checkbox-switch input[type=checkbox]:checked + label:before {
   border-color: #767676;
   background: #767676;
   text-align: right;
   color: white;
 }
-.radio-switch input[type=radio] + label:active:before, .radio-switch input[type=radio]:checked + label:active:before {
+.checkbox-switch input[type=checkbox] + label:active:before, .checkbox-switch input[type=checkbox]:checked + label:active:before {
   border-color: rgba(163, 164, 165, 0.3411764706);
   background: rgba(163, 164, 165, 0.3411764706);
   color: white;
@@ -116,6 +116,7 @@ fieldset legend {
 
 a {
   text-decoration: none;
+  font-size: smaller;
   font-weight: 500;
   color: inherit;
   transition: all 0.1s cubic-bezier(0, 1.1, 0, 1.38);
@@ -134,4 +135,4 @@ small.cretits {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/*# sourceMappingURL=radio-switch.css.map */
+/*# sourceMappingURL=switch.css.map */

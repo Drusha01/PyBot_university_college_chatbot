@@ -2,7 +2,7 @@
 @import url("padding-margin.css");
 @import url("width-height.css");
 @import url("display-spacing.css");
-@import url("radio-switch.css");
+@import url("switch.css");
 @import url("accordion.css");
 
 
@@ -496,7 +496,7 @@ border: 1px solid #3e557f !important; }
     box-shadow: 0 3px 9px 8px rgba(0, 0, 0, 0.05) !important;
 }
 #v-tabs-tabContent {
-  padding-top: 35px;
+  padding-top: 15px;
   box-shadow: 19px 9px 20px 0px rgba(0,0,0,0.2);
 }
 .bg-primary {
@@ -588,7 +588,9 @@ a.sub-menu.nav-item.active.nav-link:hover {
 
 
 /* Scrollbar OVERFLOW Y */
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
+    position: relative;
+    z-index: 1;
     width: 5px;
   }
   ::-webkit-scrollbar-thumb {
@@ -597,7 +599,7 @@ a.sub-menu.nav-item.active.nav-link:hover {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   }
   ::-webkit-scrollbar-track {
-    background-color: rgb(229 229 229 / 11%);
+    background-color: rgb(229 229 229 / 0%);
   }
 
   /* Buttons */
@@ -626,6 +628,8 @@ a.sub-menu.nav-item.active.nav-link:hover {
 
   /* Scrollbar OVERFLOW X */
   ::-webkit-scrollbar {
+    position: relative;
+    z-index: 1;
     width: 6px;
     height: 6px;
   }
@@ -637,7 +641,7 @@ a.sub-menu.nav-item.active.nav-link:hover {
   }
 
   ::-webkit-scrollbar-track {
-    background-color: rgb(229 229 229 / 11%);
+    background-color: rgb(229 229 229 / 0%);
   }
 
   /* Buttons */
@@ -1320,3 +1324,28 @@ ul.com li .com_wrapper blockquote {
 .bi-search::before {
   font-size: 15px !important;
 }
+/* Tablets - 768px */
+@media (max-width: 768px) {
+  .nav-tabs.nav-tabs-vertical-custom{
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+/* Phones - 480px */
+@media (max-width: 480px) {
+  .nav-tabs.nav-tabs-vertical-custom {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden; 
+  }
+}
+

@@ -34,10 +34,10 @@
 
 
                 <!-- Add Admin Button (Opens Add Modal) -->
-                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
+                <button class="btn btn-primary float-right mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add Admin</button>
                 <!-- Admin Table -->
                 <div class="table-responsive">
-                    <table id="example1" class="display responsive nowrap" style="min-width:100%">
+                    <table id="example1" class="table table-hover table-bordered" style="min-width:100%">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Username</th>
@@ -55,7 +55,7 @@
                                 <td>admin1@example.com</td>
                                 <td>Administrator</td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#editAdminModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
@@ -65,7 +65,7 @@
                                 <td>admin2@example.com</td>
                                 <td>Administrator</td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal">Edit</button>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#editAdminModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add Admin</button>
+                        <button type="button" class="btn btn-success">Add Admin</button>
                     </div>
                 </div>
             </div>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-success">Save Changes</button>
                     </div>
                 </div>
             </div>
@@ -197,10 +197,10 @@
         <div class="tab-pane fade" id="user-management-tab">
             <div class="container-fluid">
                 <!-- Add user Button (Opens Add user Modal) -->
-                <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
+                <button class="btn btn-primary float-right mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
                 <!-- User Table -->
                 <div class="table-responsive">
-                    <table id="example2" class="display responsive nowrap" style="min-width:100%">
+                    <table id="example2" class="table table-hover table-bordered" style="min-width:100%">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Username</th>
@@ -220,7 +220,7 @@
                                 <td>Applicant</td>
                                 <td>Active</td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#editUserModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
@@ -231,7 +231,7 @@
                                 <td>Applicant</td>
                                 <td>Inactive</td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editUserModal">Edit</button>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#editUserModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
@@ -295,7 +295,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add User</button>
+                        <button type="button" class="btn btn-success">Add User</button>
                     </div>
                 </div>
             </div>
@@ -353,7 +353,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-success">Save Changes</button>
                     </div>
                 </div>
             </div>
@@ -368,7 +368,7 @@
 
                 <!-- Role Table -->
                 <div class="table-responsive mt-30">
-                    <table id="example3" class="display responsive nowrap" style="min-width:100%">
+                    <table id="example3" class="table table-hover table-bordered" style="min-width:100%">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Username</th>
@@ -386,7 +386,7 @@
                                 <td>Full access</td>
                                 <td>Edit, Delete, Create</td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editRoleModal">Edit</button>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#editRoleModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
@@ -396,7 +396,7 @@
                                 <td>Modify content</td>
                                 <td>Edit, Create</td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editRoleModal">Edit</button>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#editRoleModal">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
@@ -440,7 +440,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-success">Save Changes</button>
                     </div>
                 </div>
             </div>

@@ -17,14 +17,14 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-md-5 col-12">
+                <div class="col-md-5 col-12 mb-2">
                     <div class="box dash-chat" id="chat-bx">
                         <div class="box-body p-0">
                             <!-- Recent Chats -->
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="messages" role="tabpanel">
                                     <div class="row mb-2">
-                                        <div class="col-11">
+                                        <div class="col-10 pr-0">
                                             <div class="bg-light rounded search-bar">
                                                 <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -34,7 +34,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="dropdown">
+                                        <div class="col-2 dropdown">
                                             <div class="navbar-nav navbar-nav-right">
                                                 <div class="nav-item dropdown">
                                                     <a href="#" class="nav-link" data-bs-toggle="collapse" href="#filterDropdown" role="button" aria-expanded="false" aria-controls="filterDropdown">
@@ -76,8 +76,8 @@
                                             </div>
                                         </div>
                                     </div> 
-                                    <div class="scrollbar-y chat-box-six2 custminh-500 cqh-31">
-                                        <ul class="nav nav-tabs nav-tabs-vertical-custom nav-justified" role="tablist">
+                                    <div class="scrollbar-y chat-box-six2 cqh-24 overflow-x-hidden">
+                                        <ul class="nav nav-tabs nav-tabs-vertical nav-justified" role="tablist">
                                             <li class="nav-item"> 
                                                 <a class="nav-link fade show p-0" data-toggle="tab" href="#first" role="tab">
                                                     <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
@@ -137,8 +137,8 @@
                                 </div>
 
                                 <div class="box-body">
-                                    <div class="d-flex justify-content-center align-items-center text-muted scrollbar-y chat-box-six custminh-350 cqh-31">
-                                        <div class="row text-center">
+                                    <div class="d-flex justify-content-center align-items-center text-muted scrollbar-y chat-box-six cqh-24">
+                                        <div class="row text-center px-2">
                                             <h3 class="col-12 text-secondary">Open a Message</h3>
                                             <p class="col-12">To open, click from the Chat List you want to view message.</p>
                                         </div>
@@ -167,7 +167,7 @@
                                 </div>
 
                                 <div class="box-body">
-                                    <div class="scrollbar-y chat-box-six custminh-350 cqh-31">
+                                    <div class="scrollbar-y chat-box-six cqh-24">
                                         <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                             <div>
                                                 <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
@@ -185,7 +185,7 @@
 
                                         <div class="rt-bx mb-30 d-flex align-items-start w-p100">
                                             <div>
-                                                <a class="ms-15 status-success avatar avatar-lg" href="#"><img class="bg-danger-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-2.png') }}" alt="..."></a>
+                                                <a class="ms-15 status-success avatar avatar-lg" href="#"><img class="bg-danger-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-3.png') }}" alt="..."></a>
                                             </div>
                                             <div>
                                                 <div class="chat-comment d-table max-w-p70 bg-light mb-15 px-15 py-10 rounded10 bter-0">
@@ -220,7 +220,7 @@
                                             </div>
                                             <div>
                                                 <div class="chat-comment box-shadowed d-table max-w-p70 bg-primary mb-15 px-15 py-10 rounded10 btsr-0">
-                                                    <p class="mb-0 p-2">Hi, are you there?</p>
+                                                    <p class="mb-0 p-2">is there new product arrived?</p>
                                                 </div>
                                                 <p class="text-muted mb-15">2 minutes ago</p>
                                             </div>
@@ -251,7 +251,7 @@
                                 </div>
 
                                 <div class="box-body">
-                                    <div class="scrollbar-y chat-box-six custminh-350 cqh-31">
+                                    <div class="scrollbar-y chat-box-six cqh-24">
                                         <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                             <div>
                                                 <a class="me-15 status-success avatar avatar-lg" href="#"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-2.png') }}" alt="..."></a>
@@ -260,7 +260,21 @@
                                                 <div class="chat-comment box-shadowed d-table max-w-p70 bg-primary mb-15 px-15 py-10 rounded10 btsr-0">
                                                     <p class="mb-0 p-2">Hello There!</p>
                                                 </div>
-                                                <p class="text-muted mb-15">one minute ago</p>
+                                                <div class="chat-comment box-shadowed d-table max-w-p70 bg-primary mb-15 px-15 py-10 rounded10 btsr-0">
+                                                    <p class="mb-0 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                                <p class="text-muted mb-15">1 minute ago</p>
+                                            </div>
+                                        </div>
+                                        <div class="rt-bx mb-30 d-flex align-items-start w-p100">
+                                            <div>
+                                                <a class="ms-15 status-success avatar avatar-lg" href="#"><img class="bg-danger-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-3.png') }}" alt="..."></a>
+                                            </div>
+                                            <div>
+                                                <div class="chat-comment d-table max-w-p70 bg-light mb-15 px-15 py-10 rounded10 bter-0">
+                                                    <p class="mb-0 p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <p class="text-muted mb-15">2 minutes ago</p>
                                             </div>
                                         </div>
 

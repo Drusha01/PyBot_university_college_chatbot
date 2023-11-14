@@ -34,11 +34,11 @@
             <div class="tab-pane fade show active " id="admin-management-tab">
                 <div class="container-fluid">
                     <!-- Add Admin Button (Opens Add Modal) -->
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>
+                    <button class="btn btn-primary float-right mt-2 mb-2" data-toggle="modal" data-target="#adminAddModal">Add College</button>
 
                     <!-- Admin Table -->
                     <div class="table-responsive">
-                        <table id="example1" class="display responsive nowrap" style="min-width:100%">
+                        <table id="example1" class="table table-hover table-bordered" style="min-width:100%">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>College Name</th>
@@ -52,9 +52,9 @@
                                     <td>CCS</td>
                                     <td>College of Computing Studies</td>
                                     <td>
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#editAdminModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
-                                        <button class="btn btn-info" onclick="window.location.href='ccs'"><i class="bi bi-eye-fill"></i></button>
+                                        <button class="btn btn-secondary" onclick="window.location.href='ccs'"><i class="bi bi-eye-fill"></i></button>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
@@ -91,7 +91,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Add College</button>
+                            <button type="button" class="btn btn-success">Add College</button>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save Changes</button>
+                            <button type="button" class="btn btn-success">Save Changes</button>
                         </div>
                     </div>
                 </div>
@@ -138,10 +138,10 @@
             <div class="tab-pane fade" id="user-management-tab">
                 <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddModal">Add Q&A</button>
+                    <button class="btn btn-primary float-right mt-2 mb-2" data-toggle="modal" data-target="#AddModal">Add Q&A</button>
                     <!-- User Table -->
                     <div class="table-responsive">
-                        <table id="example2" class="display responsive nowrap" style="width:100%">
+                        <table id="example2" class="table table-hover table-bordered" style="min-width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -172,7 +172,7 @@
                                     @endforeach
                                     </td>
                                     <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
@@ -185,145 +185,146 @@
                     <!-- End User Table -->
                 </div>
                             <!-- Add Q AND A modal -->
-            <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="addModalLabel">Add</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body cqh-30">
-                            <form>
-                                <div class="form-group-row">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="addquestion">Question/s</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-                                            </div>
-                                            <div id="add-container"></div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="addresponse">Responses</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-                                            </div>
-                                            <div id="add-container2"></div>
-                                        </div>
-                                        <div class="col-md-12 d-flex justify-content-center mb-3">
-                                            <button id="add_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="addtag" class="">Tag</label>
-                                                <input type="text" id="addtag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="d-grid gap-3">
-                                                <label class="form-label">For</label>
-                                                <div class="col d-inline-flex"> 
-                                                    <div class="col-2">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" value="CS"> CS
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- End Add Admin  -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Add</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body cqh-30">
-                        <form>
-                            <div class="form-group-row">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="editquestion">Question/s</label>
-                                            <textarea class="form-control form-control-sm" rows="3" id="editquestion" name="editquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-                                        </div>
-                                        <div id="edit-container"></div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="editresponse">Responses</label>
-                                            <textarea class="form-control form-control-sm" rows="3" id="editresponse" name="editresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-                                        </div>
-                                        <div id="edit-container2"></div>
-                                    </div>
-                                    <div class="col-md-12 d-flex justify-content-center mb-3">
-                                        <button id="edit_data" class="btn btn-success btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="edittag" class="">Tag</label>
-                                            <input type="text" id="edittag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="d-grid gap-3">
-                                            <label class="form-label">For</label>
-                                            <div class="col d-inline-flex"> 
-                                                <div class="col-2">
-                                                    <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                                    </label>
-                                                </div>
-                                                <div class="col-2">
-                                                    <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" value="CS"> CS
-                                                    </label>
-                                                </div>
-                                                <div class="col-2">
-                                                    <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="modal modal-xl fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addModalLabel">Add</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                        </form>
-                        <!-- End Add Admin  -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Edit</button>
+                            <div class="modal-body cqh-30">
+                                <form>
+                                    <div class="form-group-row">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addquestion">Question/s</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="addquestion" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                                </div>
+                                                <div id="add-container"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addresponse">Responses</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="addresponse" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                                </div>
+                                                <div id="add-container2"></div>
+                                            </div>
+                                            <div class="col-md-12 d-flex justify-content-center mb-3">
+                                                <button id="add_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addtag" class="">Tag</label>
+                                                    <input type="text" id="addtag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="d-grid gap-3">
+                                                    <label class="form-label">For</label>
+                                                    <div class="col d-inline-flex"> 
+                                                        <div class="col-2">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="CS"> CS
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End Add Admin  -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Add</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="modal modal-xl fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body cqh-30">
+                                <form>
+                                    <div class="form-group-row">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="editquestion">Question/s</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="editquestion" name="editquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                                </div>
+                                                <div id="edit-container"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="editresponse">Responses</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="editresponse" name="editresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                                </div>
+                                                <div id="edit-container2"></div>
+                                            </div>
+                                            <div class="col-md-12 d-flex justify-content-center mb-3">
+                                                <button id="edit_data" class="btn btn-success btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="edittag" class="">Tag</label>
+                                                    <input type="text" id="edittag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="d-grid gap-3">
+                                                    <label class="form-label">For</label>
+                                                    <div class="col d-inline-flex"> 
+                                                        <div class="col-2">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="CS"> CS
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End Add Admin  -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -332,10 +333,10 @@
             <!-- CSC ----------------------------------------------------------------------------------------------------- tab -->
             <div class="tab-pane fade" id="csc-management-tab">
                 <div class="container-fluid">
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#AddCSC">Add Q&A</button>
+                    <button class="btn btn-primary float-right mt-2 mb-2" data-toggle="modal" data-target="#AddCSC">Add Q&A</button>
                     <!-- Role Table -->
                     <div class="table-responsive">
-                        <table id="example3" class="display responsive nowrap" style="width:100%">
+                        <table id="example3" class="table table-hover table-bordered" style="min-width:100%">
                         <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -366,7 +367,7 @@
                                     @endforeach
                                     </td>
                                     <td class="text-center">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#editCSCModal"><i class='bx bxs-edit'></i></button>
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#editCSCModal"><i class='bx bxs-edit'></i></button>
                                         <button class="btn btn-danger"><i class='bx bxs-trash'></i></button>
                                     </td>
                                 </tr>
@@ -378,113 +379,107 @@
                     </div>
                 </div>
                             <!-- TBD add Modal -->
-            <div class="modal fade" id="AddCSC" tabindex="-1" role="dialog" aria-labelledby="addRoleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="addRoleModalLabel">Add</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body cqh-30">
-                            <form>
-                                <div class="form-group-row">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="cscquestion">Question/s</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="cscquestion" name="cscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                <div class="modal fade" id="AddCSC" tabindex="-1" role="dialog" aria-labelledby="addRoleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addRoleModalLabel">Add</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body cqh-30">
+                                <form>
+                                    <div class="form-group-row">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="cscquestion">Question/s</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="cscquestion" name="cscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                                </div>
+                                                <div id="tbd-container"></div>
                                             </div>
-                                            <div id="tbd-container"></div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="cscresponse">Responses</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="cscresponse" name="cscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="cscresponse">Responses</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="cscresponse" name="cscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                                </div>
+                                                <div id="tbd-container2"></div>
                                             </div>
-                                            <div id="tbd-container2"></div>
-                                        </div>
-                                        <div class="col-md-12 d-flex justify-content-center mb-3">
-                                            <button id="csc_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                            <button id="removecsc_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="addtag2" class="">Tag</label>
-                                                <input type="text" id="addtag2" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                            <div class="col-md-12 d-flex justify-content-center mb-3">
+                                                <button id="csc_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
+                                                <button id="removecsc_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addtag2" class="">Tag</label>
+                                                    <input type="text" id="addtag2" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                            <!-- End Add Admin  -->
+                                </form>
+                                <!-- End Add Admin  -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Save Changes</button>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+                
+                <!-- TBD edit Modal -->
+                <div class="modal fade" id="editCSCModal" tabindex="-1" role="dialog" aria-labelledby="editRoleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editRoleModalLabel">Edit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body cqh-30">
+                                <form>
+                                    <div class="form-group-row">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="editcscquestion">Question/s</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="editcscquestion" name="editcscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                                </div>
+                                                <div id="edittbd-container"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="editcscresponse">Responses</label>
+                                                    <textarea class="form-control form-control-sm" rows="3" id="editcscresponse" name="editcscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                                </div>
+                                                <div id="edittbd-container2"></div>
+                                            </div>
+                                            <div class="col-md-12 d-flex justify-content-center mb-3">
+                                                <button id="editcsc_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
+                                                <button id="editremovecsc_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="edittag2" class="">Tag</label>
+                                                    <input type="text" id="edittag2" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End Add Admin  -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Save Changes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- TBD edit Modal -->
-            <div class="modal fade" id="editCSCModal" tabindex="-1" role="dialog" aria-labelledby="editRoleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editRoleModalLabel">Edit</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body cqh-30">
-                            <form>
-                                <div class="form-group-row">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="editcscquestion">Question/s</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="editcscquestion" name="editcscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
-                                            </div>
-                                            <div id="edittbd-container"></div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="editcscresponse">Responses</label>
-                                                <textarea class="form-control form-control-sm" rows="3" id="editcscresponse" name="editcscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
-                                            </div>
-                                            <div id="edittbd-container2"></div>
-                                        </div>
-                                        <div class="col-md-12 d-flex justify-content-center mb-3">
-                                            <button id="editcsc_data" class="btn btn-success  btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
-                                            <button id="editremovecsc_data" class="btn btn-secondary btn-icon float-right"  type="button"><i class="bi bi-dash-lg"></i></button>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="edittag2" class="">Tag</label>
-                                                <input type="text" id="edittag2" class="form-control" value="General, Informational, Specific" data-role="tagsinput"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- End Add Admin  -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save Changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-
-
-
-
-
             <!-- End Add User Modal -->
 
             <!-- End Edit User Modal -->

@@ -39,7 +39,7 @@
                     <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create New Intents</button>
                         <!-- Admin Table -->
                         <div class="table-responsive">
-                            <table id="example1" class="display responsive nowrap" style="width:100%" cellspacing="0">
+                            <table id="example1" class="table table-hover table-bordered" style="width:100%">
                                 <thead class="thead-dark">
                                     <tr>
                                         @foreach ($intent_data_filter as $item => $value)
@@ -91,7 +91,7 @@
                     <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
                         <!-- Admin Table -->
                         <div class="table-responsive">
-                            <table id="example2" class="display responsive nowrap" style="width:100%" cellspacing="0">
+                            <table id="example2" class="table table-hover table-bordered" style="width:100%">
                                 <thead class="thead-dark">
                                     <tr>
                                     @foreach ($model_list_filter as $item => $value)
@@ -147,7 +147,9 @@
                     <button class="btn btn-danger float-right mt-2 mb-2 mx-1" wire:click="end_deployment()" >End</button>
                         <!-- Admin Table -->
                         <div class="table-responsive">
+                            <hr>
                             <div class="text-center"> Currently deployed: {{$selected_model}} </div>
+                            <hr>
                         </div>
                         <!-- End Admin Table -->
                     </div>

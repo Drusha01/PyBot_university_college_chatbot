@@ -1,113 +1,90 @@
 $num: 0;
-@for $num from 0 through 800 {
-  .custw-#{$num} {
-    width: #{$num}px !important;
-  }
-  .custminw-#{$num} {
-    min-width: #{$num}px !important;
-  }
-  .custmaxw-#{$num} {
-    max-width: #{$num}px !important;
-  }
-  .custh-#{$num} {
-    height: #{$num}px !important;
-  }
-  .custminh-#{$num} {
-    min-height: #{$num}px !important;
-  }
-  .custmaxh-#{$num} {
-    max-height: #{$num}px !important;
-  }
-
-}
-
-$container_width: 15px; // Adjust this to your container's width
-$container_height: 15px; // Adjust this to your container's height
 $min_cqw: 1; // Minimum value for cqw
 $max_cqw: 100; // Maximum value for cqw
 $min_cqh: 1; // Minimum value for cqh
 $max_cqh: 100; // Maximum value for cqh
 
-@for $num from $min_cqw through $max_cqw {
-  .cqw-#{$num} {
-    width: calc(#{$num} * #{$container_width}) !important;
-  }
-}
-
-@for $num from $min_cqh through $max_cqh {
-  .cqh-#{$num} {
-    height: calc(#{$num} * #{$container_height}) !important;
-  }
-}
-
 // Dynamic media queries
-$mobile_width: 16.5px;
-$mobile_height: 16.5px;
+$mobile_minwidth: 17.5px;
+$mobile_maxwidth: 17.5px;
+$mobile_minheight: 17.5px;
+$mobile_maxheight: 17.5px;
 
-$tablets_width: 20px;
-$tablets_height: 20px;
+$tablets_minwidth: 28px;
+$tablets_maxwidth: 28px;
+$tablets_minheight: 28px;
+$tablets_maxheight: 28px;
 
-$laptop_width: 9.5px;
-$laptop_height: 9.5px;
+$laptop_minwidth: 9.5px;
+$laptop_maxwidth: 14.5px;
+$laptop_minheight: 9.5px;
+$laptop_maxheight: 14.5px;
 
-$desktop_width: 14px;
-$desktop_height: 14px;
+$desktop_minwidth: 24.5px;
+$desktop_maxwidth: 24.5px;
+$desktop_minheight: 24.5px;
+$desktop_maxheight: 24.5px;
 
-@media screen and (max-width: 1440px) and (max-height: 768px) {
+// Mobile 
+@media (max-width: 576px) and (min-height: 768px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
-      max-width: calc(#{$num} * #{$desktop_width}) !important;
+      min-width: calc(#{$num} * #{$mobile_minwidth}) !important;
+      max-width: calc(#{$num} * #{$mobile_maxwidth}) !important;
     }
   }
   @for $num from $min_cqh through $max_cqh {
     .cqh-#{$num} {
-      max-height: calc(#{$num} * #{$desktop_height}) !important;
+      min-height: calc(#{$num} * #{$mobile_minheight}) !important;
+      max-height: calc(#{$num} * #{$mobile_maxheight}) !important;
     }
   }
 }
-@media screen and (max-width: 1025px) and (max-height: 620px) {
+// Laptop 
+@media (min-width: 768px) and (min-height: 1024px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
-      max-width: calc(#{$num} * #{$laptop_width}) !important;
+      min-width: calc(#{$num} * #{$tablets_minwidth}) !important;
+      max-width: calc(#{$num} * #{$tablets_maxwidth}) !important;      
     }
   }
   @for $num from $min_cqh through $max_cqh {
     .cqh-#{$num} {
-      max-height: calc(#{$num} * #{$laptop_height}) !important;
+      min-height: calc(#{$num} * #{$tablets_minheight}) !important;
+      max-height: calc(#{$num} * #{$tablets_maxheight}) !important;
     }
   }
 }
-@media screen and (max-width: 768px) and (max-height: 1024px) {
+// Tablet 
+@media (min-width: 992px) and (min-height: 620px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
-      max-width: calc(#{$num} * #{$tablets_width}) !important;
+      min-width: calc(#{$num} * #{$laptop_minwidth}) !important;
+      max-width: calc(#{$num} * #{$laptop_maxwidth}) !important;
     }
   }
   @for $num from $min_cqh through $max_cqh {
     .cqh-#{$num} {
-      max-height: calc(#{$num} * #{$tablets_height}) !important;
+      min-height: calc(#{$num} * #{$laptop_minheight}) !important;
+      max-height: calc(#{$num} * #{$laptop_maxheight}) !important;
     }
   }
 }
-@media screen and (max-width: 480px) and (max-height: 800px) {
+// Desktop 
+@media (min-width: 1200px) and (min-height: 768px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
-      max-width: calc(#{$num} * #{$mobile_width}) !important;
+      min-width: calc(#{$num} * #{$desktop_minwidth}) !important;
+      max-width: calc(#{$num} * #{$desktop_maxwidth}) !important;
     }
   }
   @for $num from $min_cqh through $max_cqh {
     .cqh-#{$num} {
-      max-height: calc(#{$num} * #{$mobile_height}) !important;
+      min-height: calc(#{$num} * #{$desktop_minheight}) !important;
+      max-height: calc(#{$num} * #{$desktop_maxheight}) !important;
     }
   }
 }
-
-
-
-
-
-
-
 
 
 
