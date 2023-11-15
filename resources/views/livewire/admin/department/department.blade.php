@@ -31,8 +31,8 @@
             <div class="tab-pane fade @if($active == 'it') show active @endif " id="IT-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <button class="btn btn-primary float-right mt-2 mb-2" wire:click="add_q_and_a('IT')">Add IT Q&A</button>
-                        <table id="example1" class="table table-hover table-bordered" style="width:100%">
+                        <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('IT')">Add IT Q&A</button>
+                        <table id="example1" class="display responsive nowrap" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -85,8 +85,8 @@
             <div class="tab-pane fade @if($active == 'cs') show active @endif " id="CS-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <button class="btn btn-primary float-right mt-2 mb-2" wire:click="add_q_and_a('CS')">Add CS Q&A</button>
-                        <table id="example2" class="table table-hover table-bordered" style="width:100%">
+                        <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CS')">Add CS Q&A</button>
+                        <table id="example2" class="display responsive nowrap" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -137,8 +137,8 @@
             <div class="tab-pane fade @if($active == 'act') show active @endif " id="ACT-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <button class="btn btn-primary float-right mt-2 mb-2" wire:click="add_q_and_a('ACT')">Add ACT Q&A</button>
-                        <table id="example2" class="table table-hover table-bordered" style="width:100%">
+                        <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('ACT')">Add ACT Q&A</button>
+                        <table id="example2" class="display responsive nowrap" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>

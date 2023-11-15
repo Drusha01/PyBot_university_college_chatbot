@@ -1,5 +1,4 @@
 @section('title', 'Pybot | Colleges') <!-- Set the page title -->
-
 @section('colleges', 'active')
 
 <div>
