@@ -40,13 +40,7 @@
     <script src="{{ asset('admin-assets/js/custom.js') }}"></script>
 
     <!-- injects:css -->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
-
-    <!-- === Datatables === -->
-    <link href="{{ asset('admin-assets/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin-assets/vendor/datatables/css/responsive.dataTables.min.css') }}" rel="stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -237,12 +231,8 @@
     <script src="{{ asset('assets/js/chat.js') }}"></script>
     <script src="{{ asset('admin-assets/js/forms.js') }}"></script>
 
-    <script src="{{ asset('admin-assets/vendors/iCheck/icheck.min.js') }}"></script>
 	<script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
 
-    <script src="{{ asset('admin-assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
-    <!-- <script src="{{ asset('admin-assets/vendor/datatables/js/datatables.init.js') }}"></script> -->
 
 
 
