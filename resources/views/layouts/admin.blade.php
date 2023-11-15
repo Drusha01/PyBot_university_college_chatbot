@@ -63,11 +63,6 @@
             <div class="page-body-wrapper">
                 <!-- ======= Sidebar ======= -->
                 @livewire('components.sidebar.admin-sidebar')
-        @livewire('components.navigation.admin-navigation')
-            <div class="page-body-wrapper">
-                <!-- ======= Sidebar ======= -->
-                @livewire('components.sidebar.admin-sidebar')
-
 
             <!-- ========== Main Content ========== -->
             <div class="main-panel">
@@ -84,7 +79,7 @@
 
     @livewireScripts
     <script>
-         window.addEventListener('swal:message', event => {
+        window.addEventListener('swal:message', event => {
             Swal.fire({
                 position: event.detail.position,
                 icon: event.detail.icon,
@@ -198,8 +193,6 @@
                 window.close();
             });
         });
-
-        window.addEventListener('swal:remove_backdrop', event => {
 
         window.addEventListener('swal:remove_backdrop', event => {
             Swal.fire({
