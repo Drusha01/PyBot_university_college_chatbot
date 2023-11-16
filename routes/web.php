@@ -24,6 +24,7 @@ use App\Http\Livewire\Authentication\AccountInactive;
 // page
 use App\Http\Livewire\Page\Home\Home;
 use App\Http\Livewire\Page\profile\Profile;
+use App\Http\Livewire\Page\Chat\Chat;
 use App\Http\Livewire\Page\AboutUs\AboutUs;
 use App\Http\Livewire\Page\Academic\Academic;
 use App\Http\Livewire\Page\Admission\Admission;
@@ -80,6 +81,7 @@ Route::prefix('/')->group(function () {
     Route::get('/', Home::class)->name('page.home');
     Route::get('/AboutUs', AboutUs::class)->name('page.AboutUs');
     Route::get('/profile', Profile::class)->name('page.profile');
+    Route::get('/chat', Chat::class)->name('page.chat');
     Route::get('/academic', Academic::class)->name('page.academic');
     Route::get('/admission', admission::class)->name('page.admission');
     Route::get('/forums', Forums::class)->name('page.forums');

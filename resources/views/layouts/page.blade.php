@@ -31,6 +31,7 @@
         <link href="{{ asset('admin-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
         @livewireStyles
@@ -164,6 +165,11 @@
                 // alert(modal_id.detail)
                 $('#'+modal_id.detail).modal('toggle');
             }); 
+            window.addEventListener('chatScrollDown', function(div_id){
+            // alert(modal_id.detail)
+            // $('#'+div_id.detail).modal('toggle');
+            $('#'+div_id.detail).scrollTop($('#'+div_id.detail)[0].scrollHeight);
+        }); 
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>

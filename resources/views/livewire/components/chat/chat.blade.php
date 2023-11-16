@@ -12,6 +12,10 @@
       <figure class="avatar">
         <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" />
       </figure>
+      <!-- <select wire:model="chat_type" wire:change="update_chat_type" style="background-color:inherit;border-color:inherit; color:white;">
+        <option value="1">Pybot</option>
+        <option value="2">Chat</option>
+      </select> -->
       <span class="chat-box-toggle"><i class="bi bi-x"></i></span>
     </div>
     <div class="messages">
