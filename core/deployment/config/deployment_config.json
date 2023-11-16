@@ -3,8 +3,8 @@
     "threshold": 0.025,
     "iteration": 5,
     "run": 1,
-    "path_to_questions": "C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\\\deployment\\questions\\",
-    "path_to_answers": "C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\\\deployment\\answers\\",
-    "path": "C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\",
-    "model_folder": "model_v17"
+    "path_to_questions": "C:\\wamp\\www\\PyBot_university_college_chatbot\\core\\\\deployment\\questions\\",
+    "path_to_answers": "C:\\wamp\\www\\PyBot_university_college_chatbot\\core\\\\deployment\\answers\\",
+    "path": "C:\\wamp\\www\\PyBot_university_college_chatbot\\core\\",
+    "model_folder": "model_v19"
 }
