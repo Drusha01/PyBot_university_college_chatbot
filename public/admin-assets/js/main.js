@@ -56,53 +56,6 @@
     })
   }
 
-
-
-  /**
-   * /Datatables rendering
-   */
-
-  function initializeDataTable(tableId) {
-    var table = $(tableId).DataTable({
-      responsive: {
-        // Control responsive breakpoints
-        breakpoints: [
-            { name: 'desktop-large', width: Infinity },
-            { name: 'desktop', width: 1200 },
-            { name: 'tablet', width: 992 },
-            { name: 'phone-large', width: 768 },
-            { name: 'phone', width: 576 }
-        ],
-        // Set non-responsive columns (columns you want to be always visible)
-        details: {
-            type: 'column',
-            target: 'tr'
-        }
-
-      },
-      columnDefs: [
-          {
-              className: 'dtr-control',
-              orderable: false,
-              target: 0
-          }
-      ],                 //Disabled if False
-        info: true,           // Disable the "Showing X of Y entries" information
-        ordering: true,       // Disable column sorting
-        paging: true,         // Disable pagination (previous and next buttons)
-        lengthChange: false,   // Disable the "Show X entries" dropdown
-        searching: true,      // Disable the search bar
-        order: [1, 'desc'],
-    });
-
-  }
-    // Initialize DataTable for table with ID 'example'
-    initializeDataTable('#example');
-    initializeDataTable('#example1');
-    initializeDataTable('#example2');
-    initializeDataTable('#example3');
-
-
   /**
    * Navbar links active state on scroll
    */

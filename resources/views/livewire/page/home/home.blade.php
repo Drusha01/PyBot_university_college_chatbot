@@ -1,8 +1,4 @@
   <!-- ======= Top Navigation ======= -->
-
- 
-
-
 <div>
 <main id="home">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">

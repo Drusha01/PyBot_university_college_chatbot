@@ -31,6 +31,8 @@
     <!-- Tags Input -->
     <link rel="stylesheet" href="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css') }}"/>
     <script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css') }}"/>
+    <script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
 
     <!-- === Main JS === -->
     <script src="{{ asset('admin-assets/js/main.js') }}"></script>
@@ -62,7 +64,6 @@
                 <!-- ======= Sidebar ======= -->
                 @livewire('components.sidebar.admin-sidebar')
 
-
             <!-- ========== Main Content ========== -->
             <div class="main-panel">
                 <div class="content-wrapper" id="content">
@@ -78,7 +79,7 @@
 
     @livewireScripts
     <script>
-         window.addEventListener('swal:message', event => {
+        window.addEventListener('swal:message', event => {
             Swal.fire({
                 position: event.detail.position,
                 icon: event.detail.icon,
@@ -206,11 +207,22 @@
                     allowEscapeKey: false
                     })
 
+
                 .then(function() {
+                    $('div.modal-backdrop').remove();
                     $('div.modal-backdrop').remove();
                     window.location.href = `${event.detail.link}`
                 });
         });
+
+        window.addEventListener('openModal', function(modal_id){
+            // alert(modal_id.detail)
+            $('#'+modal_id.detail).modal('toggle');
+        }); 
+        window.addEventListener('closeModal', function(modal_id){
+            // alert(modal_id.detail)
+            $('#'+modal_id.detail).modal('toggle');
+        }); 
 
         window.addEventListener('openModal', function(modal_id){
             // alert(modal_id.detail)
