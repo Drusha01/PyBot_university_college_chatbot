@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>@yield('title', 'Pybot | Administrator')</title> <!-- Use the yield directive to set the title -->
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <link rel="shortcut icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
-  <link rel="icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>@yield('title', 'Pybot | Administrator')</title> <!-- Use the yield directive to set the title -->
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="shortcut icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -44,10 +44,6 @@
     <!-- injects:css -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
-
-    <!-- === Datatables === -->
-    <link href="{{ asset('admin-assets/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin-assets/vendor/datatables/css/responsive.dataTables.min.css') }}" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
