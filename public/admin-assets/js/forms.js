@@ -17,7 +17,7 @@
             <div class="new-entry">
                 <div class="form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>
-                    <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="addquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="addquestion[]"  placeholder="Type Question"></textarea>
                 </div>
             </div>
         `;
@@ -26,7 +26,7 @@
             <div class="new-entry">
                 <div class="form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>
-                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="addresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="addresponse[]"  placeholder="Type desire response.."></textarea>
                 </div>
             </div>
         `;
@@ -53,7 +53,7 @@
             <div class="new-entry">
                 <div class="form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>
-                    <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="editquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="editquestion[]"  placeholder="Type Question"></textarea>
                 </div>
             </div>
         `;
@@ -62,7 +62,7 @@
             <div class="new-entry">
                 <div class "form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>   
-                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="editresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="editresponse[]"  placeholder="Type desire response.."></textarea>
                 </div>
             </div>
         `;
@@ -102,7 +102,7 @@
             <div class="new-entry">
                 <div class="form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>
-                    <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="cscquestion[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newQuestionId}" name="cscquestion[]"  placeholder="Type Question"></textarea>
                 </div>
             </div>
         `;
@@ -111,7 +111,7 @@
             <div class="new-entry">
                 <div class="form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>
-                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="cscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="cscresponse[]"  placeholder="Type desire response.."></textarea>
                 </div>
             </div>
         `;
@@ -150,7 +150,7 @@
             <div class="new-entry">
                 <div class="form-group">
                     <button class="btn btn-danger btn-rounded btn-icon remove-entry float-right" type="button"><i class="bi bi-x-lg"></i></button>
-                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="editcscresponse[]" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" id="${newResponseId}" name="editcscresponse[]"  placeholder="Type desire response.."></textarea>
                 </div>
             </div>
         `;

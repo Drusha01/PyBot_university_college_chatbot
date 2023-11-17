@@ -110,12 +110,6 @@
   }
 
   /**
-   * Perfect ScrollBar
-   */
-  new SimpleBar(document.querySelector('.scrollbar-y'));
-
-
-  /**
    * Sidebar-Icon-Only
    */
   $(document).ready(function () {
@@ -127,26 +121,57 @@
     // Handle sidebar toggle
     $('[data-toggle="offcanvas"]').on("click", function () {
       $('.sidebar-offcanvas').toggleClass('active');
+      // Add CSS class to main-panel after sidebar toggle
+      if ($('.sidebar-offcanvas').hasClass('active')) {
+        $('.main-panel').addClass('off-canvas');
+      } else {
+        $('.main-panel').removeClass('off-canvas');
+      }
     });
-
-    $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function (ev) {
+    
+    $(document).on('mouseenter mouseleave touchstart touchend', '.sidebar .nav-item', function (ev) {
       // Check if the body element has certain classes
       var sidebarIconOnly = body.hasClass("sidebar-icon-only");
       var sidebarFixed = body.hasClass("sidebar-fixed");
       var $menuItem = $(this);
 
+      function onLongPress(element, callback) {
+        var timeoutId;
+        
+        element.on('touchstart', function(e) {
+          timeoutId = setTimeout(function() {
+            timeoutId = null;
+            e.stopPropagation();
+            callback(e.target);
+          }, 500);
+        });
+      
+        element.on('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      
+        element.on('touchend touchmove', function() {
+          if (timeoutId) clearTimeout(timeoutId);
+        });
+      }      
+    
       if (!('ontouchstart' in document.documentElement) && sidebarIconOnly) {
         // If it's not a touch device and the sidebar is in icon-only mode
-        if (sidebarFixed && ev.type === 'mouseenter') {
-          // If the sidebar is fixed and the mouse enters the element
+        if (sidebarFixed && (ev.type === 'mouseenter' || ev.type === 'touchstart')) {
+          // If the sidebar is fixed and the mouse enters the element or touch starts
           body.removeClass('sidebar-icon-only');
         } else {
-          // Otherwise, toggle the 'hover-open' class based on mouseenter/mouseleave
-          $menuItem.toggleClass('hover-open', ev.type === 'mouseenter');
+          // Otherwise, toggle the 'hover-open' class based on mouseenter/mouseleave/touchstart
+          onLongPress($menuItem, function(element) {
+            element.toggleClass('hover-open', (ev.type === 'mouseenter' || ev.type === 'touchstart'));
+          });    
         }
       }
+      
     });
+    
 
+    
 
     // Toggle sidebar visibility
     $('[data-toggle="minimize"]').on("click", function () {

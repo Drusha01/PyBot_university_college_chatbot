@@ -29,7 +29,7 @@
                 <div class="container-fluid">
                     <div class="table-responsive">
                         <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('IT')">Add IT Q&A</button>
-                        <table id="example1" class="display responsive nowrap" style="width:100%">
+                        <table id="example1" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -83,7 +83,7 @@
                 <div class="container-fluid">
                     <div class="table-responsive">
                         <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CS')">Add CS Q&A</button>
-                        <table id="example2" class="display responsive nowrap" style="width:100%">
+                        <table id="example2" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -135,7 +135,7 @@
                 <div class="container-fluid">
                     <div class="table-responsive">
                         <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('ACT')">Add ACT Q&A</button>
-                        <table id="example2" class="display responsive nowrap" style="width:100%">
+                        <table id="example2" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
                             <thead class="thead-dark">
                                 <tr>
@@ -200,7 +200,7 @@
                                                 @foreach($q_and_a['questions'] as $key => $value)
                                                 <div class="form-group" >
                                                     <label for="editquestion">Question/s</label>
-                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
                                                 </div>
                                                 <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_question({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -211,7 +211,7 @@
                                                 @foreach($q_and_a['answers'] as $key => $value)
                                                     <div class="form-group" >
                                                         <label for="editresponse">Responses</label>
-                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -226,7 +226,7 @@
                                                     <input type="text" id="edittag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-9">
                                                 <div class="d-grid gap-3">
                                                     <label class="form-label">For</label>
                                                     <div class="col d-inline-flex"> 
@@ -248,7 +248,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="d-grid gap-3">
                                                     <label class="form-label">Target</label>
                                                     <select class="form-select" wire:model="q_and_a.target_type_id" id="" >
@@ -290,7 +290,7 @@
                                                 @foreach($q_and_a['questions'] as $key => $value)
                                                 <div class="form-group" >
                                                     <label for="editquestion">Question/s</label>
-                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type Question"></textarea>
+                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
                                                 </div>
                                                 <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_question({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -301,7 +301,7 @@
                                                 @foreach($q_and_a['answers'] as $key => $value)
                                                     <div class="form-group" >
                                                         <label for="editresponse">Responses</label>
-                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details" onkeyup="this.value = this.value.replace(/\b\w/g, function(l){ return l.toUpperCase(); })" placeholder="Type desire response.."></textarea>
+                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -316,7 +316,7 @@
                                                     <input type="text" id="edittag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-9">
                                                 <div class="d-grid gap-3">
                                                     <label class="form-label">For</label>
                                                     <div class="col d-inline-flex"> 
@@ -338,7 +338,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="d-grid gap-3">
                                                     <label class="form-label">Target</label>
                                                     <select class="form-select" wire:model="q_and_a.target_type_id" id="" >
