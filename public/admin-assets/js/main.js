@@ -171,7 +171,7 @@
     });
     
 
-    
+
 
     // Toggle sidebar visibility
     $('[data-toggle="minimize"]').on("click", function () {

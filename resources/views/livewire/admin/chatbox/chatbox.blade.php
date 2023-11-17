@@ -22,7 +22,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="messages" role="tabpanel">
                                         <div class="row mb-2">
-                                            <div class="col-10 pr-0">
+                                            <div class="col-9 pr-0">
                                                 <div class="bg-light rounded search-bar">
                                                     <div class="input-group">
                                                     <div class="input-group-prepend">
@@ -32,47 +32,36 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-2 dropdown">
-                                                <div class="navbar-nav navbar-nav-right">
+                                            <div class="col-3">
+                                                <div class="navbar-nav btn-group p-0">
                                                     <div class="nav-item dropdown">
-                                                        <a href="#" class="nav-link" data-bs-toggle="collapse" href="#filterDropdown" role="button" aria-expanded="false" aria-controls="filterDropdown">
-                                                            <i class="bi bi-funnel"></i>
+                                                    <a class="nav-link count-indicator btn btn-outline-light dropdown-toggle" id="filterDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bi bi-funnel"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="filterDropdown">
+                                                        <a class="dropdown-item filter-option" data-filter-category="all" tabindex="-1">
+                                                        <i class="bi bi-chat-square-text"></i>
+                                                        <span>All Chats</span>
                                                         </a>
-                                                    </div>
-                                                    <ul class="collapse" id="filterDropdown"class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="">
-                                                        <div>
-                                                            <a class="nav-link dropdown-item" data-target="#all-chats" tabindex="-1">
-                                                                <i class="bi bi-chat-square-text"></i>
-                                                                <span>All Chats</span>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <a class="nav-link dropdown-item" data-target="#active-contacts" tabindex="-1">
-                                                                <i class="bi bi-person-check"></i>
-                                                                <span>Active Contacts</span>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <a class="nav-link dropdown-item" data-target="#archived-chats">
-                                                                <i class="bi bi-archive"></i>
-                                                                <span>Archived Chats</span>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <a class="nav-link dropdown-item" data-target="#spam-messages" tabindex="-1">
-                                                                <i class="bi bi-bookmark-x"></i>
-                                                                <span>Spam Messages</span>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <a class="nav-link dropdown-item" data-target="#trash-bin" tabindex="-1">
-                                                                <i class="bi bi-trash3"></i>
-                                                                <span>Trash Bin</span>
-                                                            </a>
-                                                        </div>
-                                                    </ul><!-- .dropdown-menu -->
+                                                        <a class="dropdown-item filter-option" data-filter-category="active" tabindex="-1">
+                                                        <i class="bi bi-person-check"></i>
+                                                        <span>Active Contacts</span>
+                                                        </a>
+                                                        <a class="dropdown-item filter-option" data-filter-category="archived" tabindex="-1">
+                                                        <i class="bi bi-archive"></i>
+                                                        <span>Archived Chats</span>
+                                                        </a>
+                                                        <a class="dropdown-item filter-option" data-filter-category="spam" tabindex="-1">
+                                                        <i class="bi bi-bookmark-x"></i>
+                                                        <span>Spam Messages</span>
+                                                        </a>
+                                                        <a class="dropdown-item filter-option" data-filter-category="trash" tabindex="-1">
+                                                        <i class="bi bi-trash3"></i>
+                                                        <span>Trash Bin</span>
+                                                        </a>
+                                                    </div></div>
                                                 </div>
-                                            </div>
+                                                </div>
                                         </div> 
                                         <div class="scrollbar-y chat-box-six2 cqh-24 overflow-x-hidden">
                                             <ul class="nav nav-tabs nav-tabs-vertical nav-justified" role="tablist">
