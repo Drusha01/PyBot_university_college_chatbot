@@ -24,13 +24,7 @@
     <!-- === Datatables === -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script><!-- needed for toggles -->
 
-    <!-- Perfect ScrollBar -->
-    <link rel="stylesheet" href="https://unpkg.com/simplebar@6.2.5/dist/simplebar.css">
-    <script src="https://unpkg.com/simplebar@6.2.5/dist/simplebar.min.js"></script>
-
     <!-- Tags Input -->
-    <link rel="stylesheet" href="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css') }}"/>
-    <script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css') }}"/>
     <script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
 
@@ -39,10 +33,8 @@
     <script src="{{ asset('admin-assets/js/template.js') }}"></script>
     <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/custom.js') }}"></script>
 
     <!-- injects:css -->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -60,6 +52,7 @@
                 <!-- ======= Sidebar ======= -->
                 @livewire('components.sidebar.admin-sidebar')
 
+
             <!-- ========== Main Content ========== -->
             <div class="main-panel">
                 <div class="content-wrapper" id="content">
@@ -75,7 +68,7 @@
 
     @livewireScripts
     <script>
-        window.addEventListener('swal:message', event => {
+         window.addEventListener('swal:message', event => {
             Swal.fire({
                 position: event.detail.position,
                 icon: event.detail.icon,
@@ -203,22 +196,11 @@
                     allowEscapeKey: false
                     })
 
-
                 .then(function() {
-                    $('div.modal-backdrop').remove();
                     $('div.modal-backdrop').remove();
                     window.location.href = `${event.detail.link}`
                 });
         });
-
-        window.addEventListener('openModal', function(modal_id){
-            // alert(modal_id.detail)
-            $('#'+modal_id.detail).modal('toggle');
-        }); 
-        window.addEventListener('closeModal', function(modal_id){
-            // alert(modal_id.detail)
-            $('#'+modal_id.detail).modal('toggle');
-        }); 
 
         window.addEventListener('openModal', function(modal_id){
             // alert(modal_id.detail)
@@ -240,17 +222,10 @@
     <script src="{{ asset('admin-assets/js/template.js') }}"></script>
     <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="{{ asset('assets/js/chat.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/forms.js') }}"></script>
 
-    <script src="{{ asset('admin-assets/vendors/iCheck/icheck.min.js') }}"></script>
 	<script src="{{ asset('admin-assets/vendor/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js') }}"></script>
-
-    <script src="{{ asset('admin-assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/vendor/datatables/js/dataTables.responsive.min.js') }}"></script>
-    <!-- <script src="{{ asset('admin-assets/vendor/datatables/js/datatables.init.js') }}"></script> -->
 
 
 
