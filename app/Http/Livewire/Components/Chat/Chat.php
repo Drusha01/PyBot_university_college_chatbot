@@ -10,8 +10,13 @@ use Illuminate\Support\Facades\Storage;
 
 class Chat extends Component
 {
+    public $chat_type;
     public function render()
     {
         return view('livewire.components.chat.chat');
     }
+    public function update_chat_type(){
+    }
+
+
 }
