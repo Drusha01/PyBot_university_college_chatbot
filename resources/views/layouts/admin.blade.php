@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>@yield('title', 'Pybot | Administrator')</title> <!-- Use the yield directive to set the title -->
+     <title>{{ config('app.name', 'Laravel').' - '.$title }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link rel="shortcut icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
