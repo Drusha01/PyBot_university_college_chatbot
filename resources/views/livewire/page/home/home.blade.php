@@ -92,7 +92,7 @@
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
-          <img src="{{ ('img/faculty/go.png') }}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <img src="{{asset('assets/images/bg.png')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3>Dr. Roderick P. Go</h3>
           <h4>Dean</h4>
         </div><!-- /.col-lg-4 -->
