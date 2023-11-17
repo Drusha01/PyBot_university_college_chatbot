@@ -18,20 +18,20 @@
               <div class="row">
                   <ul class="nav nav-tabs nav-tabs-vertical-custom col-md-2 col-sm-12 pr-0" id="v-tabs-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                      <a class="nav-link rounded-left" id="v-tabs-general-tab" data-toggle="tab" href="#v-tabs-general" role="tab" aria-controls="v-tabs-general" aria-selected="false" wire:ignore.self>General</a>
+                      <a class="nav-link active rounded-left" id="v-tabs-general-tab" data-toggle="tab" href="#v-tabs-general" role="tab" aria-controls="v-tabs-general" aria-selected="false" wire:ignore.self>General</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <a class="nav-link active rounded-left" id="v-tabs-preference-tab" data-toggle="tab" href="#v-tabs-preference" role="tab" aria-controls="v-tabs-preference" aria-selected="true" wire:ignore.self>Preferences</a>
+                      <a class="nav-link  rounded-left" id="cms-tab" data-toggle="tab" href="#cms" role="tab" aria-controls="cms" aria-selected="true" wire:ignore.self>Content Management System</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <a class="nav-link rounded-left" id="v-tabs-account-tab" data-toggle="tab" href="#v-tabs-account" role="tab" aria-controls="v-tabs-account" aria-selected="false" wire:ignore.self>System Assets</a>
+                      <a class="nav-link rounded-left" id="system-assets-tab" data-toggle="tab" href="#system-assets" role="tab" aria-controls="system-assets" aria-selected="false" wire:ignore.self>System Assets</a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                       <a class="nav-link rounded-left" id="v-tabs-privacy-tab" data-toggle="tab" href="#v-tabs-privacy" role="tab" aria-controls="v-tabs-privacy" aria-selected="false" wire:ignore.self>Privacy</a>
-                    </li>
+                    </li> -->
                   </ul>
                   <div class="tab-content overflow-auto cqh-30 col-md-10 col-sm-12" id="v-tabs-tabContent">
-                    <div class="tab-pane fade" id="v-tabs-general" role="tabpanel" aria-labelledby="v-tabs-general-tab" tabindex="0">
+                    <div class="tab-pane fade" id="v-tabs-general" role="tabpanel" aria-labelledby="v-tabs-general-tab" tabindex="0" wire:ignore.self>
                       <div class="row">
                         <div class="col-12 ">
                           <details open>
@@ -105,59 +105,8 @@
                       </div>
                     </div>
 
-                    <div class="tab-pane fade show active" id="v-tabs-preference" role="tabpanel" aria-labelledby="v-tabs-preference-tab" tabindex="0">
+                    <div class="tab-pane fade show active" id="cms" role="tabpanel" aria-labelledby="cms-tab" tabindex="0" wire:ignore.self>
                       <div class="row">
-                        <div class="col-12 ">
-                          <details>
-                            <summary><h4 class="">Manage Details</h4></summary>
-                              <div class="content border-top">
-                                <form action="">
-                                  <div class="row">
-                                    <div class="col-12 mb-20">
-                                      <div class="row">
-                                        <div class="col-md-4 col-sm-12 mb-3">
-                                          <!-- Image preview -->
-                                          <img class="w-75" id="logoPreview" src="{{ asset('admin-assets\media\defaults\default-image.png') }}" alt="System Logo">
-                                        </div>
-                                        <div class="col-md-8 col-sm-12">
-                                          <div class="row">
-                                            <div class="col-md-5">
-                                              <div class="col-md-12">
-                                                <div class="form-group">
-                                                  <label for="systemName">System Name:</label>
-                                                  <input class="form-control form-control-sm" id="systemName" type="text">
-                                                </div>
-                                              </div>
-                                              <div class="col-md-12">
-                                                <div class="form-group">
-                                                  <label for="systemLogo">System Logo:</label> 
-                                                  <input class="form-control form-control-sm form-control-file" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, document.getElementById('logoPreview'))">
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                              <div class="col-md-12">
-                                                <div class="form-group">
-                                                  <label for="systemEmail">Email:</label>
-                                                  <input class="form-control form-control-sm" id="systemEmail" type="email">
-                                                </div>
-                                              </div>
-                                              <div class="col-md-12">
-                                                <div class="form-group">
-                                                  <label for="systemContact">Contact:</label>
-                                                  <input class="form-control form-control-sm" id="systemContact" type="text">
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                          </details>
-                        </div>
                         <div class="col-12">
                           <details open>
                             <summary><h4 class="">Page Assets</h4></summary>
@@ -1158,7 +1107,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade" id="v-tabs-account" role="tabpanel" aria-labelledby="v-tabs-acoount-tab" tabindex="0">
+                    <div class="tab-pane fade" id="system-assets" role="tabpanel" aria-labelledby="system-assets" tabindex="0" wire:ignore.self>
                       <div class="row">
                         <div class="col-12 ">
                           <details open>
@@ -1174,7 +1123,7 @@
                                         </div>
                                         <div class="col-md-8 col-sm-12">
                                           <div class="row">
-                                            <div class="col-md-5">
+                                            <div class="col-md-6">
                                               <div class="col-md-12">
                                                 <div class="form-group">
                                                   <label for="systemName">System Name:</label>
@@ -1188,21 +1137,12 @@
                                                 </div>
                                               </div>
                                             </div>
-                                            <div class="col-md-5">
-                                              <div class="col-md-12">
-                                                <div class="form-group">
-                                                  <label for="systemEmail">Email:</label>
-                                                  <input class="form-control form-control-sm" id="systemEmail" type="email">
-                                                </div>
-                                              </div>
-                                              <div class="col-md-12">
-                                                <div class="form-group">
-                                                  <label for="systemContact">Contact:</label>
-                                                  <input class="form-control form-control-sm" id="systemContact" type="text">
-                                                </div>
-                                              </div>
-                                            </div>
+                                           
                                           </div>
+                                          <br>
+                                            <div class="col-md-1 sticky-bottom">
+                                              <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#modifyModalPhoto">Edit</button>
+                                            </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1213,7 +1153,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade" id="v-tabs-privacy" role="tabpanel" aria-labelledby="v-tabs-privacy-tab" tabindex="0">
+                    <div class="tab-pane fade" id="v-tabs-privacy" role="tabpanel" aria-labelledby="v-tabs-privacy-tab" tabindex="0" wire:ignore.self>
                       <div class="row">
                         <div class="col-12 ">
                           <details open>
