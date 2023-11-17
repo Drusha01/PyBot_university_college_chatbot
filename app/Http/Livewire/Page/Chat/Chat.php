@@ -34,6 +34,7 @@ class Chat extends Component
                 'chat_box_user_receiver' => $this->chat_box->chat_box_user_receiver,
                 'chat_box_sender_isread' => $this->chat_box->chat_box_sender_isread,
                 'chat_box_receiver_isread' => $this->chat_box->chat_box_receiver_isread,
+                'chat_box_cbc_id' => $this->chat_box->chat_box_cbc_id,
             ];
     
             if($this->chat_box){
@@ -75,6 +76,14 @@ class Chat extends Component
                             'cbc_chat_content_type_id' => 1,
                             'cbc_chat_content' => $this->chat_content_details,
                     ]);
+                    $last_chat_content = DB::table('chat_box_contents')
+                        ->orderBy('cbc_id','desc')
+                        ->first();
+                    DB::table('chat_box')
+                        ->where('chat_box_user_sender','=',$this->user_details['user_id'])
+                        ->update([
+                            'chat_box_cbc_id' => $last_chat_content->cbc_id
+                        ]);
                     $this->chat_content_details= null;
                 }else{
                     $this->dispatchBrowserEvent('swal:redirect',[
@@ -100,6 +109,7 @@ class Chat extends Component
                     'chat_box_user_receiver' => 0,
                     'chat_box_sender_isread' => 0,
                     'chat_box_receiver_isread' => 0,
+                    'chat_box_cbc_id' => 0,
                 ]);
             
             $this->chat_box = DB::table('chat_box')
@@ -114,6 +124,7 @@ class Chat extends Component
                 'chat_box_user_receiver' => $this->chat_box->chat_box_user_receiver,
                 'chat_box_sender_isread' => $this->chat_box->chat_box_sender_isread,
                 'chat_box_receiver_isread' => $this->chat_box->chat_box_receiver_isread,
+                'chat_box_cbc_id' => $this->chat_box->chat_box_cbc_id,
             ];
     
        
@@ -127,6 +138,14 @@ class Chat extends Component
                             'cbc_chat_content_type_id' => 1,
                             'cbc_chat_content' => $this->chat_content_details,
                     ]);
+                    $last_chat_content = DB::table('chat_box_contents')
+                        ->orderBy('cbc_id','desc')
+                        ->first();
+                    DB::table('chat_box')
+                        ->where('chat_box_user_sender','=',$this->user_details['user_id'])
+                        ->update([
+                            'chat_box_cbc_id' => $last_chat_content->cbc_id
+                        ]);
                     $this->chat_content_details= null;
                 }else{
                     $this->dispatchBrowserEvent('swal:redirect',[

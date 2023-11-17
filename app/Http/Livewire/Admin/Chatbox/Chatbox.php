@@ -24,7 +24,7 @@ class Chatbox extends Component
     }
     public function update_data(){
   
-        $this->chat_box_list =DB::table('chat_box_contents as cbc')
+        $this->chat_box_list =DB::table('chat_box as cb')
             ->select(
                 // '*',
                 'cbc_user_id',
@@ -37,10 +37,9 @@ class Chatbox extends Component
                 'cbc.cbc_chat_box_id',
                 DB::raw('TIME_FORMAT(cbc.date_created, "%h:%i %p") as date_created')
                 )
+            ->join('chat_box_contents as cbc','cbc.cbc_id','cb.chat_box_cbc_id')
             ->join('users as u','u.user_id','cbc_user_id')
-            // ->join('chat_box as cb','cb.chat_box_id','cbc_chat_box_id')
-            ->groupBy('cbc_chat_box_id')
-            ->orderBy('cbc.date_created','desc')
+            ->orderBy('cb.date_updated','desc')
             ->get()
             ->toArray();
 
@@ -61,6 +60,7 @@ class Chatbox extends Component
             'user_lastname' => NULL,
             'user_firstname' => NULL,
             'user_profile_picture' => NULL,
+            
         ];
 
         $this->chat_content = [];
@@ -138,6 +138,14 @@ class Chatbox extends Component
                             'cbc_chat_content_type_id' => 1,
                             'cbc_chat_content' => $this->chat_content_details,
                     ]);
+                    $last_chat_content = DB::table('chat_box_contents')
+                        ->orderBy('cbc_id','desc')
+                        ->first();
+                    DB::table('chat_box')
+                        ->where('chat_box_user_sender','=',$this->user_details['user_id'])
+                        ->update([
+                            'chat_box_cbc_id' => $last_chat_content->cbc_id
+                        ]);
                     $this->chat_content_details= null;
                 }else{
                     $this->dispatchBrowserEvent('swal:redirect',[

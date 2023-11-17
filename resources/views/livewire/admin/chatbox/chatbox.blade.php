@@ -174,8 +174,8 @@
                                                 @if($value->cbc_user_id != $chat_box['chat_box_user_sender'])
                                                 <div class="rt-bx mb-30 d-flex align-items-start w-p100">
                                                     <div>
-                                                        <div class="chat-comment d-table max-w-p70 bg-primary mr-50 mb-15 px-15 py-10 rounded10 bter-0">
-                                                            <p class="mb-0 p-2">{{$value->cbc_chat_content}}</p>
+                                                        <div class="chat-comment d-table max-w-p70 bg-primary mr-50 mb-15 px-15 py-10 rounded10 bter-0" >
+                                                            <p class="mb-0 p-2 " >{{$value->cbc_chat_content}}</p>
                                                         </div>
 
                                                     </div>
@@ -184,7 +184,7 @@
                                                 <div class="lt-bx mb-30 d-flex align-items-start w-p100">
                                                     <div>
                                                         <div class="chat-comment d-table max-w-p70 bg-light  ml-50 mb-15 px-15 py-10 rounded10 bter-0">
-                                                            <p class="mb-0 p-2">{{$value->cbc_chat_content}}</p>
+                                                            <p class="mb-0 p-2 text-wrap">{{$value->cbc_chat_content}}</p>
                                                         </div>
                                                         
                                                     </div>
