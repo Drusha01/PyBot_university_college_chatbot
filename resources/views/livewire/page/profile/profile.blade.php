@@ -11,7 +11,7 @@
             <!-- Left Column -->
             <div class="col-lg-4">
                 <div class="user-profile-left text-center">
-                <div class="rounded-circle border-dark p-3" style="background-color: lightgray; display: inline-block;">
+                <div class="rounded border-dark p-3" style="background-color: lightgray; display: inline-block;">
                 @if($user_details['user_profile_picture'] == 'default.png')
                     <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 150px; height: 150px;">
                 @else
