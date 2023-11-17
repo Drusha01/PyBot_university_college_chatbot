@@ -135,7 +135,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group">
                                                 <label for="systemLogo">System Logo:</label> 
-                                                <input class="form-control form-control-sm" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, document.getElementById('logoPreview'))">
+                                                <input class="form-control form-control-sm form-control-file" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, document.getElementById('logoPreview'))">
                                               </div>
                                             </div>
                                           </div>
@@ -231,11 +231,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="homeSectionContent">Title:</label>
-                                              <input type="text" class="form-control" id="homeSectionContent" placeholder="Enter Title for the Home section">
+                                              <input type="text" class="form-control form-control-sm" id="homeSectionContent" placeholder="Enter Title for the Home section">
                                             </div>
                                             <div class="form-group">
                                               <label for="homeSectionContent">Content:</label>
-                                              <input type="text" class="form-control" id="homeSectionContent" placeholder="Enter content for the Home section">
+                                              <input type="text" class="form-control form-control-sm" id="homeSectionContent" placeholder="Enter content for the Home section">
                                             </div>
                                             <!--   add more form fields here   -->
 
@@ -263,11 +263,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="editHomeSectionContent">Title:</label>
-                                              <input type="text" class="form-control" id="editHomeSectionContent" value="Current content goes here">
+                                              <input type="text" class="form-control form-control-sm" id="editHomeSectionContent" value="Current content goes here">
                                             </div>
                                             <div class="form-group">
                                               <label for="editHomeSectionContent">Content:</label>
-                                              <input type="text" class="form-control" id="editHomeSectionContent" value="Current content goes here">
+                                              <input type="text" class="form-control form-control-sm" id="editHomeSectionContent" value="Current content goes here">
                                             </div>
                                             <!--  add more form fields -->
 
@@ -344,11 +344,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="aboutUsContent">Title:</label>
-                                              <textarea class="form-control" id="aboutUsContent"  placeholder="Enter Title"></textarea>
+                                              <textarea class="form-control form-control-sm" id="aboutUsContent"  placeholder="Enter Title"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="aboutUsContent">Content:</label>
-                                              <textarea class="form-control" id="aboutUsContent"  placeholder="Enter content"></textarea>
+                                              <textarea class="form-control form-control-sm" id="aboutUsContent"  placeholder="Enter content"></textarea>
                                             </div>
                                             <!--  add more form fields  -->
 
@@ -375,11 +375,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="editAboutUsContent">Title:</label>
-                                              <textarea class="form-control" id="editAboutUsContent"  placeholder="Edit content for About Us section"></textarea>
+                                              <textarea class="form-control form-control-sm" id="editAboutUsContent"  placeholder="Edit content for About Us section"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="editAboutUsContent">Content:</label>
-                                              <textarea class="form-control" id="editAboutUsContent"  placeholder="Edit content for About Us section"></textarea>
+                                              <textarea class="form-control form-control-sm" id="editAboutUsContent"  placeholder="Edit content for About Us section"></textarea>
                                             </div>
                                             <!--  add more form fields for editing as needed -->
 
@@ -459,15 +459,15 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="academicTitle">Title:</label>
-                                              <input type="text" class="form-control" id="academicTitle" placeholder="Enter title for Academic section">
+                                              <input type="text" class="form-control form-control-sm" id="academicTitle" placeholder="Enter title for Academic section">
                                             </div>
                                             <div class="form-group">
                                               <label for="academicContent">Content:</label>
-                                              <textarea class="form-control" id="academicContent" placeholder="Enter content for Academic section"></textarea>
+                                              <textarea class="form-control form-control-sm" id="academicContent" placeholder="Enter content for Academic section"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="academicButton">Button:</label>
-                                              <input type="text" class="form-control" id="academicButton" placeholder="Enter text for button">
+                                              <input type="text" class="form-control form-control-sm" id="academicButton" placeholder="Enter text for button">
                                             </div>
                                             <!-- Add more form fields as needed -->
                                             <button type="submit" class="btn btn-success">Save</button>
@@ -498,15 +498,15 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="academicTitle">Title:</label>
-                                              <input type="text" class="form-control" id="academicTitle" placeholder="Enter title for Academic section">
+                                              <input type="text" class="form-control form-control-sm" id="academicTitle" placeholder="Enter title for Academic section">
                                             </div>
                                             <div class="form-group">
                                               <label for="academicContent">Content:</label>
-                                              <textarea class="form-control" id="academicContent" placeholder="Enter content for Academic section"></textarea>
+                                              <textarea class="form-control form-control-sm" id="academicContent" placeholder="Enter content for Academic section"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="academicButton">Button:</label>
-                                              <input type="text" class="form-control" id="academicButton" placeholder="Enter text for button">
+                                              <input type="text" class="form-control form-control-sm" id="academicButton" placeholder="Enter text for button">
                                             </div>
                                             <!-- Add more form fields for editing as needed -->
                                             <button type="submit" class="btn btn-success">Save Changes</button>
@@ -586,15 +586,15 @@
                                               </div>
                                               <div class="form-group">
                                                 <label for="academicTitle">Title:</label>
-                                                <input type="text" class="form-control" id="academicTitle" placeholder="Enter title for Academic section">
+                                                <input type="text" class="form-control form-control-sm" id="academicTitle" placeholder="Enter title for Academic section">
                                               </div>
                                               <div class="form-group">
                                                 <label for="academicContent">Content:</label>
-                                                <textarea class="form-control" id="academicContent" placeholder="Enter content for Academic section"></textarea>
+                                                <textarea class="form-control form-control-sm" id="academicContent" placeholder="Enter content for Academic section"></textarea>
                                               </div>
                                               <div class="form-group">
                                                 <label for="academicButton">Button:</label>
-                                                <input type="text" class="form-control" id="academicButton" placeholder="Enter text for button">
+                                                <input type="text" class="form-control form-control-sm" id="academicButton" placeholder="Enter text for button">
                                               </div>
                                             <!--  add more form fields  -->
 
@@ -625,15 +625,15 @@
                                               </div>
                                               <div class="form-group">
                                                 <label for="academicTitle">Title:</label>
-                                                <input type="text" class="form-control" id="academicTitle" placeholder="Enter title for Academic section">
+                                                <input type="text" class="form-control form-control-sm" id="academicTitle" placeholder="Enter title for Academic section">
                                               </div>
                                               <div class="form-group">
                                                 <label for="academicContent">Content:</label>
-                                                <textarea class="form-control" id="academicContent" placeholder="Enter content for Academic section"></textarea>
+                                                <textarea class="form-control form-control-sm" id="academicContent" placeholder="Enter content for Academic section"></textarea>
                                               </div>
                                               <div class="form-group">
                                                 <label for="academicButton">Button:</label>
-                                                <input type="text" class="form-control" id="academicButton" placeholder="Enter text for button">
+                                                <input type="text" class="form-control form-control-sm" id="academicButton" placeholder="Enter text for button">
                                               </div>
                                             <!--  add more form fields for editing as needed -->
 
@@ -711,11 +711,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="faqQuestion">Question:</label>
-                                              <input type="text" class="form-control" id="faqQuestion" placeholder="Enter question for FAQ/Forums">
+                                              <input type="text" class="form-control form-control-sm" id="faqQuestion" placeholder="Enter question for FAQ/Forums">
                                             </div>
                                             <div class="form-group">
                                               <label for="faqAnswer">Answer:</label>
-                                              <textarea class="form-control" id="faqAnswer" rows="4" placeholder="Enter answer for FAQ/Forums"></textarea>
+                                              <textarea class="form-control form-control-sm" id="faqAnswer" rows="4" placeholder="Enter answer for FAQ/Forums"></textarea>
                                             </div>
                                             <!-- Add more form fields as needed -->
 
@@ -743,11 +743,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="faqQuestion">Question:</label>
-                                              <input type="text" class="form-control" id="faqQuestion" placeholder="Enter question for FAQ/Forums">
+                                              <input type="text" class="form-control form-control-sm" id="faqQuestion" placeholder="Enter question for FAQ/Forums">
                                             </div>
                                             <div class="form-group">
                                               <label for="faqAnswer">Answer:</label>
-                                              <textarea class="form-control" id="faqAnswer" rows="4" placeholder="Enter answer for FAQ/Forums"></textarea>
+                                              <textarea class="form-control form-control-sm" id="faqAnswer" rows="4" placeholder="Enter answer for FAQ/Forums"></textarea>
                                             </div>
                                             <!--  add more form fields for editing as needed -->
 
@@ -821,15 +821,15 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="carouselTitle">Title:</label>
-                                              <input type="text" class="form-control" id="carouselTitle" placeholder="Enter title">
+                                              <input type="text" class="form-control form-control-sm" id="carouselTitle" placeholder="Enter title">
                                             </div>
                                             <div class="form-group">
                                               <label for="carouselDescription">Description:</label>
-                                              <textarea class="form-control" id="carouselDescription" rows="4" placeholder="Enter description"></textarea>
+                                              <textarea class="form-control form-control-sm" id="carouselDescription" rows="4" placeholder="Enter description"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="carouselImage">Image:</label>
-                                              <input type="file" class="form-control-file" id="carouselImage">
+                                              <input type="file" class="form-control form-control-sm form-control-file" id="carouselImage">
                                             </div>
                                             <!--  add more form fields as needed -->
 
@@ -856,15 +856,15 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="editCarouselTitle">Title:</label>
-                                              <input type="text" class="form-control" id="editCarouselTitle" placeholder="Edit title">
+                                              <input type="text" class="form-control form-control-sm" id="editCarouselTitle" placeholder="Edit title">
                                             </div>
                                             <div class="form-group">
                                               <label for="editCarouselDescription">Description:</label>
-                                              <textarea class="form-control" id="editCarouselDescription" rows="4" placeholder="Edit description"></textarea>
+                                              <textarea class="form-control form-control-sm" id="editCarouselDescription" rows="4" placeholder="Edit description"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="editCarouselImage">Image:</label>
-                                              <input type="file" class="form-control-file" id="editCarouselImage">
+                                              <input type="file" class="form-control form-control-sm form-control-file" id="editCarouselImage">
                                             </div>
                                             <!--  add more form fields for editing as needed -->
 
@@ -940,23 +940,23 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="addProgramsImage">Image:</label>
-                                              <input type="file" class="form-control" id="addProgramsImage">
+                                              <input type="file" class="form-control form-control-sm form-control-file" id="addProgramsImage">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsFullName">Full Name:</label>
-                                              <input type="text" class="form-control" id="addProgramsFullName" placeholder="Enter full name">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsFullName" placeholder="Enter full name">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsPosition">Position:</label>
-                                              <input type="text" class="form-control" id="addProgramsPosition" placeholder="Enter position">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsPosition" placeholder="Enter position">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsTitle">Title:</label>
-                                              <input type="text" class="form-control" id="addProgramsTitle" placeholder="Enter title">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsTitle" placeholder="Enter title">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsDescription">Description:</label>
-                                              <textarea class="form-control" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
+                                              <textarea class="form-control form-control-sm" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
                                             </div>
                                             <!--  add more form fields as needed -->
 
@@ -984,11 +984,11 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="editProgramsTitle">Title:</label>
-                                              <input type="text" class="form-control" id="editProgramsTitle" placeholder="Edit title">
+                                              <input type="text" class="form-control form-control-sm" id="editProgramsTitle" placeholder="Edit title">
                                             </div>
                                             <div class="form-group">
                                               <label for="editProgramsDescription">Description:</label>
-                                              <textarea class="form-control" id="editProgramsDescription" rows="4" placeholder="Edit description"></textarea>
+                                              <textarea class="form-control form-control-sm" id="editProgramsDescription" rows="4" placeholder="Edit description"></textarea>
                                             </div>
                                             <!--  add more form fields for editing as needed -->
 
@@ -1062,23 +1062,23 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="addProgramsImage">Image:</label>
-                                              <input type="file" class="form-control" id="addProgramsImage">
+                                              <input type="file" class="form-control form-control-sm form-control-file" id="addProgramsImage">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsFullName">Full Name:</label>
-                                              <input type="text" class="form-control" id="addProgramsFullName" placeholder="Enter full name">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsFullName" placeholder="Enter full name">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsPosition">Position:</label>
-                                              <input type="text" class="form-control" id="addProgramsPosition" placeholder="Enter position">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsPosition" placeholder="Enter position">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsTitle">Title:</label>
-                                              <input type="text" class="form-control" id="addProgramsTitle" placeholder="Enter title">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsTitle" placeholder="Enter title">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsDescription">Description:</label>
-                                              <textarea class="form-control" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
+                                              <textarea class="form-control form-control-sm" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
                                             </div>
                                             <!--  add more form fields for adding as needed -->
 
@@ -1105,23 +1105,23 @@
                                           <form>
                                             <div class="form-group">
                                               <label for="addProgramsImage">Image:</label>
-                                              <input type="file" class="form-control" id="addProgramsImage">
+                                              <input type="file" class="form-control form-control-sm form-control-file" id="addProgramsImage">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsFullName">Full Name:</label>
-                                              <input type="text" class="form-control" id="addProgramsFullName" placeholder="Enter full name">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsFullName" placeholder="Enter full name">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsPosition">Position:</label>
-                                              <input type="text" class="form-control" id="addProgramsPosition" placeholder="Enter position">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsPosition" placeholder="Enter position">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsTitle">Title:</label>
-                                              <input type="text" class="form-control" id="addProgramsTitle" placeholder="Enter title">
+                                              <input type="text" class="form-control form-control-sm" id="addProgramsTitle" placeholder="Enter title">
                                             </div>
                                             <div class="form-group">
                                               <label for="addProgramsDescription">Description:</label>
-                                              <textarea class="form-control" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
+                                              <textarea class="form-control form-control-sm" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
                                             </div>
                                             <!--  add more form fields for editing as needed -->
 
@@ -1188,7 +1188,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group">
                                                 <label for="systemLogo">System Logo:</label> 
-                                                <input class="form-control form-control-sm" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, document.getElementById('logoPreview'))">
+                                                <input class="form-control form-control-sm form-control-file" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, document.getElementById('logoPreview'))">
                                               </div>
                                             </div>
                                           </div>
@@ -1243,7 +1243,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group">
                                                 <label for="systemLogo">System Logo:</label> 
-                                                <input class="form-control form-control-sm" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, document.getElementById('logoPreview'))">
+                                                <input class="form-control form-control-sm form-control-file" id="systemLogo" type="file" accept="image/*" onchange="previewImage(this, 'logoPreview')">
                                               </div>
                                             </div>
                                           </div>
@@ -1280,6 +1280,20 @@
     </section>
     <!-- /.content -->      
   </div>
+  <script>
+    function previewImage(input, previewId) {
+      var imgPreview = document.getElementById(previewId);
+      
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+          imgPreview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
 </main><!-- End #main -->
 </div>

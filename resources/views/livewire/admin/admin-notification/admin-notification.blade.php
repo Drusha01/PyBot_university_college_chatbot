@@ -25,7 +25,7 @@
           <div class="px-20">
             <div class="row mt-4">
               <div class="card p-0">
-                <div class="card-header custom-bg-color">
+                <div class="card-header">
                     <div class="btn-group float-right">
                     <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Bulk Action
@@ -40,17 +40,25 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="display no wrap" style="width:100%">
+                        <table id="example" class="table table-hover searchable " style="width:100%">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th style="width:42px;"><input type="checkbox" id="check-all" /></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><input type="checkbox" class="row-check" /></td>
+                                    <td>Avail</td>
+                                    <td>Sali, Khay Abdilla has availed gym-use.</td>
+                                    <td>2023-09-18 14:25:57</td>
                                     <td>
-                                        <input type="checkbox">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#viewNotificationModal">View</button>
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteNotificationModal">Delete</button>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="row-check" /></td>
                                     <td>Avail</td>
                                     <td>Sali, Khay Abdilla has availed gym-use.</td>
                                     <td>2023-09-18 14:25:57</td>
@@ -112,4 +120,13 @@
             </div>
         </div>
     </div>
+    <script>
+        // THIS ADD CHECKBOX ALL TO TABLE
+        $(document).on('change', 'table thead [type="checkbox"]', function(e){
+        e && e.preventDefault();
+        var $table = $(e.target).closest('table'), $checked = $(e.target).is(':checked');
+        $('tbody [type="checkbox"]',$table).prop('checked', $checked);
+        $("#btn-del-reports").toggle();
+        });
+    </script>
 </div>

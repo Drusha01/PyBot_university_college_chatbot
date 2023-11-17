@@ -121,7 +121,7 @@
                     <form id="editUserForm">
                       <div class="form-group">
                         <label for="firstName">User Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                        <input type="text" class="form-control form-control-sm" id="firstName" placeholder="Enter First Name">
                       </div>
                       <!-- Add more form fields for editing user information as needed -->
                     </form>
@@ -146,11 +146,89 @@
                   <div class="modal-body">
                     <!-- Add form fields for editing the profile here -->
                     <form>
-                      <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                      <div class="row">
+                        <div class="col-12 mb-20">
+                          <div class="row">
+                            <div class="col-md-3 col-sm-12 mb-3">
+                              <div class="col-md-12">
+                                <!-- Image preview -->
+                                <img class="w-100" id="imgPreview" src="{{ asset('admin-assets\media\defaults\default-image.png') }}" alt="Profile Picture">
+                              </div>
+                              <div class="col-md-10 mt-25">
+                                <div class="form-group">
+                                  <label for="profile-pic">Profile Picture:</label> 
+                                  <input class="form-control form-control-sm form-control-file" id="profile-pic" type="file" accept="image/*" onchange="previewImage(this, 'imgPreview')">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <div class="row">
+                                    <div class="col-md-4">
+                                      <!-- First Name -->
+                                      <div class="form-group">
+                                        <label for="editFirstName">First Name</label>
+                                        <input type="text" class="form-control form-control-sm" id="editFirstName" placeholder="Enter First Name">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <!-- Middle Name -->
+                                      <div class="form-group">
+                                        <label for="editMiddleName">Middle Name</label>
+                                        <input type="text" class="form-control form-control-sm" id="editMiddleName" placeholder="Enter Middle Name">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <!-- Last Name -->
+                                      <div class="form-group">
+                                        <label for="editLastName">Last Name</label>
+                                        <input type="text" class="form-control form-control-sm" id="editLastName" placeholder="Enter Last Name">
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-md-12">
+                                  <div class="row">
+                                    <div class="col-md-5">
+                                      <!-- Contact Number -->
+                                      <div class="form-group">
+                                        <label for="editContactNumber">Contact Number</label>
+                                        <input type="text" class="form-control form-control-sm" id="editContactNumber" placeholder="Enter Contact Number">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <!-- Birthdate -->
+                                      <div class="form-group">
+                                        <label for="editBirthdate">Birthdate</label>
+                                        <input type="date" class="form-control form-control-sm form-date" id="editBirthdate" placeholder="Enter Birthdate">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <!-- Age -->
+                                      <div class="form-group">
+                                        <label for="editAge">Age</label>
+                                        <input type="text" class="form-control form-control-sm" id="editAge" placeholder="Enter Age">
+                                      </div>
+                                    </div>
+
+                                    <div class="col-md-4 mt-4">
+                                      <!-- Program -->
+                                      <div class="form-group">
+                                        <label for="editProgram">Program</label>
+                                        <select class="form-control form-control-sm form-select" id="" >
+                                          <option value="Computer Science">Computer Science</option>
+                                        </select>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <!-- Add more form fields for editing the profile as needed -->
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -175,15 +253,15 @@
                     <form>
                       <div class="form-group">
                         <label for="currentPassword">Current Password</label>
-                        <input type="password" class="form-control" id="currentPassword" placeholder="Enter Current Password">
+                        <input type="password" class="form-control form-control-sm" id="currentPassword" placeholder="Enter Current Password">
                       </div>
                       <div class="form-group">
                         <label for="newPassword">New Password</label>
-                        <input type="password" class="form-control" id="newPassword" placeholder="Enter New Password">
+                        <input type="password" class="form-control form-control-sm" id="newPassword" placeholder="Enter New Password">
                       </div>
                       <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm New Password">
+                        <input type="password" class="form-control form-control-sm" id="confirmPassword" placeholder="Confirm New Password">
                       </div>
                     </form>
                   </div>
@@ -194,12 +272,27 @@
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
 
+    <script>
+    function previewImage(input, previewId) {
+      var imgPreview = document.getElementById(previewId);
+      
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+          imgPreview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
 
   </main><!-- End #main -->
 </div>
