@@ -171,7 +171,7 @@
     });
     
 
-    
+
 
     // Toggle sidebar visibility
     $('[data-toggle="minimize"]').on("click", function () {
@@ -184,30 +184,61 @@
   });
 
   //tags input
-  function init_TagsInput() {
-
-    if (typeof $.fn.tagsInput !== 'undefined') {
-
-        $('#tags_1').tagsInput({
-            width: 'auto'
-        });
-
-    }
-    $("input").tagsinput('items')
-
-  };
+  function init_TagsInput(elementId) {
+    var tagElement = document.getElementById(elementId);
+    tagElement.tagsinput({
+        itemValue: 'value',
+        itemText: 'text',
+        typeahead: {
+            source: function(query) {
+                return $.getJSON('tag.json');
+            }
+        }
+    });
+  }
   init_TagsInput();
+
   /* INPUT MASK */
-
-  function init_InputMask() {
-
+  function init_InputMask(maskIds) {
     if (typeof ($.fn.inputmask) === 'undefined') { return; }
+    
+    if (!Array.isArray(maskIds)) {
+      maskIds = [maskIds]; // Convert single ID to an array
+    }
+    
     console.log('init_InputMask');
-
-    $(":input").inputmask();
-
+    
+    maskIds.forEach(function(maskId) {
+      var inputmask = document.getElementById(maskId);
+      if (inputmask) {
+        $(inputmask).inputmask();
+      }
+    });
   };
-  init_InputMask();
+
+  /* Initialize image preview */
+  function previewImage(input, previewId) {
+    var imgPreview = document.getElementById(previewId);
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          imgPreview.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        // If no file is chosen, set the image's src to the default
+        imgPreview.src = "{{ asset('admin-assets/media/defaults/default-image.png') }}";
+    }
+  }
+
+
+
+  // Attach event listeners 
+  document.addEventListener('DOMContentLoaded', function() {
+    previewImage();
+    init_InputMask();
+    init_TagsInput();
+  });
 
 
 })();

@@ -21,6 +21,7 @@ class CreateChatBoxTable extends Migration
             chat_box_user_receiver INT NOT NULL,
             chat_box_sender_isread BOOL DEFAULT 0,
             chat_box_receiver_isread BOOL DEFAULT 0,
+            chat_box_cbc_id INT NOT NULL,
             date_created DATETIME DEFAULT CURRENT_TIMESTAMP,
             date_updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         );');

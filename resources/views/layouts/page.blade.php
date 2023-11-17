@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="Chat Interface" content="PyBot">
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Laravel').' - '.$title }}</title>
         <!-- styled css -->
         <link rel="stylesheet" href="{{ asset('admin-assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/chat.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
         <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">

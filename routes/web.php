@@ -99,7 +99,7 @@ Route::get('/train_model_v0', [Python_executioner::class, 'train_model_v0'])->na
 
 
 
-// admmin
+// admin
 Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::class])->group(function () {
     Route::prefix('/admin')->group(function () {
         Route::get('/dashboard', Dashboard::class)->name('dashboard');

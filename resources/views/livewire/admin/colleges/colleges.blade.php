@@ -450,6 +450,14 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            // Initialize TagsInput for specific elements
+            init_TagsInput('#addtag');
+            init_TagsInput('#edittag'); 
+            init_TagsInput('#addtag2');
+            init_TagsInput('#edittag2');
+            init_TagsInput('#depttag');
+            init_TagsInput('#deptedittag');
+        </script>
     </main><!-- End #main -->
 </div>

@@ -25,32 +25,40 @@
           <div class="px-20">
             <div class="row mt-4">
               <div class="card p-0">
-                <div class="card-header custom-bg-color">
-                    <div class="btn-group float-right">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Bulk Action
-                      </button>
-                      <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Mark as Read</a>
-                          <a class="dropdown-item" href="#">Delete</a>
-                      </div>
-
-
-                    </div>
-                </div>
-                <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="display no wrap" style="width:100%">
-                            <thead>
+                        <table id="example" class="table table-hover searchable " style="width:100%">
+                            <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th style="width:42px;vertical-align:middle;"><input type="checkbox" id="check-all" /></th>
+                                    <th colspan="4">
+                                        <div class="btn-sm btn-group float-right p-0">
+                                            <div class="dropdown">
+                                                <button class="btn btn-outline-light dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Bulk Action
+                                                </button>
+
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="#">Mark as Read</a>
+                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><input type="checkbox" class="row-check" /></td>
+                                    <td>Avail</td>
+                                    <td>Sali, Khay Abdilla has availed gym-use.</td>
+                                    <td>2023-09-18 14:25:57</td>
                                     <td>
-                                        <input type="checkbox">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#viewNotificationModal">View</button>
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteNotificationModal">Delete</button>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="row-check" /></td>
                                     <td>Avail</td>
                                     <td>Sali, Khay Abdilla has availed gym-use.</td>
                                     <td>2023-09-18 14:25:57</td>
@@ -63,7 +71,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
               </div>
             </div>
           </div>
@@ -71,7 +78,7 @@
 
     <!-- View Notification Modal -->
     <div class="modal fade" id="viewNotificationModal" tabindex="-1" role="dialog" aria-labelledby="viewNotificationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="viewNotificationModalLabel">View Notification</h5>
@@ -94,7 +101,7 @@
 
     <!-- Delete Notification Modal -->
     <div class="modal fade" id="deleteNotificationModal" tabindex="-1" role="dialog" aria-labelledby="deleteNotificationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deleteNotificationModalLabel">Delete Notification</h5>
@@ -112,4 +119,13 @@
             </div>
         </div>
     </div>
+    <script>
+        // THIS ADD CHECKBOX ALL TO TABLE
+        $(document).on('change', 'table thead [type="checkbox"]', function(e){
+        e && e.preventDefault();
+        var $table = $(e.target).closest('table'), $checked = $(e.target).is(':checked');
+        $('tbody [type="checkbox"]',$table).prop('checked', $checked);
+        $("#btn-del-reports").toggle();
+        });
+    </script>
 </div>

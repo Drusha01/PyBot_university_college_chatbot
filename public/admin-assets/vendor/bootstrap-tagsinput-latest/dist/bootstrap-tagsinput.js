@@ -642,13 +642,7 @@
    */
   $(function() {
     $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
-    $('input[data-role=tagsinput]').tagsinput({
-      typeahead: {
-        source: function(query) {
-          return $.getJSON('tags.json');
-        }
-      }
-    });
+
     
   });
 

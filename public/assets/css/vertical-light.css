@@ -9014,32 +9014,79 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.2;
 }
 
-h1, .h1 {
-  font-size: 2.5rem;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-h2, .h2 {
+h1, .h1 {
   font-size: 2rem;
 }
 
-h3, .h3 {
+h2, .h2 {
   font-size: 1.75rem;
 }
 
-h4, .h4 {
+h3, .h3 {
   font-size: 1.5rem;
 }
 
-h5, .h5 {
+h4, .h4 {
   font-size: 1.25rem;
 }
 
-h6, .h6 {
+h5, .h5 {
   font-size: 1rem;
 }
 
+h6, .h6 {
+  font-size: 0.75rem;
+}
+
+/* Desktop - 1280px */
+@media (min-width: 1280px) {
+  h1 {font-size: 2.5rem;}  
+  h2 {font-size: 2rem;}
+  h3 {font-size: 1.75rem;}
+  h4 {font-size: 1.5rem;}
+  h5 {font-size: 1.25rem;}
+  h6 {font-size: 1rem;}
+}
+
+/* Laptop - 1024px */  
+@media (min-width: 1024px) {
+  h1 {font-size: 2rem;}
+  h2 {font-size: 1.75rem;}
+  h3 {font-size: 1.5rem;}
+  h4 {font-size: 1.25rem;}
+  h5 {font-size: 1.125rem;}
+  h6 {font-size: 1rem;}
+}
+
+/* Tablets - 768px */
+@media (min-width: 768px) {
+  h1 {font-size: 1.75rem;}
+  h2 {font-size: 1.5rem;}
+  h3 {font-size: 1.25rem;}
+  h4 {font-size: 1.125rem;}
+  h5 {font-size: 1rem;}
+  h6 {font-size: 0.875rem;}
+}  
+
+/* Phones - 480px */
+@media (min-width: 480px) {
+  h1 {font-size: 1.5rem;}
+  h2 {font-size: 1.25rem;}
+  h3 {font-size: 1.125rem;}
+  h4 {font-size: 1rem;}
+  h5 {font-size: 0.875rem;}
+  h6 {font-size: 0.75rem;}
+}
+
 .lead {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -15604,6 +15651,7 @@ a.close.disabled {
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
+  -webkit-text-stroke: 1.4px #0b4033;
 }
 
 @keyframes spinner-border {
@@ -19451,20 +19499,27 @@ p {
   line-height: 1.3rem;
 }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 h1, .h1 {
-  font-size: 3.125rem;
+  font-size: 2rem;
 }
 
 h2, .h2 {
-  font-size: 2.187rem;
+  font-size: 1.75rem;
 }
 
 h3, .h3 {
-  font-size: 1.525rem;
+  font-size: 1.5rem;
 }
 
 h4, .h4 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }
 
 h5, .h5 {
@@ -19472,7 +19527,47 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: .9375rem;
+  font-size: 0.75rem;
+}
+
+/* Desktop - 1280px */
+@media (min-width: 1280px) {
+  h1 {font-size: 2.5rem;}  
+  h2 {font-size: 2rem;}
+  h3 {font-size: 1.75rem;}
+  h4 {font-size: 1.5rem;}
+  h5 {font-size: 1.25rem;}
+  h6 {font-size: 1rem;}
+}
+
+/* Laptop - 1024px */  
+@media (min-width: 1024px) {
+  h1 {font-size: 2rem;}
+  h2 {font-size: 1.75rem;}
+  h3 {font-size: 1.5rem;}
+  h4 {font-size: 1.25rem;}
+  h5 {font-size: 1.125rem;}
+  h6 {font-size: 1rem;}
+}
+
+/* Tablets - 768px */
+@media (min-width: 768px) {
+  h1 {font-size: 1.75rem;}
+  h2 {font-size: 1.5rem;}
+  h3 {font-size: 1.25rem;}
+  h4 {font-size: 1.125rem;}
+  h5 {font-size: 1rem;}
+  h6 {font-size: 0.875rem;}
+}  
+
+/* Phones - 480px */
+@media (min-width: 480px) {
+  h1 {font-size: 1.5rem;}
+  h2 {font-size: 1.25rem;}
+  h3 {font-size: 1.125rem;}
+  h4 {font-size: 1rem;}
+  h5 {font-size: 0.875rem;}
+  h6 {font-size: 0.75rem;}
 }
 
 .display-1 {
@@ -22592,8 +22687,8 @@ code {
   border-right: 0;
   border-left: 0;
   border-bottom: 0;
-  font: normal normal normal 24px/1 "themify";
-  content: "\e64b";
+  font: normal normal normal 24px/1 "bootstrap-icons";
+  content: "\F229";
   width: auto;
   height: auto;
   vertical-align: middle;

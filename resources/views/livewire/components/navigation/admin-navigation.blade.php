@@ -56,9 +56,9 @@
                         <div>
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
                                 <div class="d-flex">
-                                    <img src="{{ asset('admin-assets\media\avatar\6.jpg') }}" alt="profile"/>
+                                <img style="border-radius:50%;"src="@if($user_details['user_profile_picture']== 'default.png'){{ asset('admin-assets/media/avatar/5.jpg')}} @else {{asset('storage/images/thumbnail/'.$user_details['user_profile_picture'])}} @endif" width="40" alt="">
                                     <div class="text-center my-auto">
-                                        <h6 class="font-weight-normal px-2 mb-0">Admin Pybot</h6>
+                                        <h6 class="font-weight-normal px-2 mb-0">{{$user_details['user_firstname'].' '.$user_details['user_lastname']}}</h6>
                                     </div>
                                     <div class=""><i class="fs-10 bi bi-chevron-down"></i></div>
                                 </div>
@@ -66,6 +66,9 @@
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                                 <a class="dropdown-item" href="{{route ('admin-profile') }}">
                                     Profile
+                                </a>
+                                <a class="dropdown-item" href="{{route ('chatbox') }}">
+                                    Chat
                                 </a>
                                 <a class="dropdown-item" href="{{route ('setting')}}">
                                     Settings
