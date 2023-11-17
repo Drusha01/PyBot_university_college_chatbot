@@ -25,25 +25,25 @@
           <div class="px-20">
             <div class="row mt-4">
               <div class="card p-0">
-                <div class="card-header">
-                    <div class="btn-group float-right">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Bulk Action
-                      </button>
-                      <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Mark as Read</a>
-                          <a class="dropdown-item" href="#">Delete</a>
-                      </div>
-
-
-                    </div>
-                </div>
-                <div class="card-body">
                     <div class="table-responsive">
                         <table id="example" class="table table-hover searchable " style="width:100%">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr>
-                                    <th style="width:42px;"><input type="checkbox" id="check-all" /></th>
+                                    <th style="width:42px;vertical-align:middle;"><input type="checkbox" id="check-all" /></th>
+                                    <th colspan="4">
+                                        <div class="btn-sm btn-group float-right p-0">
+                                            <div class="dropdown">
+                                                <button class="btn btn-outline-light dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Bulk Action
+                                                </button>
+
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="#">Mark as Read</a>
+                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,7 +71,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
               </div>
             </div>
           </div>
@@ -79,7 +78,7 @@
 
     <!-- View Notification Modal -->
     <div class="modal fade" id="viewNotificationModal" tabindex="-1" role="dialog" aria-labelledby="viewNotificationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="viewNotificationModalLabel">View Notification</h5>
@@ -102,7 +101,7 @@
 
     <!-- Delete Notification Modal -->
     <div class="modal fade" id="deleteNotificationModal" tabindex="-1" role="dialog" aria-labelledby="deleteNotificationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deleteNotificationModalLabel">Delete Notification</h5>

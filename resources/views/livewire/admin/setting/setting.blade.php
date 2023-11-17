@@ -219,7 +219,7 @@
                                   </div>                                  
                                   <!-- Add Home Modal -->
                                   <div class="modal fade" id="addHomeModal" tabindex="-1" role="dialog" aria-labelledby="addHomeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="addHomeModalLabel">Add Home Section</h5>
@@ -251,7 +251,7 @@
 
                                   <!-- Edit Home Modal -->
                                   <div class="modal fade" id="editHomeModal" tabindex="-1" role="dialog" aria-labelledby="editHomeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editHomeModalLabel">Edit Home Section</h5>
@@ -283,7 +283,7 @@
 
                                   <!-- Delete Home Modal -->
                                   <div class="modal fade" id="deleteHomeModal" tabindex="-1" role="dialog" aria-labelledby="deleteHomeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteHomeModalLabel">Confirm Deletion</h5>
@@ -332,7 +332,7 @@
                                   </div>
                                   <!-- Add About Us Modal -->
                                   <div class="modal fade" id="addAboutUsModal" tabindex="-1" role="dialog" aria-labelledby="addAboutUsModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="addAboutUsModalLabel">Add About Us Section</h5>
@@ -363,7 +363,7 @@
                                   </div>
                                   <!-- Edit About Us Modal -->
                                   <div class="modal fade" id="editAboutUsModal" tabindex="-1" role="dialog" aria-labelledby="editAboutUsModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editAboutUsModalLabel">Edit About Us Section</h5>
@@ -394,7 +394,7 @@
                                   </div>
                                   <!-- Delete About Us Modal -->
                                   <div class="modal fade" id="deleteAboutUsModal" tabindex="-1" role="dialog" aria-labelledby="deleteAboutUsModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteAboutUsModalLabel">Confirm Deletion</h5>
@@ -443,7 +443,7 @@
                                   </div>
                                     <!-- Add Academic Modal -->
                                   <div class="modal fade" id="addAcademicModal" tabindex="-1" role="dialog" aria-labelledby="addAcademicModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="addAcademicModalLabel">Add Academic Section</h5>
@@ -482,7 +482,7 @@
 
                                   <!-- Edit Academic Modal -->
                                   <div class="modal fade" id="editAcademicModal" tabindex="-1" role="dialog" aria-labelledby="editAcademicModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editAcademicModalLabel">Edit Academic Section</h5>
@@ -521,7 +521,7 @@
 
                                   <!-- Delete Academic Modal -->
                                   <div class="modal fade" id="deleteAcademicModal" tabindex="-1" role="dialog" aria-labelledby="deleteAcademicModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteAcademicModalLabel">Confirm Deletion</h5>
@@ -570,7 +570,7 @@
                                   </div>
                                   <!-- Add Admission Modal -->
                                   <div class="modal fade" id="addAdmissionModal" tabindex="-1" role="dialog" aria-labelledby="addAdmissionModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="addAdmissionModalLabel">Add Admission Section</h5>
@@ -609,7 +609,7 @@
                                   </div>
                                   <!-- Edit Admission Modal -->
                                   <div class="modal fade" id="editAdmissionModal" tabindex="-1" role="dialog" aria-labelledby="editAdmissionModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editAdmissionModalLabel">Edit Admission Section</h5>
@@ -648,7 +648,7 @@
                                   </div>
                                   <!-- Delete Admission Modal -->
                                   <div class="modal fade" id="deleteAdmissionModal" tabindex="-1" role="dialog" aria-labelledby="deleteAdmissionModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                         <div class modal-content>
                                           <div class="modal-header">
                                             <h5 class="modal-title" id="deleteAdmissionModalLabel">Confirm Deletion</h5>
@@ -731,7 +731,7 @@
 
                                   <!-- Edit FAQ Modal -->
                                   <div class="modal fade" id="editFAQModal" tabindex="-1" role="dialog" aria-labelledby="editFAQModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editFAQModalLabel">Edit FAQ/Forums Section</h5>
@@ -762,7 +762,7 @@
                                   </div>
                                   <!-- Delete FAQ Modal -->
                                   <div class="modal fade" id="deleteFAQModal" tabindex="-1" role="dialog" aria-labelledby="deleteFAQModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteFAQModalLabel">Confirm Deletion</h5>
@@ -844,7 +844,7 @@
                                   </div>
                                   <!-- Edit Carousel Modal -->
                                   <div class="modal fade" id="editCarouselModal" tabindex="-1" role="dialog" aria-labelledby="editCarouselModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editCarouselModalLabel">Edit Carousel Section</h5>
@@ -879,7 +879,7 @@
                                   </div>
                                   <!-- Delete Carousel Modal -->
                                   <div class="modal fade" id="deleteCarouselModal" tabindex="-1" role="dialog" aria-labelledby="deleteCarouselModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteCarouselModalLabel">Confirm Deletion</h5>
@@ -928,7 +928,7 @@
                                     </div>
                                   <!-- Add Programs Modal -->
                                   <div class="modal fade" id="addProgramsModal" tabindex="-1" role="dialog" aria-labelledby="addProgramsModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="addProgramsModalLabel">Add Programs Section</h5>
@@ -972,7 +972,7 @@
 
                                   <!-- Edit Programs Modal -->
                                   <div class="modal fade" id="editProgramsModal" tabindex="-1" role="dialog" aria-labelledby="editProgramsModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editProgramsModalLabel">Edit Programs Section</h5>
@@ -1003,7 +1003,7 @@
                                   </div>
                                   <!-- Delete Programs Modal -->
                                   <div class="modal fade" id="deleteProgramsModal" tabindex="-1" role="dialog" aria-labelledby="deleteProgramsModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteProgramsModalLabel">Confirm Deletion</h5>
@@ -1050,7 +1050,7 @@
                                   </div>
                                   <!-- Add Faculty Modal -->
                                   <div class="modal fade" id="addFacultyModal" tabindex="-1" role="dialog" aria-labelledby="addFacultyModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="addFacultyModalLabel">Add Faculty and Staff Section</h5>
@@ -1093,7 +1093,7 @@
                                   </div>
                                   <!-- Edit Faculty Modal -->
                                   <div class="modal fade" id="editFacultyModal" tabindex="-1" role="dialog" aria-labelledby="editFacultyModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="editFacultyModalLabel">Edit Faculty and Staff Section</h5>
@@ -1136,7 +1136,7 @@
                                   </div>
                                   <!-- Delete Faculty Modal -->
                                   <div class="modal fade" id="deleteFacultyModal" tabindex="-1" role="dialog" aria-labelledby="deleteFacultyModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="deleteFacultyModalLabel">Confirm Deletion</h5>
