@@ -7,6 +7,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- styled css -->
         <link rel="stylesheet" href="{{ asset('admin-assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/chat.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
         <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">

@@ -9,14 +9,6 @@ $(window).load(function() {
   }, 100);
 });
 
-function updateScrollbar() {
-  
-}
-
-function setDate(){
-  
-}
-
 
 
 $('.message-submit').click(function() {
@@ -69,7 +61,7 @@ $('.message-submit').click(function() {
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
     insertMessage();
-    return false;
+    return true;
   }
 })
 
@@ -104,16 +96,20 @@ function fakeMessage() {
     setDate();
     updateScrollbar();
     i++;
-  }, 1000 + (Math.random() * 20) * 100);
+  }, 1000 + (Math.random() * 20) * 10);
 
 }
+
+
 
 $("#chat-circle").click(function() {
   $("#chat-circle").toggle('scale');
   $(".chat").toggle('scale');
+  $(".chat").toggleClass("d-flex flex-column justify-content-between");
 })
 
 $(".chat-box-toggle").click(function() {
   $("#chat-circle").toggle('scale');
   $(".chat").toggle('scale');
+  $(".chat").removeClass("d-flex flex-column justify-content-between");
 })

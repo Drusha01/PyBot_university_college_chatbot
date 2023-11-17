@@ -43,6 +43,7 @@
 #top-nav .nav-link {
   color: #fff; /* Text color for navigation links */
   text-decoration: none; /* Remove default text decoration */
+  font-size: smaller;
 }
 
 /* Icon links (if needed) */
@@ -64,12 +65,26 @@
   margin: 0;
   position: relative;
   font-size: 30px;
-  line-height: 76.5px;
+  line-height: 50px;
   letter-spacing: 1px;
   font-weight: 400;
   font-family: 'Nico-Moji';
   display: inline-block;
   width: 95px;
   flex-shrink: 0;
-  -webkit-text-stroke: 3px #fff;
+  -webkit-text-stroke: 1.7px #fff;
+}
+.green-bold {
+  margin: 0;
+  position: relative;
+  font-size: 31px;
+  line-height: 1px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-family: 'Nico-Moji';
+  display: inline-block;
+  width: 95px;
+  color: #fff;
+  flex-shrink: 0;
+  -webkit-text-stroke: 1.4px #0b4033;
 }
