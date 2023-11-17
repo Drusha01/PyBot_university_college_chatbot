@@ -81,7 +81,14 @@
                                                         <a class="nav-link fade show p-0" wire:click="chat_box_selected({{$value->cbc_chat_box_id}})" @if($value->cbc_user_id == $chat_box['chat_box_user_sender']) style="background-color:white;" @endif >
                                                             <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
                                                                 <div class="d-flex align-items-center w-100 pr-10">
-                                                                    <span class="me-15 status-success avatar avatar-lg"><img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></span>
+                                                                    <span class="me-15 status-success avatar avatar-lg">
+                                                                        @if( $value->user_profile_picture == 'default.png')
+                                                                            <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="bg-primary-light avr-round" alt="User Profile" >
+                                                                        @else
+                                                                            <img  class="bg-primary-light avr-round" style="border-radius: 50%;" src="{{asset('storage/images/resize/'.$value->user_profile_picture)}}" alt="">
+                                                                        @endif
+                                                                        <!-- <img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."> -->
+                                                                    </span>
                                                                     <div class="text-left text-dark w-100">
                                                                     <p class="mb-5"><strong>{{ $value->user_firstname.' '.$value->user_middlename.' '.$value->user_lastname}}</strong></p>
                                                                     <span class="hover-primary mb-0"><strong>{{$value->cbc_chat_content}}</strong></span>
@@ -155,7 +162,13 @@
                                         @if($chat_box)
                                         <div class="d-flex justify-content-between align-items-center w-p100">
                                             <div class="d-flex align-items-center w-100 pr-10">
-                                                <a class="me-15 status-success avatar avatar-lg" href="#modal-right"><img class="bg-primary-light rounded-circle" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."></a>
+                                                <a class="me-15 status-success avatar avatar-lg" href="#modal-right">
+                                                    @if( $chat_box['user_profile_picture'] == 'default.png')
+                                                        <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="bg-primary-light avr-round" alt="User Profile" >
+                                                    @else
+                                                        <img  class="bg-primary-light avr-round" style="border-radius: 50%;" src="{{asset('storage/images/resize/'.$chat_box['user_profile_picture'])}}" alt="">
+                                                    @endif
+                                                </a>
                                                 <div>
                                                 <a class="hover-primary mb-5" href="#"><strong>{{$chat_box['user_firstname'].' '.$chat_box['user_middlename'].' '.$chat_box['user_lastname']}}</strong></a>
                                                 <p class="mb-0 fs-12 text-success">Active Now</p>

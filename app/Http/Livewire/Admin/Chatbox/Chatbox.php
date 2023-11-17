@@ -75,11 +75,11 @@ class Chatbox extends Component
                 'chat_box_status_id',
                 'chat_box_user_sender',
                 'chat_box_user_receiver',
-                'u.user_firstname',
-                'u.user_middlename',
-                'u.user_lastname',
-                'u.user_firstname',
-                'u.user_profile_picture',
+                'user_firstname',
+                'user_middlename',
+                'user_lastname',
+                'user_firstname',
+                'user_profile_picture',
                 )
         ->join('users as u','u.user_id','chat_box_user_sender')
         ->where('chat_box_id','=',$chat_box_id)
