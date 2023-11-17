@@ -37,7 +37,10 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{{route ('page.profile') }}">
-                            <i class="bi bi-person-fill"></i> Profile
+                                <i class="bi bi-person-fill"></i> Profile
+                            </a>
+                            <a class="dropdown-item" href="{{route ('page.chat') }}">
+                                <i class="bi bi-chat"></i> Chat
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout">

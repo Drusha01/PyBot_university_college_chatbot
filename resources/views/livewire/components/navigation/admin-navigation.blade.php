@@ -67,6 +67,9 @@
                                 <a class="dropdown-item" href="{{route ('admin-profile') }}">
                                     Profile
                                 </a>
+                                <a class="dropdown-item" href="{{route ('chatbox') }}">
+                                    Chat
+                                </a>
                                 <a class="dropdown-item" href="{{route ('setting')}}">
                                     Settings
                                 </a>
