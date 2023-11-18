@@ -8,7 +8,8 @@
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item banner bg-center bg-cover bg-no-repeat active" >
+        <div class="carousel-item active" >
+          <img src="{{asset('admin-assets/media/programs/banner-1.jpg')}}"  class="card-img-top w-50 mx-auto banner" alt="Admission Image 1">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Student-Centered College.</h1>
@@ -17,7 +18,8 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item banner bg-center bg-cover bg-no-repeat" >
+        <div class="carousel-item" >
+          <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}"  class="card-img-top w-50 mx-auto banner" alt="Admission Image 2">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Innovative and Supportive Faculty and Staff.</h1>
@@ -26,7 +28,8 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item banner bg-center bg-cover bg-no-repeat" >
+        <div class="carousel-item" >
+          <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}"  class="card-img-top w-50 mx-auto banner" alt="Admission Image 3">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Convenient Facilities.</h1>

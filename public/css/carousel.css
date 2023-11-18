@@ -106,7 +106,7 @@ p.justify{
 .banner {
   background: linear-gradient(45deg, rgba(98, 156, 148, 0.75), rgba(19, 115, 104, 0.75));
   background-position: center;
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
 }
 
