@@ -42,6 +42,7 @@
         @livewire('components.navigation.navigation')
         @livewire('components.chat.chat')
         {{ $slot }}
+        @livewire('components.footer.page-footer')
 
         @livewireScripts
         <script>

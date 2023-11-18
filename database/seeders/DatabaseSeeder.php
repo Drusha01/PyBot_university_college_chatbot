@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             userDefaults::class,
             q_and_a_types_seeder::class,
             target_types::class,
+            About_us_page::class,
+            system_logo_seeder::class,
         ]);
     }
 }

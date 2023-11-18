@@ -2,14 +2,27 @@
   <!-- Academic Page Content Section -->
   <section class="py-5" style="margin-top: 5rem;">
     <div class="container">
-      <div class="row mb-4 border-bottom">
+      <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <h2 class="display-4 mb-4">Academic Programs</h2>
           <p class="lead">Explore our academic programs designed to help you achieve your educational goals.</p>
         </div>
       </div>
 
-      <div class="row mt-3">
+      <div class="row border-top mt-3 justify-content-xl-center">
+        @if($academic_data)
+          @foreach($academic_data as $key=>$value)
+            <div class="col-md-3">
+              <div class="card mb-4">
+                <img src="{{asset('storage/content/academic/'.$value->academic_logo)}}" class="card-img-top " alt="Program Image">
+                <div class="card-body">
+                  <h5 class="card-title">{{$value->academic_header}}</h5>
+                  <p class="card-text cqh-7">{{$value->academic_content}}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        @else
         <div class="col-md-3">
           <div class="card mb-4">
             <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top " alt="Program Image">
@@ -20,7 +33,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-md-3">
           <div class="card mb-4">
             <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top" alt="Program Image">
@@ -131,6 +143,7 @@
             </div>
           </div>
         </div>
+        @endif
         <!-- Add more program cards here (copy and paste the above card structure as needed) -->
 
       </div>

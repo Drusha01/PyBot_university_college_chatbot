@@ -17,11 +17,16 @@ class Admission extends Component
         
     }
     public function update_data(){
-
+        $this->admission_data = DB::table('admissions as a')
+            ->select('*')
+            ->orderBy('admission_order')
+            ->get()
+            ->toArray();
     }
     public function mount(Request $request){
         $this->user_details = $request->session()->all();
         $this->title = 'Admission';
+        self::update_data();
     }
     public function render()
     {

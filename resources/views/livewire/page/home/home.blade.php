@@ -1,5 +1,6 @@
 <div>
   <main class="content-wrapper" id="home">
+    @if($carousel_data || 1)
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -44,6 +45,7 @@
           <span class="visually-hidden ">Next</span>
       </button>
     </div>
+    @endif
     
     <!-- <div class="container marketing">
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
@@ -134,21 +136,6 @@
       <hr class="featurette-divider">
     </div> -->
   </main>
-</div>
-
-
-<!-- FOOTER -->
-<div class="container">
-  <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About Us</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Academics</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Admission</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
-    </ul>
-    <p class="text-center text-muted">&copy; 2023 PyBot</p>
-  </footer>
 </div>
 
 
