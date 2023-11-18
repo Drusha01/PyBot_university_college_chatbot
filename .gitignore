@@ -15,3 +15,6 @@ yarn-error.log
 /.vscode
  
 storage/logs/laravel.log
+core/intent_list/
+core/model_list/
+core/deployment/
