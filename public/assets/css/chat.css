@@ -274,6 +274,7 @@ Messages
   border-radius: 10px 10px 0 10px;
   margin: 5px 8px;
   max-width: 80%;
+  overflow-wrap: break-word;
 }
 .messages .message.message-personal::before {
   left: auto;

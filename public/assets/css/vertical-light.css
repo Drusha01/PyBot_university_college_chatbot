@@ -15492,7 +15492,7 @@ a.close.disabled {
   width: 100%;
   margin-right: -100%;
   backface-visibility: hidden;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -15509,12 +15509,12 @@ a.close.disabled {
 
 .carousel-item-next:not(.carousel-item-left),
 .active.carousel-item-right {
-  transform: translateX(100%);
+  transform: translateX(2%);
 }
 
 .carousel-item-prev:not(.carousel-item-right),
 .active.carousel-item-left {
-  transform: translateX(-100%);
+  transform: translateX(-1%);
 }
 
 .carousel-fade .carousel-item {
@@ -15526,14 +15526,14 @@ a.close.disabled {
 .carousel-fade .carousel-item.active,
 .carousel-fade .carousel-item-next.carousel-item-left,
 .carousel-fade .carousel-item-prev.carousel-item-right {
-  z-index: 1;
-  opacity: 1;
+  z-index: 0;
+  opacity: 0;
 }
 
 .carousel-fade .active.carousel-item-left,
 .carousel-fade .active.carousel-item-right {
-  z-index: 0;
-  opacity: 0;
+  z-index: 1;
+  opacity: 1;
   transition: opacity 0s 0.6s;
 }
 
