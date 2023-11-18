@@ -17,11 +17,17 @@ class Home extends Component
         
     }
     public function update_data(){
-
+        $this->carousel_data = DB::table('carousel as c')
+        ->select('*')
+        ->orderBy('carousel_order')
+        ->get()
+        ->toArray();
     }
     public function mount(Request $request){
         $this->user_details = $request->session()->all();
         $this->title = 'Homepage';
+
+        self::update_data();
     }
     public function render()
     {
