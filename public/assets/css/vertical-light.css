@@ -15650,8 +15650,10 @@ a.close.disabled {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
+  font-size: x-large;
   text-align: center;
-  -webkit-text-stroke: 1.4px #0b4033;
+  text-shadow: 5px 5px 14px black;
+  -webkit-text-stroke: 1.4px #7c8884;
 }
 
 @keyframes spinner-border {
@@ -28545,7 +28547,7 @@ div.tagsinput span.tag a {
 
 .content-wrapper {
   background: #F5F7FF;
-  padding: 2.375rem 2.375rem;
+  padding: 2.375rem 0 2.375rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1;
@@ -28873,9 +28875,9 @@ div.tagsinput span.tag a {
   -webkit-transition: background 0.25s ease;
   -moz-transition: background 0.25s ease;
   -ms-transition: background 0.25s ease;
-  -webkit-box-shadow: 0px 5px 21px -5px #CDD1E1;
-  -moz-box-shadow: 0px 5px 21px -5px #CDD1E1;
-  box-shadow: 0px 5px 21px -5px #CDD1E1;
+  -webkit-box-shadow: 0px 1px 21px -5px #CDD1E1;
+  -moz-box-shadow: 0px 1px 21px -5px #CDD1E1;
+  box-shadow: 0px 1px 21px -5px #CDD1E1;
   /* Navbar color variations */
 }
 

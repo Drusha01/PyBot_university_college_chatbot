@@ -6,13 +6,13 @@
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-inner ">
+      <div class="carousel-inner">
         <div class="carousel-item banner-1 active ">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Student-Centered College.</h1>
-              <p>The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
-              <p><a class="btn btn-lg btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+              <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Student-Centered College.</h1>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.4px #7c8884;">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
+              <p class="animated fadeInUp"><a class="btn btn-lg btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="admissions">
         <h1 class="display-4 fw-normal">Admissions</h1>
         <p class="fs-5">
-        Our admission process is now powered by a decision-support system called - <span class="green-bold fs-5">GreenScreen</span>.
+        Our admission process is now powered by a decision-support system called - <span class="green-bold fs-5">Pybot</span>.
         </p>
         <p><a class="btn btn-lg btn-success background-color-green text-center btn-apply btn-font" href="../student/apply.php">Apply Now</a></p>
       </div>
@@ -92,9 +92,15 @@
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
-          <img src="{{asset('assets/images/bg.png')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Dr. Roderick P. Go</h3>
-          <h4>Dean</h4>
+          <div class="row">
+            <div class="col-12 mb-2">
+            <img src="{{asset('assets/images/faces/face4.jpg')}}" alt="" class="bd-placeholder-img rounded w-75">
+            </div>
+            <div class="col-12 border-top pt-3">
+            <h3>Dr. Roderick P. Go</h3>
+            <h4>Dean</h4>
+            </div>
+          </div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img src="../img/faculty/odon.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
@@ -107,10 +113,16 @@
           <h4>Secretary</h4>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img src="../img/faculty/sadiwa.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Ms. Lucy Felix-Sadiwa, MSCS</h3>
-          <h4>CS Department Head</h4>
-        </div><!-- /.col-lg-4 -->
+          <div class="row">
+            <div class="col-12 mb-2">
+            <img src="{{asset('assets/images/faces/face4.jpg')}}" alt="" class="bd-placeholder-img rounded w-75">
+            </div>
+            <div class="col-12 border-top pt-3">
+            <h3>Ms. Lucy Felix-Sadiwa, MSCS</h3>
+            <h4>CS Department Head</h4>
+            </div>
+          </div>
+        </div>
         <div class="col-lg-4">
           <img src="../img/faculty/escorialj.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3>Mr. John Augustus A. Escorial, MIT</h3>

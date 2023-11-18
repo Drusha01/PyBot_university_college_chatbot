@@ -15589,12 +15589,12 @@ a.close.disabled {
 
 .carousel-item-next:not(.carousel-item-left),
 .active.carousel-item-right {
-  transform: translateX(100%);
+  transform: translateX(1%);
 }
 
 .carousel-item-prev:not(.carousel-item-right),
 .active.carousel-item-left {
-  transform: translateX(-100%);
+  transform: translateX(-1%);
 }
 
 .carousel-fade .carousel-item {
@@ -15614,7 +15614,7 @@ a.close.disabled {
 .carousel-fade .active.carousel-item-right {
   z-index: 0;
   opacity: 0;
-  transition: opacity 0s 0.6s;
+  transition: opacity 0s 0.2s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -15625,17 +15625,57 @@ a.close.disabled {
 }
 
 .carousel-item:nth-child(1) {
-  animation: carousel-animation 12s infinite;
+  animation: carousel-animation 9s infinite;
 }
 
 .carousel-item:nth-child(2) {
-  animation: carousel-animation 12s 3s infinite;
+  animation: carousel-animation 9s 3s infinite;
 }
 
 .carousel-item:nth-child(3) {
-  animation: carousel-animation 12s 6s infinite;
+  animation: carousel-animation 9s 6s infinite;
 }
 
+/**
+ * Change animation duration
+ */
+ .animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
 .carousel-control-prev,
 .carousel-control-next {
   position: absolute;
@@ -15649,7 +15689,7 @@ a.close.disabled {
   color: #fff;
   text-align: center;
   opacity: 0.5;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.2s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -15720,7 +15760,7 @@ a.close.disabled {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   opacity: .5;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.2s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

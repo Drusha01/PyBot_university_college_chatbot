@@ -39,8 +39,8 @@
                         <!-- Profile Tab Content -->
                         <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab" wire:ignore.self>
                             <h4>Profile Information</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item">First name: </strong>{{$user_details['user_firstname']}}</li>
+                            <ul class="list-group border-top">
+                                <li class="list-group-item border-0">First name: </strong>{{$user_details['user_firstname']}}</li>
                                 <li class="list-group-item">Middle name: </strong> {{$user_details['user_middlename']}}</li>
                                 <li class="list-group-item">Last name: </strong> {{$user_details['user_lastname']}}</li>
                                 <li class="list-group-item">Suffix: </strong> {{$user_details['user_suffix']}}</li>
