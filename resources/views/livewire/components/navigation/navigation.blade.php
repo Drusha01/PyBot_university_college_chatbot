@@ -40,7 +40,7 @@
                                 <i class="bi bi-person-fill"></i> Profile
                             </a>
                             <a class="dropdown-item" href="{{route ('page.chat') }}">
-                                <i class="bi bi-chat"></i> Chat
+                                <i class="bi bi-chat-fill"></i> Chat
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout">
