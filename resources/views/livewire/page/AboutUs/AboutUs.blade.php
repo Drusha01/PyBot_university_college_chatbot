@@ -9,9 +9,10 @@
           <div class="p-3 pb-md-4 mx-auto text-center">
             <div class="row justify-content-xl-center">
               <div class="p-3 pb-md-4 mx-auto text-center">
-                <h2 class="display-4 fw-normal p-3 pb-md-6 mx-auto text-center">About Us</h2>
-                <p class="lead text-dark p-3 pb-md-4 mx-auto text-center">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
-                <p class="mb-5">Nullam gravida orci ac luctus molestie. Fusce finibus congue erat, non aliquam magna tincidunt at. Aenean lacinia arcu ex, sed pharetra nibh porta a. Curabitur vel consequat nibh, ac interdum nisl. Nunc pulvinar nec massa vitae sollicitudin.</p>
+                <div class="col-md-12 border-bottom mb-4 text-center">
+                  <h2 class="display-4 fw-normal p-3 pb-md-6 mx-auto text-center">About Us</h2>
+                  <p class="lead text-dark p-3 pb-md-4 mx-auto text-center">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
+                </div>
                 <div class="row gy-4 gy-md-0 gx-xxl-5X">
                   <div class="col-12 col-md-4">
                     <div class="row">
@@ -25,7 +26,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-4">
-                    <div class="row">
+                    <div class="card row">
                       <div class="col-md-12 me-4 text-primary">
                         <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top " alt="Program Image">
                       </div>
@@ -37,7 +38,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-4">
-                    <div class="row">
+                    <div class="card row">
                       <div class="col-md-12 me-4 text-primary">
                         <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top " alt="Program Image"> 
                       </div>

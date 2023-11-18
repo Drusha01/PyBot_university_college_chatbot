@@ -2,14 +2,14 @@
   <!-- Academic Page Content Section -->
   <section class="py-5" style="margin-top: 5rem;">
     <div class="container">
-      <div class="row">
+      <div class="row mb-4 border-bottom">
         <div class="col-lg-8 offset-lg-2 text-center">
           <h2 class="display-4 mb-4">Academic Programs</h2>
           <p class="lead">Explore our academic programs designed to help you achieve your educational goals.</p>
         </div>
       </div>
 
-      <div class="row border-top mt-3">
+      <div class="row mt-3">
         <div class="col-md-3">
           <div class="card mb-4">
             <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top " alt="Program Image">

@@ -137,6 +137,10 @@ body {
   filter: blur(80px);
   transform: scale(1.2);
 }
+.bg-primary {
+  background-color: #6993ff !important;
+  color: #ffffff !important;
+}
 
 /*--------------------
 Chat

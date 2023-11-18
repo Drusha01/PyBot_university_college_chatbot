@@ -131,9 +131,6 @@
                                     <a class="nav-link" id="carousel-tab" data-toggle="tab" href="#carousel" role="tab" aria-controls="carousel" aria-selected="false">Carousel</a>
                                   </li>
                                   <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="programs-tab" data-toggle="tab" href="#programs" role="tab" aria-controls="programs" aria-selected="false">Programs</a>
-                                  </li>
-                                  <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="faculty-tab" data-toggle="tab" href="#faculty" role="tab" aria-controls="faculty" aria-selected="false">Faculty and Staff</a>
                                   </li>
                                 </ul>
@@ -845,129 +842,6 @@
                                   </div>
                                   <!-- Carousel end Tab -->
 
-                                  <!-- Programs Tab -->
-                                  <div class="tab-pane fade" id="programs" role="tabpanel" aria-labelledby="programs-tab">
-                                      <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addProgramsModal">Add Programs</button>
-                                      <div class="table-responsive">
-                                        <table class="table table-hover table-bordered mt-3" id="programsTable" style="min-width: 100%;">
-                                          <thead class="thead-dark">
-                                            <tr>
-                                              <th>Section</th>
-                                              <th>Title</th>
-                                              <th>Description</th>
-                                              <th>Actions</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <td>Programs Section</td>
-                                              <td>Title</td>
-                                              <td>Static content for the Programs section goes here.</td>
-                                              <td>
-                                                <button class="btn btn-info" data-toggle="modal" data-target="#editProgramsModal">Edit</button>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteProgramsModal">Delete</button>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    <!-- Add Programs Modal -->
-                                    <div class="modal fade" id="addProgramsModal" tabindex="-1" role="dialog" aria-labelledby="addProgramsModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="addProgramsModalLabel">Add Programs Section</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                            <form>
-                                              <div class="form-group">
-                                                <label for="addProgramsImage">Image:</label>
-                                                <input type="file" class="form-control form-control-sm form-control-file" id="addProgramsImage">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="addProgramsFullName">Full Name:</label>
-                                                <input type="text" class="form-control form-control-sm" id="addProgramsFullName" placeholder="Enter full name">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="addProgramsPosition">Position:</label>
-                                                <input type="text" class="form-control form-control-sm" id="addProgramsPosition" placeholder="Enter position">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="addProgramsTitle">Title:</label>
-                                                <input type="text" class="form-control form-control-sm" id="addProgramsTitle" placeholder="Enter title">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="addProgramsDescription">Description:</label>
-                                                <textarea class="form-control form-control-sm" id="addProgramsDescription" rows="4" placeholder="Enter description"></textarea>
-                                              </div>
-                                              <!--  add more form fields as needed -->
-
-                                              <button type="submit" class="btn btn-success">Save</button>
-                                            </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <!-- Edit Programs Modal -->
-                                    <div class="modal fade" id="editProgramsModal" tabindex="-1" role="dialog" aria-labelledby="editProgramsModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="editProgramsModalLabel">Edit Programs Section</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                            <form>
-                                              <div class="form-group">
-                                                <label for="editProgramsTitle">Title:</label>
-                                                <input type="text" class="form-control form-control-sm" id="editProgramsTitle" placeholder="Edit title">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="editProgramsDescription">Description:</label>
-                                                <textarea class="form-control form-control-sm" id="editProgramsDescription" rows="4" placeholder="Edit description"></textarea>
-                                              </div>
-                                              <!--  add more form fields for editing as needed -->
-
-                                              <button type="submit" class="btn btn-success">Save Changes</button>
-                                            </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <!-- Delete Programs Modal -->
-                                    <div class="modal fade" id="deleteProgramsModal" tabindex="-1" role="dialog" aria-labelledby="deleteProgramsModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteProgramsModalLabel">Confirm Deletion</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                            <p>Are you sure you want to delete the Programs section?</p>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- Programs end Tab -->
 
                                   <!-- Faculty and Staff Tab -->
                                   <div class="tab-pane fade" id="faculty" role="tabpanel" aria-labelledby="faculty-tab">

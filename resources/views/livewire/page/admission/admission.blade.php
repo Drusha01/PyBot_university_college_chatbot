@@ -2,13 +2,13 @@
     <!-- Admission Page Content Section -->
     <section class="py-5" style="margin-top: 5rem;" >
       <div class="container">
-        <div class="row">
+        <div class="row border-bottom mb-4">
           <div class="col-lg-8 offset-lg-2 text-center">
             <h2 class="display-4 mb-4">Admissions</h2>
             <p class="lead">Welcome to the Western Mindanao State University's admission page. We are excited to help you start your educational journey with us.</p>
           </div>
         </div>
-        <div class="row border-top mt-3">
+        <div class="row mt-3">
           <div class="col-md-6">
             <div class="card mb-4">
               <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top w-50 mx-auto" alt="Admission Image 1">
