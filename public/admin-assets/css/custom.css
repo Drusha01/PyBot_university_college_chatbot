@@ -754,6 +754,8 @@ Messages
   line-height: 1.4;
   margin-left: 10px;
   position: relative;
+  max-width: 80%;
+  overflow-wrap: break-word;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 .messages .message .timestamp {
@@ -811,6 +813,8 @@ Messages
   transform-origin: 0 0;
   -webkit-animation: bounce 500ms linear both;
           animation: bounce 500ms linear both;
+  max-width: 80%;
+  overflow-wrap: break-word;
 }
 .messages .message.loading::before {
   position: absolute;
@@ -930,7 +934,7 @@ Custom Srollbar
 }
 
 .mCSB_inside > .mCSB_container {
-  margin-right: 0px;
+  margin-right: 5px !important;
   padding: 0 10px;
 }
 

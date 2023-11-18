@@ -9,6 +9,14 @@ $(window).load(function() {
   }, 100);
 });
 
+function updateScrollbar() {
+  
+}
+
+function setDate(){
+  
+}
+
 
 
 $('.message-submit').click(function() {
@@ -61,7 +69,7 @@ $('.message-submit').click(function() {
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
     insertMessage();
-    return true;
+    return false;
   }
 })
 
@@ -96,11 +104,9 @@ function fakeMessage() {
     setDate();
     updateScrollbar();
     i++;
-  }, 1000 + (Math.random() * 20) * 10);
+  }, 1000 + (Math.random() * 20) * 100);
 
 }
-
-
 
 $("#chat-circle").click(function() {
   $("#chat-circle").toggle('scale');

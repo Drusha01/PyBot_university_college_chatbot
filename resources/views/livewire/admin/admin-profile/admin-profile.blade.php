@@ -58,7 +58,7 @@
                   <span class="col-md-9">{{$user_details['user_lastname']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
-                  <span class="col-md-3 text-muted">Siffix:</span>
+                  <span class="col-md-3 text-muted">Suffix:</span>
                   <span class="col-md-9">{{$user_details['user_suffix']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
