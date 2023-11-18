@@ -1,6 +1,3 @@
-@section('title', 'Pybot | User Profile') <!-- Set the page title -->
-
-@section('setting', 'active')
 <div>
   <main id="main" class="main">
     <div class="pagetitle">
@@ -18,20 +15,24 @@
         <div class="col-md-4">
           <div class="text-center">
             <div class="rounded bg-secondary-subtle d-inline-block border-dark p-3 mx-auto w-auto h-100">
-              <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded" alt="User Profile"  style="width: 180px; height: 180px;">
+              @if($user_details['user_profile_picture'] == 'default.png')
+                  <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 180px; height: 180px;">
+              @else
+                  <img style="border-radius: 50%;" width="180px" height="180px" src="{{asset('storage/images/resize/'.$user_details['user_profile_picture'])}}" alt="">
+              @endif
             </div>
             <ul class="d-flex flex-column mb-2 mt-80">
                 <li class="d-flex align-items-center">
                   <span class="col-md-3 text-muted">Username:</span> 
-                  <span class="col-md-9">Kai kai</span>
+                  <span class="col-md-9">{{$user_details['user_name']}}</span>
                 </li>
             </ul>
             <ul class="nav nav-pills flex-column mt-3" id="profileTabs" role="tablist">
-              <li class="nav-item" >
-                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
+              <li class="nav-item">
+                  <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true" wire:ignore.self>Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="username-tab" data-toggle="tab" href="#username" role="tab" aria-controls="username" aria-selected="false">Username</a>
+                  <a class="nav-link" id ="Profile-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="Profile" aria-selected="false" wire:ignore.self>Profile Photo</a>
               </li>
             </ul>
           </div>
@@ -41,44 +42,48 @@
         <div class="col-md-8">
           <div class="tab-content" id="profileTabsContent">
             <!-- Profile Tab Content -->
-            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab" wire:ignore.self>
               <h4 class="pt-2 pb-2">Profile Information</h4>
               <ul class="list-group border-top d-flex flex-column mb-2">
                 <li class="list-group-item d-flex align-items-center">
                   <span class="col-md-3 text-muted">First Name:</span> 
-                  <span class="col-md-9">John</span>
+                  <span class="col-md-9">{{$user_details['user_firstname']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
                   <span class="col-md-3 text-muted">Middle Name:</span>
-                  <span class="col-md-9">Doe</span>
+                  <span class="col-md-9">{{$user_details['user_middlename']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
                   <span class="col-md-3 text-muted">Last Name:</span>
-                  <span class="col-md-9">Smith</span>
+                  <span class="col-md-9">{{$user_details['user_lastname']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
-                  <span class="col-md-3 text-muted">Program:</span>
-                  <span class="col-md-9">Computer Science</span>
+                  <span class="col-md-3 text-muted">Suffix:</span>
+                  <span class="col-md-9">{{$user_details['user_suffix']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
-                  <span class="col-md-3 text-muted">Account ID:</span>
-                  <span class="col-md-9">12345678</span>
-                </li>
-                <li class="list-group-item d-flex align-items-center">
-                  <span class="col-md-3 text-muted">Contact #:</span>
-                  <span class="col-md-9">(+63) 925-456-7890</span>
+                  <span class="col-md-3 text-muted">Gender:</span>
+                  <span class="col-md-9">{{$user_details['user_gender_details']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
                   <span class="col-md-3 text-muted">Age:</span>
-                  <span class="col-md-9">25</span>
+                  <span class="col-md-9">{{floor((time() - strtotime($user_details['user_birthdate'])) / 31556926);}}</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <span class="col-md-3 text-muted">Home Address:</span>
+                  <span class="col-md-9">{{$user_details['user_address']}}</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <span class="col-md-3 text-muted">Contact #:</span>
+                  <span class="col-md-9">{{$user_details['user_phone']}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
                   <span class="col-md-3 text-muted">Birthdate:</span>
-                  <span class="col-md-9">January 1, 1998</span>
+                  <span class="col-md-9">{{date_format(date_create($user_details['user_birthdate']), "F d, Y ")}}</span>
                 </li>
                 <li class="list-group-item d-flex align-items-center">
                   <span class="col-md-3 text-muted">Account created:</span>
-                  <span class="col-md-9">January 1, 1998</span>
+                  <span class="col-md-9">{{date_format(date_create( $user_details['date_created']), "F d, Y ")}}</span>
                 </li>
               </ul>
               <div class="text-right">
@@ -87,27 +92,18 @@
               </div>
             </div>
 
-            <!-- Username Tab Content -->
-            <div class="tab-pane fade" id="username" role="tabpanel" aria-labelledby="username-tab">
-              <h4 class="pt-2 pb-2">Username Information</h4>
-              <ul class="list-group border-top d-flex flex-column mb-2">
-                <li class="list-group-item d-flex align-items-center">
-                  <span class="col-md-3 text-muted">Username:</span> 
-                  <span class="col-md-9">Kai kai</span>
-                </li>
-                <li class="list-group-item d-flex align-items-center">
-                  <span class="col-md-3 text-muted">Email:</span> 
-                  <span class="col-md-9">useremail@example.com</span>
-                </li>
-              </ul>
-              <!-- Add more username-related information as needed -->
-              <div class="text-right">
-              <button class="btn btn-info mt-3" data-toggle="modal" data-target="#editModal">Edit Username</button>
-              </div>
+            <div class="tab-pane fade" id="Profile" role="tabpanel" aria-labelledby="profile-tab" wire:ignore.self>
+              <h4 class="pt-2 pb-2">Profile Photo</h4>
+              @if($user_details['user_profile_picture'] == 'default.png')
+                  <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 500px; height: 500px;">
+              @else
+                  <img style="border-radius: 50%;" width="500" height="500" src="{{asset('storage/images/resize/'.$user_details['user_profile_picture'])}}" alt="">
+              @endif
+              <br>
+              <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#modifyModalPhoto">Edit</button>
             </div>
-
             <!-- Edit Modal -->
-            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modifyModalPhoto" tabindex="-1" role="dialog" aria-labelledby="modifyModalPhotoLabel" aria-hidden="true" wire:ignore.self>
               <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -117,25 +113,31 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <!-- Add a form for editing user information here -->
-                    <form id="editUserForm">
-                      <div class="form-group">
-                        <label for="firstName">User Name</label>
-                        <input type="text" class="form-control form-control-sm" id="firstName" placeholder="Enter First Name">
-                      </div>
-                      <!-- Add more form fields for editing user information as needed -->
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="saveChangesBtn">Save Changes</button>
+                      <form wire:submit.prevent="update_profile_and_id()">
+                          <!-- Full Name -->
+                          <div class="form-group row">
+                              <label class="col-sm-4 col-form-label mb-5">Profile photo<span style="color:red;"></span> :</label>
+                              <div class="col-sm-8">
+                                  <input type="file" accept="image/png, image/jpeg" wire:model="photo" class="form-control" id="newFullName" placeholder="Current Password"></input>
+                              </div>
+                          </div>
+                          <div>
+                              @if(isset($profile_photo_error))
+                                  <span class="error" style="color:red;">{{ $profile_photo_error }}</span>
+                              @endif
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Save Changes</button>
+                          </div>
+                      </form>
                   </div>
                 </div>
               </div>
             </div>
             <!-- Edit Profile Modal -->
-            <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true" wire:ignore.self>
+              <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
@@ -144,103 +146,67 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <!-- Add form fields for editing the profile here -->
-                    <form>
-                      <div class="row">
-                        <div class="col-12 mb-20">
-                          <div class="row">
-                            <div class="col-md-3 col-sm-12 mb-3">
-                              <div class="col-md-12">
-                                <!-- Image preview -->
-                                <img class="w-100" id="imgPreview" src="{{ asset('admin-assets\media\defaults\default-image.png') }}" alt="Profile Picture">
-                              </div>
-                              <div class="col-md-10 mt-25">
-                                <div class="form-group">
-                                  <label for="profile-pic">Profile Picture:</label> 
-                                  <input class="form-control form-control-sm form-control-file" id="profile-pic" type="file" accept="image/*" onchange="previewImage(this, 'imgPreview')">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                              <div class="row">
-                                <div class="col-md-12">
-                                  <div class="row">
-                                    <div class="col-md-4">
-                                      <!-- First Name -->
-                                      <div class="form-group">
-                                        <label for="editFirstName">First Name</label>
-                                        <input type="text" class="form-control form-control-sm" id="editFirstName" placeholder="Enter First Name">
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <!-- Middle Name -->
-                                      <div class="form-group">
-                                        <label for="editMiddleName">Middle Name</label>
-                                        <input type="text" class="form-control form-control-sm" id="editMiddleName" placeholder="Enter Middle Name">
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <!-- Last Name -->
-                                      <div class="form-group">
-                                        <label for="editLastName">Last Name</label>
-                                        <input type="text" class="form-control form-control-sm" id="editLastName" placeholder="Enter Last Name">
-                                      </div>
-                                    </div>
-                                    
-                                  </div>
-                                  
-                                </div>
-                                <div class="col-md-12">
-                                  <div class="row">
-                                    <div class="col-md-5">
-                                      <!-- Contact Number -->
-                                      <div class="form-group">
-                                        <label for="editContactNumber">Contact Number</label>
-                                        <input type="text" class="form-control form-control-sm" id="editContactNumber" placeholder="Enter Contact Number">
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <!-- Birthdate -->
-                                      <div class="form-group">
-                                        <label for="editBirthdate">Birthdate</label>
-                                        <input type="date" class="form-control form-control-sm form-date" id="editBirthdate" placeholder="Enter Birthdate">
-                                      </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                      <!-- Age -->
-                                      <div class="form-group">
-                                        <label for="editAge">Age</label>
-                                        <input type="text" class="form-control form-control-sm" id="editAge" placeholder="Enter Age">
-                                      </div>
-                                    </div>
-
-                                    <div class="col-md-4 mt-4">
-                                      <!-- Program -->
-                                      <div class="form-group">
-                                        <label for="editProgram">Program</label>
-                                        <select class="form-control form-control-sm form-select" id="" >
-                                          <option value="Computer Science">Computer Science</option>
-                                        </select>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                    <form wire:submit.prevent="save_profile_info()">
+                      <div class="form-group row">
+                          <label  class="col-sm-4 col-form-label">First name<span style="color:red;">*</span></label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="firstname" class="form-control" placeholder="Enter firstname" required>
                           </div>
-                        </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Middle name<span style="color:red;"></span></label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="middlename" class="form-control" placeholder="Enter middlename" >
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Last name<span style="color:red;">*</span></label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="lastname" class="form-control" placeholder="Enter lastname" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Suffix<span style="color:red;"></span></label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="suffix" class="form-control" placeholder="Enter suffix" >
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Gender<span style="color:red;"></span></label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="gender" class="form-control" placeholder="Enter gender" >
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Complete address</label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="address" class="form-control" placeholder="Enter address" >
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Phone number<span style="color:red;"></span></label>
+                          <div class="col-sm-8">
+                          <input type="text"  wire:model="phone" class="form-control" placeholder="Enter phone number"  oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 11);">
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Birthdate<span style="color:red;">*</span></label>
+                          <div class="col-sm-8">
+                          <input type="date"  wire:model="birthdate" class="form-control" placeholder="Enter birthdate" required>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save Changes</button>
                       </div>
                     </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Changes</button>
                   </div>
                 </div>
               </div>
             </div>
             <!-- Change Password Modal -->
-            <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true" wire:ignore.self>
+              <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
@@ -250,31 +216,42 @@
                   </div>
                   <div class="modal-body">
                     <!-- Add form fields for changing the password here -->
-                    <form>
-                      <div class="form-group">
-                        <label for="currentPassword">Current Password</label>
-                        <input type="password" class="form-control form-control-sm" id="currentPassword" placeholder="Enter Current Password">
+                    <form wire:submit.prevent="change_password()">
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Current Password<span style="color:red;">*</span></label>
+                          <div class="col-sm-8">
+                          <input type="password"  wire:model="current_password"  class="form-control" placeholder="Current Password" required>
+                          </div>
                       </div>
-                      <div class="form-group">
-                        <label for="newPassword">New Password</label>
-                        <input type="password" class="form-control form-control-sm" id="newPassword" placeholder="Enter New Password">
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">New Password<span style="color:red;">*</span></label>
+                          <div class="col-sm-8">
+                          <input type="password"  wire:model="new_password" wire:keyup.debounce.500ms="new_password()" class="form-control" placeholder="New Password" required>
+                          </div>
                       </div>
-                      <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control form-control-sm" id="confirmPassword" placeholder="Confirm New Password">
+                      <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Confirm Password<span style="color:red;">*</span></label>
+                          <div class="col-sm-8">
+                          <input type="password"  wire:model="confirm_password" wire:keyup.debounce.500ms="confirm_password"class="form-control" placeholder="Confirm Password" required>
+                          </div>
+                      </div>
+                      <div>
+                      @if(isset($password_error)) <span class="error" style="color:red;">{{ $password_error }}</span> @endif
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save Changes</button>
                       </div>
                     </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Change Password</button>
                   </div>
                 </div>
               </div>
             </div>
-
+            
           </div>
+          
         </div>
+        
       </div>
     </div>
 

@@ -67,7 +67,90 @@ body#home-page {
     /* rtl:remove */
     letter-spacing: -.05rem;
   }
+
+  .pricing-header {
+    max-width: 90%;
+    margin-bottom: 2rem;
+}
+
+.programs-section {
+    max-width: 960px;
+    margin: auto;
+}
+
+.featurette-divider.sec-divider{
+    margin: 2rem 0;
+    height: 0;
+}
+
+.featurette-divider{
+    margin: 2rem 0;
+}
+
+.featurette-heading{
+    margin-top: 4rem;
+}
+
+p.justify{
+    text-align: justify;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+
   
+  .banner-1{
+    background: linear-gradient(45deg,
+    rgba(98, 156, 148, 0.75),
+    rgba(19, 115, 104, 0.75)),
+    url('../admin-assets/media/programs/banner-1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-2{
+    background: linear-gradient(45deg,
+    rgba(98, 156, 148, 0.75),
+    rgba(19, 115, 104, 0.75)),
+    url('../admin-assets/media/programs/banner-2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-3{
+    background: linear-gradient(45deg,
+    rgba(98, 156, 148, 0.75),
+    rgba(19, 115, 104, 0.75)),
+    url('../admin-assets/media/programs/banner-3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.course-1{
+    background: url('../admin-assets/media/programs//course-1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.course-2{
+    background: url('../admin-assets/media/programs//course-2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
   
   /* RESPONSIVE CSS
   -------------------------------------------------- */
@@ -81,7 +164,7 @@ body#home-page {
     }
   
     .featurette-heading {
-      font-size: 50px;
+      font-size: 42px;
     }
 
     .carousel-caption {

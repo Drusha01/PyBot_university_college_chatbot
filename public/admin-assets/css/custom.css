@@ -676,24 +676,7 @@ a.sub-menu.nav-item.active.nav-link:hover {
 
 
 
-/*--------------------
-Chat
---------------------*/
-.chat {
-    width: auto;
-    height: 70vh;
-    max-width: 100%;
-    max-height: 400px;
-    z-index: 99;
-    overflow: hidden;
-    box-shadow: 0 2px 12px -5px rgb(0 0 0 / 68%);
-    background: rgb(0 0 0 / 62%);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 80px 35px 35px;
-}
+
 
 /*--------------------
 Chat Title
@@ -771,6 +754,8 @@ Messages
   line-height: 1.4;
   margin-left: 10px;
   position: relative;
+  max-width: 80%;
+  overflow-wrap: break-word;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 .messages .message .timestamp {
@@ -828,6 +813,8 @@ Messages
   transform-origin: 0 0;
   -webkit-animation: bounce 500ms linear both;
           animation: bounce 500ms linear both;
+  max-width: 80%;
+  overflow-wrap: break-word;
 }
 .messages .message.loading::before {
   position: absolute;
@@ -947,7 +934,7 @@ Custom Srollbar
 }
 
 .mCSB_inside > .mCSB_container {
-  margin-right: 0px;
+  margin-right: 5px !important;
   padding: 0 10px;
 }
 

@@ -111,9 +111,11 @@ function fakeMessage() {
 $("#chat-circle").click(function() {
   $("#chat-circle").toggle('scale');
   $(".chat").toggle('scale');
+  $(".chat").toggleClass("d-flex flex-column justify-content-between");
 })
 
 $(".chat-box-toggle").click(function() {
   $("#chat-circle").toggle('scale');
   $(".chat").toggle('scale');
+  $(".chat").removeClass("d-flex flex-column justify-content-between");
 })

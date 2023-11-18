@@ -1,9 +1,4 @@
 <div>
-        <!-- ======= Top Navigation ======= -->
- 
-    
-    
-
     <div class="container rounded">
     <!-- User Profile Content -->
     <section class="py-5" style="margin-top: 5rem;">
@@ -11,17 +6,21 @@
             <!-- Left Column -->
             <div class="col-lg-4">
                 <div class="user-profile-left text-center">
-                <div class="rounded-circle border-dark p-3" style="background-color: lightgray; display: inline-block;">
-                @if($user_details['user_profile_picture'] == 'default.png')
-                    <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 150px; height: 150px;">
-                @else
-                    <img style="border-radius: 50%;" width="150" height="150" src="{{asset('storage/images/resize/'.$user_details['user_profile_picture'])}}" alt="">
-                @endif
-                    
-                </div>
-
-                    <h3>Username:{{$user_details['user_name']}}</h3>
-                    <ul class="nav nav-tabs mt-3" id="profileTabs" role="tablist" >
+                    <div class="rounded border-dark p-3" style="background-color: lightgray; display: inline-block;">
+                    @if($user_details['user_profile_picture'] == 'default.png')
+                        <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 150px; height: 150px;">
+                    @else
+                        <img style="border-radius: 50%;" width="150" height="150" src="{{asset('storage/images/resize/'.$user_details['user_profile_picture'])}}" alt="">
+                    @endif
+                        
+                    </div>
+                    <ul class="d-flex flex-column mb-2 mt-80">
+                        <li class="d-flex align-items-center">
+                            <span class="col-md-3 text-muted">Username:</span> 
+                            <span class="col-md-9">{{$user_details['user_name']}}</span>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-pills flex-column mt-3" id="profileTabs" role="tablist" >
                         <li class="nav-item">
                             <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true" wire:ignore.self>Profile</a>
                         </li>
@@ -33,26 +32,57 @@
             </div>
 
             <!-- Right Column -->
-            <div class="col-lg-8">
+            <div class="col-md-8">
                 <div class="user-profile-right">
                     <div class="tab-content" id="profileTabsContent">
                         <!-- Profile Tab Content -->
                         <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab" wire:ignore.self>
-                            <h4>Profile Information</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item">First name: </strong>{{$user_details['user_firstname']}}</li>
-                                <li class="list-group-item">Middle name: </strong> {{$user_details['user_middlename']}}</li>
-                                <li class="list-group-item">Last name: </strong> {{$user_details['user_lastname']}}</li>
-                                <li class="list-group-item">Suffix: </strong> {{$user_details['user_suffix']}}</li>
-                                <li class="list-group-item">Gender: </strong> {{$user_details['user_gender_details']}}</li>
-                                <li class="list-group-item">Age: </strong> {{floor((time() - strtotime($user_details['user_birthdate'])) / 31556926);}}</li>
-                                <li class="list-group-item">Home Address: </strong> {{$user_details['user_address']}}</li>
-                                <li class="list-group-item">Phone number: </strong> {{$user_details['user_phone']}}</li>
-                                <li class="list-group-item">Email: </strong> {{$user_details['user_email']}} @if($user_details['user_email_verified'] == 1) @else<a href="profile/change-email">verify</a>@endif</li>
-                                <li class="list-group-item">Birthdate: </strong> {{date_format(date_create($user_details['user_birthdate']), "F d, Y ")}}</li>
-                                <li class="list-group-item">Account Created: </strong> {{date_format(date_create( $user_details['date_created']), "F d, Y ")}}</li>
-                   
-                                <!-- Add more user profile information as needed -->
+                            <h4 class="pt-2 pb-2">Profile Information</h4>
+                            <ul class="list-group border-top d-flex flex-column mb-2">
+                                <li class="list-group-item d-flex align-items-center border-0">
+                                <span class="col-md-3 text-muted">First Name:</span> 
+                                <span class="col-md-9">{{$user_details['user_firstname']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Middle Name:</span>
+                                <span class="col-md-9">{{$user_details['user_middlename']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Last Name:</span>
+                                <span class="col-md-9">{{$user_details['user_lastname']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Suffix:</span>
+                                <span class="col-md-9">{{$user_details['user_suffix']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Gender:</span>
+                                <span class="col-md-9">{{$user_details['user_gender_details']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Age:</span>
+                                <span class="col-md-9">{{floor((time() - strtotime($user_details['user_birthdate'])) / 31556926);}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Home Address:</span>
+                                <span class="col-md-9">{{$user_details['user_address']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Phone Number:</span>
+                                <span class="col-md-9">{{$user_details['user_phone']}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Email:</span>
+                                <span class="col-md-9">{{$user_details['user_email']}} @if($user_details['user_email_verified'] == 1) @else<a href="profile/change-email">verify</a>@endif</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Birthdate:</span>
+                                <span class="col-md-9">{{date_format(date_create($user_details['user_birthdate']), "F d, Y ")}}</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                <span class="col-md-3 text-muted">Account created:</span>
+                                <span class="col-md-9">{{date_format(date_create( $user_details['date_created']), "F d, Y ")}}</span>
+                                </li>
                             </ul>
                             <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#modifyModalDetails">Edit Profile</button>
                             <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#modifyModalpassword">Change Password</button>
