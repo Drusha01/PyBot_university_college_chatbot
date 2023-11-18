@@ -41,11 +41,15 @@ class Usermanagement extends Component
     public $view_admin_roles;
     public $view_admin_user_id;
     public $delete_admin_user_id;
+    
+    // public function boot(){
+    //     dd(2);
+    // }
 
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
-            return redirect('/login');
+            return $this->redirect('/login');
         }else{
             $user_status = DB::table('users as u')
             ->select('u.user_status_id','us.user_status_details')
@@ -55,11 +59,14 @@ class Usermanagement extends Component
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'deleted' ){
-            return redirect('/deleted');
+            header("Location: /deleted");
+            die();
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'inactive' ){
-            return redirect('/inactive');
+            header("Location: /deleted");
+            die();
+            return $this->redirect('/inactive');
         }
     }
 
@@ -188,8 +195,7 @@ class Usermanagement extends Component
 
         self::update_data();
     }
-    public function render()
-    {
+    public function render(){
         return view('livewire.admin.usermanagement.usermanagement',[
             ])
             ->layout('layouts.admin',[

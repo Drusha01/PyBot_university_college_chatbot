@@ -88,7 +88,7 @@
                                             @if($value->user_status_details == 'deleted') 
                                                 <button class="btn btn-warning" wire:click="activate_admin({{ $value->user_id }})">Activate</button>
                                             @else
-                                            <button class="btn btn-danger" wire:click="delete_admin({{ $value->user_id }})">Delete</button>
+                                            <button class="btn btn-danger" wire:click="delete_admin_now({{ $value->user_id }})">Delete</button>
                                             @endif
                                         @endif
                                         </td>
@@ -330,157 +330,62 @@
                         <table id="example2" class="table table-hover table-bordered" style="min-width:100%">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Username</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                @foreach ($user_data_filter as $item => $value)
+                                    @if($loop->last && $value )
+                                        <th class="text-center">
+                                            Action
+                                        </th>
+                                    @elseif($value)
+                                        <th>{{$item}}</th>
+                                    @endif
+                                @endforeach
                                 </tr>
                             </thead>
                             <tbody>
                                 <!--  table -->
-                                <tr>
-                                    <td>1</td>
-                                    <td>User 1</td>
-                                    <td>user1@example.com</td>
-                                    <td>Applicant</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-info" data-toggle="modal" data-target="#editUserModal">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>User 2</td>
-                                    <td>user2@example.com</td>
-                                    <td>Applicant</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-info" data-toggle="modal" data-target="#editUserModal">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
+                                @forelse ($user_data as $item => $value)
+                                    <tr>
+                                    @if($user_data_filter['#'])
+                                        <td>{{ $loop->index+1 }}</td>
+                                    @endif
+                                    @if($user_data_filter['Username'])
+                                        <td>{{ $value->user_name }}</td>
+                                    @endif
+                                    @if($user_data_filter['Full name'])
+                                        <td>{{ $value->user_lastname.', '.$value->user_firstname.' '.$value->user_middlename }}</td>
+                                    @endif
+                                    @if($user_data_filter['Email'])
+                                        <td>{{ $value->user_email }}</td>
+                                    @endif
+                                    @if($user_data_filter['CP#'])
+                                        <td>{{ $value->user_phone }}</td>
+                                    @endif
+                                    @if($user_data_filter['Verified'])
+                                        <td class="text-center"> @if($value->user_email_verified) <i class="bi bi-check"></i> @else <i class="bi bi-x"></i> @endif </td>
+                                    @endif
+                                    @if($user_data_filter['Status'])
+                                        <td class='text-center'>
+                                            {{ $value->user_status_details }}
+                                        </td>
+                                    @endif
+                                    @if($user_data_filter['Action'])
+                                        <td class="text-center">
+                                            @if($value->user_status_details == 'deleted') 
+                                                <button class="btn btn-warning" wire:click="activate_admin({{ $value->user_id }})">Activate</button>
+                                            @else
+                                            <button class="btn btn-danger" wire:click="delete_admin_now({{ $value->user_id }})">Delete</button>
+                                            @endif
+                                        </td>
+                                    @endif
+                                    </tr>
+                                @empty
+                                <td class="text-center font-weight-bold" colspan="42">
+                                    NO RECORDS 
+                                </td>
+                                @endforelse
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>
-                    </div>
-
-                    <div class="modal fade" id="AddUserModal" tabindex="-1" role="dialog" aria-labelledby="AddUserModal" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="AddUserModalLabel">Add User</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body cqh-30">
-                                    <!-- Add User form -->
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="AddUserFirstName">First Name</label>
-                                                    <input type="text" class="form-control" id="AddUserFirstName" placeholder="Enter First Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="AddUserMiddleName">Midlle Name</label>
-                                                    <input type="text" class="form-control" id="AddUserMiddleName" placeholder="Enter Middle Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="AddUserLastName">Last Name</label>
-                                                    <input type="text" class="form-control" id="AddUserLastName" placeholder="Enter Last Name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 p-0">
-                                            <div class="form-group">
-                                                <label for="AddUserEmail">Email</label>
-                                                <input type="email" class="form-control" id="AddUserEmail" placeholder="Enter Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 p-0">
-                                            <div class="form-group">
-                                                <label for="AddUserRole">Role</label>
-                                                <select class="form-control" id="AddUserRole">
-                                                    <option value="user">User</option>
-                                                    <option value="TBD">TBD</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <!-- End Add User  -->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success">Add User</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Edit User Modal -->
-                    <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body cqh-30">
-                                    <!-- User Edit Form -->
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="editUserFirstName">First Name</label>
-                                                    <input type="text" class="form-control" id="editUserFirstName" placeholder="Edit First name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="editUserMiddleName">Middle Name</label>
-                                                    <input type="text" class="form-control" id="editUserMiddleName" placeholder="Edit Middle Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="editUserLastName">Last Name</label>
-                                                    <input type="text" class="form-control" id="editUserLastName" placeholder="Edit Last Name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 p-0">
-                                            <div class="form-group">
-                                                <label for="editUserEmail">Email</label>
-                                                <input type="email" class="form-control" id="editUserEmail" placeholder="Enter new Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 p-0">
-                                            <div class="form-group">
-                                                <label for="editUserRole">Role</label>
-                                                <select class="form-control" id="editUserRole">
-                                                    <option value="user">Applicant</option>
-                                                    <option value="moderator">TBD</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <!-- End User Edit Form -->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success">Save Changes</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -86,7 +86,8 @@ class Setting extends Component
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
-            return redirect('/login');
+            header("Location: /login");
+            die();
         }else{
             $user_status = DB::table('users as u')
             ->select('u.user_status_id','us.user_status_details')
@@ -96,11 +97,13 @@ class Setting extends Component
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'deleted' ){
-            return redirect('/deleted');
+            header("Location: /deleted");
+            die();
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'inactive' ){
-            return redirect('/inactive');
+            header("Location: /inactive");
+            die();
         }
     }
 
@@ -164,7 +167,7 @@ class Setting extends Component
             'U' => true,
             'D' => true
         ];
-        
+
         $this->faq_filter = [
             '#'=> true,
             'Question'=> true,
