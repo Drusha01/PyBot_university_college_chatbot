@@ -17,11 +17,17 @@ class Academic extends Component
         
     }
     public function update_data(){
-
+        $this->academic_data = DB::table('academics as a')
+            ->select('*')
+            ->orderBy('academic_order')
+            ->get()
+            ->toArray();
     }
     public function mount(Request $request){
         $this->user_details = $request->session()->all();
         $this->title = 'academic';
+
+        self::update_data();
     }
     public function render()
     {

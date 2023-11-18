@@ -9,7 +9,20 @@
         </div>
       </div>
 
-      <div class="row border-top mt-3">
+      <div class="row border-top mt-3 justify-content-xl-center">
+        @if($academic_data)
+          @foreach($academic_data as $key=>$value)
+            <div class="col-md-3">
+              <div class="card mb-4">
+                <img src="{{asset('storage/content/academic/'.$value->academic_logo)}}" class="card-img-top " alt="Program Image">
+                <div class="card-body">
+                  <h5 class="card-title">{{$value->academic_header}}</h5>
+                  <p class="card-text cqh-7">{{$value->academic_content}}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        @else
         <div class="col-md-3">
           <div class="card mb-4">
             <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top " alt="Program Image">
@@ -20,7 +33,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-md-3">
           <div class="card mb-4">
             <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top" alt="Program Image">
@@ -131,6 +143,7 @@
             </div>
           </div>
         </div>
+        @endif
         <!-- Add more program cards here (copy and paste the above card structure as needed) -->
 
       </div>
