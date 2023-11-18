@@ -2,8 +2,8 @@
     <nav id="top-nav" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="http://pybot/admin-assets/media/pybot_icon.svg" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
-            <span class="logo">Pybot</span>
+            <img src="{{ asset('storage/content/system_asset/'.$system_asset['system_asset_logo']) }}" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
+            <span class="logo">{{$system_asset['system_asset_name']}}</span>
         </a>
 
         <!-- Navigation links -->

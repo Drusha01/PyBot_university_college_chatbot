@@ -158,6 +158,13 @@ class Setting extends Component
         $this->title = 'Setting';
 
         // faq
+        $this->access_role = [
+            'C' => true,
+            'R' => true,
+            'U' => true,
+            'D' => true
+        ];
+        
         $this->faq_filter = [
             '#'=> true,
             'Question'=> true,

@@ -17,7 +17,11 @@ class AboutUs extends Component
         
     }
     public function update_data(){
-
+        $this->about_us_data = DB::table('about_us')
+        ->select('*')
+        ->orderBy('about_us_order')
+        ->get()
+        ->toArray();
     }
 
     public function mount(Request $request){

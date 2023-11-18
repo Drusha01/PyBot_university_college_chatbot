@@ -23,7 +23,13 @@ class AdminNavigation extends Component
             ->get()
             ->toArray();
         }
-       
+        $system_assets = DB::table('system_assets')
+        ->first();
+        $this->system_asset =[
+            'system_asset_id'  => $system_assets->system_asset_id,
+            'system_asset_name'  => $system_assets->system_asset_name,
+            'system_asset_logo'  => $system_assets->system_asset_logo,
+        ];
     }
     public function render()
     {

@@ -7,7 +7,7 @@
                 <img src="{{ asset('admin-assets/media/logo.svg') }}" alt="name">
             </a>
             <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}">
-                <img src="{{ asset('admin-assets/media/pybot_icon.svg') }}" alt="logo">
+                <img src="{{ asset('storage/content/system_asset/'.$system_asset['system_asset_logo']) }}" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
             </a>
         </div>
 
