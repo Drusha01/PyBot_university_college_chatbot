@@ -35,7 +35,7 @@
                             <!-- <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 30px; height: 30px; margin-right: 8px;">Kai kai -->
                             <img style="border-radius:50%;"src="@if($user_details['user_profile_picture']== 'default.png'){{ asset('admin-assets/media/avatar/5.jpg')}} @else {{asset('storage/images/thumbnail/'.$user_details['user_profile_picture'])}} @endif" width="40" alt="">
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        <div class="dropdown-menu" style="left: -100px;" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{{route ('page.profile') }}">
                                 <i class="bi bi-person-fill"></i> Profile
                             </a>
@@ -44,7 +44,7 @@
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout">
-                            <i class="bi bi-box-arrow-right"></i> Sign Out sd
+                            <i class="bi bi-box-arrow-right"></i> Sign Out
                             </a>
                         </div>
                     </li>

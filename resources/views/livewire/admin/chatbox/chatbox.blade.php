@@ -63,31 +63,43 @@
                                                 </div>
                                                 </div>
                                         </div> 
-                                        <div class="scrollbar-y chat-box-six2 cqh-24 overflow-x-hidden">
+                                        <div class="scrollbar-y chat-box-six2 cqh-22 overflow-x-hidden">
                                             <ul class="nav nav-tabs nav-tabs-vertical nav-justified" role="tablist">
                                                 @forelse ($chat_box_list as $key => $value)
                                                     <li class="nav-item" > 
                                                         <a class="nav-link fade show p-0" wire:click="chat_box_selected({{$value->cbc_chat_box_id}})" @if($value->cbc_user_id == $chat_box['chat_box_user_sender']) style="background-color:white;" @endif >
                                                             <div class="p-20 bb-1 d-flex align-items-center justify-content-between pull-up">
-                                                                <div class="d-flex align-items-center w-100 pr-10">
-                                                                    <span class="me-15 status-success avatar avatar-lg">
-                                                                        @if( $value->user_profile_picture == 'default.png')
-                                                                            <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="bg-primary-light avr-round" alt="User Profile" >
-                                                                        @else
-                                                                            <img  class="bg-primary-light avr-round" style="border-radius: 50%;" src="{{asset('storage/images/resize/'.$value->user_profile_picture)}}" alt="">
-                                                                        @endif
-                                                                        <!-- <img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."> -->
-                                                                    </span>
-                                                                    <div class="text-left text-dark w-100">
-                                                                    <p class="mb-5"><strong>{{ $value->user_firstname.' '.$value->user_middlename.' '.$value->user_lastname}}</strong></p>
-                                                                    <span class="hover-primary mb-0"><strong>{{$value->cbc_chat_content}}</strong></span>
-                                                                
+                                                                <div class="col-12 pr-10">
+                                                                    <div class="row">
+                                                                        <div class="col-2">
+                                                                            <span class="me-15 status-success avatar avatar-lg">
+                                                                                @if( $value->user_profile_picture == 'default.png')
+                                                                                    <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="bg-primary-light avr-round" alt="User Profile" >
+                                                                                @else
+                                                                                    <img  class="bg-primary-light avr-round" style="border-radius: 50%;" src="{{asset('storage/images/resize/'.$value->user_profile_picture)}}" alt="">
+                                                                                @endif
+                                                                                <!-- <img class="bg-primary-light avr-round" src="{{ asset('admin-assets/media/avatar/avatar-1.png') }}" alt="..."> -->
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="col-8">
+                                                                            <div class="text-left text-dark">
+                                                                                <div class="row">
+                                                                                    <div class="col-12">
+                                                                                        <p class="mb-5"><strong>{{ $value->user_firstname.' '.$value->user_middlename.' '.$value->user_lastname}}</strong></p>
+                                                                                    </div>
+                                                                                    <div class="col-10">
+                                                                                        <span class="hover-primary mb-0"><strong>{{$value->cbc_chat_content}}</strong></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-2 text-end">
+                                                                            <span class="d-block mb-5 fs-12 text-nowrap">{{$value->date_created}}</span>
+                                                                            <!-- <span class="badge badge-primary">2</span> -->
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="text-end">
-                                                                <span class="d-block mb-5 fs-12 text-nowrap">{{$value->date_created}}</span>
-                                                                <!-- <span class="badge badge-primary">2</span> -->
-                                                                </div>
+                                                                
                                                             </div>
                                                         </a> 
                                                     </li>
@@ -135,7 +147,7 @@
                                     </div>
 
                                     <div class="box-body">
-                                        <div class="d-flex justify-content-center align-items-center text-muted scrollbar-y chat-box-six cqh-24">
+                                        <div class="d-flex justify-content-center align-items-center text-muted scrollbar-y chat-box-six cqh-22">
                                             <div class="row text-center px-2">
                                                 <h3 class="col-12 text-secondary">Open a Message</h3>
                                                 <p class="col-12">To open, click from the Chat List you want to view message.</p>
@@ -171,7 +183,7 @@
                                         @endif
                                     </div>
                                     <div class="box-body" wire:poll.2000ms="update_content_data()">
-                                        <div class="scrollbar-y chat-box-six cqh-24">
+                                        <div class="scrollbar-y chat-box-six cqh-22">
                                             @foreach ($chat_content as $key =>$value)
                                                 @if($value->cbc_user_id != $chat_box['chat_box_user_sender'])
                                                 <div class="rt-bx mb-30 d-flex align-items-start w-p100">

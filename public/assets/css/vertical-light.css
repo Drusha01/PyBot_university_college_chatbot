@@ -8737,6 +8737,10 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 }
 
 abbr[title],
@@ -8784,6 +8788,10 @@ blockquote {
 b,
 strong {
   font-weight: bolder;
+  overflow: hidden;
+  display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 }
 
 small {
@@ -13415,7 +13423,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: #124f31ed;
 }
 
 .nav-fill > .nav-link,
@@ -15492,7 +15500,7 @@ a.close.disabled {
   width: 100%;
   margin-right: -100%;
   backface-visibility: hidden;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -15509,12 +15517,12 @@ a.close.disabled {
 
 .carousel-item-next:not(.carousel-item-left),
 .active.carousel-item-right {
-  transform: translateX(100%);
+  transform: translateX(2%);
 }
 
 .carousel-item-prev:not(.carousel-item-right),
 .active.carousel-item-left {
-  transform: translateX(-100%);
+  transform: translateX(-1%);
 }
 
 .carousel-fade .carousel-item {
@@ -15526,14 +15534,14 @@ a.close.disabled {
 .carousel-fade .carousel-item.active,
 .carousel-fade .carousel-item-next.carousel-item-left,
 .carousel-fade .carousel-item-prev.carousel-item-right {
-  z-index: 1;
-  opacity: 1;
+  z-index: 0;
+  opacity: 0;
 }
 
 .carousel-fade .active.carousel-item-left,
 .carousel-fade .active.carousel-item-right {
-  z-index: 0;
-  opacity: 0;
+  z-index: 1;
+  opacity: 1;
   transition: opacity 0s 0.6s;
 }
 
@@ -30688,5 +30696,8 @@ div.tagsinput span.tag a {
     display: none;
   }
 }
+
+
+
 
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
