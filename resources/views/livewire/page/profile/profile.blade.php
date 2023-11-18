@@ -11,7 +11,7 @@
             <!-- Left Column -->
             <div class="col-lg-4">
                 <div class="user-profile-left text-center">
-                <div class="rounded-circle border-dark p-3" style="background-color: lightgray; display: inline-block;">
+                <div class="rounded border-dark p-3" style="background-color: lightgray; display: inline-block;">
                 @if($user_details['user_profile_picture'] == 'default.png')
                     <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" class="rounded-circle" alt="User Profile" style="width: 150px; height: 150px;">
                 @else
@@ -39,8 +39,8 @@
                         <!-- Profile Tab Content -->
                         <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab" wire:ignore.self>
                             <h4>Profile Information</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item">First name: </strong>{{$user_details['user_firstname']}}</li>
+                            <ul class="list-group border-top">
+                                <li class="list-group-item border-0">First name: </strong>{{$user_details['user_firstname']}}</li>
                                 <li class="list-group-item">Middle name: </strong> {{$user_details['user_middlename']}}</li>
                                 <li class="list-group-item">Last name: </strong> {{$user_details['user_lastname']}}</li>
                                 <li class="list-group-item">Suffix: </strong> {{$user_details['user_suffix']}}</li>

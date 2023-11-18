@@ -104,7 +104,7 @@
             </div>
             <!-- Edit Modal -->
             <div class="modal fade" id="modifyModalPhoto" tabindex="-1" role="dialog" aria-labelledby="modifyModalPhotoLabel" aria-hidden="true" wire:ignore.self>
-              <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="editModalLabel">Edit User Information</h5>
