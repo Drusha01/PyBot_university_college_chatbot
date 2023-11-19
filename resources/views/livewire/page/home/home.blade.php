@@ -9,7 +9,8 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" >
-          <img src="{{asset('admin-assets/media/programs/banner-1.jpg')}}"  class="card-img-top w-50 mx-auto banner" alt="Admission Image 1">
+          <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" class="card-img-top mx-auto" alt="Admission Image 1">
+          <div class="banner"></div>
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Student-Centered College.</h1>
@@ -19,7 +20,8 @@
           </div>
         </div>
         <div class="carousel-item" >
-          <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}"  class="card-img-top w-50 mx-auto banner" alt="Admission Image 2">
+          <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}"  class="card-img-top mx-auto" alt="Admission Image 2">
+          <div class="banner"></div>
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Innovative and Supportive Faculty and Staff.</h1>
@@ -29,7 +31,8 @@
           </div>
         </div>
         <div class="carousel-item" >
-          <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}"  class="card-img-top w-50 mx-auto banner" alt="Admission Image 3">
+          <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}"  class="card-img-top mx-auto" alt="Admission Image 3">
+          <div class="banner"></div>
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Convenient Facilities.</h1>

@@ -158,8 +158,8 @@
                           <summary><h4 class="">Page Assets</h4></summary>
                             <div class="content border-top">
                               <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false" wire:ignore.self wire:click="active_page(' ')">Home</a>
+                                <li class="nav-item active" role="presentation">
+                                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false" wire:ignore.self wire:click="active_page(' ')">Home</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                   <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false" wire:ignore.self wire:click="active_page(' ')">About Us</a>
@@ -183,7 +183,7 @@
                               </ul>
                               <div class="tab-content" id="myTabContent">
                                 <!-- HOME TAB -->
-                                <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab"  wire:ignore.self> 
+                                <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab"  wire:ignore.self> 
                                   <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addHomeModal">Add Home</button>
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="homeTable" style="min-width: 100%;">

@@ -15747,6 +15747,9 @@ a.close.disabled {
 .bg-center {
   background-position: center !important;
 }
+.bg-auto {
+  background-size: auto !important;
+}
 .bg-cover {
   background-size: cover !important;
 }
