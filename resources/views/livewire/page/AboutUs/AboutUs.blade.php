@@ -10,7 +10,7 @@
             <div class="row justify-content-xl-center">
               <div class="p-3 pb-md-4 mx-auto text-center">
                 <h2 class="display-4 fw-normal p-3 pb-md-6 mx-auto text-center">About Us</h2>
-                <p class="lead text-dark p-3 pb-md-4 mx-auto text-center">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
+                <p class="lead text-dark p-3 pb-md-4 border-bottom mx-auto text-center">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
                 <p class="mb-5"></p>
                 <div class="row gy-4 gy-md-0 gx-xxl-5X justify-content-center">
                   @if($about_us_data)
