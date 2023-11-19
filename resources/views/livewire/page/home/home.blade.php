@@ -14,7 +14,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Student-Centered College.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.4px #7c8884;">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
               <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
@@ -25,7 +25,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Innovative and Supportive Faculty and Staff.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.4px #7c8884;">The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
               <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
@@ -36,7 +36,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Convenient Facilities.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.4px #7c8884;">The College of Computing Studies is equipped with spacious and fully-aircon classrooms, high-tech laboratories, media rooms, and free wifi for all students.</p>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies is equipped with spacious and fully-aircon classrooms, high-tech laboratories, media rooms, and free wifi for all students.</p>
               <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
