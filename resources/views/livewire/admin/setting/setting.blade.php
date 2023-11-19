@@ -14,13 +14,13 @@
       <section class="content">
         <div class="row">
           <div class="col-md-12 col-12">
-            <div class="cqh-31">
+            <div class="cqh-32">
               <div class="row">
                 <ul class="nav nav-tabs nav-tabs-vertical-custom col-md-2 col-sm-12 pr-0" id="v-tabs-tab" role="tablist">
                   <li class="nav-item" role="presentation">
                     <a class="nav-link active rounded-left" id="v-tabs-general-tab" data-toggle="tab" href="#v-tabs-general" role="tab" aria-controls="v-tabs-general" aria-selected="true" wire:ignore.self>General</a>
                   </li>
-                  <li class="nav-item" role="presentation">
+                  <li class="nav-item wrap-text" role="presentation">
                     <a class="nav-link  rounded-left" id="cms-tab" data-toggle="tab" href="#cms" role="tab" aria-controls="cms" aria-selected="false" wire:ignore.self>Content Management System</a>
                   </li>
                   <li class="nav-item" role="presentation">
