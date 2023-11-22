@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Admission extends Component
 {
-    public function booted(){
-
+    public function booted(Request $request){
+        $this->user_details = $request->session()->all();
     }
     public function hydrate(){
         

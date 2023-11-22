@@ -26,6 +26,11 @@ class DatabaseSeeder extends Seeder
             target_types::class,
             About_us_page::class,
             system_logo_seeder::class,
+
+            moduleList::class,
+            admin_role_names::class,
+            // admin_role::class,
+            access_role::class,
         ]);
     }
 }

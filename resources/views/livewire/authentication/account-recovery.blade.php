@@ -43,7 +43,7 @@
     <div>
       <div class="container">
           <div class="header">
-              <h1>WMSU Testing and Evaluation Center</h1>
+              <h1>Pybot AI Machine Learning</h1>
               <p>Invalid link</p>
               <a href="{{ route('login') }}">Login</a>
           </div>

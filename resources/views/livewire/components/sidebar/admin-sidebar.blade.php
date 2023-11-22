@@ -1,48 +1,18 @@
 <div>
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav fw-bolder">
-            <li class="nav-item @yield('dashboard')">
-            <a class="nav-link" href="{{ route('dashboard') }}">
-            <i class='bi bi-grid menu-icon'></i>
-                <span class="menu-title">Dashboard</span>
-            </a>
-            </li>
-            <li class="nav-item @yield('colleges')">
-                <a class="nav-link" href="{{ route('colleges') }}"  aria-expanded="false" aria-controls="sub-menu">
-                    <i class='bi bi-person menu-icon'></i>
-                    <span class="menu-title">Colleges</span>
-                </a>
-            </li>
-            <li class="nav-item @yield('department')">
-                <a class="nav-link" href="{{ route('department') }}">
-                    <i class="bi bi-question-circle menu-icon"></i>
-                    <span class="menu-title">Department</span>
-                </a>
-            </li>
-            <li class="nav-item @yield('model')">
-                <a class="nav-link" href="{{ route('model') }}">
-                    <i class="bi bi-envelope menu-icon"></i>
-                    <span class="menu-title">Model</span>
-                </a>
-            </li>
-            <li class="nav-item @yield('user-management')">
-                <a class="nav-link" href="{{ route('user-management') }}">
-                    <i class="bi bi-card-list menu-icon"></i>
-                    <span class="menu-title">User Management</span>
-                </a>
-            </li>
-            <li class="nav-item @yield('chatbox')">
-                <a class="nav-link collapsed" href="{{ route('chatbox') }}">
-                    <i class="bi bi-chat-text menu-icon"></i>
-                    <span class="menu-title">Chat box Management</span>
-                </a>
-            </li>
-            <li class="nav-item @yield('setting')">
-            <a class="nav-link" href="{{ route('setting') }}">
-                <i class='bi bi-gear menu-icon'></i>
-                    <span class="menu-title">Settings</span>
-                </a>
-            </li>
+            @foreach($current_roles as $item => $value)
+                @if($value->access_role_create || $value->access_role_read || $value->access_role_update || $value->access_role_delete)
+                <li class="nav-item">
+                    <a class="nav-link"  href="/admin/{{$value->module_nav_route}}" >
+                    <i class='{{$value->module_nav_icon}}'></i>
+                        <span class="menu-title">{{$value->module_nav_name}}</span>
+                    </a>
+                </li>
+                    
+                @endif
+            @endforeach
+            
             <li class="nav-item logout">
                 <a class="nav-link" href="{{ route('logout') }}">
                 <i class='bi bi-box-arrow-in-right menu-icon'></i>
