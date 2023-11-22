@@ -61,7 +61,7 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-            <img src="<?php echo $message->embed(asset('images/logo/logo.png') ); ?>">
+            <img src="data:image/png;base64,{{base64_encode(file_get_contents(public_path().'/images/logo/logo.png'))}}" alt="">
             </div>
             <h1>WMSU PYBOT</h1>
         </div>
