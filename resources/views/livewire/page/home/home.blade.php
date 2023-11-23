@@ -105,10 +105,8 @@
     @if(0 && $academic_data)
       <div class="container marketing">
         <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
-          <h1 class="display-4 fw-normal">Programs</h1>
-          <p class="fs-5">Our programs are always up-to-date, following the CHED recommendation, industry standards,
-            and feedback from our successful alumni to ensure we always deliver quality education and produce highly employable
-            graduates.
+          <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+          <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
           </p>
         </div>
         <hr class="featurette-divider">
@@ -117,16 +115,13 @@
           <div class="col-12 col-md-12 col-lg-7 course-cs">
             <h2 class="featurette-heading course-title">BS in Computer Science</span></h2>
             <p class="lead justify">
-              The computer science course is intended for students with a solid background in mathematics
-              and an interest in the theory, practice, art, and science of computer programming. This course provides
-              graduates with an educational foundation for careers in computer software or computer system design,
-              including careers as software engineers, application software designers, system programmers, or system engineers.
+              Master advanced programming languages, algorithms, and software architecture for careers in fields like machine learning, blockchain, IoT, and more. Gain a comprehensive foundation rooted in computer theory and mathematics.
             </p>
             <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
           </div>
           <div class="col-12 col-md-10 col-lg-5 mx-auto mx-lg-0 course-1"></div>
         </div>
-        
+
         <div class="col-md-3">
           <div class="card mb-4">
             <img src="{{asset('storage/content/academic/'.$value->academic_logo)}}" class="card-img-top " alt="Program Image">
@@ -140,10 +135,8 @@
     @else
     <div class="container marketing">
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
-        <h1 class="display-4 fw-normal">Programs</h1>
-        <p class="fs-5">Our programs are always up-to-date, following the CHED recommendation, industry standards,
-          and feedback from our successful alumni to ensure we always deliver quality education and produce highly employable
-          graduates.
+        <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+        <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
       </div>
       <hr class="featurette-divider">
@@ -151,10 +144,7 @@
         <div class="col-12 col-md-12 col-lg-7 course-cs">
           <h2 class="featurette-heading course-title">BS in Computer Science</span></h2>
           <p class="lead justify">
-            The computer science course is intended for students with a solid background in mathematics
-            and an interest in the theory, practice, art, and science of computer programming. This course provides
-            graduates with an educational foundation for careers in computer software or computer system design,
-            including careers as software engineers, application software designers, system programmers, or system engineers.
+            Master advanced programming languages, algorithms, and software architecture for careers in fields like machine learning, blockchain, IoT, and more. Gain a comprehensive foundation rooted in computer theory and mathematics.
           </p>
           <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
         </div>
@@ -165,9 +155,18 @@
         <div class="col-12 col-md-12 col-lg-7 course-it">
           <h2 class="featurette-heading course-title">BS in Information Technology</span></h2>
           <p class="lead justify">
-            The BS in Information Systems program focuses on the design, development and implementation of information
-            and communications technology (ICT) resources to ensure information systems applications can be used in various
-            industry sectors (business, education, media and entertainment, healthcare, government, and service).
+            Apply emerging technologies to implement and administer real-world information systems, networks, databases and infrastructure. Become the do-it-all IT expert every organization needs.
+          </p>
+          <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
+        </div>
+        <div class="col-12 col-md-10 col-lg-5 mx-auto mx-lg-0 course-1 course-2"></div>
+      </div>
+      <hr class="featurette-divider sec-divider">
+      <div class="row featurette featurette-2">
+        <div class="col-12 col-md-12 col-lg-7 course-it">
+          <h2 class="featurette-heading course-title">Associate in Computer Technology (ACT)</span></h2>
+          <p class="lead justify">
+            Build versatile computer skills in programming, hardware, databases, and networks. Gain knowledge applicable across sectors and launch your technology career.
           </p>
           <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
         </div>
@@ -180,7 +179,7 @@
           <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
             <h1 class="display-4 fw-normal">Admissions</h1>
             <p class="fs-5">
-            Our admission process is now powered by a decision-support system called - <span class="green-bold fs-5">Pybot</span>.
+              We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
             </p>
             <p></p>
           </div>
@@ -201,7 +200,7 @@
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
         <h1 class="display-4 fw-normal">Admissions</h1>
         <p class="fs-5">
-        Our admission process is now powered by a decision-support system called - <span class="green-bold fs-5">Pybot</span>.
+          We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
         </p>
         <p><a class="btn btn-md btn-success background-color-green text-center btn-apply btn-font" href="../student/apply.php">Apply Now</a></p>
       </div>
@@ -232,41 +231,39 @@
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
-          <div class="row">
-            <div class="col-12 mb-2">
-            <img src="{{asset('assets/images/faces/face4.jpg')}}" alt="" class="bd-placeholder-img rounded w-75">
-            </div>
-            <div class="col-12 border-top pt-3">
-            <h3>Dr. Roderick P. Go</h3>
-            <h4>Dean</h4>
-            </div>
-          </div>
+          <img src="{{asset('admin-assets/media/avatar/avatar-1.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Dr. Juan Dela Cruz</h3>
+          <h4>Dean</h4>
         </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/odon.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Odon A. Maravillas, Jr., MSCS</h3>
+          <img src="{{asset('admin-assets/media/avatar/avatar-2.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Maria Santos, MSCS</h3>
           <h4>Associate Dean</h4>
         </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/belamide.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Gadmar M. Belamide, MEnggEd-ICT</h3>
-          <h4>Secretary</h4>
-        </div>
-        <div class="col-lg-4">
-          <div class="row">
-            <div class="col-12 mb-2">
-            <img src="{{asset('assets/images/faces/face4.jpg')}}" alt="" class="bd-placeholder-img rounded w-75">
-            </div>
-            <div class="col-12 border-top pt-3">
-            <h3>Ms. Lucy Felix-Sadiwa, MSCS</h3>
-            <h4>CS Department Head</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <img src="../img/faculty/escorialj.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. John Augustus A. Escorial, MIT</h3>
+          <img src="{{asset('admin-assets/media/avatar/avatar-3.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Carla Rivera, MIT</h3>
           <h4>IT Department Head</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{{asset('admin-assets/media/avatar/avatar-4.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Daniel Padilla</h3>
+          <h4>CS Department Head</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{{asset('admin-assets/media/avatar/avatar-5.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Andrea Lopez, MSCS </h3>
+          <h4>ACT Department Head</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{{asset('admin-assets/media/avatar/avatar-6.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Miguel Torres</h3>
+          <h4>Faculty Member</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{{asset('admin-assets/media/avatar/avatar-8.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Clara Mendoza</h3>
+          <h4>Faculty Member</h4>
         </div>
       </div>
       @endif
