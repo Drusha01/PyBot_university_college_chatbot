@@ -16,7 +16,7 @@ class CreateQuestions extends Migration
         DB::statement('CREATE TABLE questions(
             question_id INT PRIMARY KEY AUTO_INCREMENT,
             question_q_and_a_id INT ,
-            question_details VARCHAR(255) ,
+            question_details VARCHAR(2048) ,
             date_created DATETIME DEFAULT CURRENT_TIMESTAMP,
             date_updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             FOREIGN KEY (question_q_and_a_id) REFERENCES q_and_a(q_and_a_id)
