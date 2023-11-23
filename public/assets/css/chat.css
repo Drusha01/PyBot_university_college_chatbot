@@ -121,10 +121,10 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 1.3;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .bg {
@@ -150,9 +150,9 @@ Chat
   bottom: 0;
   right: 0;
   transform: translate(-5%, -5%);
-  width: 300px;
+  width: 369px;
   height: 80vh;
-  max-height: 355px;
+  max-height: 465px;
   z-index: 99;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.815);
