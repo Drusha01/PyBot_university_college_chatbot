@@ -5,16 +5,28 @@
         <div class="carousel-indicators">
           @foreach ($carousel_data as $key =>$value)
             @if($key == 0)
-              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide {{ $key+1}}"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ $key}}" class="active" aria-current="true" aria-label="Slide {{ $key+1}}"></button>
             @else
-              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide {{ $key+1}}"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ $key}}" aria-label="Slide {{ $key+1}}"></button>
             @endif
           @endforeach
         </div>
-      <div class="carousel-inner">
-      @foreach ($carousel_data as $key =>$value)
-        @if($key == 0)
-          <div class="carousel-item active" >
+        <div class="carousel-inner">
+        @foreach ($carousel_data as $key =>$value)
+          @if($key == 0)
+            <div class="carousel-item active" >
+              <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" class="card-img-top mx-auto" alt="Admission Image {{ $key+1}}">
+              <div class="banner"></div>
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_header_title}}</h1>
+                  <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_paragraph_paragraph}}</p>
+                  <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+                </div>
+              </div>
+            </div>
+          @else
+          <div class="carousel-item" >
             <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" class="card-img-top mx-auto" alt="Admission Image {{ $key+1}}">
             <div class="banner"></div>
             <div class="container">
@@ -25,18 +37,17 @@
               </div>
             </div>
           </div>
-        @else
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide {{ $key+1}}"></button>
-        @endif
-      @endforeach
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden ">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden ">Next</span>
-      </button>
+          @endif
+        @endforeach
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden ">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden ">Next</span>
+        </button>
       </div>
     @else
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
