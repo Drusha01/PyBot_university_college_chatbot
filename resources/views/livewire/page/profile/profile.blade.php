@@ -103,7 +103,7 @@
         </div>
 
         <div class="modal fade" id="modifyModalPhoto" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabelDetails" aria-hidden="true" wire:ignore.self>
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modifyModalLabelDetails">Change Profile photo</h5>
@@ -136,7 +136,7 @@
         </div>
 
         <div class="modal fade" id="modifyModalDetails" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabelDetails" aria-hidden="true" wire:ignore.self>
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content ">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modifyModalLabelDetails">Modify Profile Details</h5>

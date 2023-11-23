@@ -119,3 +119,12 @@ $(".chat-box-toggle").click(function() {
   $(".chat").toggle('scale');
   $(".chat").removeClass("d-flex flex-column justify-content-between");
 })
+
+
+document.addEventListener('keypress', function(event) {
+  const submitButton = document.querySelector('input[type="submit"], button[type="submit"]');
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Prevent default form submission
+    submitButton.click(); // Trigger the click event of the submit button
+  }
+});

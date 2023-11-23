@@ -16,7 +16,7 @@
         <option value="1">Pybot</option>
         <option value="2">Chat</option>
       </select> -->
-      <span class="chat-box-toggle"><i class="bi bi-x"></i></span>
+      <span class="chat-box-toggle"><i class="bi bi-chevron-down"></i></span>
     </div>
     <div class="messages">
       <div class="messages-content"></div>

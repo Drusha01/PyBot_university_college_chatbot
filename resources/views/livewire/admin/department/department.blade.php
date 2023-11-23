@@ -223,35 +223,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="edittag" class="">Tag</label>
-                                                    <input type="text" id="edittag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
+                                                    <input type="text" id="edittag" class="form-control form-control-sm" value="General, Informational, Specific" data-role="tagsinput"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-9">
-                                                <div class="d-grid gap-3">
-                                                    <label class="form-label">For</label>
-                                                    <div class="col d-inline-flex"> 
-                                                        <div class="col-2">
-                                                            <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" value="CS"> CS
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-3">
-                                                <div class="d-grid gap-3">
+                                                <div class="form-group">
                                                     <label class="form-label">Target</label>
-                                                    <select class="form-select" wire:model="q_and_a.target_type_id" id="" >
+                                                    <select class="form-control  form-control-sm form-select" wire:model="q_and_a.target_type_id" id="" >
                                                         @foreach ($target_types as $key =>$value)
                                                             <option value="{{$value->target_type_id }}">{{$value->target_type_details }}</option>
                                                         @endforeach
@@ -313,35 +292,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="edittag" class="">Tag</label>
-                                                    <input type="text" id="edittag" class="form-control form-control-lg" value="General, Informational, Specific" data-role="tagsinput"/>
+                                                    <input type="text" id="edittag" class="form-control form-control-sm" value="General, Informational, Specific" data-role="tagsinput"/>
                                                 </div>
                                             </div>
-                                            <div class="col-md-9">
-                                                <div class="d-grid gap-3">
-                                                    <label class="form-label">For</label>
-                                                    <div class="col d-inline-flex"> 
-                                                        <div class="col-2">
-                                                            <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" checked="checked" value="IT"> IT
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" value="CS"> CS
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" value="ACT"> ACT
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-3">
-                                                <div class="d-grid gap-3">
+                                                <div class="form-group">
                                                     <label class="form-label">Target</label>
-                                                    <select class="form-select" wire:model="q_and_a.target_type_id" id="" >
+                                                    <select class="form-control  form-control-sm form-select" wire:model="q_and_a.target_type_id" id="" >
                                                         @foreach ($target_types as $key =>$value)
                                                             <option value="{{$value->target_type_id }}">{{$value->target_type_details }}</option>
                                                         @endforeach

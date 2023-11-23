@@ -17,7 +17,7 @@ class system_logo_seeder extends Seeder
         DB::statement('INSERT INTO system_assets VALUES(
             NULL,
             "Pybot",
-            "logo.png",
+            "favicon-192x192.png",
             NOW(),
             NOW()
         );');

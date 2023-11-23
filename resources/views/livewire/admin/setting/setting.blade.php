@@ -14,13 +14,13 @@
       <section class="content">
         <div class="row">
           <div class="col-md-12 col-12">
-            <div class="cqh-31">
+            <div class="cqh-32">
               <div class="row">
                 <ul class="nav nav-tabs nav-tabs-vertical-custom col-md-2 col-sm-12 pr-0" id="v-tabs-tab" role="tablist">
                   <li class="nav-item" role="presentation">
                     <a class="nav-link active rounded-left" id="v-tabs-general-tab" data-toggle="tab" href="#v-tabs-general" role="tab" aria-controls="v-tabs-general" aria-selected="true" wire:ignore.self>General</a>
                   </li>
-                  <li class="nav-item" role="presentation">
+                  <li class="nav-item wrap-text" role="presentation">
                     <a class="nav-link  rounded-left" id="cms-tab" data-toggle="tab" href="#cms" role="tab" aria-controls="cms" aria-selected="false" wire:ignore.self>Content Management System</a>
                   </li>
                   <li class="nav-item" role="presentation">
@@ -158,8 +158,8 @@
                           <summary><h4 class="">Page Assets</h4></summary>
                             <div class="content border-top">
                               <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false" wire:ignore.self wire:click="active_page(' ')">Home</a>
+                                <li class="nav-item active" role="presentation">
+                                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false" wire:ignore.self wire:click="active_page(' ')">Home</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                   <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false" wire:ignore.self wire:click="active_page(' ')">About Us</a>
@@ -183,7 +183,7 @@
                               </ul>
                               <div class="tab-content" id="myTabContent">
                                 <!-- HOME TAB -->
-                                <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab"  wire:ignore.self> 
+                                <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab"  wire:ignore.self> 
                                   <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addHomeModal">Add Home</button>
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="homeTable" style="min-width: 100%;">
