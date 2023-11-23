@@ -508,7 +508,7 @@ class Model extends Component
 
     
             for ($i=2; $i < $model_length; $i++) { 
-                if($this->selected_model+2 == $i){
+                if(intval($this->selected_model)+2 == intval($i)){
                     // dd($models_list[$i]);
                     $model_folder = $models_list[$i];
                     $file_path  = dirname(__FILE__,6).'\\core\\';
