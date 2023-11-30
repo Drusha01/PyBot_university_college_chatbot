@@ -142,6 +142,25 @@ body {
   color: #ffffff !important;
 }
 
+.avatar-title {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7269ef;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
 /*--------------------
 Chat
 --------------------*/
@@ -297,6 +316,14 @@ Messages
   -webkit-animation: bounce 500ms linear both;
           animation: bounce 500ms linear both;
 }
+.messages .message.next {
+  margin-top: -7px;
+  transform: scale(0);
+  transform-origin: 0 0;
+  -webkit-animation: bounce 500ms linear both;
+          animation: bounce 500ms linear both;
+}
+
 .messages .message.loading::before {
   position: absolute;
   top: 50%;
@@ -358,6 +385,44 @@ Messages
   margin-left: 7px;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
+}
+
+.messages .message .message-img {
+  border-radius: .2rem;
+  position: relative
+}
+
+.messages .message .message-img .message-img-list {
+  position: relative
+}
+
+.messages .message .message-img img {
+  max-width: 150px
+}
+
+.messages .message .message-img .message-img-link {
+  position: absolute;
+  right: 10px;
+  left: auto;
+  bottom: 10px
+}
+
+.messages .message .message-img .message-img-link li>a {
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center
+}
+
+.messages .message .message-link > a{
+  padding: 0.75rem 1rem;
+  font-size: 0.833rem;
+  text-decoration: underline;
+  color: var(--reply-anchor-text);
+  transition: 0.3s ease;
 }
 
 /*--------------------

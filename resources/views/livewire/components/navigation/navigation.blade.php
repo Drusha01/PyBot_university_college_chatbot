@@ -1,14 +1,17 @@
 <div>
-    <nav id="top-nav" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav id="top-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('storage/content/system_asset/'.$system_asset['system_asset_logo']) }}" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
             <span class="logo">{{$system_asset['system_asset_name']}}</span>
         </a>
+        <button class="navbar-toggler collapsed" aria-expanded="false" aria-controls="navbarNav" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <!-- Navigation links -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route ('page.home')}}">Home</a>
                 </li>

@@ -10,7 +10,7 @@
         <h2>ACTIVE</h2>
       </div>
       <figure class="avatar">
-        <img src="{{ asset('admin-assets/media/avatar/5.jpg') }}" />
+        <img src="{{ asset('admin-assets/media/icon.png') }}" alt="logo">
       </figure>
       <!-- <select wire:model="chat_type" wire:change="update_chat_type" style="background-color:inherit;border-color:inherit; color:white;">
         <option value="1">Pybot</option>
