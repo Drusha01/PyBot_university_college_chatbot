@@ -127,7 +127,9 @@
       } else {
         $('.main-panel').removeClass('off-canvas');
       }
+      $('.offcanvas-collapse').toggleClass('open')
     });
+
     
     $(document).on('mouseenter mouseleave touchstart touchend', '.sidebar .nav-item', function (ev) {
       // Check if the body element has certain classes

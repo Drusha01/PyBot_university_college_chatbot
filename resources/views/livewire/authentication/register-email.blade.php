@@ -3,10 +3,10 @@
         <div class="container">
         <div class="card login-card">
             <div class="row no-gutters">
-            <div class="col-md-5">
+            <div class="col-md-3">
                 <img src="{{ asset('assets/images/CCS_building.png') }}" alt="login" class="login-card-img">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-9">
                 <div class="card-body">
                 <div class="brand-wrapper justify-content-between">
                 <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="logo">
@@ -22,7 +22,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
-                            <input type="email"  wire:model="email" class="form-control" placeholder="Email address" required>
+                            <input type="email"  wire:model="email" class="form-control  form-control-sm" placeholder="Email address" required>
                         </div>
                         <button type="submit"   class="btn btn-block login-btn mb-4 button-color">Send Verification Code</button>
 
@@ -32,7 +32,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input type="number"  wire:model="code" class="form-control" placeholder="Enter code" min="100000" max="999999" required>
+                                <input type="number"  wire:model="code" class="form-control  form-control-sm" placeholder="Enter code" min="100000" max="999999" required>
                             </div>
                             <button type="submit"   class="btn btn-block login-btn mb-4 button-color">Verify</button>
                             <a href="{{ route('login') }}" class="forgot-password-link">Back to Login</a>
@@ -44,29 +44,29 @@
                         <div class="row mb-1">
                             <div class="col-md-12 mb-1">
                                 <label for="firstName" class="form-label">Username</label>
-                                <input type="text" style="color:{{$style}}"class="form-control"  wire:model="username" wire:keyup="verify_username()" required>
+                                <input type="text" style="color:{{$style}}"class="form-control  form-control-sm"  wire:model="username" wire:keyup="verify_username()" required>
                             </div>
                             <div class="col-md-12 mb-1">
                                 <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" wire:model="firstname" required>
+                                <input type="text" class="form-control  form-control-sm" wire:model="firstname" required>
                             </div>
                             <div class="col-md-12 mb-1">
                                 <label for="middleName" class="form-label">Middle Name</label>
-                                <input type="text" class="form-control" wire:model="middlename">
+                                <input type="text" class="form-control  form-control-sm" wire:model="middlename">
                             </div>
                             <div class="col-md-12 mb-1">
                                 <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" wire:model="lastname" required>
+                                <input type="text" class="form-control  form-control-sm" wire:model="lastname" required>
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" min="8" wire:model="password"  wire:keyup="verify_password()"required>
+                                <input type="password" class="form-control  form-control-sm" min="8" wire:model="password"  wire:keyup="verify_password()"required>
                             </div>
                             <div class="col-md-12 ">
                                 <label for="confirmPassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" min="8" wire:model="confirm_password"  wire:keyup="verify_confirm_password()"required>
+                                <input type="password" class="form-control  form-control-sm" min="8" wire:model="confirm_password"  wire:keyup="verify_confirm_password()"required>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -75,7 +75,7 @@
                             </div>
                             <div class="col-md-8 mb-8">
                                 <label for="birthDate" class="form-label">Birthday</label>
-                                <input type="date" class="form-control" wire:model="birthdate"  wire:change="verify_birthdate()"required>
+                                <input type="date" class="form-control  form-control-sm" wire:model="birthdate"  wire:change="verify_birthdate()"required>
                             </div>
                             <button type="submit" class="btn-block button-color ">{{$sign_up_button}}</button>
                         </div>

@@ -1347,3 +1347,6 @@ ul.com li .com_wrapper blockquote {
   }
 }
 
+.wrap-text {
+  text-wrap: pretty;
+}

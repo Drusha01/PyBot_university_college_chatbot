@@ -8718,10 +8718,10 @@ body {
   color: #1F1F1F;
   text-align: left;
   background-color: #fff;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -9066,7 +9066,7 @@ h6, .h6 {
 
 /* Desktop - 1280px */
 @media (min-width: 1280px) {
-  h1 {font-size: 2.5rem;}  
+  h1 {font-size: 2.5rem;}
   h2 {font-size: 2rem;}
   h3 {font-size: 1.75rem;}
   h4 {font-size: 1.5rem;}
@@ -9074,7 +9074,7 @@ h6, .h6 {
   h6 {font-size: 1rem;}
 }
 
-/* Laptop - 1024px */  
+/* Laptop - 1024px */
 @media (min-width: 1024px) {
   h1 {font-size: 2rem;}
   h2 {font-size: 1.75rem;}
@@ -9092,7 +9092,7 @@ h6, .h6 {
   h4 {font-size: 1.125rem;}
   h5 {font-size: 1rem;}
   h6 {font-size: 0.875rem;}
-}  
+}
 
 /* Phones - 480px */
 @media (min-width: 480px) {
@@ -30430,7 +30430,7 @@ div.tagsinput span.tag a {
   li.nav-item.logout {
     width: 228.6px;
   }
-  
+
 }
 
 @media (min-width: 780px) {

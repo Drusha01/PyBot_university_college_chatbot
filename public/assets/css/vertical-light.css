@@ -8739,7 +8739,7 @@ p {
   margin-bottom: 1rem;
   overflow: hidden;
   display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 
@@ -9055,7 +9055,7 @@ h6, .h6 {
 
 /* Desktop - 1280px */
 @media (min-width: 1280px) {
-  h1 {font-size: 2.5rem;}  
+  h1 {font-size: 2.5rem;}
   h2 {font-size: 2rem;}
   h3 {font-size: 1.75rem;}
   h4 {font-size: 1.5rem;}
@@ -9063,7 +9063,7 @@ h6, .h6 {
   h6 {font-size: 1rem;}
 }
 
-/* Laptop - 1024px */  
+/* Laptop - 1024px */
 @media (min-width: 1024px) {
   h1 {font-size: 2rem;}
   h2 {font-size: 1.75rem;}
@@ -9081,7 +9081,7 @@ h6, .h6 {
   h4 {font-size: 1.125rem;}
   h5 {font-size: 1rem;}
   h6 {font-size: 0.875rem;}
-}  
+}
 
 /* Phones - 480px */
 @media (min-width: 480px) {
@@ -15747,6 +15747,9 @@ a.close.disabled {
 .bg-center {
   background-position: center !important;
 }
+.bg-auto {
+  background-size: auto !important;
+}
 .bg-cover {
   background-size: cover !important;
 }
@@ -19507,7 +19510,7 @@ body {
   -webkit-font-smoothing: antialiased;
   --dot-bg: #f5f7ff;
     --dot-color: #b6c8bf;
-    --dot-size: 0.7px;
+    --dot-size: 1.4px;
     --dot-space: 20px;
     background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color);
 }
@@ -19557,7 +19560,7 @@ h6, .h6 {
 
 /* Desktop - 1280px */
 @media (min-width: 1280px) {
-  h1 {font-size: 2.5rem;}  
+  h1 {font-size: 2.5rem;}
   h2 {font-size: 2rem;}
   h3 {font-size: 1.75rem;}
   h4 {font-size: 1.5rem;}
@@ -19565,7 +19568,7 @@ h6, .h6 {
   h6 {font-size: 1rem;}
 }
 
-/* Laptop - 1024px */  
+/* Laptop - 1024px */
 @media (min-width: 1024px) {
   h1 {font-size: 2rem;}
   h2 {font-size: 1.75rem;}
@@ -19583,7 +19586,7 @@ h6, .h6 {
   h4 {font-size: 1.125rem;}
   h5 {font-size: 1rem;}
   h6 {font-size: 0.875rem;}
-}  
+}
 
 /* Phones - 480px */
 @media (min-width: 480px) {
@@ -28578,7 +28581,19 @@ div.tagsinput span.tag a {
 
 @media (max-width: 767px) {
   .content-wrapper {
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 0rem;
+  }
+  .chat {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-3%, -3%);
+    width: 455px;
+    height: 80vh;
+    max-height: 630px;
+  }
+  .message-box .message-input {
+    width: 85%;
   }
 }
 
@@ -28890,6 +28905,72 @@ div.tagsinput span.tag a {
     right: 0;
   }
 }
+
+@media (max-width: 991.98px) {
+  .offcanvas-collapse {
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #343a40;
+    transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  }
+  .offcanvas-collapse.open {
+    visibility: visible;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  color: rgba(255, 255, 255, .75);
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-underline .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+  color: #6c757d;
+}
+
+.nav-underline .nav-link:hover {
+  color: #007bff;
+}
+
+.nav-underline .active {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.bg-purple { background-color: #6f42c1; }
+
+.lh-100 { line-height: 1; }
+.lh-125 { line-height: 1.25; }
+.lh-150 { line-height: 1.5; }
 
 /* Navbar */
 .navbar {

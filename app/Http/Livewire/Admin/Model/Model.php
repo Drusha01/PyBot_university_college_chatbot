@@ -374,10 +374,10 @@ class Model extends Component
             $model_lr = $request->input('model_lr');
     
             if(!$max_epoch){
-                $max_epoch = 250 ;
+                $max_epoch = 1000 ;
             }
             if(!$model_lr){
-                $model_lr = 0.01 ;
+                $model_lr = 0.001 ;
             }
     
             $file_path  = dirname(__FILE__,6);
@@ -414,7 +414,10 @@ class Model extends Component
             }
 
             if($output){
-                
+                $train_log_file_name = 'model_train_logs.txt';
+                $train_logs = fopen($file_path.$models_file_path.$model_name.'/'.$train_log_file_name,'w') or die("Unable to open file!");
+                fwrite($train_logs,$output);
+                fclose($train_logs);
                 $this->dispatchBrowserEvent('swal:remove_backdrop',[
                     'position'          									=> 'center',
                     'icon'                                                  => 'success',
@@ -505,7 +508,7 @@ class Model extends Component
 
     
             for ($i=2; $i < $model_length; $i++) { 
-                if($this->selected_model+2 == $i){
+                if(intval($this->selected_model)+2 == intval($i)){
                     // dd($models_list[$i]);
                     $model_folder = $models_list[$i];
                     $file_path  = dirname(__FILE__,6).'\\core\\';
@@ -523,7 +526,7 @@ class Model extends Component
                         }
                         $config_file = array(
                             'delay'=>25,
-                            'threshold'=>.025,
+                            'threshold'=>.25,
                             'iteration'=>5,
                             'run'=>0,
                             'path_to_questions'=>$file_path.'\\deployment\\questions\\',

@@ -22,6 +22,7 @@ class AboutUs extends Component
         ->orderBy('about_us_order')
         ->get()
         ->toArray();
+        
     }
 
     public function mount(Request $request){
@@ -29,6 +30,7 @@ class AboutUs extends Component
         $this->title = 'AboutUs';
 
         self::update_data();
+        
     }
     public function render()
     {
