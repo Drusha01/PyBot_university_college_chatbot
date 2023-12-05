@@ -300,6 +300,7 @@ class Model extends Component
                         'q_and_a_type_details',
                         'answer_id',
                         'answer_details',
+                        'answer_type',
                         'target_type_details')
                     ->join('answers as a', 'a.answer_q_and_a_id', '=', 'qa.q_and_a_id')
                     ->join('q_and_a_types as t', 't.q_and_a_type_id', '=', 'qa.q_and_a_type_id')

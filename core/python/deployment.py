@@ -51,6 +51,7 @@ def predict_class(sentence):
     results.sort(key = lambda x: x[1], reverse=True)
 
     return_list =[]
+    return return_list
     for r in results:
         return_list.append({'intent':classes[r[0]],'probability': str(r[1])})
 
@@ -123,7 +124,7 @@ while(exists(json_config_path)):
 
             json_content = {
                 "question": question,
-                "answer": answer
+                "answer": ints
             }
             json_object = json.dumps(json_content, indent=4)
             with open(config_path_to_answers+item, "w") as outfile:

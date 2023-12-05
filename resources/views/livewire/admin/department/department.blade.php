@@ -60,7 +60,26 @@
                                         </td>
                                         <td>
                                         @foreach($it_q_and_a_data[$item]['answers'] as $a_item => $a_value)
-                                            <p>{{($a_item+1).'. '. $a_value}}</p>
+                                            @if($a_value['answer_type'] == 1)
+                                            <?php 
+                                                $ext = explode('.',$a_value['answers']);
+                                                $ext = $ext[1];?>
+                                                @if($ext == 'pdf')
+                                                    <a href="{{asset('storage/answer_details/'.$a_value['answers'])}}" target="blank">
+                                                    file[{{$a_value['answers']}}]
+                                                    </a> 
+                                                    <br>
+                                                    <br>
+                                                @else  
+                                                    <a href="{{asset('storage/answer_details/'.$a_value['answers'])}}" target="blank">
+                                                        <img src="{{asset('storage/answer_details/'.$a_value['answers'])}}" alt="" width="80px"> 
+                                                    </a> 
+                                                    <br>
+                                                    <br>
+                                                @endif
+                                            @else
+                                                <p>{{($a_item+1).'. '. $a_value['answers']}}</p>
+                                            @endif
                                         @endforeach
                                         </td>
                                         <td class="text-center">
@@ -114,7 +133,27 @@
                                         </td>
                                         <td>
                                         @foreach($cs_q_and_a_data[$item]['answers'] as $a_item => $a_value)
-                                            <p>{{($a_item+1).'. '. $a_value}}</p>
+                                            @if($a_value['answer_type'] == 1)
+                                                <?php 
+                                                $ext = explode('.',$a_value['answers']);
+                                                $ext = $ext[1];
+                                                ?>
+                                                @if($ext == 'pdf')
+                                                    <a href="{{asset('storage/answer_details/'.$a_value['answers'])}}" target="blank">
+                                                    file[{{$a_value['answers']}}]
+                                                    </a> 
+                                                    <br>
+                                                    <br>
+                                                @else  
+                                                    <a href="{{asset('storage/answer_details/'.$a_value['answers'])}}" target="blank">
+                                                        <img src="{{asset('storage/answer_details/'.$a_value['answers'])}}" alt="" width="80px"> 
+                                                    </a> 
+                                                    <br>
+                                                    <br>
+                                                @endif
+                                            @else
+                                                <p>{{($a_item+1).'. '. $a_value['answers']}}</p>
+                                            @endif
                                         @endforeach
                                         </td>
                                         <td class="text-center">
@@ -166,7 +205,27 @@
                                         </td>
                                         <td>
                                         @foreach($act_q_and_a_data[$item]['answers'] as $a_item => $a_value)
-                                            <p>{{($a_item+1).'. '. $a_value}}</p>
+                                            @if($a_value['answer_type'] == 1)
+                                                <?php 
+                                                $ext = explode('.',$a_value['answers']);
+                                                $ext = $ext[1];
+                                                ?>
+                                                @if($ext == 'pdf')
+                                                    <a href="{{asset('storage/answer_details/'.$a_value['answers'])}}" target="blank">
+                                                    file[{{$a_value['answers']}}]
+                                                    </a> 
+                                                    <br>
+                                                    <br>
+                                                @else  
+                                                    <a href="{{asset('storage/answer_details/'.$a_value['answers'])}}" target="blank">
+                                                        <img src="{{asset('storage/answer_details/'.$a_value['answers'])}}" alt="" width="80px"> 
+                                                    </a> 
+                                                    <br>
+                                                    <br>
+                                                @endif
+                                            @else
+                                                <p>{{($a_item+1).'. '. $a_value['answers']}}</p>
+                                            @endif
                                         @endforeach
                                         </td>
                                         <td class="text-center">
@@ -211,11 +270,16 @@
                                                 @foreach($q_and_a['answers'] as $key => $value)
                                                     <div class="form-group" >
                                                         <label for="editresponse">Responses</label>
-                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        @if($q_and_a['answers'][$key]['answer_type'] == 1)
+                                                        <input wire:key="add-answer-{{$key}}"class="form-control form-control-sm" type="file" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></input>
+                                                        @else
+                                                        <textarea wire:key="add-answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        @endif
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
-                                                <button  wire:key="add_answer" class="btn btn-success btn-icon float-right" wire:click="add_answer()" type="button"><i class="bi bi-plus-lg"></i></button>
+                                                <button  wire:key="add-add_answer_file" class="btn btn-success btn-icon float-right" wire:click="add_answer(2)" type="button"><i class="bi bi-plus-lg"></i></button>
+                                                <button  wire:key="add-add_answer" class="btn btn-success btn-icon float-right" wire:click="add_answer(1)" type="button"><i class="bi bi-file-earmark"></i></button>
                                             </div>
                                             <!-- <div class="col-md-12 d-flex justify-content-center mb-3">
                                                 <button id="edit_data" class="btn btn-success btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
@@ -280,11 +344,16 @@
                                                 @foreach($q_and_a['answers'] as $key => $value)
                                                     <div class="form-group" >
                                                         <label for="editresponse">Responses</label>
-                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        @if($q_and_a['answers'][$key]['answer_type'] == 1)
+                                                        <input wire:key="edit-answer-{{$key}}"class="form-control form-control-sm" type="file" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></input>
+                                                        @else
+                                                        <textarea wire:key="edit-answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        @endif
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
-                                                <button  wire:key="add_edit_answer" class="btn btn-success btn-icon float-right" wire:click="add_answer()" type="button"><i class="bi bi-plus-lg"></i></button>
+                                                <button  wire:key="edit-add_answer_file" class="btn btn-success btn-icon float-right" wire:click="add_answer(2)" type="button"><i class="bi bi-plus-lg"></i></button>
+                                                <button  wire:key="edit-add_answer" class="btn btn-success btn-icon float-right" wire:click="add_answer(1)" type="button"><i class="bi bi-file-earmark"></i></button>
                                             </div>
                                             <!-- <div class="col-md-12 d-flex justify-content-center mb-3">
                                                 <button id="edit_data" class="btn btn-success btn-icon float-right"  type="button"><i class="bi bi-plus-lg"></i></button>
