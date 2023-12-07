@@ -47,13 +47,14 @@ $('.message-submit').click(function() {
   
   
   ,success: function(result){
-      // var response = JSON.parse(result);
-      
-      $('.message.loading').remove();
-      updateScrollbar();
-      $('<div class="message new">' + result + '</div>').appendTo($('.mCSB_container')).addClass('new');
-      setDate();
-      updateScrollbar();
+      var response = JSON.parse(result);
+
+      response.forEach(myFunction)
+      // $('.message.loading').remove();
+      // updateScrollbar();
+      // $('<div class="message new">' + result + '</div>').appendTo($('.mCSB_container')).addClass('new');
+      // setDate();
+      // updateScrollbar();
   }
   });
   $('.message-input').val(null);
@@ -65,6 +66,67 @@ $('.message-submit').click(function() {
   // }, 1000 + (Math.random() * 20) * 100);
 
 });
+function myFunction(item, index, arr) {
+  $('.message.loading').remove();
+    updateScrollbar();
+  if(arr[index]['answer_type'] == 1){
+    var ext = arr[index]['answer'].substr(arr[index]['answer'].lastIndexOf('.') + 1);
+    if(ext == 'jpg' || ext =='png'){
+      console.log(ext);
+      $('<div class="message">' + `
+      <ul class="list-inline message-img  mb-0">
+        <li class="list-inline-item message-img-list me-2 ms-0">
+            <div>
+                <a class="popup-img d-inline-block m-1" href="/storage/answer_details/`+arr[index]['answer']+`" target="_blank" title="Project 1">
+                    <img src="/storage/answer_details/`+arr[index]['answer']+`" alt="" class="rounded border">
+                </a>
+            </div>
+            <div class="message-img-link">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a href="/storage/answer_details/`+arr[index]['answer']+`" target="_blank" class="fw-medium"></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+      </ul>
+    ` + '</div>').appendTo($('.mCSB_container')).addClass('next');
+    }else if(ext == 'pdf'){
+      console.log(ext);
+      $('<div class="message">' + `
+      <div class="bg-light p-2 mb-2">
+        <div class="d-flex flex-wrap align-items-center attached-file">
+            <div class="avatar-sm me-3 ms-0 attached-file-avatar">
+                <div class="avatar-title bg-primary-subtle text-primary rounded fs-20">
+                    <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                </div>
+            </div>                                                            
+            <div class="flex-grow-1 overflow-hidden">
+                <div class="text-start">
+                    <h5 class="fs-14 text-truncate mb-1">`+arr[index]['answer']+`</h5>
+                    <p class="text-muted text-truncate fs-13 mb-0"></p>
+                </div>
+            </div>
+            <div class="ms-4 me-0">
+                <div class="d-flex gap-2 fs-20 d-flex align-items-start">
+                    <div>
+                        <a download="/storage/answer_details/`+arr[index]['answer']+`" href="/storage/answer_details/`+arr[index]['answer']+`" class="fw-medium">
+                            <i class="bi bi-download"></i>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </div>                                                        
+      </div>
+    ` + '</div>').appendTo($('.mCSB_container')).addClass('next');
+    }
+  }else if(arr[index]['answer_type'] == 2){
+    $('<div class="message new">' + arr[index]['answer'] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  }
+  setDate();
+  updateScrollbar();
+
+}
 
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
@@ -156,9 +218,9 @@ function fakeMessage() {
     $('.message.loading').remove();
     $('<div class="message">' + greet[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
     $('<div class="message">' + ask[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
-    $('<div class="message">' + image[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
-    $('<div class="message">' + file[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
-    $('<div class="message">' + link[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
+    // $('<div class="message">' + image[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
+    // $('<div class="message">' + file[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
+    // $('<div class="message">' + link[i] + '</div>').appendTo($('.mCSB_container')).addClass('next');
     setDate();
     updateScrollbar();
     i++;

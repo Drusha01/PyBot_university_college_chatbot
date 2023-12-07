@@ -51,7 +51,6 @@ def predict_class(sentence):
     results.sort(key = lambda x: x[1], reverse=True)
 
     return_list =[]
-    return return_list
     for r in results:
         return_list.append({'intent':classes[r[0]],'probability': str(r[1])})
 
@@ -61,11 +60,16 @@ def get_response(intent_list, intents_json):
     tag = intent_list[0]['intent']
     list_of_intents = intents_json['intents']
     result = 'i dont understand you'
-    for i in list_of_intents:   
-        if i['tag'] == tag:
-            result = random.choice(i['responses'])
-            break
-    return result
+    result_list = []
+    length = len(intent_list)
+    for x in range(length):
+        tag = intent_list[x]['intent']
+        for i in list_of_intents:   
+            if i['tag'] == tag :
+                # result = random.choice(i['responses'])
+                result = i['responses']
+                result_list.append({'response':result,'question':i['patterns']})
+    return result_list
 
 
 
@@ -124,7 +128,8 @@ while(exists(json_config_path)):
 
             json_content = {
                 "question": question,
-                "answer": ints
+                "answer": ints,
+                'response':answer,
             }
             json_object = json.dumps(json_content, indent=4)
             with open(config_path_to_answers+item, "w") as outfile:

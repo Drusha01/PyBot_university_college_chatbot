@@ -308,6 +308,7 @@ class Model extends Component
                     ->where('qa.q_and_a_id','=',($value->q_and_a_id))
                     ->get()
                     ->toArray();
+                // dd($answers_list);
                 $answer_length = count($answers_list);
                 foreach ($answers_list as $answer_key => $answer_value) {
                     fwrite($intent_file, json_encode($answer_value,JSON_FORCE_OBJECT));
