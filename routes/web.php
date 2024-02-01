@@ -105,7 +105,7 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/dashboard', Dashboard::class)->name('dashboard');
         Route::get('/colleges', Colleges::class)->name('colleges');
         Route::get('/department', Department::class)->name('department');
-        Route::get('/usermanagement', Usermanagement::class)->name('user-management');
+        Route::get('/usermanagement', Usermanagement::class)->name('usermanagement');
         Route::get('/chatbox', Chatbox::class)->name('chatbox');
         Route::get('/setting', Setting::class)->name('setting');
         Route::get('/model', Model::class)->name('model');
