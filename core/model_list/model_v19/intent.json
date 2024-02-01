@@ -252,66 +252,6 @@
                 }
             ],
             "context_set": ""
-        },
-        {
-            "tag": "11",
-            "patterns": [
-                "What Is IT?"
-            ],
-            "responses": [
-                {
-                    "answer_id": 23,
-                    "q_and_a_type_details": "IT",
-                    "answer_details": "INFO TECH",
-                    "target_type_details": "public"
-                }
-            ],
-            "context_set": ""
-        },
-        {
-            "tag": "12",
-            "patterns": [
-                "What Is Cs?"
-            ],
-            "responses": [
-                {
-                    "answer_id": 24,
-                    "q_and_a_type_details": "CS",
-                    "answer_details": "COMPUTER SCIENCE",
-                    "target_type_details": "public"
-                }
-            ],
-            "context_set": ""
-        },
-        {
-            "tag": "13",
-            "patterns": [
-                "What Is Act?"
-            ],
-            "responses": [
-                {
-                    "answer_id": 25,
-                    "q_and_a_type_details": "ACT",
-                    "answer_details": "ACOUNTANT",
-                    "target_type_details": "public"
-                }
-            ],
-            "context_set": ""
-        },
-        {
-            "tag": "14",
-            "patterns": [
-                "IS IT GOOD COURSE?"
-            ],
-            "responses": [
-                {
-                    "answer_id": 26,
-                    "q_and_a_type_details": "IT",
-                    "answer_details": "YES, MOST OF STUDENT WHO ADASDAJ",
-                    "target_type_details": "public"
-                }
-            ],
-            "context_set": ""
         }
     ]
 }
