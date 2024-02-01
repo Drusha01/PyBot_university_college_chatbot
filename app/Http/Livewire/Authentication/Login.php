@@ -78,17 +78,26 @@ class Login extends Component
                 $request->session()->put('date_updated', $user_details->date_updated);
 
                 //append it to session
-                $this->dispatchBrowserEvent('swal:redirect',[
-                    'position'          									=> 'center',
-                    'icon'              									=> 'success',
-                    'title'             									=> 'Welcome back python!',
-                    'showConfirmButton' 									=> 'true',
-                    'timer'             									=> '1500',
-                    'link'              									=> '/'
-                ]);
+              
                 $data = $request->session()->all();
                 if(isset($data['user_role_details']) && $data['user_role_details'] == 'admin'){
-                    return redirect('/admin/dashboard');
+                    $this->dispatchBrowserEvent('swal:redirect',[
+                        'position'          									=> 'center',
+                        'icon'              									=> 'success',
+                        'title'             									=> 'Welcome back python!',
+                        'showConfirmButton' 									=> 'true',
+                        'timer'             									=> '1500',
+                        'link'              									=> 'admin/dashboard'
+                    ]);
+                }else{
+                    $this->dispatchBrowserEvent('swal:redirect',[
+                        'position'          									=> 'center',
+                        'icon'              									=> 'success',
+                        'title'             									=> 'Welcome back python!',
+                        'showConfirmButton' 									=> 'true',
+                        'timer'             									=> '1500',
+                        'link'              									=> ''
+                    ]);
                 }
             }else{
                 $this->dispatchBrowserEvent('swal:redirect',[
