@@ -169,6 +169,9 @@ class Python_executioner extends Controller
         // write to question folder
         if(strlen($question)>0){
             
+            // preprocessor to check if the question has match in db if one or more is matched, return the answer (db/array)
+
+
             $file_path  = dirname(__FILE__,4);
             $question_file_path = '/core/deployment/questions/';
             $answer_file_path = '/core/deployment/answers/';
