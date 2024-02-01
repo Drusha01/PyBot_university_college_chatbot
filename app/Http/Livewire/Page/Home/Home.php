@@ -11,47 +11,16 @@ use Illuminate\Support\Facades\Storage;
 class Home extends Component
 {
     public function booted(Request $request){
-        $this->user_details = $request->session()->all();
-        
     }
     public function hydrate(){
         
     }
     public function update_data(){
-        $this->faq_data = DB::table('faq as f')
-            ->select('*')
-            ->orderBy('faq_order')
-            ->get()
-            ->toArray();
         $this->carousel_data = DB::table('carousel as c')
-            ->select('*')
-            ->orderBy('carousel_order')
-            ->get()
-            ->toArray();
-
-        $this->about_us_data = DB::table('about_us')
-            ->select('*')
-            ->orderBy('about_us_order')
-            ->get()
-            ->toArray();
-
-        $this->academic_data = DB::table('academics as a')
-            ->select('*')
-            ->orderBy('academic_order')
-            ->get()
-            ->toArray();
-
-        $this->admission_data = DB::table('admissions as a')
-            ->select('*')
-            ->orderBy('admission_order')
-            ->get()
-            ->toArray();
-
-        $this->faculty_data = DB::table('faculty')
-            ->select('*')
-            ->orderBy('faculty_order')
-            ->get()
-            ->toArray();
+        ->select('*')
+        ->orderBy('carousel_order')
+        ->get()
+        ->toArray();
     }
     public function mount(Request $request){
         $this->user_details = $request->session()->all();
