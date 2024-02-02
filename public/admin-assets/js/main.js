@@ -127,7 +127,9 @@
       } else {
         $('.main-panel').removeClass('off-canvas');
       }
+      $('.offcanvas-collapse').toggleClass('open')
     });
+
     
     $(document).on('mouseenter mouseleave touchstart touchend', '.sidebar .nav-item', function (ev) {
       // Check if the body element has certain classes
@@ -183,62 +185,7 @@
     });
   });
 
-  //tags input
-  function init_TagsInput(elementId) {
-    var tagElement = document.getElementById(elementId);
-    tagElement.tagsinput({
-        itemValue: 'value',
-        itemText: 'text',
-        typeahead: {
-            source: function(query) {
-                return $.getJSON('tag.json');
-            }
-        }
-    });
-  }
-  init_TagsInput();
 
-  /* INPUT MASK */
-  function init_InputMask(maskIds) {
-    if (typeof ($.fn.inputmask) === 'undefined') { return; }
-    
-    if (!Array.isArray(maskIds)) {
-      maskIds = [maskIds]; // Convert single ID to an array
-    }
-    
-    console.log('init_InputMask');
-    
-    maskIds.forEach(function(maskId) {
-      var inputmask = document.getElementById(maskId);
-      if (inputmask) {
-        $(inputmask).inputmask();
-      }
-    });
-  };
-
-  /* Initialize image preview */
-  function previewImage(input, previewId) {
-    var imgPreview = document.getElementById(previewId);
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          imgPreview.src = e.target.result;
-        };
-        reader.readAsDataURL(input.files[0]);
-    } else {
-        // If no file is chosen, set the image's src to the default
-        imgPreview.src = "{{ asset('admin-assets/media/defaults/default-image.png') }}";
-    }
-  }
-
-
-
-  // Attach event listeners 
-  document.addEventListener('DOMContentLoaded', function() {
-    previewImage();
-    init_InputMask();
-    init_TagsInput();
-  });
 
 
 })();

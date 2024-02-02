@@ -1,6 +1,55 @@
 <div>
   <main class="content-wrapper" id="home">
-    @if($carousel_data || 1)
+    @if($carousel_data)
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          @foreach ($carousel_data as $key =>$value)
+            @if($key == 0)
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ $key}}" class="active" aria-current="true" aria-label="Slide {{ $key+1}}"></button>
+            @else
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ $key}}" aria-label="Slide {{ $key+1}}"></button>
+            @endif
+          @endforeach
+        </div>
+        <div class="carousel-inner">
+        @foreach ($carousel_data as $key =>$value)
+          @if($key == 0)
+            <div class="carousel-item active" >
+              <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" class="card-img-top mx-auto" alt="Admission Image {{ $key+1}}">
+              <div class="banner"></div>
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_header_title}}</h1>
+                  <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_paragraph_paragraph}}</p>
+                  <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+                </div>
+              </div>
+            </div>
+          @else
+          <div class="carousel-item" >
+            <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" class="card-img-top mx-auto" alt="Admission Image {{ $key+1}}">
+            <div class="banner"></div>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_header_title}}</h1>
+                <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_paragraph_paragraph}}</p>
+                <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          @endif
+        @endforeach
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden ">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden ">Next</span>
+        </button>
+      </div>
+    @else
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -8,30 +57,36 @@
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item banner-1 active ">
+        <div class="carousel-item active" >
+          <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" class="card-img-top mx-auto" alt="Admission Image 1">
+          <div class="banner"></div>
           <div class="container">
             <div class="carousel-caption">
               <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Student-Centered College.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.4px #7c8884;">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
               <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
         </div>
-        <div class="carousel-item banner-2">
+        <div class="carousel-item" >
+          <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}"  class="card-img-top mx-auto" alt="Admission Image 2">
+          <div class="banner"></div>
           <div class="container">
-            <div class="carousel-caption ">
-              <h1>Innovative and Supportive Faculty and Staff.</h1>
-              <p>The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
-              <p><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+            <div class="carousel-caption">
+              <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Innovative and Supportive Faculty and Staff.</h1>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
+              <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
         </div>
-        <div class="carousel-item banner-3 ">
+        <div class="carousel-item" >
+          <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}"  class="card-img-top mx-auto" alt="Admission Image 3">
+          <div class="banner"></div>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Convenient Facilities.</h1>
-              <p>The College of Computing Studies is equipped with spacious and fully-aircon classrooms, high-tech laboratories, media rooms, and free wifi for all students.</p>
-              <p><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+              <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Convenient Facilities.</h1>
+              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies is equipped with spacious and fully-aircon classrooms, high-tech laboratories, media rooms, and free wifi for all students.</p>
+              <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
             </div>
           </div>
         </div>
@@ -46,13 +101,42 @@
       </button>
     </div>
     @endif
-    
+
+    @if(0 && $academic_data)
+      <div class="container marketing">
+        <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
+          <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+          <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
+          </p>
+        </div>
+        <hr class="featurette-divider">
+      @foreach($academic_data as $key=>$value)
+        <div class="row featurette featurette-1">
+          <div class="col-12 col-md-12 col-lg-7 course-cs">
+            <h2 class="featurette-heading course-title">BS in Computer Science</span></h2>
+            <p class="lead justify">
+              Master advanced programming languages, algorithms, and software architecture for careers in fields like machine learning, blockchain, IoT, and more. Gain a comprehensive foundation rooted in computer theory and mathematics.
+            </p>
+            <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
+          </div>
+          <div class="col-12 col-md-10 col-lg-5 mx-auto mx-lg-0 course-1"></div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="{{asset('storage/content/academic/'.$value->academic_logo)}}" class="card-img-top " alt="Program Image">
+            <div class="card-body">
+              <h5 class="card-title">{{$value->academic_header}}</h5>
+              <p class="card-text cqh-7">{{$value->academic_content}}</p>
+            </div>
+          </div>
+        </div>
+      @endforeach
+    @else
     <div class="container marketing">
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
-        <h1 class="display-4 fw-normal">Programs</h1>
-        <p class="fs-5">Our programs are always up-to-date, following the CHED recommendation, industry standards,
-          and feedback from our successful alumni to ensure we always deliver quality education and produce highly employable
-          graduates.
+        <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+        <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
       </div>
       <hr class="featurette-divider">
@@ -60,10 +144,7 @@
         <div class="col-12 col-md-12 col-lg-7 course-cs">
           <h2 class="featurette-heading course-title">BS in Computer Science</span></h2>
           <p class="lead justify">
-            The computer science course is intended for students with a solid background in mathematics
-            and an interest in the theory, practice, art, and science of computer programming. This course provides
-            graduates with an educational foundation for careers in computer software or computer system design,
-            including careers as software engineers, application software designers, system programmers, or system engineers.
+            Master advanced programming languages, algorithms, and software architecture for careers in fields like machine learning, blockchain, IoT, and more. Gain a comprehensive foundation rooted in computer theory and mathematics.
           </p>
           <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
         </div>
@@ -74,160 +155,118 @@
         <div class="col-12 col-md-12 col-lg-7 course-it">
           <h2 class="featurette-heading course-title">BS in Information Technology</span></h2>
           <p class="lead justify">
-            The BS in Information Systems program focuses on the design, development and implementation of information
-            and communications technology (ICT) resources to ensure information systems applications can be used in various
-            industry sectors (business, education, media and entertainment, healthcare, government, and service).
+            Apply emerging technologies to implement and administer real-world information systems, networks, databases and infrastructure. Become the do-it-all IT expert every organization needs.
           </p>
           <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
         </div>
         <div class="col-12 col-md-10 col-lg-5 mx-auto mx-lg-0 course-1 course-2"></div>
       </div>
+      <hr class="featurette-divider sec-divider">
+      <div class="row featurette featurette-2">
+        <div class="col-12 col-md-12 col-lg-7 course-it">
+          <h2 class="featurette-heading course-title">Associate in Computer Technology (ACT)</span></h2>
+          <p class="lead justify">
+            Build versatile computer skills in programming, hardware, databases, and networks. Gain knowledge applicable across sectors and launch your technology career.
+          </p>
+          <p class="btn-apply-center"><a class="btn btn-md btn-success background-color-green btn-apply btn-font" href="../student/apply.php?program=bscs">Apply Now</a></p>
+        </div>
+        <div class="col-12 col-md-10 col-lg-5 mx-auto mx-lg-0 course-1 course-2"></div>
+      </div>
+      @endif
       <hr class="featurette-divider">
+
+      @if($academic_data)
+          <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
+            <h1 class="display-4 fw-normal">Admissions</h1>
+            <p class="fs-5">
+              We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
+            </p>
+            <p></p>
+          </div>
+          <div class="row justify-content-xl-center">
+          @foreach($academic_data as $key=>$value)
+            <div class="col-md-3">
+              <div class="card mb-4">
+                <img src="{{asset('storage/content/academic/'.$value->academic_logo)}}" class="card-img-top " alt="Program Image">
+                <div class="card-body">
+                  <h5 class="card-title">{{$value->academic_header}}</h5>
+                  <p class="card-text cqh-7">{{$value->academic_content}}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+          </div>
+      @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
         <h1 class="display-4 fw-normal">Admissions</h1>
         <p class="fs-5">
-        Our admission process is now powered by a decision-support system called - <span class="green-bold fs-5">Pybot</span>.
+          We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
         </p>
         <p><a class="btn btn-md btn-success background-color-green text-center btn-apply btn-font" href="../student/apply.php">Apply Now</a></p>
       </div>
+      @endif
+
       <hr class="featurette-divider">
+      @if($faculty_data)
+        <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
+          <h1 class="display-4 fw-normal">Faculty and Staff</h1>
+        </div>
+        <div class="row faculty justify-content-xl-center">
+        @foreach($faculty_data as $key =>$value)
+          <div class="col-lg-4">
+            <div class="row">
+              <div class="col-12 mb-2">
+              <img src="{{asset('storage/content/faculty/'.$value->faculty_picture)}}" alt="" class="bd-placeholder-img rounded w-75">
+              </div>
+              <div class="col-12 border-top pt-3">
+              <h3>{{$value->faculty_fullname}}</h3>
+              <h4>{{$value->faculty_position}}</h4>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
         <h1 class="display-4 fw-normal">Faculty and Staff</h1>
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
-          <div class="row">
-            <div class="col-12 mb-2">
-            <img src="{{asset('assets/images/faces/face4.jpg')}}" alt="" class="bd-placeholder-img rounded w-75">
-            </div>
-            <div class="col-12 border-top pt-3">
-            <h3>Dr. Roderick P. Go</h3>
-            <h4>Dean</h4>
-            </div>
-          </div>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/odon.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Odon A. Maravillas, Jr., MSCS</h3>
-          <h4>Associate Dean</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/belamide.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Gadmar M. Belamide, MEnggEd-ICT</h3>
-          <h4>Secretary</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <div class="row">
-            <div class="col-12 mb-2">
-            <img src="{{asset('assets/images/faces/face4.jpg')}}" alt="" class="bd-placeholder-img rounded w-75">
-            </div>
-            <div class="col-12 border-top pt-3">
-            <h3>Ms. Lucy Felix-Sadiwa, MSCS</h3>
-            <h4>CS Department Head</h4>
-            </div>
-          </div>
+          <img src="{{asset('admin-assets/media/avatar/avatar-1.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Dr. Juan Dela Cruz</h3>
+          <h4>Dean</h4>
         </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/escorialj.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. John Augustus A. Escorial, MIT</h3>
+          <img src="{{asset('admin-assets/media/avatar/avatar-2.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Maria Santos, MSCS</h3>
+          <h4>Associate Dean</h4>
+        </div>
+        <div class="col-lg-4">
+          <img src="{{asset('admin-assets/media/avatar/avatar-3.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Carla Rivera, MIT</h3>
           <h4>IT Department Head</h4>
-        </div><!-- /.col-lg-4 -->
+        </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/escoriala.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mrs. Aida A. Escorial, MIT</h3>
-          <h4>Graduate Program Chair</h4>
-        </div><!-- /.col-lg-4 -->
+          <img src="{{asset('admin-assets/media/avatar/avatar-4.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Daniel Padilla</h3>
+          <h4>CS Department Head</h4>
+        </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/aripE.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Edwip I. Arip, MEnggEd-ICT</h3>
-          <h4>External Studies Unit Technical Associate</h4>
-        </div><!-- /.col-lg-4 -->
+          <img src="{{asset('admin-assets/media/avatar/avatar-5.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Andrea Lopez, MSCS </h3>
+          <h4>ACT Department Head</h4>
+        </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/aripJ.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. John Paul I. Arip</h3>
-          <h4>LMS Quality Assurance</h4>
-        </div><!-- /.col-lg-4 -->
+          <img src="{{asset('admin-assets/media/avatar/avatar-6.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Miguel Torres</h3>
+          <h4>Faculty Member</h4>
+        </div>
         <div class="col-lg-4">
-          <img src="../img/faculty/female.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mrs. Justin Anne Albay-Arip</h3>
-          <h4>Visiting Lecturer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/ballaho.png" alt="" class="bd-placeholder-img rounded-circle photo" width="140" height="140">
-          <h3>Mr. Jaydee C. Ballaho</h3>
-          <h4>LMS Lead Developer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/catadman.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. Jason A. Catadman</h3>
-          <h4>LMS Asst. Developer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/flores.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Mark L. Flores, MEnggEd-ICT</h3>
-          <h4>Director, Data Protection and Security</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/gregana.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Ms. Pauleen Jean E. Gregana</h3>
-          <h4>Visiting Lecturer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/female.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Ms. Aradzna M. Kamman</h3>
-          <h4>Visiting Lecturer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/female.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Ms. Mara Marie Liao</h3>
-          <h4>Visiting Lecturer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/lines.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Marvic A. Lines, MEnggEd-ICT</h3>
-          <h4>LMS Training and Management</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/female.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Ms. Ceed Janelle B. Lorenzo</h3>
-          <h4>Visiting Lecturer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/lorenzo.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Ceed Jezreel B. Lorenzo, MIT</h3>
-          <h4>Research Coordinator</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/rojas.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Engr. Marjorie A. Rojas</h3>
-          <h4>Student Affairs and Guidance Coordinator</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/male.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. Theo Jay M'lleno Sanson</h3>
-          <h4>Visiting Lecturer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/tahil.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. Salimar B. Tahil, MEnggEd-ICT</h3>
-          <h4>Asst. Director, MISTO</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/timpangco.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. Whesley G. Timpangco</h3>
-          <h4>LMS Network Engineer</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/jackaria.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Ms. Alhadzra M. Jackaria</h3>
-          <h4>Laboratory Technician</h4>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="../img/faculty/male.png" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
-          <h3>Mr. John Roy S. Velario</h3>
-          <h4>Administrative Assistant</h4>
-        </div><!-- /.col-lg-4 -->
+          <img src="{{asset('admin-assets/media/avatar/avatar-8.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
+          <h3>Clara Mendoza</h3>
+          <h4>Faculty Member</h4>
+        </div>
       </div>
+      @endif
       <hr class="featurette-divider">
     </div>
   </main>

@@ -3,7 +3,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- FAQ/forums content -->
-    <section id="faq-forums" class="bg-light py-5" style="margin-top: 5rem;">
+    <section id="faq-forums" class="py-5" style="margin-top: 5rem;">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">

@@ -75,13 +75,14 @@ Route::middleware([Authenticated::class])->group(function () {
 // page
 Route::middleware([Authenticated::class, AccountisValid::class, AccountisAdmin::class])->group(function () {
     Route::get('/profile', Profile::class)->name('page.profile');
+    Route::get('/chat', Chat::class)->name('page.chat');
 });
 
 Route::prefix('/')->group(function () {
     Route::get('/', Home::class)->name('page.home');
     Route::get('/AboutUs', AboutUs::class)->name('page.AboutUs');
-    Route::get('/profile', Profile::class)->name('page.profile');
-    Route::get('/chat', Chat::class)->name('page.chat');
+    // Route::get('/profile', Profile::class)->name('page.profile');
+   
     Route::get('/academic', Academic::class)->name('page.academic');
     Route::get('/admission', admission::class)->name('page.admission');
     Route::get('/forums', Forums::class)->name('page.forums');

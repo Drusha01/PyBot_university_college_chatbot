@@ -22,28 +22,16 @@
   padding: 10px 0; /* Add some padding */
 }
 
-#top-nav .navbar-nav {
-  display: flex; /* Display the navigation links horizontally */
-  align-items: center; /* Center items vertically */
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.offcanvas.show:not(.hiding) .nav-link, .offcanvas.showing .nav-link {
+  color: #000;
 }
 
-#top-nav .navbar-toggler {
-  background-color: #007bff; /* Background color for the toggle button */
-  color: #fff; /* Text color for the toggle button */
-}
-
-#top-nav .navbar-toggler:focus {
-  outline: none; /* Remove the outline on focus */
-}
-
-#top-nav .nav-item {
-  margin: 0 10px; /* Add spacing between navigation links */
-}
-
-#top-nav .nav-link {
-  color: #fff; /* Text color for navigation links */
-  text-decoration: none; /* Remove default text decoration */
-  font-size: smaller;
+.d-contents{
+  display: contents !important;
 }
 
 /* Icon links (if needed) */
@@ -72,6 +60,7 @@
   display: inline-block;
   width: 95px;
   flex-shrink: 0;
+  color: #000;
   -webkit-text-stroke: 1.7px #fff;
 }
 .green-bold {
