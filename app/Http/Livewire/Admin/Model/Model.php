@@ -231,7 +231,7 @@ class Model extends Component
             'title'             									=> 'Successfully created an intent data!',
             'showConfirmButton' 									=> 'true',
             'timer'             									=> '1000',
-            'link'              									=> 'admin/model'
+            'link'              									=> 'model'
         ]);
     }
     public function create_new_intent_2(){
@@ -351,7 +351,7 @@ class Model extends Component
             'title'             									=> 'Successfully created an intent data!',
             'showConfirmButton' 									=> 'true',
             'timer'             									=> '1000',
-            'link'              									=> 'admin/model'
+            'link'              									=> 'model'
         ]);
     }
 

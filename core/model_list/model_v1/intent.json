@@ -12,9 +12,24 @@
                 "greetings"
             ],
             "responses": [
-                "Hello crimson!",
-                "Good to see you again crimson!",
-                "Hi there pybot at your service, how can I help you crimson?"
+                {
+                    "answer_id": 1,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Hello crimson!",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 2,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Good to see you again crimson!",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 3,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Hi there pybot at your service, how can I help you crimson?",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -31,9 +46,24 @@
                 "see ya"
             ],
             "responses": [
-                "Sad to see you go ",
-                "Talk to you later ",
-                "Goodbye "
+                {
+                    "answer_id": 4,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Sad to see you go ",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 5,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Talk to you later ",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 6,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Goodbye ",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -47,7 +77,12 @@
                 "Can you recommend good coding resources?"
             ],
             "responses": [
-                "Check out my lessons"
+                {
+                    "answer_id": 7,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Check out my lessons",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -60,7 +95,12 @@
                 "What does information technology means"
             ],
             "responses": [
-                "BSIT"
+                {
+                    "answer_id": 8,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "BSIT",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -72,7 +112,12 @@
                 "Show my stock portfolio"
             ],
             "responses": [
-                "Here are your stocks!"
+                {
+                    "answer_id": 9,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Here are your stocks!",
+                    "target_type_details": "student"
+                }
             ],
             "context_set": ""
         },
@@ -85,7 +130,12 @@
                 "What is the definition of College of Computing Studies?"
             ],
             "responses": [
-                "College of Computing Studies provides three (3) courses mainly BSCS, BSIT, MIT"
+                {
+                    "answer_id": 10,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "College of Computing Studies provides three (3) courses mainly BSCS, BSIT, ACT",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -95,7 +145,12 @@
                 "What are the events for this year"
             ],
             "responses": [
-                "The events for this year are this and that"
+                {
+                    "answer_id": 11,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "The events for this year are this and that",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -108,7 +163,12 @@
                 "How do I change course?"
             ],
             "responses": [
-                "shifting process!"
+                {
+                    "answer_id": 12,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "shifting process!",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -124,14 +184,54 @@
                 "Thanks"
             ],
             "responses": [
-                "Thank you",
-                "Thank you so much",
-                "I appreciate it",
-                "Please accept my deepest gratitude",
-                "Cheers",
-                "Much appreciated",
-                "Many thanks",
-                "I gladly appreciate it!"
+                {
+                    "answer_id": 13,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Thank you",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 14,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Thank you so much",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 15,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "I appreciate it",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 16,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Please accept my deepest gratitude",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 17,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Cheers",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 18,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Much appreciated",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 19,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "Many thanks",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 20,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "I gladly appreciate it!",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         },
@@ -144,7 +244,33 @@
                 "CS department?"
             ],
             "responses": [
-                "CS stands for Computer Science, CS offer a theoretical approach in solving a real world problems via computing"
+                {
+                    "answer_id": 21,
+                    "q_and_a_type_details": "CCS",
+                    "answer_details": "CS stands for Computer Science, CS offer a theoretical approach in solving a real world problems via computing",
+                    "target_type_details": "public"
+                }
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "11",
+            "patterns": [
+                "test"
+            ],
+            "responses": [
+                {
+                    "answer_id": 31,
+                    "q_and_a_type_details": "CSC",
+                    "answer_details": "1e5edd08f2add54c8d2ad0b136e54f2e.jpg",
+                    "target_type_details": "public"
+                },
+                {
+                    "answer_id": 30,
+                    "q_and_a_type_details": "CSC",
+                    "answer_details": "test",
+                    "target_type_details": "public"
+                }
             ],
             "context_set": ""
         }
