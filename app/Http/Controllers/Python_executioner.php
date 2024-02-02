@@ -204,25 +204,71 @@ class Python_executioner extends Controller
             unlink($file_path.$answer_file_path.$question_file_name);
             $question = $answer['question'];
             $pybot_response = $answer['answer'];
-           
-            if($pybot_response['target_type_details'] == 'public'){
-                print_r(json_encode($pybot_response['answer_details']));
-            }else if($pybot_response['target_type_details'] == 'student'){
-                // check if we are logged in
-                $this->user_details = $request->session()->all();
-                if(isset($this->user_details['user_id'])){
-                    print_r(json_encode($pybot_response['answer_details']));
-                }else{
-                    print_r('I\'m sorry, the response is only intented to signed up user please sign up asdfs');
-                }
-            }else if ($pybot_response['target_type_details'] == 'admin'){
-                $this->user_details = $request->session()->all();
-                if(isset($this->user_details['user_id'])){
-                    print_r(json_encode($pybot_response['answer_details']));
-                }else{
-                    print_r('I\'m sorry, the response is only intented to signed up user please sign up');
+            $valid = false;
+            foreach ($pybot_response as $key => $value) {
+                if(intval($value['probability']) > .75){
+                    $valid = true;
                 }
             }
+            if($valid){
+                print_r( $pybot_response );
+                
+            }else{
+                // print_r($answer['response']);
+                $answers = [];
+                $count = count($answer['response']);
+
+                if($count ==1){
+                    $response = [];
+                    foreach ($answer['response'] as $key => $value) {
+                        $answer_list = [];
+                        $length = count($value['response']);
+                        $rand = rand(0,$length-1);
+                        array_push($response, ['answer'=>$value['response'][$rand ]['answer_details'],'answer_type'=>$value['response'][$rand ]['answer_type']]);
+                    }
+                    return json_encode($response);
+                }elseif($count >1){
+                    $response = [];
+                    foreach ($answer['response'] as $key => $value) {
+                        $answer_list = [];
+                        $length = count($value['response']);
+                        $rand = rand(0,$length-1);
+                        array_push($response, ['answer'=>$value['response'][$rand ]['answer_details'],'answer_type'=>$value['response'][$rand ]['answer_type']]);
+                    }
+                    return json_encode($response);
+                }else{
+
+                }
+                return $count;
+                
+                // foreach ($variable as $key => $value) {
+                //     # code...
+                // }
+                // echo '<br><br>';
+                // print_r($answer['answer']);
+                // echo '<br><br>';
+                // print_r($answer['response']);
+                // print_r('unsure response');
+            }
+           
+            // if($pybot_response['target_type_details'] == 'public'){
+            //     print_r(($pybot_response['answer_details']));
+            // }else if($pybot_response['target_type_details'] == 'student'){
+            //     // check if we are logged in
+            //     $this->user_details = $request->session()->all();
+            //     if(isset($this->user_details['user_id'])){
+            //         print_r(($pybot_response['answer_details']));
+            //     }else{
+            //         print_r('I\'m sorry, the response is only intented to signed up user please sign up asdfs');
+            //     }
+            // }else if ($pybot_response['target_type_details'] == 'admin'){
+            //     $this->user_details = $request->session()->all();
+            //     if(isset($this->user_details['user_id'])){
+            //         print_r(($pybot_response['answer_details']));
+            //     }else{
+            //         print_r('I\'m sorry, the response is only intented to signed up user please sign up');
+            //     }
+            // }
             
            
         }

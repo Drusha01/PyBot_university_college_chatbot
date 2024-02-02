@@ -17,6 +17,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 1,
                 "Hello crimson!",
                 NOW(),
@@ -24,6 +25,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 1,
                 "Good to see you again crimson!",
                 NOW(),
@@ -31,6 +33,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 1,
                 "Hi there pybot at your service, how can I help you crimson?",
                 NOW(),
@@ -42,6 +45,7 @@ class answersSeeders extends Seeder
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
                 2,
+                2,
                 "Sad to see you go ",
                 NOW(),
                 NOW()
@@ -49,12 +53,14 @@ class answersSeeders extends Seeder
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
                 2,
+                2,
                 "Talk to you later ",
                 NOW(),
                 NOW()
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 2,
                 "Goodbye ",
                 NOW(),
@@ -64,6 +70,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 3,
                 "Check out my lessons",
                 NOW(),
@@ -73,6 +80,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 4,
                 "BSIT",
                 NOW(),
@@ -82,6 +90,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 5,
                 "Here are your stocks!",
                 NOW(),
@@ -91,6 +100,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 6,
                 "College of Computing Studies provides three (3) courses mainly BSCS, BSIT, ACT",
                 NOW(),
@@ -100,6 +110,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 7,
                 "The events for this year are this and that",
                 NOW(),
@@ -109,6 +120,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 8,
                 "shifting process!",
                 NOW(),
@@ -118,6 +130,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "Thank you",
                 NOW(),
@@ -125,6 +138,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "Thank you so much",
                 NOW(),
@@ -132,6 +146,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "I appreciate it",
                 NOW(),
@@ -139,6 +154,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "Please accept my deepest gratitude",
                 NOW(),
@@ -146,6 +162,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "Cheers",
                 NOW(),
@@ -153,6 +170,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "Much appreciated",
                 NOW(),
@@ -160,6 +178,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "Many thanks",
                 NOW(),
@@ -167,6 +186,7 @@ class answersSeeders extends Seeder
             );');
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 9,
                 "I gladly appreciate it!",
                 NOW(),
@@ -176,6 +196,7 @@ class answersSeeders extends Seeder
         {
             DB::statement('INSERT INTO answers VALUES(
                 NULL,
+                2,
                 10,
                 "CS stands for Computer Science, CS offer a theoretical approach in solving a real world problems via computing",
                 NOW(),

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Department extends Component
 {
+    use WithFileUploads;
     public $it_data;
 
     public $cs_q_and_a_data;
@@ -88,7 +89,7 @@ class Department extends Component
 
             $answers_data =[];
             foreach ($answers as $key => $a_value) {
-                array_push($answers_data,$a_value->answer_details);
+                array_push($answers_data,['answers'=>$a_value->answer_details,'answer_type'=>$a_value->answer_type]);
             }
             
             array_push($this->it_q_and_a_data,[
@@ -129,7 +130,7 @@ class Department extends Component
 
             $answers_data =[];
             foreach ($answers as $key => $a_value) {
-                array_push($answers_data,$a_value->answer_details);
+                array_push($answers_data,['answers'=>$a_value->answer_details,'answer_type'=>$a_value->answer_type]);
             }
             
             array_push($this->cs_q_and_a_data,[
@@ -169,7 +170,7 @@ class Department extends Component
 
             $answers_data =[];
             foreach ($answers as $key => $a_value) {
-                array_push($answers_data,$a_value->answer_details);
+                array_push($answers_data,['answers'=>$a_value->answer_details,'answer_type'=>$a_value->answer_type]);
             }
             
             array_push($this->act_q_and_a_data,[
@@ -226,6 +227,60 @@ class Department extends Component
             ->layout('layouts.admin',[
                 'title'=>$this->title]);
     }
+    public function save_image($photo,$folder_name){
+        if($photo && file_exists(storage_path().'/app/livewire-tmp/'.$photo->getfilename())){
+            $file_extension =$photo->getClientOriginalExtension();
+            $tmp_name = 'livewire-tmp/'.$photo->getfilename();
+            $size = Storage::size($tmp_name);
+            $mime = Storage::mimeType($tmp_name);
+            $max_image_size = 20 * 1024*1024; // 5 mb
+            $file_extensions = array('image/jpeg','image/png','image/jpg','application/pdf');
+            
+            if($size<= $max_image_size){
+                $valid_extension = false;
+                foreach ($file_extensions as $value) {
+                    if($value == $mime){
+                        $valid_extension = true;
+                        break;
+                    }
+                }
+                if($valid_extension){
+                    $storage_file_path = storage_path().'/app/public/'.$folder_name.'/';
+                    // move
+                    $new_file_name = md5($tmp_name).'.'.$file_extension;
+                    while(DB::table('answers')
+                    ->where([$folder_name=> $new_file_name,'answer_type' =>1])
+                    ->first()){
+                        $new_file_name = md5($tmp_name.rand(1,10000000)).'.'.$file_extension;
+                    }
+                   
+                    if(Storage::copy($tmp_name, 'public/'.$folder_name.'/'.$new_file_name)){
+                        return $new_file_name;
+                    }    
+                }else{
+                    $this->dispatchBrowserEvent('swal:redirect',[
+                        'position'          									=> 'center',
+                        'icon'              									=> 'warning',
+                        'title'             									=> 'Invalid image type!',
+                        'showConfirmButton' 									=> 'true',
+                        'timer'             									=> '1500',
+                        'link'              									=> '#'
+                    ]);
+                    return 0;
+                }
+            }else{
+                $this->dispatchBrowserEvent('swal:redirect',[
+                    'position'          									=> 'center',
+                    'icon'              									=> 'warning',
+                    'title'             									=> 'Image is too large!',
+                    'showConfirmButton' 									=> 'true',
+                    'timer'             									=> '1500',
+                    'link'              									=> '#'
+                ]);
+                return 0;
+            }     
+        }
+    }
     public function active_page($active){
         $this->active = $active;
     }
@@ -263,12 +318,21 @@ class Department extends Component
 
             $answers_list = [];
             foreach ($answers as $key => $value) {
-                array_push($answers_list,[
-                    'answer_details'=>$value->answer_details,
-                    'answer_id'=>$value->answer_id
-                ]);
+                if($value->answer_type == 1){
+                    array_push($answers_list,[
+                        'answer_details'=>NULL,
+                        'answer_type'=>$value->answer_type,
+                        'answer_id'=>$value->answer_id
+                    ]);
+                }else{
+                    array_push($answers_list,[
+                        'answer_details'=>$value->answer_details,
+                        'answer_type'=>$value->answer_type,
+                        'answer_id'=>$value->answer_id
+                    ]);
+                }
+                
             }
-           
 
             $this->q_and_a = [
                 'q_and_a_id' => $q_and_a_id,
@@ -295,6 +359,7 @@ class Department extends Component
     
         array_push($answers_list,[
             'answer_details'=>NULL,
+            'answer_type'=>2,
             'answer_id'=>NULL
         ]);
 
@@ -363,12 +428,21 @@ class Department extends Component
                     }
                 }
                 foreach ($answers as $key => $value) {
-                    if(strlen($value['answer_details'])>0){
+                    if($value['answer_type'] == 2){
                         DB::table('answers')
                         ->insert([
                             'answer_details'=> $value['answer_details'],
+                            'answer_type'=> $value['answer_type'],
                             'answer_q_and_a_id'=>$q_and_a->q_and_a_id
-                    ]);
+                        ]);
+                    }else{
+                        $file_name = self::save_image($value['answer_details'],'answer_details');
+                        DB::table('answers')
+                        ->insert([
+                            'answer_details'=> $file_name ,
+                            'answer_type'=> $value['answer_type'],
+                            'answer_q_and_a_id'=>$q_and_a->q_and_a_id
+                        ]);
                     }
                 }
                 self::update_data();
@@ -432,13 +506,24 @@ class Department extends Component
                 ->where('answer_q_and_a_id','=',$q_and_a_id)
                 ->delete();
             foreach ($answers as $key => $value) {
-                if(strlen($value['answer_details'])>0){
-                    DB::table('answers')
+                if($value['answer_details']){
+                    if($value['answer_type'] == 2){
+                        DB::table('answers')
                         ->insert([
                             'answer_details'=> $value['answer_details'],
-                            'answer_q_and_a_id'=>$q_and_a_id
-                    ]);
-                }
+                            'answer_type'=> $value['answer_type'],
+                            'answer_q_and_a_id'=>$q_and_a->q_and_a_id
+                        ]);
+                    }else{
+                        $file_name = self::save_image($value['answer_details'],'answer_details');
+                        DB::table('answers')
+                        ->insert([
+                            'answer_details'=> $file_name ,
+                            'answer_type'=> $value['answer_type'],
+                            'answer_q_and_a_id'=>$q_and_a->q_and_a_id
+                        ]);
+                    }
+                }   
             }
             DB::table('q_and_a')
                 ->where('q_and_a_id','=',$q_and_a_id)
@@ -463,9 +548,10 @@ class Department extends Component
             'question_id'=>NULL
         ]);
     }
-    public function add_answer(){
+    public function add_answer($answer_type){
         array_push($this->q_and_a['answers'],[
             'answer_details'=>NULL,
+            'answer_type'=>$answer_type,
             'answer_id'=>NULL
         ]);
     }
