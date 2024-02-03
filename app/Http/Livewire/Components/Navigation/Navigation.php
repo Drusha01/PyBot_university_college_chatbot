@@ -25,11 +25,19 @@ class Navigation extends Component
         }
         $system_assets = DB::table('system_assets')
             ->first();
-        $this->system_asset =[
-            'system_asset_id'  => $system_assets->system_asset_id,
-            'system_asset_name'  => $system_assets->system_asset_name,
-            'system_asset_logo'  => $system_assets->system_asset_logo,
-        ];
+            if($system_assets){
+                $this->system_asset =[
+                    'system_asset_id'  => $system_assets->system_asset_id,
+                    'system_asset_name'  => $system_assets->system_asset_name,
+                    'system_asset_logo'  => $system_assets->system_asset_logo,
+                ];
+            }else{
+                $this->system_asset =[
+                    'system_asset_id'  => NULL,
+                    'system_asset_name'    => NULL,
+                    'system_asset_logo'    => NULL,
+                ];
+            }
        
     }
     public function render()

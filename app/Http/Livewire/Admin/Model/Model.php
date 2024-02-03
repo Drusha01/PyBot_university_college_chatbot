@@ -26,7 +26,7 @@ class Model extends Component
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
-            header("Location: /login");
+            header("Location: login");
             die();
         }else{
             $user_status = DB::table('users as u')
@@ -37,12 +37,12 @@ class Model extends Component
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'deleted' ){
-            header("Location: /deleted");
+            header("Location: deleted");
             die();
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'inactive' ){
-            header("Location: /inactive");
+            header("Location: inactive");
             die();
         }
     }
@@ -231,7 +231,7 @@ class Model extends Component
             'title'             									=> 'Successfully created an intent data!',
             'showConfirmButton' 									=> 'true',
             'timer'             									=> '1000',
-            'link'              									=> '/admin/model'
+            'link'              									=> 'model'
         ]);
     }
     public function create_new_intent_2(){
@@ -300,6 +300,7 @@ class Model extends Component
                         'q_and_a_type_details',
                         'answer_id',
                         'answer_details',
+                        'answer_type',
                         'target_type_details')
                     ->join('answers as a', 'a.answer_q_and_a_id', '=', 'qa.q_and_a_id')
                     ->join('q_and_a_types as t', 't.q_and_a_type_id', '=', 'qa.q_and_a_type_id')
@@ -307,6 +308,7 @@ class Model extends Component
                     ->where('qa.q_and_a_id','=',($value->q_and_a_id))
                     ->get()
                     ->toArray();
+                // dd($answers_list);
                 $answer_length = count($answers_list);
                 foreach ($answers_list as $answer_key => $answer_value) {
                     fwrite($intent_file, json_encode($answer_value,JSON_FORCE_OBJECT));
@@ -351,7 +353,7 @@ class Model extends Component
             'title'             									=> 'Successfully created an intent data!',
             'showConfirmButton' 									=> 'true',
             'timer'             									=> '1000',
-            'link'              									=> '/admin/model'
+            'link'              									=> 'model'
         ]);
     }
 

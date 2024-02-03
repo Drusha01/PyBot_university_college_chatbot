@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Colleges extends Component
 {
+    use WithFileUploads;
     public $ccs_data;
 
     public $ccs_q_and_a_data;
@@ -36,7 +37,7 @@ class Colleges extends Component
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
-            header("Location: /login");
+            header("Location: login");
             die();
         }else{
             $user_status = DB::table('users as u')
@@ -47,12 +48,12 @@ class Colleges extends Component
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'deleted' ){
-            header("Location: /deleted");
+            header("Location: deleted");
             die();
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'inactive' ){
-            header("Location: /inactive");
+            header("Location: inactive");
             die();
         }
     }
@@ -88,7 +89,7 @@ class Colleges extends Component
 
             $answers_data =[];
             foreach ($answers as $key => $a_value) {
-                array_push($answers_data,$a_value->answer_details);
+                array_push($answers_data,['answers'=>$a_value->answer_details,'answer_type'=>$a_value->answer_type]);
             }
             
             array_push($this->ccs_q_and_a_data,[
@@ -103,13 +104,13 @@ class Colleges extends Component
 
 
         $this->csc_data = DB::table('q_and_a as qa')
-        ->select('q_and_a_id','q_and_a_tag','target_type_details','target_type_id')
-        ->join('q_and_a_types as qt', 'qt.q_and_a_type_id', '=', 'qa.q_and_a_type_id')
-        ->join('target_types as tt', 'tt.target_type_id', '=', 'qa.q_and_a_target_type_id')
-        ->where('qt.q_and_a_type_details','=','CSC')
-        ->orderBy('q_and_a_id')
-        ->get()
-        ->toArray();
+            ->select('q_and_a_id','q_and_a_tag','target_type_details','target_type_id')
+            ->join('q_and_a_types as qt', 'qt.q_and_a_type_id', '=', 'qa.q_and_a_type_id')
+            ->join('target_types as tt', 'tt.target_type_id', '=', 'qa.q_and_a_target_type_id')
+            ->where('qt.q_and_a_type_details','=','CSC')
+            ->orderBy('q_and_a_id')
+            ->get()
+            ->toArray();
         $this->csc_q_and_a_data = [];
         foreach ($this->csc_data as $key => $value) {
             $questions = DB::table('questions as q')
@@ -129,7 +130,7 @@ class Colleges extends Component
 
             $answers_data =[];
             foreach ($answers as $key => $a_value) {
-                array_push($answers_data,$a_value->answer_details);
+                array_push($answers_data,['answers'=>$a_value->answer_details,'answer_type'=>$a_value->answer_type]);
             }
             
             array_push($this->csc_q_and_a_data,[
@@ -214,10 +215,20 @@ class Colleges extends Component
 
             $answers_list = [];
             foreach ($answers as $key => $value) {
-                array_push($answers_list,[
-                    'answer_details'=>$value->answer_details,
-                    'answer_id'=>$value->answer_id
-                ]);
+                if($value->answer_type == 1){
+                    array_push($answers_list,[
+                        'answer_details'=>null,
+                        'answer_type'=>$value->answer_type,
+                        'answer_id'=>$value->answer_id
+                    ]);
+                }else{
+                    array_push($answers_list,[
+                        'answer_details'=>$value->answer_details,
+                        'answer_type'=>$value->answer_type,
+                        'answer_id'=>$value->answer_id
+                    ]);
+                }
+                
             }
            
 
@@ -244,11 +255,6 @@ class Colleges extends Component
 
         $answers_list = [];
     
-        array_push($answers_list,[
-            'answer_details'=>NULL,
-            'answer_id'=>NULL
-        ]);
-
         $target_type_id = NULL;
         if($this->target_types){
             foreach ($this->target_types as $key => $value) {
@@ -272,7 +278,64 @@ class Colleges extends Component
             'target_type_details'=>NULL
         ];
 
+
         $this->dispatchBrowserEvent('openModal','AddModal');
+    }
+
+    
+    public function save_image($photo,$folder_name){
+        if($photo && file_exists(storage_path().'/app/livewire-tmp/'.$photo->getfilename())){
+            $file_extension =$photo->getClientOriginalExtension();
+            $tmp_name = 'livewire-tmp/'.$photo->getfilename();
+            $size = Storage::size($tmp_name);
+            $mime = Storage::mimeType($tmp_name);
+            $max_image_size = 20 * 1024*1024; // 5 mb
+            $file_extensions = array('image/jpeg','image/png','image/jpg','application/pdf');
+            
+            if($size<= $max_image_size){
+                $valid_extension = false;
+                foreach ($file_extensions as $value) {
+                    if($value == $mime){
+                        $valid_extension = true;
+                        break;
+                    }
+                }
+                if($valid_extension){
+                    $storage_file_path = storage_path().'/app/public/'.$folder_name.'/';
+                    // move
+                    $new_file_name = md5($tmp_name).'.'.$file_extension;
+                    while(DB::table('answers')
+                    ->where([$folder_name=> $new_file_name,'answer_type' =>1])
+                    ->first()){
+                        $new_file_name = md5($tmp_name.rand(1,10000000)).'.'.$file_extension;
+                    }
+                   
+                    if(Storage::copy($tmp_name, 'public/'.$folder_name.'/'.$new_file_name)){
+                        return $new_file_name;
+                    }    
+                }else{
+                    $this->dispatchBrowserEvent('swal:redirect',[
+                        'position'          									=> 'center',
+                        'icon'              									=> 'warning',
+                        'title'             									=> 'Invalid image type!',
+                        'showConfirmButton' 									=> 'true',
+                        'timer'             									=> '1500',
+                        'link'              									=> '#'
+                    ]);
+                    return 0;
+                }
+            }else{
+                $this->dispatchBrowserEvent('swal:redirect',[
+                    'position'          									=> 'center',
+                    'icon'              									=> 'warning',
+                    'title'             									=> 'Image is too large!',
+                    'showConfirmButton' 									=> 'true',
+                    'timer'             									=> '1500',
+                    'link'              									=> '#'
+                ]);
+                return 0;
+            }     
+        }
     }
     public function save_add_q_and_a(){
         if(isset($this->q_and_a['q_and_a_id'])){
@@ -314,12 +377,24 @@ class Colleges extends Component
                     }
                 }
                 foreach ($answers as $key => $value) {
-                    if(strlen($value['answer_details'])>0){
+                    if($value['answer_type'] == 2){
                         DB::table('answers')
                         ->insert([
                             'answer_details'=> $value['answer_details'],
+                            'answer_type'=> $value['answer_type'],
                             'answer_q_and_a_id'=>$q_and_a->q_and_a_id
-                    ]);
+                        ]);
+                    }else{
+                        $file_name = self::save_image($value['answer_details'],'answer_details');
+                        DB::table('answers')
+                        ->insert([
+                            'answer_details'=> $file_name ,
+                            'answer_type'=> $value['answer_type'],
+                            'answer_q_and_a_id'=>$q_and_a->q_and_a_id
+                        ]);
+                    }
+                    if(strlen($value['answer_details'])>0){
+                        
                     }
                 }
                 self::update_data();
@@ -382,15 +457,26 @@ class Colleges extends Component
             DB::table('answers')
                 ->where('answer_q_and_a_id','=',$q_and_a_id)
                 ->delete();
-            foreach ($answers as $key => $value) {
-                if(strlen($value['answer_details'])>0){
-                    DB::table('answers')
-                        ->insert([
-                            'answer_details'=> $value['answer_details'],
-                            'answer_q_and_a_id'=>$q_and_a_id
-                    ]);
+                foreach ($answers as $key => $value) {
+                    if($value['answer_details']){
+                        if($value['answer_type'] == 2){
+                            DB::table('answers')
+                            ->insert([
+                                'answer_details'=> $value['answer_details'],
+                                'answer_type'=> $value['answer_type'],
+                                'answer_q_and_a_id'=>$q_and_a->q_and_a_id
+                            ]);
+                        }else{
+                            $file_name = self::save_image($value['answer_details'],'answer_details');
+                            DB::table('answers')
+                            ->insert([
+                                'answer_details'=> $file_name ,
+                                'answer_type'=> $value['answer_type'],
+                                'answer_q_and_a_id'=>$q_and_a->q_and_a_id
+                            ]);
+                        }
+                    }   
                 }
-            }
             DB::table('q_and_a')
                 ->where('q_and_a_id','=',$q_and_a_id)
                 ->update(['q_and_a_target_type_id'=>$this->q_and_a['target_type_id']]);
@@ -414,9 +500,10 @@ class Colleges extends Component
             'question_id'=>NULL
         ]);
     }
-    public function add_answer(){
+    public function add_answer($answer_type){
         array_push($this->q_and_a['answers'],[
             'answer_details'=>NULL,
+            'answer_type'=>$answer_type,
             'answer_id'=>NULL
         ]);
     }
@@ -477,6 +564,7 @@ class Colleges extends Component
             foreach ($answers as $key => $value) {
                 array_push($answers_list,[
                     'answer_details'=>$value->answer_details,
+                    'answer_type'=>$value->answer_type,
                     'answer_id'=>$value->answer_id
                 ]);
             }

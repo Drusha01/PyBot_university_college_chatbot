@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => '/PyBot_university_college_chatbot/public',
+    'asset_url' => null,
 
     /*
     |--------------------------------------------------------------------------
