@@ -104,7 +104,7 @@
 
     <!-- start -->
     @if(0 && $academic_data)
-      <div class="container marketing">
+      <div class="container marketing" style="font-family: -webkit-body; background-color: darkseagreen;">
         <div class="pricing-header pt-md-1 pb-md-4 mx-auto text-center" id="academics">
           <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
           <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
