@@ -181,5 +181,6 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="{{ asset('assets/js/chat.js') }}"></script>
+        <script src="{{ asset('admin-assets/js/chat.js') }}"></script>
     </body>
 </html>

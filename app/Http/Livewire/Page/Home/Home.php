@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Home extends Component
 {
+    public $academic_data;
+    public $faculty_data;
     public function booted(Request $request){
     }
     public function hydrate(){

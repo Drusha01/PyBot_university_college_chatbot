@@ -1,6 +1,6 @@
 <div>
     <nav id="top-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
+        <div class="container-fluid navbar-container">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('storage/content/system_asset/'.$system_asset['system_asset_logo']) }}" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
             <span class="logo">{{$system_asset['system_asset_name']}}</span>
