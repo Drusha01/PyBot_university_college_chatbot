@@ -21,7 +21,7 @@ class Chatbox extends Component
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
-            header("Location: /login");
+            header("Location: login");
             die();
         }else{
             $user_status = DB::table('users as u')
@@ -32,12 +32,12 @@ class Chatbox extends Component
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'deleted' ){
-            header("Location: /deleted");
+            header("Location: deleted");
             die();
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'inactive' ){
-            header("Location: /inactive");
+            header("Location: inactive");
             die();
         }
     }

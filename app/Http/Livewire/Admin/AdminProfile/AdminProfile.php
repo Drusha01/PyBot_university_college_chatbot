@@ -41,7 +41,7 @@ class AdminProfile extends Component
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
-            header("Location: /login");
+            header("Location: login");
             die();
         }else{
             $user_status = DB::table('users as u')
@@ -52,12 +52,12 @@ class AdminProfile extends Component
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'deleted' ){
-            header("Location: /deleted");
+            header("Location: deleted");
             die();
         }
 
         if(isset($user_status->user_status_details) && $user_status->user_status_details == 'inactive' ){
-            header("Location: /inactive");
+            header("Location: inactive");
             die();
         }
     }
@@ -99,7 +99,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Unauthenticated!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'deleted' ){
@@ -109,7 +109,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account deleted!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/deleted'
+                'link'              									=> 'deleted'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'inactive' ){
@@ -119,7 +119,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account inactive!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/inactive'
+                'link'              									=> 'inactive'
             ]);
         }
        
@@ -230,7 +230,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Unauthenticated!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'deleted' ){
@@ -240,7 +240,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account deleted!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/deleted'
+                'link'              									=> 'deleted'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'inactive' ){
@@ -250,7 +250,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account inactive!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/inactive'
+                'link'              									=> 'inactive'
             ]);
         }
 
@@ -522,7 +522,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Unauthenticated!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'deleted' ){
@@ -532,7 +532,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account deleted!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/deleted'
+                'link'              									=> 'deleted'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'inactive' ){
@@ -542,7 +542,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account inactive!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/inactive'
+                'link'              									=> 'inactive'
             ]);
         }
         if(strlen($this->new_password) < 8 ) {
@@ -647,7 +647,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Unauthenticated!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'deleted' ){
@@ -657,7 +657,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account deleted!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/deleted'
+                'link'              									=> 'deleted'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'inactive' ){
@@ -667,7 +667,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account inactive!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/inactive'
+                'link'              									=> 'inactive'
             ]);
         }
         if(strlen($this->new_password) < 8 ) {
@@ -698,7 +698,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Unauthenticated!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'deleted' ){
@@ -708,7 +708,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account deleted!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/deleted'
+                'link'              									=> 'deleted'
             ]);
         }
         if(isset($user_details['user_status_details']) && $user_details['user_status_details'] == 'inactive' ){
@@ -718,7 +718,7 @@ class AdminProfile extends Component
                 'title'             									=> 'Account inactive!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '1500',
-                'link'              									=> '/inactive'
+                'link'              									=> 'inactive'
             ]);
         }
         if(strlen($this->confirm_password) < 8 ) {

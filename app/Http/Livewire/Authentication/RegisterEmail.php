@@ -425,7 +425,7 @@ class RegisterEmail extends Component
                     'title'             									=> 'Successfully signed up!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '1500',
-                    'link'              									=> '/'
+                    'link'              									=> ''
                 ]);
             }else{
                 $this->dispatchBrowserEvent('swal:redirect',[

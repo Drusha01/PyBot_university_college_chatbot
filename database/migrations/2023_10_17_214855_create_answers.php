@@ -15,6 +15,7 @@ class CreateAnswers extends Migration
     {
         DB::statement('CREATE TABLE answers(
             answer_id INT PRIMARY KEY AUTO_INCREMENT,
+            answer_type INT,
             answer_q_and_a_id INT,
             answer_details VARCHAR(2048),
             date_created DATETIME DEFAULT CURRENT_TIMESTAMP,
