@@ -102,14 +102,15 @@
     </div>
     @endif
 
+    <!-- start -->
     @if(0 && $academic_data)
-      <div class="container marketing">
-        <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
+    <!-- steff yung background color darkseagreen di man gumagawa kahit inline or external or bootstrap, pahelp dito.-->
+      <div class="container marketing" style="font-family: -webkit-body; background-color: darkseagreen;">
+        <div class="pricing-header pt-md-1 pb-md-4 mx-auto text-center" id="academics">
           <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
           <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
           </p>
         </div>
-        <hr class="featurette-divider">
       @foreach($academic_data as $key=>$value)
         <div class="row featurette featurette-1">
           <div class="col-12 col-md-12 col-lg-7 course-cs">
@@ -173,8 +174,10 @@
         <div class="col-12 col-md-10 col-lg-5 mx-auto mx-lg-0 course-1 course-2"></div>
       </div>
       @endif
+      <!-- end -->
+      
       <hr class="featurette-divider">
-
+      
       @if($academic_data)
           <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
             <h1 class="display-4 fw-normal">Admissions</h1>
