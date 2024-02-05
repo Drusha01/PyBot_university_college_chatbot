@@ -1,9 +1,9 @@
 /* Style for the header */
 #header {
-  background-color: #007bff; /* Background color for the header */
-  color: #fff; /* Text color */
-  padding: 10px; /* Add padding */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  /* background-color: #007bff; */ /* Background color for the header */
+  /* color: #fff; */ /* Text color */
+  /* padding: 10px; */ /* Add padding */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */ /* Add a shadow for depth */
 }
 
 .dasboard-logo {
