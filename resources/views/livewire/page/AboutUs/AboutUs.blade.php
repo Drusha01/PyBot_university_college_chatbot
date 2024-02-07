@@ -2,9 +2,9 @@
   <section class="about-us-section" style="text-align: center; font-family: -webkit-body;">
     <div class="row">
       <div class="col-12">
-        <div class="about-box" style="background-color: darkseagreen; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-          <h2 class="display-4 fw-normal text-white">About Us</h2>
-          <p class="lead border-bottom mb-4 text-white">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
+        <div class="about-box" style=" padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h2 class="display-4 fw-normal ">About Us</h2>
+          <p class="lead border-bottom mb-4">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
           <div class="row gy-4 gy-md-0 gx-xxl-5X justify-content-center">
             @if($about_us_data)
               @foreach($about_us_data as $key => $value)
@@ -14,8 +14,8 @@
                       <img src="{{asset('storage/content/about_us/'.$value->about_us_logo)}}" style="border-radius:50%;" alt="" width="92" height="92">
                     </div>
                     <div class="col-md-12">
-                      <h4 class="lead mt-3 mb-1 text-white" >{{$value->about_us_header}}</h4>
-                      <p class="text-white">{{$value->about_us_content}}</p>
+                      <h4 class="lead mt-3 mb-1 " >{{$value->about_us_header}}</h4>
+                      <p class="#">{{$value->about_us_content}}</p>
                     </div>
                   </div>
                 </div>

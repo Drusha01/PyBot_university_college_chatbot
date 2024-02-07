@@ -35,7 +35,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
-  color: var(--color-default);
+  color: darkolivegreen;
 }
 
 a {
@@ -184,8 +184,8 @@ section {
 }
 
 .scroll-top:hover {
-  background: rgba(248, 90, 64, 0.8);
-  color: #fff;
+  background: darkolivegreen;
+  color: darkseagreen;
 }
 
 .scroll-top.active {
@@ -242,7 +242,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: linear-gradient(-111deg, rgb(62 145 119), rgb(66 121 98), rgb(49 132 99));
+  background: darkseagreen;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -295,7 +295,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  /* background-color: #008374; */
+  background: linear-gradient(25deg, rgba(12, 75, 68, 0.78), rgb(0 114 101 / 85%), rgb(2 111 88 / 78%));
   position: absolute;
   width: 100%;
 }
@@ -2561,7 +2561,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   font-size: 14px;
-  background: var(--color-tertiary);
+  background: darkseagreen;
   padding: 50px 0;
   color: white;
 }
