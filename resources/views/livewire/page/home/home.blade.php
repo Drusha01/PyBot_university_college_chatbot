@@ -135,7 +135,7 @@
       @endforeach
     @else
     <div class="container marketing">
-      <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center mb-5" id="academics">
+      <div class="pricing-header pb-md-4 mx-auto text-center mb-5" id="academics">
         <h1 class="display-6 fw-normal">Technology Degrees That Deliver Results</h1>
         <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
@@ -200,7 +200,7 @@
           @endforeach
           </div>
       @else
-      <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
+      <div class="pricing-header pb-md-4 mx-auto text-center" id="admissions">
         <h1 class="display-6 fw-normal">Admissions</h1>
         <p class="fs-5">
           We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
@@ -229,7 +229,7 @@
           </div>
         @endforeach
       @else
-      <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
+      <div class="pricing-header pb-md-4 mx-auto text-center" id="faculty">
         <h1 class="display-6 fw-normal">Faculty and Staff</h1>
       </div>
       <div class="display-8 row faculty">
