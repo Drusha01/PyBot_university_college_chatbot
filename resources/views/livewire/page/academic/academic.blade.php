@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-          <h2 class="display-4 mb-4">Academic Programs</h2>
+          <h2 class="display-6 mb-4">Academic Programs</h2>
           <p class="lead">Explore our academic programs designed to help you achieve your educational goals.</p>
         </div>
       </div>

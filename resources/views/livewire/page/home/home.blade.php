@@ -135,15 +135,15 @@
       @endforeach
     @else
     <div class="container marketing">
-      <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
-        <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+      <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center mb-5" id="academics">
+        <h1 class="display-6 fw-normal">Technology Degrees That Deliver Results</h1>
         <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
       </div>
       <hr class="featurette-divider">
       <div class="row featurette featurette-1">
         <div class="col-12 col-md-12 col-lg-7 course-cs">
-          <h2 class="featurette-heading course-title">BS in Computer Science</span></h2>
+          <h2 class="display-6 featurette-heading course-title">BS in Computer Science</span></h2>
           <p class="lead justify">
             Master advanced programming languages, algorithms, and software architecture for careers in fields like machine learning, blockchain, IoT, and more. Gain a comprehensive foundation rooted in computer theory and mathematics.
           </p>
@@ -154,7 +154,7 @@
       <hr class="featurette-divider sec-divider">
       <div class="row featurette featurette-2">
         <div class="col-12 col-md-12 col-lg-7 course-it">
-          <h2 class="featurette-heading course-title">BS in Information Technology</span></h2>
+          <h2 class="display-6 featurette-heading course-title">BS in Information Technology</span></h2>
           <p class="lead justify">
             Apply emerging technologies to implement and administer real-world information systems, networks, databases and infrastructure. Become the do-it-all IT expert every organization needs.
           </p>
@@ -165,7 +165,7 @@
       <hr class="featurette-divider sec-divider">
       <div class="row featurette featurette-2">
         <div class="col-12 col-md-12 col-lg-7 course-it">
-          <h2 class="featurette-heading course-title">Associate in Computer Technology (ACT)</span></h2>
+          <h2 class="display-6 featurette-heading course-title">Associate in Computer Technology (ACT)</span></h2>
           <p class="lead justify">
             Build versatile computer skills in programming, hardware, databases, and networks. Gain knowledge applicable across sectors and launch your technology career.
           </p>
@@ -180,7 +180,7 @@
       
       @if($academic_data)
           <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
-            <h1 class="display-4 fw-normal">Admissions</h1>
+            <h1 class="display-6 fw-normal">Admissions</h1>
             <p class="fs-5">
               We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
             </p>
@@ -201,7 +201,7 @@
           </div>
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
-        <h1 class="display-4 fw-normal">Admissions</h1>
+        <h1 class="display-6 fw-normal">Admissions</h1>
         <p class="fs-5">
           We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
         </p>
@@ -212,7 +212,7 @@
       <hr class="featurette-divider">
       @if($faculty_data)
         <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
-          <h1 class="display-4 fw-normal">Faculty and Staff</h1>
+          <h1 class="display-6 fw-normal">Faculty and Staff</h1>
         </div>
         <div class="row faculty justify-content-xl-center">
         @foreach($faculty_data as $key =>$value)
@@ -230,9 +230,9 @@
         @endforeach
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
-        <h1 class="display-4 fw-normal">Faculty and Staff</h1>
+        <h1 class="display-6 fw-normal">Faculty and Staff</h1>
       </div>
-      <div class="row faculty">
+      <div class="display-8 row faculty">
         <div class="col-lg-4">
           <img src="{{asset('admin-assets/media/avatar/avatar-1.jpg')}}" alt="" class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3>Dr. Juan Dela Cruz</h3>
