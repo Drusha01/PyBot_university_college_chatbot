@@ -170,7 +170,7 @@ section {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background: var(--color-secondary);
+  background: darkseagreen;
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -294,11 +294,14 @@ section {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 90px;
+  height: 80px;
   background: linear-gradient(25deg, rgba(12, 75, 68, 0.78), rgb(0 114 101 / 85%), rgb(2 111 88 / 78%));
   position: absolute;
   width: 100%;
 }
+
+
+
 
 .header.sticked {
   position: fixed;
@@ -374,7 +377,7 @@ section {
 
   .navbar a i,
   .navbar a:focus i {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 0;
     margin-left: 5px;
   }
@@ -386,7 +389,7 @@ section {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--color-secondary);
+    background-color: darkseagreen;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;

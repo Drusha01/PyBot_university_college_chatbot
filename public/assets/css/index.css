@@ -3,7 +3,7 @@
   /* background-color: #007bff; */ /* Background color for the header */
   /* color: #fff; */ /* Text color */
   /* padding: 10px; */ /* Add padding */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */ /* Add a shadow for depth */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
 }
 
 .dasboard-logo {
@@ -66,7 +66,7 @@
 .green-bold {
   margin: 0;
   position: relative;
-  font-size: 30px;
+  font-size: 31px;
   line-height: 1px;
   letter-spacing: 1px;
   font-weight: 400;
