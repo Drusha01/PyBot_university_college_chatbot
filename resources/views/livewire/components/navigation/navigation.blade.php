@@ -50,14 +50,14 @@
                         <img style="border-radius:50%;"src="@if($user_details['user_profile_picture']== 'default.png'){{ asset('admin-assets/media/avatar/5.jpg')}} @else {{asset('storage/images/thumbnail/'.$user_details['user_profile_picture'])}} @endif" width="40" alt="">
                     </a>
                     <div class="dropdown-menu" style="left: -100px;" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="{{route ('page.profile') }}">
+                        <a class="dropdown-item" style="color: #12653e;" href="{{route ('page.profile') }}">
                             <i class="bi bi-person-fill"></i> Profile
                         </a>
-                        <a class="dropdown-item" href="{{route ('page.chat') }}">
+                        <a class="dropdown-item" style="color: #12653e;" href="{{route ('page.chat') }}">
                             <i class="bi bi-chat-fill"></i> Chat
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{route('logout')}}">
+                        <a class="dropdown-item" style="color: #12653e;" href="{{route('logout')}}">
                         <i class="bi bi-box-arrow-right"></i> Sign Out
                         </a>
                     </div>
