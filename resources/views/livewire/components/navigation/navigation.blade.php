@@ -21,7 +21,7 @@
             <img src="{{ asset('storage/content/system_asset/'.$system_asset['system_asset_logo']) }}" class="mr-2" alt="logo" style="width: 40px;height: 34px;">
             <span class="logo">{{$system_asset['system_asset_name']}}</span>
         </a>
-      <nav id="navbar" class="navbar display-8">
+      <nav id="navbar" class="navbar">
         <ul>
             <li class="nav-item">
                 <a class="nav-link" href="{{route ('page.home')}}">Home</a>

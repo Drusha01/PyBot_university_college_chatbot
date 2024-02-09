@@ -1,14 +1,34 @@
 <div>
-    <!-- Admission Page Content Section -->
-    <section class="py-5" style="margin-top: 5rem;" >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2 text-center">
-            <h2 class="display-6 mb-4">Admissions</h2>
-            <p class="lead">Welcome to the Western Mindanao State University's admission page. We are excited to help you start your educational journey with us.</p>
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-color: white;">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h2 class="display-4 fw-normal text-white">Admissions</h2>
+            
           </div>
         </div>
-        <div class="row border-top mt-3 justify-content-xl-center">
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{{route ('page.home')}}">Home</a></li>
+          <li>Admissions</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+    <!-- Admission Page Content Section -->
+    <section class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p class="lead mb-4 text-black">Welcome to the Western Mindanao State University's admission page. We are excited to help you start your educational journey with us.</p>
+          </div>
+        </div>
+        <div class="row mt-3 justify-content-xl-center">
           @if($admission_data)
             @foreach($admission_data as $key=>$value)
               <div class="col-md-6">

@@ -10,6 +10,13 @@
 # Set main reusable colors and fonts using CSS variables
 # Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --------------------------------------------------------------*/
+
+@import url("font.css");
+@import url("padding-margin.css");
+@import url("width-height.css");
+@import url("display-spacing.css");
+@import url("switch.css");
+@import url("accordion.css");
 /* Fonts */
 :root {
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -20,7 +27,7 @@
 /* Colors */
 :root {
   --color-default: rgba(0, 131, 116, 0.8);
-  --color-primary: linear-gradient(-111deg, rgb(107 220 184 / 63%), rgb(93 197 154 / 63%), rgb(88 184 146 / 63%));
+  --color-primary: linear-gradient(25deg, rgba(12, 75, 68, 0.78), rgb(0 114 101 / 85%), rgb(2 111 88 / 78%));
   --color-secondary: #001008;
   --color-tertiary: linear-gradient(45deg, #2a484e, #31474e, #2b474c);
 }
@@ -35,7 +42,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
-  color: darkolivegreen;
+  color: var(--color-default);
 }
 
 a {
@@ -54,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
 }
 
 /*--------------------------------------------------------------
@@ -170,7 +177,7 @@ section {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background: darkseagreen;
+  background: var(--color-secondary);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -184,8 +191,8 @@ section {
 }
 
 .scroll-top:hover {
-  background: darkolivegreen;
-  color: darkseagreen;
+  background: rgba(248, 90, 64, 0.8);
+  color: #fff;
 }
 
 .scroll-top.active {
@@ -242,7 +249,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: darkseagreen;
+  background: linear-gradient(25deg, rgba(12, 75, 68, 100%), rgb(0 114 101 / 100%), rgb(2 111 88 / 100%));
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -294,14 +301,11 @@ section {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 80px;
-  background: linear-gradient(25deg, rgba(12, 75, 68, 0.78), rgb(0 114 101 / 85%), rgb(2 111 88 / 78%));
+  height: 90px;
+  /* background-color: #008374; */
   position: absolute;
   width: 100%;
 }
-
-
-
 
 .header.sticked {
   position: fixed;
@@ -310,7 +314,7 @@ section {
   left: 0;
   height: 70px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(-111deg, rgb(62 145 119), rgb(66 121 98), rgb(49 132 99));
+  background: linear-gradient(25deg, rgba(12, 75, 68, 100%), rgb(0 114 101 / 100%), rgb(2 111 88 / 100%));
 }
 
 .header .logo img {
@@ -377,7 +381,7 @@ section {
 
   .navbar a i,
   .navbar a:focus i {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 0;
     margin-left: 5px;
   }
@@ -389,7 +393,7 @@ section {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: darkseagreen;
+    background-color: var(--color-secondary);
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -2564,7 +2568,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   font-size: 14px;
-  background: darkseagreen;
+  background: var(--color-tertiary);
   padding: 50px 0;
   color: white;
 }
@@ -2672,4 +2676,53 @@ section {
 
 .footer .credits a {
   color: #fff;
+}
+
+ /* Card */
+ .card {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.card-header,
+.card-footer {
+  border-color: #ebeef4;
+  background-color: #fff;
+  color: #798eb3;
+  padding: 15px;
+}
+
+.card-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #012970;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card-body {
+  padding: 0 20px 20px 20px;
+}
+
+.card-img-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dots-bg {
+  --dot-bg: white;
+  --dot-color: black;
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
 }

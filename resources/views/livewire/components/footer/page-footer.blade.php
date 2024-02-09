@@ -1,15 +1,4 @@
 <div class="footer-container">
-<!--   <footer class="card my-1">
-    <ul class="nav justify-content-center border-bottom pb-2 mb-2">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About Us</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Academics</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Admission</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
-    </ul>
-    <p class="text-center text-muted">&copy; 2023 PyBot</p>
-  </footer> -->
-  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
     <div class="container">
@@ -50,7 +39,7 @@
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  <!-- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ -->
   <div id="preloader"></div>
 </div>

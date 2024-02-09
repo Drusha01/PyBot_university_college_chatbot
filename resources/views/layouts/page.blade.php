@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/chat.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
         <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/scss/framed.scss') }}">
         <!-- <link rel="stylesheet" href="{{ asset('assets/css/vertical-light.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/user.css') }}" > -->
 
