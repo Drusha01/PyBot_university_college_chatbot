@@ -8,21 +8,34 @@
         <link rel="shortcut icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
         <link rel="icon" href="{{ asset('images/favicon/favicon.ico') }}" type="image/x-icon">
         <!-- styled css -->
-        <link rel="stylesheet" href="{{ asset('admin-assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
+        <!-- <link rel="stylesheet" href="{{ asset('admin-assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}"> -->
         <link rel="stylesheet" href="{{ asset('assets/css/chat.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
         <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/vertical-light.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/user.css') }}" >
+        <link rel="stylesheet" href="{{ asset('assets/scss/framed.scss') }}">
+        <!-- <link rel="stylesheet" href="{{ asset('assets/css/vertical-light.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/user.css') }}" > -->
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
 
         <!-- CSS Files bout us -->
         <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.2/components/abouts/about-1/assets/css/about-1.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
         <!-- inject:Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400&display=swap"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"/>
+        
         <!-- important script for profile dropdown : -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -182,5 +195,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="{{ asset('assets/js/chat.js') }}"></script>
         <script src="{{ asset('admin-assets/js/chat.js') }}"></script>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
     </body>
 </html>

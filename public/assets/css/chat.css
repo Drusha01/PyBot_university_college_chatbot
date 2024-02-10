@@ -165,7 +165,7 @@ body {
 Chat
 --------------------*/
 .chat {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   transform: translate(-5%, -5%);
@@ -492,7 +492,7 @@ Custom Srollbar
 
 #chat-circle {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   right: 5px;
   background: #063d2ffa;

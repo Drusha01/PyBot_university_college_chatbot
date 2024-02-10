@@ -1,7 +1,28 @@
 <div>
+    <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-color: white;">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h2 class="display-4 fw-normal text-white">My Profile</h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{{route ('page.home')}}">Home</a></li>
+          <li>Profile</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
     <div class="container rounded">
     <!-- User Profile Content -->
-    <section class="py-5" style="margin-top: 5rem;">
+    <section class="">
         <div class="row">
             <!-- Left Column -->
             <div class="col-lg-4">

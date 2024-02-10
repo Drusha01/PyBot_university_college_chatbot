@@ -2,8 +2,28 @@
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-color: white;">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h2 class="display-4 fw-normal text-white">Forums</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{{route ('page.home')}}">Home</a></li>
+          <li>Forums</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
     <!-- FAQ/forums content -->
-    <section id="faq-forums" class="py-5" style="margin-top: 5rem;">
+    <section id="faq-forums" class="container">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">

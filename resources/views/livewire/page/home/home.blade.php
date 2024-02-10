@@ -19,8 +19,8 @@
               <div class="banner"></div>
               <div class="container">
                 <div class="carousel-caption">
-                  <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_header_title}}</h1>
-                  <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_paragraph_paragraph}}</p>
+                  <h1 class="animated fadeInDown" style="text-shadow: 0px 0px 2px #0b4737;">{{$value->carousel_header_title}}</h1>
+                  <p class="animated fadeInUp" style="">{{$value->carousel_paragraph_paragraph}}</p>
                   <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
                 </div>
               </div>
@@ -31,8 +31,8 @@
             <div class="banner"></div>
             <div class="container">
               <div class="carousel-caption">
-                <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_header_title}}</h1>
-                <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">{{$value->carousel_paragraph_paragraph}}</p>
+                <h1 class="animated fadeInDown" style="text-shadow: 0px 0px 2px #0b4737;">{{$value->carousel_header_title}}</h1>
+                <p class="animated fadeInUp" style="">{{$value->carousel_paragraph_paragraph}}</p>
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
@@ -40,14 +40,7 @@
           @endif
         @endforeach
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden ">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden ">Next</span>
-        </button>
+        
       </div>
     @else
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -60,54 +53,134 @@
         <div class="carousel-item active" >
           <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" class="card-img-top mx-auto" alt="Admission Image 1">
           <div class="banner"></div>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Student-Centered College.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
-              <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+          <div class="row gy-4">
+            <div class="container col-md-6">
+              <div class="carousel-caption">
+                <h1 class="animated fadeInDown" style="text-shadow: 0px 0px 2px #0b4737;">Student-Centered College.</h1>
+                <p class="animated fadeInUp" style="">The College of Computing Studies allows students to explore their passions for problem-solving and producing creative experiences.</p>
+                <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+              </div>
+            </div>
+            <div class="container col-md-6">
+              <div class="frame1">
+                <div class="diagonal" id="d1">
+                  <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame2">
+                <div class="diagonal" id="d2">
+                  <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame3">
+                <div class="diagonal" id="d3">
+                  <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame4">
+                <div class="diagonal" id="d4">
+                  <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="carousel-item" >
           <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}"  class="card-img-top mx-auto" alt="Admission Image 2">
           <div class="banner"></div>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Innovative and Supportive Faculty and Staff.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
-              <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+          <div class="row gy-4">
+            <div class="container col-md-6">
+              <div class="carousel-caption">
+                <h1 class="animated fadeInDown" style="text-shadow: 0px 0px 2px #0b4737;">Innovative and Supportive Faculty and Staff.</h1>
+                <p class="animated fadeInUp" style="">The College of Computing Studies is united by a common goal: to make the world a better place through education, research, and innovation.</p>
+                <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+              </div>
+            </div>
+            <div class="container col-md-6">
+              <div class="frame1">
+                <div class="diagonal" id="d1">
+                  <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame2">
+                <div class="diagonal" id="d2">
+                  <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame3">
+                <div class="diagonal" id="d3">
+                  <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame4">
+                <div class="diagonal" id="d4">
+                  <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="carousel-item" >
           <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}"  class="card-img-top mx-auto" alt="Admission Image 3">
           <div class="banner"></div>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 class="animated fadeInDown" style="text-shadow: 2px 4px 8px #0b4737;">Convenient Facilities.</h1>
-              <p class="animated fadeInUp" style="-webkit-text-stroke: 0.9px #b1beb9; text-shadow: 2px 4px 8px #0b4737;">The College of Computing Studies is equipped with spacious and fully-aircon classrooms, high-tech laboratories, media rooms, and free wifi for all students.</p>
-              <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+          <div class="row gy-4">
+            <div class="container col-md-6">
+              <div class="carousel-caption">
+                <h1 class="animated fadeInDown" style="text-shadow: 0px 0px 2px #0b4737;">Convenient Facilities.</h1>
+                <p class="animated fadeInUp" style="">The College of Computing Studies is equipped with spacious and fully-aircon classrooms, high-tech laboratories, media rooms, and free wifi for all students.</p>
+                <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
+              </div>
+            </div>
+            <div class="container col-md-6">
+              <div class="frame1">
+                <div class="diagonal" id="d1">
+                  <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame2">
+                <div class="diagonal" id="d2">
+                  <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame3">
+                <div class="diagonal" id="d3">
+                  <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
+              <div class="frame4">
+                <div class="diagonal" id="d4">
+                  <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}" />
+                  <p class="overlay"></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden ">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden ">Next</span>
-      </button>
+      
     </div>
     @endif
+
+    <!-- Eto Kai sa baba (academic) hnd ko pa alam paano imodify ang layout... baka mabet mo yung sa Impact Templates last time check mo ulit -->
+
 
     <!-- start -->
     @if(0 && $academic_data)
     <!-- steff yung background color darkseagreen di man gumagawa kahit inline or external or bootstrap, pahelp dito.-->
       <div class="container marketing" style="font-family: -webkit-body; background-color: darkseagreen;">
         <div class="pricing-header pt-md-1 pb-md-4 mx-auto text-center" id="academics">
-          <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+          <h1 class="display-5 fw-normal">Technology Degrees That Deliver Results</h1>
           <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
           </p>
         </div>
@@ -136,7 +209,7 @@
     @else
     <div class="container marketing">
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
-        <h1 class="display-4 fw-normal">Technology Degrees That Deliver Results</h1>
+        <h1 class="display-5 fw-normal">Technology Degrees That Deliver Results</h1>
         <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
       </div>
@@ -180,7 +253,7 @@
       
       @if($academic_data)
           <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
-            <h1 class="display-4 fw-normal">Admissions</h1>
+            <h1 class="display-5 fw-normal">Admissions</h1>
             <p class="fs-5">
               We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
             </p>
@@ -201,7 +274,7 @@
           </div>
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
-        <h1 class="display-4 fw-normal">Admissions</h1>
+        <h1 class="display-5 fw-normal">Admissions</h1>
         <p class="fs-5">
           We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
         </p>
@@ -212,7 +285,7 @@
       <hr class="featurette-divider">
       @if($faculty_data)
         <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
-          <h1 class="display-4 fw-normal">Faculty and Staff</h1>
+          <h1 class="display-5 fw-normal">Faculty and Staff</h1>
         </div>
         <div class="row faculty justify-content-xl-center">
         @foreach($faculty_data as $key =>$value)
@@ -230,7 +303,7 @@
         @endforeach
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
-        <h1 class="display-4 fw-normal">Faculty and Staff</h1>
+        <h1 class="display-5 fw-normal">Faculty and Staff</h1>
       </div>
       <div class="row faculty">
         <div class="col-lg-4">

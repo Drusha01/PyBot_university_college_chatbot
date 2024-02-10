@@ -13,7 +13,7 @@ body#home-page {
   
   /* Carousel base class */
   .carousel {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 
   }
   /* Since positioning the image, we need to help out the caption */
@@ -21,6 +21,18 @@ body#home-page {
     bottom: 7rem;
     z-index: 10;
   }
+  .carousel-caption {
+    position: absolute;
+    right: 45% !important;
+    bottom: 3.25rem !important;
+    left: 5% !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 0.25rem !important;
+    color: #414141 !important;
+    text-align: left !important;
+    font-family: var(--font-primary)!important;
+    font-size: x-large;
+}
   
   /* Declare heights because of positioning of img element */
   .carousel-item {
@@ -33,6 +45,7 @@ body#home-page {
     min-width: 100%;
     background-position : center;
     height: auto;
+    opacity: 0.5;
   }
   
   /* MARKETING CONTENT
@@ -111,7 +124,7 @@ p.justify{
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(25deg, rgb(16 104 94 / 78%), rgb(0 114 101 / 85%), rgb(2 111 88 / 78%));
+  background: linear-gradient(-111deg, rgb(107 220 184 / 125%), rgb(93 197 154 / 90%), rgb(88 184 146 / 90%));
   background-blend-mode: multiply;
 }
   
@@ -170,7 +183,7 @@ p.justify{
     .carousel-caption p {
       margin-bottom: 1.25rem;
       font-size: 1.25rem;
-      line-height: 1.4;
+      line-height: 1.2;
     }
   
     .featurette-heading {

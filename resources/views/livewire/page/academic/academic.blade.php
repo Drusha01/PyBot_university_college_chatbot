@@ -1,15 +1,35 @@
 <div>
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-color: white;">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h2 class="display-4 fw-normal text-white">Academic</h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{{route ('page.home')}}">Home</a></li>
+          <li>Academic</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
   <!-- Academic Page Content Section -->
-  <section class="py-5" style="margin-top: 5rem;">
+  <section class="container">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 offset-lg-2 text-center">
-          <h2 class="display-4 mb-4">Academic Programs</h2>
-          <p class="lead">Explore our academic programs designed to help you achieve your educational goals.</p>
+        <div class="col-lg-12 text-center">
+          <p class="lead mb-4 text-black">Explore our academic programs designed to help you achieve your educational goals.</p>
         </div>
       </div>
 
-      <div class="row border-top mt-3 justify-content-xl-center">
+      <div class="row mt-3 justify-content-xl-center">
         @if($academic_data)
           @foreach($academic_data as $key=>$value)
             <div class="col-md-3">
