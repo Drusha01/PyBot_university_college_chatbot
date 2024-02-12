@@ -1,15 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-<<<<<<< HEAD
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '07c9e40e3e3139affae0e67d2ef33a0988b310f0',
-=======
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
->>>>>>> kai-branch
+        'reference' => '89b85ca6bb7cefbbd33d79f9d07cf1444d3fabbe',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -35,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'carbonphp/carbon-doctrine-types' => array(
-            'pretty_version' => '3.1.0',
-            'version' => '3.1.0.0',
-            'reference' => 'a31d3358a2a5d6ae947df1691d1f321418a5f3d5',
+            'pretty_version' => '3.2.0',
+            'version' => '3.2.0.0',
+            'reference' => '18ba5ddfec8976260ead6e866180bd5d2f71aa1d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../carbonphp/carbon-doctrine-types',
             'aliases' => array(),
@@ -410,15 +404,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-<<<<<<< HEAD
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '07c9e40e3e3139affae0e67d2ef33a0988b310f0',
-=======
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
->>>>>>> kai-branch
+            'reference' => '89b85ca6bb7cefbbd33d79f9d07cf1444d3fabbe',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
