@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-12">
         <div class="about-box">
-          <p class="lead mb-4 text-black">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
+          <p class="lead mb-4" style="ccolor: var(--color-default);">Welcome to the future of educational assistance! PyBOT is your virtual companion designed to enhance your university experience in the digital age. This intelligent and friendly bot is here to make your academic journey smoother, more efficient, and enjoyable.</p>
           <div class="row gy-4 gy-md-0 gx-xxl-5X justify-content-center">
             @if($about_us_data)
               @foreach($about_us_data as $key => $value)
@@ -34,8 +34,8 @@
                       <img src="{{asset('storage/content/about_us/'.$value->about_us_logo)}}" style="border-radius:50%;" alt="" width="92" height="92">
                     </div>
                     <div class="col-md-12">
-                      <h4 class="lead mt-3 mb-1 text-white" >{{$value->about_us_header}}</h4>
-                      <p class="text-white">{{$value->about_us_content}}</p>
+                      <h4 class="lead mt-3 mb-1" style="color: var(--color-default);" >{{$value->about_us_header}}</h4>
+                      <p class="#" style="ccolor: var(--color-default);">{{$value->about_us_content}}</p>
                     </div>
                   </div>
                 </div>
