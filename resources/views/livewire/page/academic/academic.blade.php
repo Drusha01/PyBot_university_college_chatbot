@@ -25,7 +25,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <p class="lead mb-4 text-black">Explore our academic programs designed to help you achieve your educational goals.</p>
+          <p class="lead mb-4" style="ccolor: var(--color-default);">Explore our academic programs designed to help you achieve your educational goals.</p>
         </div>
       </div>
 

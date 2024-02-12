@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <p class="lead mb-4 text-black">Welcome to the Western Mindanao State University's admission page. We are excited to help you start your educational journey with us.</p>
+            <p class="lead mb-4" style="ccolor: var(--color-default);">Welcome to the Western Mindanao State University's admission page. We are excited to help you start your educational journey with us.</p>
           </div>
         </div>
         <div class="row mt-3 justify-content-xl-center">
