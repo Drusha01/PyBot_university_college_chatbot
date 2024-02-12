@@ -49,6 +49,7 @@ $('.message-submit').click(function() {
   ,success: function(result){
       var response = JSON.parse(result);
 
+
       response.forEach(myFunction)
       // $('.message.loading').remove();
       // updateScrollbar();

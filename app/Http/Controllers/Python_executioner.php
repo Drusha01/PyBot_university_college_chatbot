@@ -170,6 +170,23 @@ class Python_executioner extends Controller
         if(strlen($question)>0){
             
             // preprocessor to check if the question has match in db if one or more is matched, return the answer (db/array)
+            $q_and_a = DB::table('questions')
+                ->where('question_details','=',$question)
+                ->get()
+                ->first();
+            if( $q_and_a){
+                $responses = DB::table('answers')
+                    ->where('answer_q_and_a_id','=', $q_and_a->question_q_and_a_id)
+                    ->get()
+                    ->toArray();
+                $length = count($responses);
+                $response= [];
+                foreach ($responses as $key => $value) {
+                    $rand = rand(0,$length-1);
+                    array_push($response, ['answer'=>$value->answer_details,'answer_type'=>$value->answer_type]);
+                }
+                return json_encode($response);
+            }
 
             $file_path  = dirname(__FILE__,4);
             $question_file_path = '/core/deployment/questions/';
