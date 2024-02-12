@@ -165,7 +165,7 @@ class Python_executioner extends Controller
 
         // check admin detals and restriction
         $question = $request->input('chat');
-
+        $response = [];
         // write to question folder
         if(strlen($question)>0){
             
@@ -180,12 +180,11 @@ class Python_executioner extends Controller
                     ->get()
                     ->toArray();
                 $length = count($responses);
-                $response= [];
                 foreach ($responses as $key => $value) {
                     $rand = rand(0,$length-1);
                     array_push($response, ['answer'=>$value->answer_details,'answer_type'=>$value->answer_type]);
                 }
-                return json_encode($response);
+                // return json_encode($response);
             }
 
             $file_path  = dirname(__FILE__,4);
@@ -236,26 +235,23 @@ class Python_executioner extends Controller
                 $count = count($answer['response']);
 
                 if($count ==1){
-                    $response = [];
                     foreach ($answer['response'] as $key => $value) {
                         $answer_list = [];
                         $length = count($value['response']);
                         $rand = rand(0,$length-1);
                         array_push($response, ['answer'=>$value['response'][$rand ]['answer_details'],'answer_type'=>$value['response'][$rand ]['answer_type']]);
                     }
-                    return json_encode($response);
                 }elseif($count >1){
-                    $response = [];
                     foreach ($answer['response'] as $key => $value) {
                         $answer_list = [];
                         $length = count($value['response']);
                         $rand = rand(0,$length-1);
                         array_push($response, ['answer'=>$value['response'][$rand ]['answer_details'],'answer_type'=>$value['response'][$rand ]['answer_type']]);
                     }
-                    return json_encode($response);
                 }else{
 
                 }
+                return json_encode($response);
                 return $count;
                 
                 // foreach ($variable as $key => $value) {
@@ -286,11 +282,7 @@ class Python_executioner extends Controller
             //         print_r('I\'m sorry, the response is only intented to signed up user please sign up');
             //     }
             // }
-            
-           
         }
-        
-
     }
     
     public function model_list(Request $request){
