@@ -180,7 +180,7 @@
     <!-- steff yung background color darkseagreen di man gumagawa kahit inline or external or bootstrap, pahelp dito.-->
       <div class="container marketing" style="font-family: -webkit-body; background-color: darkseagreen;">
         <div class="pricing-header pt-md-1 pb-md-4 mx-auto text-center" id="academics">
-          <h1 class="display-5 fw-normal">Technology Degrees That Deliver Results</h1>
+          <h1 class="display-6 fw-normal">Technology Degrees That Deliver Results</h1>
           <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
           </p>
         </div>
@@ -209,7 +209,7 @@
     @else
     <div class="container marketing">
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
-        <h1 class="display-5 fw-normal">Technology Degrees That Deliver Results</h1>
+        <h1 class="display-6 fw-normal">Technology Degrees That Deliver Results</h1>
         <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
       </div>
@@ -253,7 +253,7 @@
       
       @if($academic_data)
           <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
-            <h1 class="display-5 fw-normal">Admissions</h1>
+            <h1 class="display-6 fw-normal">Admissions</h1>
             <p class="fs-5">
               We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
             </p>
@@ -274,7 +274,7 @@
           </div>
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
-        <h1 class="display-5 fw-normal">Admissions</h1>
+        <h1 class="display-6 fw-normal">Admissions</h1>
         <p class="fs-5">
           We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
         </p>
@@ -285,7 +285,7 @@
       <hr class="featurette-divider">
       @if($faculty_data)
         <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
-          <h1 class="display-5 fw-normal">Faculty and Staff</h1>
+          <h1 class="display-6 fw-normal">Faculty and Staff</h1>
         </div>
         <div class="row faculty justify-content-xl-center">
         @foreach($faculty_data as $key =>$value)
@@ -303,7 +303,7 @@
         @endforeach
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="faculty">
-        <h1 class="display-5 fw-normal">Faculty and Staff</h1>
+        <h1 class="display-6 fw-normal">Faculty and Staff</h1>
       </div>
       <div class="row faculty">
         <div class="col-lg-4">
