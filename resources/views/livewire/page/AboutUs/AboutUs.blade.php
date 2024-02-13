@@ -43,7 +43,7 @@
             @else
               <div class="col-12 col-md-4">
                 <div class="row">
-                  <div class="col-md-12 me-4 text-primary">
+                  <div class="col-md-12 me-4 mb-2 text-primary">
                     <img src="{{ asset('admin-assets/media/programs/course-1.png') }}" class="card-img-top " alt="Program Image">
                   </div>
                   <div class="col-md-12">
