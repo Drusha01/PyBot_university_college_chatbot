@@ -143,7 +143,7 @@
                     <div class="container-fluid">
                     
                     <button class="btn btn-success float-right mt-2 mb-2 mx-1" data-toggle="modal" data-target="#deployModal">Deploy</button>
-                    <button class="btn btn-warning float-right mt-2 mb-2 mx-1" wire:click="restart_deployment()" >Restart</button>
+                    <!-- <button class="btn btn-warning float-right mt-2 mb-2 mx-1" wire:click="restart_deployment()" >Restart</button> -->
                     <button class="btn btn-danger float-right mt-2 mb-2 mx-1" wire:click="end_deployment()" >End</button>
                         <!-- Admin Table -->
                         <div class="table-responsive">
