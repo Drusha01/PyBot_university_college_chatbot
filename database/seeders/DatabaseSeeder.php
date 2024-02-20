@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             admin_role_names::class,
             // admin_role::class,
             access_role::class,
+            profanity_words_seeders::class,
         ]);
     }
 }
