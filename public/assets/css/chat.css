@@ -437,16 +437,17 @@ Message Box
   border-top: 1px solid rgb(158 158 158 / 37%);
 }
 .message-box .message-input {
+  min-height: 17px !important;
+  max-height: 80px !important;
   background: none;
   border: none;
   outline: none !important;
-  resize: none;
+  resize: vertical;
   color: rgb(0 0 0);
-  font-size: 14px;
-  height: 17px;
+  font-size: 13px;
   margin: 0;
-  padding-right: 20px;
-  width: 265px;
+  padding-right: 12px;
+  width: 295px;
 }
 .message-box textarea:focus:-webkit-placeholder {
   color: rgba(255, 255, 255, 0.882);
