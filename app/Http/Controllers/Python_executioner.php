@@ -169,9 +169,20 @@ class Python_executioner extends Controller
         // write to question folder
         if(strlen($question)>0){
             
-            // preprocessor to check if the question has match in db if one or more is matched, return the answer (db/array)
-           
 
+            $question_array = explode(' ',$question);
+            $whatToStrip = array("?","!",",",";"); // Add what you want to strip in this array
+            foreach ($question_array as $key => $value) {
+                $string = str_replace($whatToStrip, "",  $value);
+                if($string = DB::table('profanity_words')
+                ->where('words','=',$string )
+                ->get()
+                ->first()){
+                    array_push($response, ['answer'=>'Hi, I was not programmed to respond to such bad words. You can as for other infomations.','answer_type'=>2]);
+                    return json_encode($response);
+                }
+            }
+            // preprocessor to check if the question has match in db if one or more is matched, return the answer (db/array)
             $file_path  = dirname(__FILE__,4);
             $question_file_path = '/core/deployment/questions/';
             $answer_file_path = '/core/deployment/answers/';
