@@ -495,6 +495,7 @@ class Model extends Component
                 'link'              									=> '#'
             ]);
         }
+        $this->selected_model = null;
     }
 
     public function deploy_model(){
