@@ -46,6 +46,7 @@ use App\Http\Livewire\Admin\Model\Model;
 use App\Http\Livewire\Admin\Ccs\Ccs;
 use App\Http\Livewire\Admin\AdminProfile\AdminProfile;
 use App\Http\Livewire\Admin\AdminNotification\AdminNotification;
+use App\Http\Livewire\Admin\ProfanityWords\ProfanityWords;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,6 +107,7 @@ Route::middleware([Authenticated::class,AccountisValid::class,AccountisStudent::
         Route::get('/dashboard', Dashboard::class)->name('dashboard');
         Route::get('/colleges', Colleges::class)->name('colleges');
         Route::get('/department', Department::class)->name('department');
+        Route::get('/profanity-words', ProfanityWords::class)->name('profanity-words');
         Route::get('/usermanagement', Usermanagement::class)->name('usermanagement');
         Route::get('/chatbox', Chatbox::class)->name('chatbox');
         Route::get('/setting', Setting::class)->name('setting');
