@@ -5,26 +5,25 @@ $min_cqh: 1; // Minimum value for cqh
 $max_cqh: 100; // Maximum value for cqh
 
 // Dynamic media queries
-$mobile_minwidth: 17.5px;
+$mobile_minwidth: 11.5px;
 $mobile_maxwidth: 17.5px;
 $mobile_minheight: 17.5px;
-$mobile_maxheight: 17.5px;
+$mobile_maxheight: 18.5px;
 
-$tablets_minwidth: 28px;
+$tablets_minwidth: 18px;
 $tablets_maxwidth: 28px;
-$tablets_minheight: 28px;
-$tablets_maxheight: 28px;
+$tablets_minheight: 15px;
+$tablets_maxheight: 19.5px;
 
 $laptop_minwidth: 14.5px;
-$laptop_maxwidth: 14.5px;
+$laptop_maxwidth: 19.5px;
 $laptop_minheight: 14.5px;
-$laptop_maxheight: 14.5px;
+$laptop_maxheight: 19.5px;
 
-$desktop_minwidth: 19.5px;
+$desktop_minwidth: 11.5px;
 $desktop_maxwidth: 19.5px;
-$desktop_minheight: 19.5px;
-$desktop_maxheight: 19.5px;
-
+$desktop_minheight: 11.5px;
+$desktop_maxheight: 16.5px;
 
 $_minwidth: 25.5px;
 $_maxwidth: 25.5px;
@@ -57,7 +56,7 @@ $_maxheight: 25.5px;
     }
   }
 }
-// Laptop 
+// Tablet 
 @media (min-width: 768px) and (min-height: 1024px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
@@ -72,7 +71,7 @@ $_maxheight: 25.5px;
     }
   }
 }
-// Tablet 
+// Laptop 
 @media (min-width: 992px) and (min-height: 620px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {

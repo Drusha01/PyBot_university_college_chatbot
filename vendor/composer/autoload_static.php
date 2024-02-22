@@ -326,8 +326,8 @@ class ComposerStaticInit269a4b9929d1b91fdad162f81aec19dd
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -526,6 +526,7 @@ class ComposerStaticInit269a4b9929d1b91fdad162f81aec19dd
         'App\\Http\\Livewire\\Admin\\Dashboard\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Dashboard/Dashboard.php',
         'App\\Http\\Livewire\\Admin\\Department\\Department' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Department/Department.php',
         'App\\Http\\Livewire\\Admin\\Model\\Model' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Model/Model.php',
+        'App\\Http\\Livewire\\Admin\\ProfanityWords\\ProfanityWords' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/ProfanityWords/ProfanityWords.php',
         'App\\Http\\Livewire\\Admin\\Setting\\Setting' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Setting/Setting.php',
         'App\\Http\\Livewire\\Admin\\Usermanagement\\Usermanagement' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Usermanagement/Usermanagement.php',
         'App\\Http\\Livewire\\Authentication\\AccountDeleted' => __DIR__ . '/../..' . '/app/Http/Livewire/Authentication/AccountDeleted.php',
@@ -688,6 +689,7 @@ class ComposerStaticInit269a4b9929d1b91fdad162f81aec19dd
         'Database\\Seeders\\admin_role_names' => __DIR__ . '/../..' . '/database/seeders/admin_role_names.php',
         'Database\\Seeders\\answersSeeders' => __DIR__ . '/../..' . '/database/seeders/answersSeeders.php',
         'Database\\Seeders\\moduleList' => __DIR__ . '/../..' . '/database/seeders/moduleList.php',
+        'Database\\Seeders\\profanity_words_seeders' => __DIR__ . '/../..' . '/database/seeders/profanity_words_seeders.php',
         'Database\\Seeders\\qAndASeeders' => __DIR__ . '/../..' . '/database/seeders/qAndASeeders.php',
         'Database\\Seeders\\q_and_a_types_seeder' => __DIR__ . '/../..' . '/database/seeders/q_and_a_types_seeder.php',
         'Database\\Seeders\\qestionSeeders' => __DIR__ . '/../..' . '/database/seeders/qestionSeeders.php',
