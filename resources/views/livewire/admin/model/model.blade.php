@@ -17,14 +17,14 @@
     <!-- Tab Navigation -->
     <ul class="nav nav-tabs" id="adminTabs">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#data-tab">Data</a>
+            <a wire:ignore.self class="nav-link active" data-toggle="tab" href="#data-tab">Data</a>
             <!-- List of JASON display -->
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#build-tab">Builds</a>
+            <a wire:ignore.self class="nav-link" data-toggle="tab" href="#build-tab">Builds</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
+            <a wire:ignore.self class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
         </li>
 
     </ul>
@@ -34,7 +34,7 @@
             <!-- Tab Content -->
             <div class="tab-content h-100">
                 <!-- Data tab -->
-                <div class="tab-pane fade show active" id="data-tab">
+                <div class="tab-pane fade show active" id="data-tab" wire:ignore.self>
                     <div class="container-fluid">
                     <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create New Intents</button>
                         <!-- Admin Table -->
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <!-- Build tab -->
-                <div class="tab-pane fade" id="build-tab">
+                <div class="tab-pane fade" id="build-tab" wire:ignore.self>
                     <div class="container-fluid">
                     <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
                         <!-- Admin Table -->
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <!-- Deploy tab -->
-                <div class="tab-pane fade" id="deploy-tab">
+                <div class="tab-pane fade" id="deploy-tab" wire:ignore.self>
                     <div class="container-fluid">
                     
                     <button class="btn btn-success float-right mt-2 mb-2 mx-1" data-toggle="modal" data-target="#deployModal">Deploy</button>

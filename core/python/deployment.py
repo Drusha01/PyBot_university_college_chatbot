@@ -56,19 +56,30 @@ def predict_class(sentence):
 
     return return_list
 
+
 def get_response(intent_list, intents_json):
-    tag = intent_list[0]['intent']
-    list_of_intents = intents_json['intents']
-    result = 'i dont understand you'
     result_list = []
-    length = len(intent_list)
-    for x in range(length):
-        tag = intent_list[x]['intent']
-        for i in list_of_intents:   
-            if i['tag'] == tag :
-                # result = random.choice(i['responses'])
-                result = i['responses']
-                result_list.append({'response':result,'question':i['patterns']})
+    if intent_list:
+        tag = intent_list[0]['intent']
+        list_of_intents = intents_json['intents']
+        result = 'i dont understand you'
+        length = len(intent_list)
+        for x in range(length):
+            tag = intent_list[x]['intent']
+            for i in list_of_intents:   
+                if i['tag'] == tag :
+                    result = i['responses']
+                    result_list.append({'response':result,'question':i['patterns']})
+    else:
+        result_list.append({'response':[
+                {
+                    "answer_id": 0,
+                    "q_and_a_type_details": "I don\'t quite understand your inquiry, please ask something else.",
+                    "answer_details": "I don\'t quite understand your inquiry, please ask something else.",
+                    "answer_type": 2,
+                    "target_type_details": "public"
+                }
+            ],'question':'no question response'})
     return result_list
 
 
@@ -91,6 +102,7 @@ while(exists(json_config_path)):
     config_path_to_answers = config['path_to_answers']
     config_path = config['path']
     config_model_folder = config['model_folder']
+
 
 
     if(not(bool(config_run)) & exists(config_path+'model_list')):
@@ -123,7 +135,7 @@ while(exists(json_config_path)):
             # read file
             file_content = json.loads(open(config_path_to_questions+str(item)).read())
             question = file_content['question']
-            ints = predict_class(question)
+            ints = predict_class(question)            
             answer = get_response(ints, intents)
 
             json_content = {

@@ -30,22 +30,21 @@
             <h2 class="section-title">Frequently Asked Questions</h2>
             @if($faq_data)
               <div class="accordion" id="faqAccordion"> 
-                @foreach($faq_data as $item => $value)
+              @foreach($faq_data as $key => $value)
                 <div class="accordion-item">
-                    <h3 class="accordion-header" id="{{$item-1}}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#item-{{$item}}" aria-expanded="false" aria-controls="a2">
-                            {{$value->faq_question}}
-                        </button>
-                    </h3>
-                    <div id="item-{{$item}}" class="accordion-collapse collapse" aria-labelledby="{{$item-1}}"
-                        data-bs-parent="#faqAccordion-">
-                        <div class="accordion-body">
-                            {{$value->faq_answer}}
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{$key}}" aria-expanded="false" aria-controls="collapseOne">
+                      {{$value->faq_question}}
+                    </button>
+                    </h2>
+                    <div id="collapse-{{$key}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-start">
+                          {{$value->faq_answer}}
                         </div>
                     </div>
                 </div>
                 @endforeach
+                
               </div>        
             @endif
           </div>
