@@ -210,13 +210,13 @@ class Python_executioner extends Controller
             while(!file_exists($file_path.$answer_file_path.$question_file_name)){
                 usleep(100); 
             }
-            
             // read json file
             $answer = json_decode(file_get_contents($file_path.$answer_file_path.$question_file_name),true);
             unlink($file_path.$answer_file_path.$question_file_name);
             $question = $answer['question'];
             $pybot_response = $answer['answer'];
             $valid = false;
+            // dd('pybot_response');
             foreach ($pybot_response as $key => $value) {
                 if(intval($value['probability']) > .75){
                     $valid = true;
@@ -224,7 +224,6 @@ class Python_executioner extends Controller
             }
             if($valid){
                 print_r( $pybot_response );
-                
             }else{
                 // print_r($answer['response']);
                 $answers = [];
