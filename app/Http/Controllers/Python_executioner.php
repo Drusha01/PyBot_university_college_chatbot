@@ -216,7 +216,6 @@ class Python_executioner extends Controller
             $question = $answer['question'];
             $pybot_response = $answer['answer'];
             $valid = false;
-            // dd('pybot_response');
             foreach ($pybot_response as $key => $value) {
                 if(intval($value['probability']) > .75){
                     $valid = true;
@@ -225,7 +224,6 @@ class Python_executioner extends Controller
             if($valid){
                 print_r( $pybot_response );
             }else{
-                // print_r($answer['response']);
                 $answers = [];
                 $count = count($answer['response']);
 
@@ -255,45 +253,13 @@ class Python_executioner extends Controller
                             ->toArray();
                         $length = count($responses);
                         $rand = rand(0,$length-1);
-                        // foreach ($responses as $key => $value) {
-                        
-                            array_push($response, ['answer'=>$responses[$rand]->answer_details,'answer_type'=>$responses[$rand]->answer_type]);
-                            // break;
-                        // }
-                        // return json_encode($response);
+                        array_push($response, ['answer'=>$responses[$rand]->answer_details,'answer_type'=>$responses[$rand]->answer_type]);
+                    }else{
+                        array_push($response, ['answer'=>'I don\'t quite understand your inquiry, please ask something else.','answer_type'=>2]);
                     }
                 }
                 return json_encode($response);
-                return $count;
-                
-                // foreach ($variable as $key => $value) {
-                //     # code...
-                // }
-                // echo '<br><br>';
-                // print_r($answer['answer']);
-                // echo '<br><br>';
-                // print_r($answer['response']);
-                // print_r('unsure response');
             }
-           
-            // if($pybot_response['target_type_details'] == 'public'){
-            //     print_r(($pybot_response['answer_details']));
-            // }else if($pybot_response['target_type_details'] == 'student'){
-            //     // check if we are logged in
-            //     $this->user_details = $request->session()->all();
-            //     if(isset($this->user_details['user_id'])){
-            //         print_r(($pybot_response['answer_details']));
-            //     }else{
-            //         print_r('I\'m sorry, the response is only intented to signed up user please sign up asdfs');
-            //     }
-            // }else if ($pybot_response['target_type_details'] == 'admin'){
-            //     $this->user_details = $request->session()->all();
-            //     if(isset($this->user_details['user_id'])){
-            //         print_r(($pybot_response['answer_details']));
-            //     }else{
-            //         print_r('I\'m sorry, the response is only intented to signed up user please sign up');
-            //     }
-            // }
         }
     }
     
