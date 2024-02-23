@@ -106,7 +106,7 @@
                     
                     <!-- Add Admin Modal -->
                     <div class="modal fade show" id="adminAddModal" tabindex="-1" role="dialog" aria-labelledby="adminAddModalLabel" aria-hidden="true" wire:ignore.self>
-                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="adminAddModalLabel">Add Admin</h5>
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <form wire:submit.prevent="add_admin()">
-                                    <div class="modal-body">
+                                    <div class="modal-body cqh-30 scrollbar-y">
                                         <!-- Add Admin form -->
                                         <div class="row">
                                             <div class="col-md-6">
@@ -207,7 +207,7 @@
 
                     <!-- View Admin Modal -->
                     <div class="modal fade show" id="ViewAdminModal" tabindex="-1" role="dialog" aria-labelledby="ViewAdminModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="ViewAdminModalLabel">View Admin Details</h5>
@@ -216,7 +216,7 @@
                                     </div>
                                 </div>
                                 <form>
-                                    <div class="modal-body">
+                                    <div class="modal-body cqh-30 scrollbar-y">
                                         <!-- View Admin Form -->
                                         <div class="form-group">
                                             <label for="editRoleName">Full Name</label>
@@ -263,7 +263,7 @@
 
                         <!-- Edit Admin Modal -->
                     <div class="modal fade show" id="EditAdminModal" tabindex="-1" role="dialog" aria-labelledby="EditAdminModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="EditAdminModalLabel">Edit Admin Details</h5>
@@ -272,7 +272,7 @@
                                     </div>
                                 </div>
                                 <form wire:submit.prevent="save_edit_admin({{$view_admin_user_id}})">
-                                    <div class="modal-body">
+                                    <div class="modal-body cqh-30 scrollbar-y">
                                         <!-- User role Form -->
                                         <div class="form-group">
                                             <label for="editRoleName">Full Name</label>
@@ -449,7 +449,7 @@
                     </div>
                 
                     <div class="modal fade show" id="AddRoleModal" tabindex="-1" role="dialog" aria-labelledby="editRoleModalLabel" aria-hidden="true" wire:ignore.self>
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="editRoleModalLabel">Add Role</h5>
@@ -458,7 +458,7 @@
                                     </div>
                                 </div>
                                 <form wire:submit.prevent="add_new_role()">
-                                    <div class="modal-body">
+                                    <div class="modal-body cqh-30 scrollbar-y">
                                         <!-- User role Form -->
                                         <div class="form-group">
                                             <label for="editRoleName">Role Name</label>
@@ -509,7 +509,7 @@
                     </div>
 
                     <div class="modal fade show" id="ViewRoleModal" tabindex="-1" role="dialog" aria-labelledby="ViewRoleModalLabel" aria-hidden="true" wire:ignore.self>
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="ViewRoleModalLabel">View Role</h5>
@@ -518,7 +518,7 @@
                                     </div>
                                 </div>
                                 <form>
-                                    <div class="modal-body">
+                                    <div class="modal-body cqh-30 scrollbar-y">
                                         <!-- View Role Form -->
                                         <div class="form-group">
                                             <label for="editRoleName">Role Name</label>
@@ -568,7 +568,7 @@
                     </div>
 
                     <div class="modal fade show" id="EditRoleModal" tabindex="-1" role="dialog" aria-labelledby="EditRoleModalLabel" aria-hidden="true" wire:ignore.self>
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="EditRoleModalLabel">Edit Role</h5>
@@ -577,7 +577,7 @@
                                     </div>
                                 </div>
                                 <form wire:submit.prevent="edit_selected_role()">
-                                    <div class="modal-body">
+                                    <div class="modal-body cqh-30 scrollbar-y">
                                         <!-- Edit Role Form -->
                                         <div class="form-group">
                                             <label for="editRoleName">Role Name</label>

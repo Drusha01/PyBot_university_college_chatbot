@@ -29,8 +29,9 @@ body {
     position: absolute;
     width: 115%;
     height: 100%;
-    object-fit: none;
+    object-fit: cover;
     filter: brightness(0.94);
+    zoom: 10%;
       }
   .login-card .card-body {
     padding: 35px 47px 37px 90px; }

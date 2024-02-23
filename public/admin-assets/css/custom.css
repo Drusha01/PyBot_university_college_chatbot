@@ -510,15 +510,15 @@ border: 1px solid #3e557f !important; }
 }
 
 .scrollbar-y {
-    max-height: 498px; /* Set a maximum height for the chat box */
+    max-height: 565px; /* Set a maximum height for the chat box */
     position: relative;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     overflow-y: auto; /* Add vertical scrollbar */
 }
 .scrollbar-x {
     max-height: 400px; /* Set a maximum height for the chat box */
     position: relative;
-    overflow-y: hidden;
+    overflow-y: hidden !important;
     overflow-x: auto; /* Add vertical scrollbar */
 }
 

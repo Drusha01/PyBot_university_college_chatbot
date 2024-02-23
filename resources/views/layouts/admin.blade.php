@@ -16,6 +16,7 @@
     <!-- === Template Main CSS File === -->
     <link href="{{ asset('admin-assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-assets/css/width-height.css') }}" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('admin-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">

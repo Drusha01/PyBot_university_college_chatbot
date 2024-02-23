@@ -4,7 +4,7 @@
         <div class="pagetitle">
             <nav>
                 <ol class="breadcrumb breadcrumb-custom">
-                    <li class="breadcrumb-item"><a href="{{ url('admin-dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Manage Department</li>
                 </ol>
             </nav>
