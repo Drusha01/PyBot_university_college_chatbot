@@ -33,7 +33,7 @@ class Colleges extends Component
 
     public $target_type_id;
     public $target_types = [];
-
+    public $access_role;
     public function booted(Request $request){
         $this->user_details = $request->session()->all();
         if(!isset($this->user_details['user_id'])){
@@ -56,11 +56,35 @@ class Colleges extends Component
             header("Location: inactive");
             die();
         }
+
+        $module_roles = DB::table('access_roles as ar')
+            ->select(
+                'access_role_id',
+                'access_role_module_id',
+                'module_nav_name',
+                'module_nav_route',
+                'module_nav_icon',
+                'access_role_create',
+                'access_role_read',
+                'access_role_update',
+                'access_role_delete',
+                )
+            ->join('modules as m','m.module_id','ar.access_role_module_id' )
+            ->where('access_role_user_id','=',$this->user_details['user_id'])
+            ->where('m.module_nav_name','=','Colleges')
+            ->first();
+            $this->access_role = [
+                'C' => $module_roles->access_role_create,
+                'R' => $module_roles->access_role_read,
+                'U' => $module_roles->access_role_update,
+                'D' => $module_roles->access_role_delete
+            ];
+        if(!( $this->access_role['C'] || $this->access_role['R'] || $this->access_role['U'] || $this->access_role['D'] ) ){
+            return redirect('/admin/dashboard');
+        }
     }
 
-    public function hydrate(){
-        self::update_data();
-    }
+   
     public function update_data(){
         $this->ccs_data = DB::table('q_and_a as qa')
         ->select('q_and_a_id','q_and_a_tag','target_type_details','target_type_id')
@@ -100,6 +124,8 @@ class Colleges extends Component
                 'answers'=>$answers_data,
                 'q_and_a_id' =>$value->q_and_a_id 
             ]);
+
+            
         }
 
 
@@ -182,12 +208,7 @@ class Colleges extends Component
         $this->active = $active;
     }
     public function edit_q_and_a($q_and_a_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
+        
         if($this->access_role['C']  ){
             $q_and_a = DB::table('q_and_a as qa')
                 ->join('q_and_a_types as qt', 'qt.q_and_a_type_id', '=', 'qa.q_and_a_type_id')
@@ -528,12 +549,6 @@ class Colleges extends Component
        $this->q_and_a['answers'] = $answers_list;
     }
     public function delete_q_and_a($q_and_a_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
         if($this->access_role['D']  ){
 
             $q_and_a = DB::table('q_and_a as qa')

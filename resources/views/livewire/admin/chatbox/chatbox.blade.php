@@ -313,7 +313,7 @@
                                         <button type="button" class="waves-effect waves-circle btn btn-circle me-10 btn-outline-secondary d-grid align-content-sm-center">
                                             <i class='bx bxs-camera' ></i>
                                         </button>
-                                        <button type="button" class="waves-effect waves-circle btn btn-circle btn-primary d-grid align-content-sm-center" wire:click="send_message()">
+                                        <button type="button" class="waves-effect waves-circle btn btn-circle btn-primary d-grid align-content-sm-center" @if( $access_role['U'] == 1) wire:click="send_message()" @else disabled @endif>
                                             <i class='bx bx-send'></i>
                                         </button>
                                     </div>

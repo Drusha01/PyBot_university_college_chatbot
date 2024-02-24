@@ -132,7 +132,9 @@
             <div class="tab-pane fade @if($active == 'college_management') show active @endif ">
                 <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CCS')">Add College Q&A</button>
+                    @if( $access_role['C'] == 1)
+                        <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CCS')">Add College Q&A</button>
+                    @endif
                     <!-- User Table -->
                     <div class="table-responsive">
                         <table id="example2" class="table table-hover table-bordered" style="width:100%">
@@ -191,8 +193,12 @@
                                         @endforeach
                                         </td>
                                         <td class="text-center">
+                                            @if( $access_role['U'] == 1)
                                             <button class="btn btn-primary" wire:click="edit_q_and_a({{$value['q_and_a_id']}})"><i class='bx bxs-edit'></i></button>
+                                            @endif
+                                            @if( $access_role['D'] == 1)
                                             <button class="btn btn-danger" wire:click="delete_q_and_a({{$value['q_and_a_id']}})"><i class='bx bxs-trash'></i></button>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty
@@ -208,8 +214,10 @@
             <!-- CSC ----------------------------------------------------------------------------------------------------- tab -->
             <div class="tab-pane fade @if($active == 'csc_management') show active @endif ">
                 <div class="container-fluid">
-                <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CSC')">Add CSC Q&A</button>
-                    <!-- Role Table -->
+                @if( $access_role['C'] == 1)
+                    <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CSC')">Add CSC Q&A</button>
+                @endif
+                <!-- Role Table -->
                     <div class="table-responsive">
                         <table id="example3" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>

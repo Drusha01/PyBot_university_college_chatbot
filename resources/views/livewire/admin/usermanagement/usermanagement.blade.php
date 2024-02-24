@@ -14,13 +14,13 @@
         <!-- Tab Navigation -->
         <ul class="nav nav-tabs" id="adminTabs">
                 <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#admin-management-tab" wire:ignore.self>Admin Management</a>
+                <a class="nav-link active" data-toggle="tab" href="#admin-management-tab"  wire:click="update_data()" wire:ignore.self>Admin Management</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#user-management-tab" wire:ignore.self>User Management</a>
+                <a class="nav-link" data-toggle="tab" href="#user-management-tab" wire:click="update_data()" wire:ignore.self>User Management</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#role-management-tab" wire:ignore.self>Role Management</a>
+                <a class="nav-link" data-toggle="tab" href="#role-management-tab"  wire:click="update_data()"wire:ignore.self>Role Management</a>
             </li>
         </ul>
          <!-- Tab Content -->
@@ -31,9 +31,11 @@
 
 
                     <!-- Add Admin Button (Opens Add Modal) -->
+                    @if( $access_role['C'] == 1)
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-success   mx-1"  wire:click="add_admin_modal()" >Add Admin</button>
                     </div>
+                    @endif
                     <!-- Admin Table -->
                     <div class="table-responsive">
                         <table id="example1" class="table table-hover table-bordered" style="min-width:100%">
@@ -235,9 +237,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @forelse ($modules as $item => $value)
-                                                        <tr wire:key="{{$value->module_id}}">
-                                                            <td>{{$value->module_nav_name}}</td>
+                                                    @forelse ($view_admin_roles as $item => $value)
+                                                        <tr wire:key="{{$value['module_id']}}">
+                                                            <td>{{$value['module_nav_name']}}</td>
                                                             <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.C"></td>
                                                             <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.R"></td>
                                                             <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.U"></td>
@@ -291,9 +293,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @forelse ($modules as $item => $value)
-                                                        <tr wire:key="{{$value->module_id}}">
-                                                            <td>{{$value->module_nav_name}}</td>
+                                                    @forelse ($view_admin_roles as $item => $value)
+                                                        <tr wire:key="{{$value['module_id']}}">
+                                                            <td>{{$value['module_nav_name']}}</td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.C"></td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.R"></td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.U"></td>
@@ -324,7 +326,6 @@
             <div class="tab-pane fade" id="user-management-tab" wire:ignore.self>
                 <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-primary float-right mt-2 mb-2" data-toggle="modal" data-target="#AddUserModal">Add User</button>
                     <!-- User Table -->
                     <div class="table-responsive">
                         <table id="example2" class="table table-hover table-bordered" style="min-width:100%">
@@ -371,9 +372,13 @@
                                     @if($user_data_filter['Action'])
                                         <td class="text-center">
                                             @if($value->user_status_details == 'deleted') 
-                                                <button class="btn btn-warning" wire:click="activate_admin({{ $value->user_id }})">Activate</button>
+                                                @if( $access_role['U'] == 1)
+                                                    <button class="btn btn-warning" wire:click="activate_admin({{ $value->user_id }})">Activate</button>
+                                                @endif
                                             @else
-                                            <button class="btn btn-danger" wire:click="delete_admin_now({{ $value->user_id }})">Delete</button>
+                                                @if( $access_role['D'] == 1)
+                                                <button class="btn btn-danger" wire:click="delete_admin_now({{ $value->user_id }})">Delete</button>
+                                                @endif
                                             @endif
                                         </td>
                                     @endif
@@ -400,9 +405,11 @@
                 <p>You can define different roles, assign permissions to each role, and allocate roles to users.</p> -->
 
                     <!-- Role Table -->
+                    @if( $access_role['C'] == 1)
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-success   mx-1"  wire:click="new_role()" >Add Role</button>
                     </div>
+                    @endif
                     <div class="table-responsive mt-30">
                         <table id="example3" class="table table-hover table-bordered" style="min-width:100%">
                             <thead class="thead-dark">
