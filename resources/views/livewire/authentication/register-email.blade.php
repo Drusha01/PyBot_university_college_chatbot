@@ -77,7 +77,9 @@
                                 <label for="birthDate" class="form-label">Birthday</label>
                                 <input type="date" class="form-control  form-control-sm" wire:model="birthdate"  wire:change="verify_birthdate()"required>
                             </div>
-                            <button type="submit" class="btn-block button-color ">{{$sign_up_button}}</button>
+                            <div class="col-12">
+                                <button type="submit" class="btn-block button-color ">{{$sign_up_button}}</button>
+                            </div>
                         </div>
                     </form>
                 </div>
