@@ -13,13 +13,13 @@
 
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
             
-            <div class="search-input">
+            <!-- <div class="search-input">
                 <a href="" target="_blank" hidden></a>
                 <input type="text" placeholder="Type to search..">
                 <div class="autocom-box">
                 </div>
                 <div class="icon"><i class="bi bi-search"></i></div>
-            </div>
+            </div> -->
 
             <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
