@@ -206,6 +206,7 @@ class Colleges extends Component
     }
     public function active_page($active){
         $this->active = $active;
+        self::update_data();
     }
     public function edit_q_and_a($q_and_a_id){
         
@@ -216,7 +217,6 @@ class Colleges extends Component
                 ->where('q_and_a_id','=',$q_and_a_id)
                 ->first();
                 $this->target_type_id = $q_and_a->target_type_id;
-
             $questions = DB::table('questions')
                 ->where('question_q_and_a_id','=',$q_and_a_id)
                 ->get()
@@ -263,6 +263,8 @@ class Colleges extends Component
                 'target_type_id'=> $q_and_a->target_type_id,
                 'target_type_details'=>$q_and_a->target_type_details
             ];
+            // dd( $this->q_and_a);
+            self::update_data();
             $this->dispatchBrowserEvent('openModal','editModal');
         }
     }
