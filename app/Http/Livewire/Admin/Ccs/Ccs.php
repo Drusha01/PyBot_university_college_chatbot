@@ -32,6 +32,24 @@ class Ccs extends Component
             header("Location: inactive");
             die();
         }
+
+        $this->module_roles = DB::table('access_roles as ar')
+            ->select(
+                'access_role_id',
+                'access_role_module_id',
+                'module_nav_name',
+                'module_nav_route',
+                'module_nav_icon',
+                'access_role_create',
+                'access_role_read',
+                'access_role_update',
+                'access_role_delete',
+                )
+            ->join('modules as m','m.module_id','ar.access_role_module_id' )
+            ->where('access_role_user_id','=',$this->user_details['user_id'])
+            ->where('module_nav_name','=','Colleges')
+            ->first();
+        dd($this->module_roles);
     }
     public function mount(){
         $this->title = 'ccs';

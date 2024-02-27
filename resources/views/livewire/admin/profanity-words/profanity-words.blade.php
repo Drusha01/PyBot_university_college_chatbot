@@ -22,7 +22,9 @@
             <div class="tab-pane fade show active py-5" id="IT-management-tab">
                 <div class="container-fluid">
                     <div class="table-responsive">
-                        <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_profanity_words()">Add profanity words</button>
+                        @if( $access_role['C'] == 1)
+                            <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_profanity_words()">Add profanity words</button>
+                        @endif
                         <table id="example1" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured as a preprocessor in chatbot</caption>
                             <thead class="thead-dark">
@@ -48,8 +50,12 @@
                                     @endif
                                     @if($profanity_words_filter['Actions'])
                                         <td class="text-center">
-                                            <button class="btn btn-primary" wire:click="edit_profanity_words({{$value->id}})"><i class='bx bxs-edit'></i></button>
-                                            <button class="btn btn-danger" wire:click="delete_profanity_words({{$value->id}})"><i class='bx bxs-trash'></i></button>
+                                            @if( $access_role['U'] == 1)
+                                                <button class="btn btn-primary" wire:click="edit_profanity_words({{$value->id}})"><i class='bx bxs-edit'></i></button>
+                                            @endif
+                                            @if( $access_role['D'] == 1)
+                                                <button class="btn btn-danger" wire:click="delete_profanity_words({{$value->id}})"><i class='bx bxs-trash'></i></button>
+                                            @endif
                                         </td>
                                         @endif
                                     </tr>

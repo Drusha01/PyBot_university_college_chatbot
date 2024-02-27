@@ -17,11 +17,11 @@
             <div class="cqh-32">
               <div class="row">
                 <ul class="nav nav-tabs nav-tabs-vertical-custom col-md-2 col-sm-12 pr-0" id="v-tabs-tab" role="tablist">
-                  <li class="nav-item" role="presentation">
+                  <!-- <li class="nav-item" role="presentation">
                     <a class="nav-link active rounded-left" id="v-tabs-general-tab" data-toggle="tab" href="#v-tabs-general" role="tab" aria-controls="v-tabs-general" aria-selected="true" wire:ignore.self>General</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item wrap-text" role="presentation">
-                    <a class="nav-link  rounded-left" id="cms-tab" data-toggle="tab" href="#cms" role="tab" aria-controls="cms" aria-selected="false" wire:ignore.self>Content Management System</a>
+                    <a class="nav-link active  rounded-left" id="cms-tab" data-toggle="tab" href="#cms" role="tab" aria-controls="cms" aria-selected="false" wire:ignore.self>Content Management System</a>
                   </li>
                   <li class="nav-item" role="presentation">
                     <a class="nav-link rounded-left" id="system-assets-tab" data-toggle="tab" href="#system-assets" role="tab" aria-controls="system-assets" aria-selected="false" wire:ignore.self>System Assets</a>
@@ -29,7 +29,7 @@
                 </ul>
 
                 <div class="tab-content overflow-auto cqh-30 col-md-10 col-sm-12" id="v-tabs-tabContent">
-                  <div class="tab-pane fade show active" id="v-tabs-general" role="tabpanel" aria-labelledby="v-tabs-general-tab" tabindex="0" wire:ignore.self>
+                  <div class="tab-pane fade show " id="v-tabs-general" role="tabpanel" aria-labelledby="v-tabs-general-tab" tabindex="0" wire:ignore.self>
                     <div class="row">
                       <div class="col-12 ">
                         <details open>
@@ -103,7 +103,7 @@
                     </div>
                   </div>
 
-                  <div class="tab-pane fade" id="system-assets" role="tabpanel" aria-labelledby="system-assets-tab" tabindex="0" wire:ignore.self>
+                  <div class="tab-pane fade show " id="system-assets" role="tabpanel" aria-labelledby="system-assets-tab" tabindex="0" wire:ignore.self>
                     <div class="row">
                       <div class="col-12 ">
                         <details open>
@@ -136,9 +136,11 @@
                                           </div>
                                         </div>
                                         <br>
+                                        @if( $access_role['U'] == 1)
                                         <div class="col-md-1 sticky-bottom">
                                           <button type="submit" class="btn btn-primary mt-3" >Save</button>
                                         </div>
+                                        @endif
                                       </form>
                                     @endif
                                   </div>
@@ -151,7 +153,7 @@
                     </div>
                   </div>
                   
-                  <div class="tab-pane fade " id="cms" role="tabpanel" aria-labelledby="cms-tab" tabindex="0" wire:ignore.self>
+                  <div class="tab-pane fade show active" id="cms" role="tabpanel" aria-labelledby="cms-tab" tabindex="0" wire:ignore.self>
                     <div class="row">
                       <div class="col-12">
                         <details open>
@@ -184,7 +186,9 @@
                               <div class="tab-content" id="myTabContent">
                                 <!-- HOME TAB -->
                                 <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab"  wire:ignore.self> 
-                                  <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addHomeModal">Add Home</button>
+                                  @if( $access_role['C'] == 1)
+                                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#addHomeModal">Add Home</button>
+                                  @endif
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="homeTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -289,8 +293,9 @@
               
                                 <!-- ABOUT US TAB -->
                                 <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab"  wire:ignore.self >
-                                  <button class="btn btn-primary float-right" wire:click="edit_about_us_content()">Edit Page About us</button>
-                                  <button class="btn btn-primary float-right" wire:click="add_about_us()">Add About Us</button>
+                                  @if( $access_role['C'] == 1)
+                                    <button class="btn btn-primary float-right" wire:click="add_about_us()">Add About Us</button>
+                                  @endif
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="aboutUsTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -325,24 +330,23 @@
                                                       <p>{{$value->about_us_content}}</p>
                                                   </td>
                                               @endif
-                                              @if($about_us_filter['Order'])
-                                                  <td class="align-middle"> 
+                                              @if($about_us_filter['Order'] )
+                                                  <td class="align-middle text-center"> 
+                                                    @if($access_role['U']==1)
                                                       <div class="btn-group-vertical btn-group-sm " role="group" aria-label="Basic example">
                                                           <button type="button" class="btn btn-outline-dark" wire:click="move_up_about_us({{$value->about_us_order}})"><i class="bx bx-up-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                           <button type="button" class="btn btn-outline-dark" wire:click="move_down_about_us({{$value->about_us_order}})"><i class="bx bx-down-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                       </div>
+                                                    @endif
                                                   </td>
                                               @endif
                                               @if($about_us_filter['Action'])
                                                   <td class="align-middle"> 
-                                                      @if($access_role['R']==0)
-                                                      <button class="btn btn-primary" wire:click="view_about_us({{$value->about_us_id}})" >View</button>
-                                                      @endif
                                                       @if($access_role['U']==1)
-                                                      <button class="btn btn-success" wire:click="edit_about_us({{$value->about_us_id}})" >Edit</button>
+                                                        <button class="btn btn-success" wire:click="edit_about_us({{$value->about_us_id}})" >Edit</button>
                                                       @endif
                                                       @if($access_role['D']==1)
-                                                      <button class="btn btn-danger" wire:click="delete_about_us({{$value->about_us_id}})">Delete</button>
+                                                        <button class="btn btn-danger" wire:click="delete_about_us({{$value->about_us_id}})">Delete</button>
                                                       @endif
                                                   </td>
                                               @endif 
@@ -486,7 +490,9 @@
 
                                 <!-- ACADEMIC TAB -->
                                 <div class="tab-pane fade" id="academic" role="tabpanel" aria-labelledby="academic-tab"  wire:ignore.self>
-                                  <button class="btn btn-primary float-right" wire:click="add_academic()">Add Academic</button>
+                                  @if($access_role['C']==1)
+                                    <button class="btn btn-primary float-right" wire:click="add_academic()">Add Academic</button>
+                                  @endif
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="academicTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -523,17 +529,16 @@
                                               @endif
                                               @if($academic_filter['Order'])
                                                   <td class="align-middle"> 
+                                                    @if($access_role['U']==1)
                                                       <div class="btn-group-vertical btn-group-sm " role="group" aria-label="Basic example">
                                                           <button type="button" class="btn btn-outline-dark" wire:click="move_up_academic({{$value->academic_order}})"><i class="bx bx-up-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                           <button type="button" class="btn btn-outline-dark" wire:click="move_down_academic({{$value->academic_order}})"><i class="bx bx-down-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                       </div>
+                                                    @endif
                                                   </td>
                                               @endif
                                               @if($academic_filter['Action'])
                                                   <td class="align-middle"> 
-                                                      @if($access_role['R']==0)
-                                                      <button class="btn btn-primary" wire:click="view_academic({{$value->academic_id}})" >View</button>
-                                                      @endif
                                                       @if($access_role['U']==1)
                                                       <button class="btn btn-success" wire:click="edit_academic({{$value->academic_id}})" >Edit</button>
                                                       @endif
@@ -655,7 +660,9 @@
 
                                 <!-- Admission Tab -->
                                 <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab"  wire:ignore.self >
-                                  <button class="btn btn-primary float-right" wire:click="add_admission()">Add Admission</button>
+                                  @if($access_role['C']==1)
+                                    <button class="btn btn-primary float-right" wire:click="add_admission()">Add Admission</button>
+                                  @endif
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="admissionTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -692,17 +699,16 @@
                                               @endif
                                               @if($admission_filter['Order'])
                                                   <td class="align-middle"> 
+                                                    @if($access_role['U']==1)
                                                       <div class="btn-group-vertical btn-group-sm " role="group" aria-label="Basic example">
                                                           <button type="button" class="btn btn-outline-dark" wire:click="move_up_admission({{$value->admission_order}})"><i class="bx bx-up-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                           <button type="button" class="btn btn-outline-dark" wire:click="move_down_admission({{$value->admission_order}})"><i class="bx bx-down-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                       </div>
+                                                    @endif
                                                   </td>
                                               @endif
                                               @if($admission_filter['Action'])
                                                   <td class="align-middle"> 
-                                                      @if($access_role['R']==0)
-                                                      <button class="btn btn-primary" wire:click="view_admission({{$value->admission_id}})" >View</button>
-                                                      @endif
                                                       @if($access_role['U']==1)
                                                       <button class="btn btn-success" wire:click="edit_admission({{$value->admission_id}})" >Edit</button>
                                                       @endif
@@ -824,7 +830,9 @@
 
                                 <!-- FAQ/Forums Tab -->
                                 <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab"  wire:ignore.self >
-                                  <button class="btn btn-primary float-right" wire:click="add_faq()">Add FAQ</button>
+                                  @if($access_role['C']==1)
+                                    <button class="btn btn-primary float-right" wire:click="add_faq()">Add FAQ</button>
+                                  @endif
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="faqTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -854,17 +862,16 @@
                                                 @endif
                                                 @if($faq_filter['Order'])
                                                     <td class="align-middle"> 
+                                                      @if($access_role['U']==1)
                                                         <div class="btn-group-vertical btn-group-sm " role="group" aria-label="Basic example">
                                                             <button type="button" class="btn btn-outline-dark" wire:click="move_up_faq({{$value->faq_order}})"><i class="bx bx-up-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                             <button type="button" class="btn btn-outline-dark" wire:click="move_down_faq({{$value->faq_order}})"><i class="bx bx-down-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                         </div>
+                                                      @endif
                                                     </td>
                                                 @endif
                                                 @if($faq_filter['Action'])
                                                     <td class="align-middle"> 
-                                                        @if($access_role['R']==0 && 0)
-                                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ViewCarouselModal" >View</button>
-                                                        @endif
                                                         @if($access_role['U']==1)
                                                         <button class="btn btn-success" wire:click="edit_faq({{$value->faq_id}})" >Edit</button>
                                                         @endif
@@ -984,7 +991,9 @@
 
                                 <!-- Carousel Tab -->
                                 <div class="tab-pane fade" id="carousel" role="tabpanel" aria-labelledby="carousel-tab"  wire:ignore.self>
-                                  <button class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#AddCarouselModal" >Add Carousel</button>
+                                  @if($access_role['C']==1)
+                                    <button class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#AddCarouselModal" >Add Carousel</button>
+                                  @endif 
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="carouselTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -1016,24 +1025,23 @@
                                                           <p>{{$value->carousel_paragraph_paragraph}}</p>
                                                       </td>
                                                   @endif
-                                                  @if($carousel_filter['Order'])
+                                                  @if($carousel_filter['Order'] )
                                                       <td class="align-middle"> 
+                                                        @if($access_role['U']==1)
                                                           <div class="btn-group-vertical btn-group-sm " role="group" aria-label="Basic example">
                                                               <button type="button" class="btn btn-outline-dark" wire:click="move_up_carousel({{$value->carousel_id}})"><i class="bx bx-up-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                               <button type="button" class="btn btn-outline-dark" wire:click="move_down_carousel({{$value->carousel_id}})"><i class="bx bx-down-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                           </div>
+                                                        @endif
                                                       </td>
                                                   @endif
                                                   @if($carousel_filter['Action'])
                                                       <td class="align-middle"> 
-                                                          @if($access_role['R']==0 && 0)
-                                                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ViewCarouselModal" >View</button>
-                                                          @endif
                                                           @if($access_role['U']==1)
-                                                          <button class="btn btn-success" wire:click="edit_carousel({{$value->carousel_id}})" >Edit</button>
+                                                            <button class="btn btn-success" wire:click="edit_carousel({{$value->carousel_id}})" >Edit</button>
                                                           @endif
                                                           @if($access_role['D']==1)
-                                                          <button class="btn btn-danger" wire:click="delete_carousel({{$value->carousel_id}})">Delete</button>
+                                                            <button class="btn btn-danger" wire:click="delete_carousel({{$value->carousel_id}})">Delete</button>
                                                           @endif
                                                       </td>
                                                   @endif                                        
@@ -1268,7 +1276,9 @@
 
                                 <!-- Faculty and Staff Tab -->
                                 <div class="tab-pane fade" id="faculty" role="tabpanel" aria-labelledby="faculty-tab"  wire:ignore.self >
-                                  <button class="btn btn-primary float-right" wire:click="add_faculty()">Add Faculty</button>
+                                  @if($access_role['C']==1)
+                                    <button class="btn btn-primary float-right" wire:click="add_faculty()">Add Faculty</button>
+                                  @endif
                                   <div class="table-responsive">
                                     <table class="table table-hover table-bordered mt-3" id="facultyTable" style="min-width: 100%;">
                                       <thead class="thead-dark">
@@ -1313,17 +1323,16 @@
                                                   @endif
                                                   @if($faculty_filter['Order'])
                                                       <td class="align-middle"> 
+                                                        @if($access_role['U']==1)
                                                           <div class="btn-group-vertical btn-group-sm " role="group" aria-label="Basic example">
                                                               <button type="button" class="btn btn-outline-dark" wire:click="move_up_faculty({{$value->faculty_id}})"><i class="bx bx-up-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                               <button type="button" class="btn btn-outline-dark" wire:click="move_down_faculty({{$value->faculty_id}})"><i class="bx bx-down-arrow-alt" style="font-size:20px; vertical-align: middle;" ></i></button>
                                                           </div>
+                                                        @endif
                                                       </td>
                                                   @endif
                                                   @if($faculty_filter['Action'])
                                                       <td class="align-middle"> 
-                                                          @if($access_role['R']==0 && 0)
-                                                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ViewfacultyModal" >View</button>
-                                                          @endif
                                                           @if($access_role['U']==1)
                                                           <button class="btn btn-success" wire:click="edit_faculty({{$value->faculty_id}})" >Edit</button>
                                                           @endif

@@ -38,7 +38,7 @@ class Usermanagement extends Component
     public $admin_confirm_password;
 
     public $admin_fullname;
-    public $view_admin_roles;
+    public $view_admin_roles = [];
     public $view_admin_user_id;
     public $delete_admin_user_id;
     
@@ -67,6 +67,31 @@ class Usermanagement extends Component
             header("Location: /deleted");
             die();
             return $this->redirect('/inactive');
+        }
+        $module_roles = DB::table('access_roles as ar')
+            ->select(
+                'access_role_id',
+                'access_role_module_id',
+                'module_nav_name',
+                'module_nav_route',
+                'module_nav_icon',
+                'access_role_create',
+                'access_role_read',
+                'access_role_update',
+                'access_role_delete',
+                )
+            ->join('modules as m','m.module_id','ar.access_role_module_id' )
+            ->where('access_role_user_id','=',$this->user_details['user_id'])
+            ->where('module_nav_name','=','User Management')
+            ->first();
+            $this->access_role = [
+                'C' => $module_roles->access_role_create,
+                'R' => $module_roles->access_role_read,
+                'U' => $module_roles->access_role_update,
+                'D' => $module_roles->access_role_delete
+            ];
+        if(!( $this->access_role['C'] || $this->access_role['R'] || $this->access_role['U'] || $this->access_role['D'] ) ){
+            return redirect('/admin/dashboard');
         }
     }
 
@@ -186,12 +211,7 @@ class Usermanagement extends Component
             'Description' => true,
             'Action' => true
         ];
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
+       
 
         self::update_data();
     }
@@ -203,13 +223,6 @@ class Usermanagement extends Component
     }
 
     public function new_role(){
-
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
 
         if($this->access_role['U'] ){
             $this->access_roles = [];
@@ -230,12 +243,7 @@ class Usermanagement extends Component
         }
     }
     public function role_all_crud($index){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
+       
         
         if($this->access_role['U'] ){
             foreach ($this->access_roles as $key => $value) {
@@ -249,12 +257,6 @@ class Usermanagement extends Component
         }
     }
     public function add_new_role(){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
         
         if($this->access_role['U'] ){
 
@@ -310,14 +312,8 @@ class Usermanagement extends Component
         }
     }
     public function view_role($admin_role_name_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
         
-        if($this->access_role['U'] ){
+        if($this->access_role['R'] ){
             $this->role_name_details = DB::table('admin_role_names as arn')
                 ->where('admin_role_name_id','=',$admin_role_name_id)
                 ->get()
@@ -342,12 +338,7 @@ class Usermanagement extends Component
         }
     }
     public function edit_role($admin_role_name_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
+       
         
         if($this->access_role['U'] ){
 
@@ -376,12 +367,6 @@ class Usermanagement extends Component
         }
     }
     public function edit_selected_role(){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];
         if($this->access_role['U'] ){
             if(DB::table('admin_role_names')
                 ->where('admin_role_name_name','=',$this->role_name_details[0]['admin_role_name_name'])
@@ -499,30 +484,41 @@ class Usermanagement extends Component
         $this->admin_fullname = $this->view_admin_data[0]->user_firstname.' '.$this->view_admin_data[0]->user_middlename.' '.$this->view_admin_data[0]->user_lastname;
 
         $roles_data = DB::table('access_roles as ar')
-                ->where('access_role_user_id','=',$user_id)
-                ->get()
-                ->toArray();
-                $this->view_admin_roles = [];
-                foreach ($roles_data as $key => $value) {
-                    array_push($this->view_admin_roles,[
-                        'access_role_module_id' =>$value->access_role_module_id,
-                        'C'=>$value->access_role_create,
-                        'R'=>$value->access_role_create,
-                        'U'=>$value->access_role_update,
-                        'D'=>$value->access_role_delete
-                    ]);
-                }
+            ->select(
+                'module_id',
+                'access_role_id',
+                'access_role_module_id',
+                'module_nav_name',
+                'module_nav_route',
+                'module_nav_icon',
+                'access_role_create',
+                'access_role_read',
+                'access_role_update',
+                'access_role_delete',
+                )
+            ->join('modules as m','m.module_id','ar.access_role_module_id' )
+            ->where('access_role_user_id','=',$user_id)
+            ->orderBy('module_number')
+            ->get()
+            ->toArray();
+        $this->view_admin_roles = [];
+        foreach ($roles_data as $key => $value) {
+            array_push($this->view_admin_roles,[
+                'module_id' =>$value->module_id,
+                'module_nav_name' =>$value->module_nav_name,
+                'access_role_module_id' =>$value->access_role_module_id,
+                'C'=>$value->access_role_create,
+                'R'=>$value->access_role_read,
+                'U'=>$value->access_role_update,
+                'D'=>$value->access_role_delete
+            ]);
+        }
 
         $this->dispatchBrowserEvent('openModal','ViewAdminModal');
         
     }
     public function edit_admin($user_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];        
+            
         if($this->access_role['U'] ){
             $this->view_admin_data = DB::table('users as u')
             ->select(
@@ -560,30 +556,40 @@ class Usermanagement extends Component
 
             $this->view_admin_user_id = $this->view_admin_data[0]->user_id;
             $roles_data = DB::table('access_roles as ar')
+                    ->select(
+                        'module_id',
+                        'access_role_id',
+                        'access_role_module_id',
+                        'module_nav_name',
+                        'module_nav_route',
+                        'module_nav_icon',
+                        'access_role_create',
+                        'access_role_read',
+                        'access_role_update',
+                        'access_role_delete',
+                        )
+                    ->join('modules as m','m.module_id','ar.access_role_module_id' )
                     ->where('access_role_user_id','=',$user_id)
+                    ->orderBy('module_number')
                     ->get()
                     ->toArray();
-                    $this->view_admin_roles = [];
-                    foreach ($roles_data as $key => $value) {
-                        array_push($this->view_admin_roles,[
-                            'access_role_module_id' =>$value->access_role_module_id,
-                            'C'=>$value->access_role_create,
-                            'R'=>$value->access_role_create,
-                            'U'=>$value->access_role_update,
-                            'D'=>$value->access_role_delete
-                        ]);
-                    }
-
+            $this->view_admin_roles = [];
+            foreach ($roles_data as $key => $value) {
+                array_push($this->view_admin_roles,[
+                    'module_id' =>$value->module_id,
+                    'module_nav_name' =>$value->module_nav_name,
+                    'access_role_module_id' =>$value->access_role_module_id,
+                    'C'=>$value->access_role_create,
+                    'R'=>$value->access_role_read,
+                    'U'=>$value->access_role_update,
+                    'D'=>$value->access_role_delete
+                ]);
+            }
             $this->dispatchBrowserEvent('openModal','EditAdminModal');
         }
     }
     public function save_edit_admin($user_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];        
+           
         if($this->access_role['U'] ){
             // dd($this->view_admin_roles);
             foreach ($this->view_admin_roles as $key => $value) {
@@ -608,13 +614,8 @@ class Usermanagement extends Component
         }
     }
     public function delete_admin($user_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];        
-        if($this->access_role['U'] ){
+           
+        if($this->access_role['D'] ){
             $this->delete_admin_user_id = $user_id;
             $this->dispatchBrowserEvent('openModal','DeleteAdminModal');
         }
@@ -626,7 +627,7 @@ class Usermanagement extends Component
             'U' => true,
             'D' => true
         ];        
-        if($this->access_role['U'] ){
+        if($this->access_role['D'] ){
             DB::table('users')
                 ->where('user_id' ,'=',  $user_id)
                 ->update([
@@ -712,12 +713,7 @@ class Usermanagement extends Component
         }
     }
     public function activate_admin($user_id){
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];        
+            
         if($this->access_role['U'] ){
             DB::table('users')
                 ->where('user_id' ,'=',  $user_id)
@@ -805,12 +801,7 @@ class Usermanagement extends Component
     }
     public function update_admin_role(){
 
-        $this->access_role = [
-            'C' => true,
-            'R' => true,
-            'U' => true,
-            'D' => true
-        ];        
+        
         if($this->access_role['U'] ){
             if($this->admin_role_name_id >0){
                 $roles_data = DB::table('admin_roles as ar')
