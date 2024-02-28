@@ -199,6 +199,7 @@ class Colleges extends Component
     }
 
     public function render(){
+        self::update_data();
         return view('livewire.admin.colleges.colleges',[
             ])
             ->layout('layouts.admin',[
@@ -279,6 +280,7 @@ class Colleges extends Component
         $answers_list = [];
     
         $target_type_id = NULL;
+        self::update_data();
         if($this->target_types){
             foreach ($this->target_types as $key => $value) {
                 $target_type_id = $value->target_type_id;

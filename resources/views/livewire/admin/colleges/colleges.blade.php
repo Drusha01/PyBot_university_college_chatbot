@@ -314,7 +314,7 @@
                                                 @foreach($q_and_a['questions'] as $key => $value)
                                                 <div class="form-group" >
                                                     <label for="editquestion">Question/s</label>
-                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
+                                                    <textarea wire:key="question-{{$key}}"  class="form-control form-control-sm" rows="3" id="editquestion" wire:model.defer="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
                                                 </div>
                                                 <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_question({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -328,7 +328,7 @@
                                                         @if($q_and_a['answers'][$key]['answer_type'] == 1)
                                                         <input wire:key="answer-{{$key}}"class="form-control form-control-sm" type="file" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></input>
                                                         @else
-                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model.defer="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
                                                         @endif
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
@@ -388,7 +388,7 @@
                                                 @foreach($q_and_a['questions'] as $key => $value)
                                                 <div class="form-group" >
                                                     <label for="editquestion">Question/s</label>
-                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
+                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model.defer="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
                                                 </div>
                                                 <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_question({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -402,7 +402,7 @@
                                                         @if($q_and_a['answers'][$key]['answer_type'] == 1)
                                                         <input wire:key="csc-answer-{{$key}}"class="form-control form-control-sm" type="file" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></input>
                                                         @else
-                                                        <textarea wire:key="csc-answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        <textarea wire:key="csc-answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model.defer="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
                                                         @endif
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
