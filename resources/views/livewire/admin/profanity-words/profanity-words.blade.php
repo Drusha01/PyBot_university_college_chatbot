@@ -24,6 +24,7 @@
                     <div class="table-responsive">
                         @if( $access_role['C'] == 1)
                             <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_profanity_words()">Add profanity words</button>
+                            <button class="btn btn-warning float-right mt-2 mb-2" wire:click="default_response()">Profanity Response</button>
                         @endif
                         <table id="example1" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured as a preprocessor in chatbot</caption>
@@ -91,6 +92,28 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal modal-md fade" id="DefaultResponseModal" tabindex="-1" role="dialog" aria-labelledby="DefaultResponseModalLabel" aria-hidden="true" wire:ignore.self>
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="DefaultResponseModalLabel">Profanity Response</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form wire:submit.prevent="save_default_response()">
+                            <div class="form-group col-md-12">
+                                <label for="editRoleName">Response</label>
+                                <input type="text" class="form-control" placeholder="enter profanity words" wire:model.defer="default_response.response" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </div>
                         </form>
                     </div>

@@ -626,4 +626,45 @@ class Colleges extends Component
             'link'              									=> '#'
         ]);
     }
+    public function default_response(){
+        $default_response = DB::table('default_response')
+        ->where('id','=',2)
+        ->first();
+        if($default_response){
+            $this->default_response = [
+                'id'=> $default_response->id,
+                'response'=>  $default_response->response,
+            ];
+            $this->dispatchBrowserEvent('openModal','DefaultResponseModal');
+        }
+    }
+    public function save_default_response(){
+        if($this->default_response['id']){
+            if(strlen($this->default_response['response']>0)){
+                DB::table('default_response')
+                ->where('id','=',$this->default_response['id'])
+                ->update([
+                    'response'=>  $this->default_response['response'],
+                ]);
+                $this->dispatchBrowserEvent('swal:redirect',[
+                    'position'          									=> 'center',
+                    'icon'              									=> 'success',
+                    'title'             									=> 'Successfully updated!',
+                    'showConfirmButton' 									=> 'true',
+                    'timer'             									=> '1000',
+                    'link'              									=> '#'
+                ]);
+                $this->dispatchBrowserEvent('openModal','DefaultResponseModal');
+            }else{
+                $this->dispatchBrowserEvent('swal:redirect',[
+                    'position'          									=> 'center',
+                    'icon'              									=> 'warning',
+                    'title'             									=> 'Invalid input!',
+                    'showConfirmButton' 									=> 'true',
+                    'timer'             									=> '1000',
+                    'link'              									=> '#'
+                ]);
+            }
+        }
+    }
 }

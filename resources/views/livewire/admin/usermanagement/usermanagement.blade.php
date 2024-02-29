@@ -33,7 +33,7 @@
                     <!-- Add Admin Button (Opens Add Modal) -->
                     @if( $access_role['C'] == 1)
                     <div class="d-flex justify-content-end">
-                        <button class="btn btn-success   mx-1"  wire:click="add_admin_modal()" >Add Admin</button>
+                        <button class="btn btn-success   mx-1"  wire:click="add_admin_modal()" >Add Sub-admin</button>
                     </div>
                     @endif
                     <!-- Admin Table -->
@@ -111,7 +111,7 @@
                         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="adminAddModalLabel">Add Admin</h5>
+                                    <h5 class="modal-title" id="adminAddModalLabel">Add Sub-admin</h5>
                                     <div type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </div>
@@ -135,7 +135,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="AddAdminMiddleName">Middle Name</label>
-                                                    <input type="text" class="form-control" wire:model.defer="admin_middlename" placeholder="Enter Middle Name" required>
+                                                    <input type="text" class="form-control" wire:model.defer="admin_middlename" placeholder="Enter Middle Name" >
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="AddAdminLastName">Last Name</label>
@@ -182,13 +182,16 @@
                                             </thead>
                                             
                                             @forelse ($modules as $item => $value)
-                                            <tr wire:key="{{$value->module_id}}">
-                                                <td>{{$value->module_nav_name}}</td>
-                                                <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.C"></td>
-                                                <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.R"></td>
-                                                <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.U"></td>
-                                                <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.D"></td>
-                                            </tr>
+                                                @if($value->module_nav_name == 'User Management')
+                                                    @else
+                                                    <tr wire:key="{{$value->module_id}}">
+                                                        <td>{{$value->module_nav_name}}</td>
+                                                        <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.C"></td>
+                                                        <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.R"></td>
+                                                        <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.U"></td>
+                                                        <td class="text-center"><input type="checkbox" wire:model.defer="admin_access_role.{{$loop->index}}.D"></td>
+                                                    </tr>
+                                                    @endif
                                             @empty
                                             <td class="text-center font-weight-bold" colspan="42">
                                                 NO RECORDS
@@ -199,7 +202,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Add Admin</button>
+                                        <button type="submit" class="btn btn-primary">Add Sub-admin</button>
                                     </div>
                                 </form>
                             </div>
@@ -238,13 +241,16 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($view_admin_roles as $item => $value)
+                                                        @if($value['module_nav_name'] == 'User Management')
+                                                        @else
                                                         <tr wire:key="{{$value['module_id']}}">
                                                             <td>{{$value['module_nav_name']}}</td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.C"></td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.R"></td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.U"></td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.D"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_admin_roles.{{$loop->index}}.C"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_admin_roles.{{$loop->index}}.R"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_admin_roles.{{$loop->index}}.U"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_admin_roles.{{$loop->index}}.D"></td>
                                                         </tr>
+                                                        @endif
                                                     @empty
                                                         <tr>
                                                             <td class="text-center font-weight-bold" colspan="5">NO RECORDS</td>
@@ -294,6 +300,8 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($view_admin_roles as $item => $value)
+                                                        @if($value['module_nav_name'] == 'User Management')
+                                                        @else
                                                         <tr wire:key="{{$value['module_id']}}">
                                                             <td>{{$value['module_nav_name']}}</td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.C"></td>
@@ -301,6 +309,7 @@
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.U"></td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="view_admin_roles.{{$loop->index}}.D"></td>
                                                         </tr>
+                                                        @endif
                                                     @empty
                                                         <tr>
                                                             <td class="text-center font-weight-bold" colspan="5">NO RECORDS</td>
@@ -489,6 +498,8 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($modules as $item => $value)
+                                                        @if($value->module_nav_name == 'User Management')
+                                                        @else
                                                         <tr wire:key="{{$value->module_id}}">
                                                             <td>{{$value->module_nav_name}}</td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="access_roles.{{$loop->index}}.C"></td>
@@ -496,6 +507,7 @@
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="access_roles.{{$loop->index}}.U"></td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="access_roles.{{$loop->index}}.D"></td>
                                                         </tr>
+                                                        @endif
                                                     @empty
                                                         <tr>
                                                             <td class="text-center font-weight-bold" colspan="5">NO RECORDS</td>
@@ -549,13 +561,16 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($modules as $item => $value)
+                                                        @if($value->module_nav_name == 'User Management')
+                                                        @else
                                                         <tr wire:key="{{$value->module_id}}">
                                                             <td>{{$value->module_nav_name}}</td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_access_role.{{$loop->index}}.C"></td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_access_role.{{$loop->index}}.R"></td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_access_role.{{$loop->index}}.U"></td>
-                                                            <td class="text-center"><input disabled type="checkbox" wire:model.defer="view_access_role.{{$loop->index}}.D"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_access_role.{{$loop->index}}.C"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_access_role.{{$loop->index}}.R"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_access_role.{{$loop->index}}.U"></td>
+                                                            <td class="text-center"><input type="checkbox" disabled wire:model.defer="view_access_role.{{$loop->index}}.D"></td>
                                                         </tr>
+                                                        @endif
                                                     @empty
                                                         <tr>
                                                             <td class="text-center font-weight-bold" colspan="5">NO RECORDS</td>
@@ -608,6 +623,8 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($modules as $item => $value)
+                                                        @if($value->module_nav_name == 'User Management')
+                                                        @else
                                                         <tr wire:key="{{$value->module_id}}">
                                                             <td>{{$value->module_nav_name}}</td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="edit_access_role.{{$loop->index}}.C"></td>
@@ -615,6 +632,7 @@
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="edit_access_role.{{$loop->index}}.U"></td>
                                                             <td class="text-center"><input type="checkbox" wire:model.defer="edit_access_role.{{$loop->index}}.D"></td>
                                                         </tr>
+                                                        @endif
                                                     @empty
                                                         <tr>
                                                             <td class="text-center font-weight-bold" colspan="5">NO RECORDS</td>
