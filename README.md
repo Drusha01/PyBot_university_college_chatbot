@@ -27,7 +27,7 @@ PyBot is accessible through a user-friendly web interface at [Admin](http://www.
 
 There are two options to set up this management system:
 
-#### 1. Download the ZIP
+ > Download the ZIP
 
 1. Click "Code" and select "Download ZIP" to download the files
 2. Extract the ZIP file to your desired folder
@@ -35,11 +35,16 @@ There are two options to set up this management system:
 4. Set up the Laravel prerequisites by running the following commands:  
 > `php artisan migrate fresh` 
 > `php artisan db:seed`
+> `composer update` then `composer require livewire/livewire`
 5. Run the Python app from `files/python-3.6.7rc2-amd64.exe`
-6. Host the files on your server and access the application through your domain or localhost.
-7. Register as a sub-admin/student and wait for the Admin to confirm your entry to get started  
+6. Set up Python by running these commands:
+> c:\python_3.6\python.exe -m pip install --upgrade pip   (check out your environment variables path of python.exe) 
+> pip install numpy, mltk, tensorflow, etc. or
+> type command `pip list`
+7. Host the files on your server and access the application through your domain or localhost.
+8. Register as a sub-admin/student and wait for the Admin to confirm your entry to get started  
 
-#### 2. Fork the Repository 
+ > Fork the Repository 
 
 1. Click "Fork" in the top right to fork this repo
 2. Clone your forked repo to your local machine
@@ -49,6 +54,6 @@ There are two options to set up this management system:
 And that's it! From your admin dashboard you can explore and manage the entire system. Let us know if you have any other questions!
 
 ## Preview 
-| ![Admin](Screenshot%202023-10-01%20113955.png "Admin") | ![Students](Screenshot%202023-10-01%20114049.png "Student") |
+| ![Admin](Screenshot 2024-03-06 232843.png "Admin") | ![Students](Screenshot 2024-03-06 233336.png "Student") |
 | --- | --- |
 | Admin | Students |
