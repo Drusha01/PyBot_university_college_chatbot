@@ -2,7 +2,7 @@
 
 PyBot is an AI-powered chatbot designed to provide information assistance for the College of Computing Studies. It can answer inquiries from students, faculty, and unauthorized users by leveraging an extensive question and answer database curated by administrators.
 
-# Features
+## Features
   - Knowledge Base: Access a comprehensive bank of questions and answers managed by administrators through an intuitive web interface.
   - Intent Recognition: PyBot utilizes natural language processing to understand user queries and provide relevant responses from the knowledge base.
   - Profanity Filter: A profanity filter ensures that PyBot's responses remain appropriate and professional.
@@ -12,7 +12,7 @@ PyBot is an AI-powered chatbot designed to provide information assistance for th
 
 PyBot is accessible through a user-friendly web interface at http://www.pybot.online/, where users can ask questions and receive instant responses from the chatbot.
 
-# Technologies Used
+## Technologies Used
  
  PyBot is built using a combination of modern web technologies and frameworks:
 
@@ -23,7 +23,7 @@ PyBot is accessible through a user-friendly web interface at http://www.pybot.on
    - Python: The core natural language processing and machine learning components are implemented using Python.
    - JavaScript: Enhancing the user experience with interactive client-side scripting.
 
-# Installation
+## Installation
 
 There are two options to set up this management system:
 
