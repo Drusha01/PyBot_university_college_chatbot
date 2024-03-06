@@ -37,14 +37,14 @@ There are two options to set up this management system:
 > `php artisan db:seed`
 5. Run the Python app from `files/python-3.6.7rc2-amd64.exe`
 6. Host the files on your server and access the application through your domain or localhost.
-7. Register as a new admin user to get started  
+7. Register as a sub-admin/student and wait for the Admin to confirm your entry to get started  
 
 #### 2. Fork the Repository 
 
 1. Click "Fork" in the top right to fork this repo
 2. Clone your forked repo to your local machine
 3. Same procedure from the previous Step `3`-`6`.
-4. Register as a new admin user to get started
+4. Register as a sub-admin/student and wait for the Admin to confirm your entry to get started  
 
 And that's it! From your admin dashboard you can explore and manage the entire system. Let us know if you have any other questions!
 
