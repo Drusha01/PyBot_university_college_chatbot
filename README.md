@@ -10,7 +10,7 @@ PyBot is an AI-powered chatbot designed to provide information assistance for th
   - User Management: Super administrators can grant and manage access roles for users within the system.
   - Model Management: Administrators can build and deploy updated chatbot models to incorporate the latest changes to the knowledge base.
 
-PyBot is accessible through a user-friendly web interface at http://www.pybot.online/, where users can ask questions and receive instant responses from the chatbot.
+PyBot is accessible through a user-friendly web interface at [Admin](http://www.pybot.online/), where users can ask questions and receive instant responses from the chatbot.
 
 ### Technologies Used
  
@@ -32,7 +32,9 @@ There are two options to set up this management system:
 1. Click "Code" and select "Download ZIP" to download the files
 2. Extract the ZIP file to your desired folder
 3. Open the project in your preferred IDE (e.g., VS Code).
-4. Set up the Laravel prerequisites by running the following commands:  `php artisan migrate fresh` and `php artisan db:seed`
+4. Set up the Laravel prerequisites by running the following commands:  
+> `php artisan migrate fresh` 
+> `php artisan db:seed`
 5. Run the Python app from `files/python-3.6.7rc2-amd64.exe`
 6. Host the files on your server and access the application through your domain or localhost.
 7. Register as a new admin user to get started  
