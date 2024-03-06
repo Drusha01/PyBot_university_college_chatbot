@@ -36,3 +36,92 @@ $gapUnit: 2px;    // Adjust this to your gap unit
 .d-grid {
   display: grid !important;
 }
+
+/* Custom breakpoints */
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px; 
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+/* Media Queries */
+
+@media (min-width: $breakpoint-xs) {
+  .d-xs-block {
+    display: block !important;
+  }
+
+  .d-xs-flex {
+    display: flex !important;
+  }
+  .d-xs-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .d-sm-block {
+    display: block !important;
+  }
+
+  .d-sm-flex {
+    display: flex !important; 
+  }
+  .d-sm-none {
+    display: none !important;
+  }
+
+}
+
+@media (min-width: $breakpoint-md) {
+  .d-md-block {
+    display: block !important;
+  }
+
+  .d-md-flex {
+    display: flex !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .d-lg-block {
+    display: block !important;
+  }
+
+  .d-lg-flex {
+    display: flex !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+} 
+
+@media (min-width: $breakpoint-xl) {
+  .d-xl-block {
+    display: block !important;
+  }
+
+  .d-xl-flex {
+    display: flex !important;
+  }
+  .d-xl-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .d-xxl-block {
+    display: block !important; 
+  }
+
+  .d-xxl-flex {
+    display: flex !important;
+  }
+  .d-xxl-none {
+    display: none !important;
+  }
+}
