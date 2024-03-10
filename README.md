@@ -54,6 +54,6 @@ There are two options to set up this management system:
 And that's it! From your admin dashboard you can explore and manage the entire system. Let us know if you have any other questions!
 
 ## Preview 
-| ![Admin](Screenshot 2024-03-06 232843.png "Admin") | ![Students](Screenshot 2024-03-06 233336.png "Student") |
+| ![Admin](Screenshot%202024-03-06%20232843.png "Admin") | ![Students](Screenshot%202024-03-06%20233336.png "Student") |
 | --- | --- |
 | Admin | Students |
