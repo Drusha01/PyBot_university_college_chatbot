@@ -2726,3 +2726,58 @@ section {
 		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
 		var(--dot-color);
 }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-text-stroke: 2px #ffffff;
+  -webkit-text-stroke-width: medium;
+  color: black;
+}
+
+.featurette {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 576px) and (min-height: 768px) {
+  .carousel-caption {
+    position: absolute;
+    right: 45% !important;
+    bottom: 3.25rem !important;
+    left: 5% !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 0.25rem !important;
+    color: #414141 !important;
+    text-align: left !important;
+    font-family: var(--font-primary) !important;
+    font-size: x-large !important;
+    -webkit-text-stroke: 1.1px #fff !important;
+    -webkit-text-stroke-width: medium;
+    backdrop-filter: blur(1px) !important;
+    width: 80% !important;
+  }
+
+  h1.animated.fadeInDown {
+    font-size: xx-large !important;
+    -webkit-text-stroke: medium #ffffff !important;
+    backdrop-filter: blur(1px) !important;
+  }
+  p.animated.fadeInUp {
+    font-size: medium !important;
+    -webkit-text-stroke: medium #ffffff !important;
+    backdrop-filter: blur(1px) !important;
+  }
+
+  .banner {
+    backdrop-filter: blur(1px) !important;
+    filter: brightness(0.5) !important;
+  }
+  .lead {
+    font-size: 1rem !important;
+    font-weight: 300;
+  }
+
+}

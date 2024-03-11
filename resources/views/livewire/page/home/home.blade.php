@@ -25,7 +25,7 @@
                       <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
                     </div>
                   </div>
-                  <div class="container col-md-6">
+                  <div class="container col-md-6 drop">
                     <div class="frame1">
                       <div class="diagonal" id="d1">
                         <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" />
@@ -65,7 +65,7 @@
                       <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
                     </div>
                   </div>
-                  <div class="container col-md-6">
+                  <div class="container col-md-6 drop">
                     <div class="frame1">
                       <div class="diagonal" id="d1">
                         <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" />
@@ -116,7 +116,7 @@
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
-            <div class="container col-md-6">
+            <div class="container col-md-6 drop">
               <div class="frame1">
                 <div class="diagonal" id="d1">
                   <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" />
@@ -155,7 +155,7 @@
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
-            <div class="container col-md-6">
+            <div class="container col-md-6 drop">
               <div class="frame1">
                 <div class="diagonal" id="d1">
                   <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}" />
@@ -194,7 +194,7 @@
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
-            <div class="container col-md-6">
+            <div class="container col-md-6 drop">
               <div class="frame1">
                 <div class="diagonal" id="d1">
                   <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}" />
