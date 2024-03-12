@@ -32,7 +32,7 @@ $_maxheight: 19.5px;
 
 
 // Mobile 
-@media (max-width: 576px) and (min-height: 768px) {
+@media screen and (max-width: 576px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
       min-width: calc(#{$num} * #{$mobile_minwidth}) !important;
@@ -47,7 +47,7 @@ $_maxheight: 19.5px;
   }
 }
 // Tablet 
-@media (min-width: 768px) and (min-height: 1024px) {
+@media screen and (min-width: 768px) and (min-height: 1024px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
       min-width: calc(#{$num} * #{$tablets_minwidth}) !important;
@@ -61,8 +61,9 @@ $_maxheight: 19.5px;
     }
   }
 }
+
 // Laptop 
-@media (min-width: 992px) and (min-height: 620px) {
+@media screen and (min-width: 992px) and (min-height: 620px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
       min-width: calc(#{$num} * #{$laptop_minwidth}) !important;
@@ -77,7 +78,7 @@ $_maxheight: 19.5px;
   }
 }
 // Desktop 
-@media (min-width: 1200px) and (min-height: 768px) {
+@media  screen and (min-width: 1200px) and (min-height: 768px) {
   @for $num from $min_cqw through $max_cqw {
     .cqw-#{$num} {
       min-width: calc(#{$num} * #{$desktop_minwidth}) !important;

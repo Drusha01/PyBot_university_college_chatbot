@@ -15246,7 +15246,7 @@ a.close.disabled {
     max-height: calc(100% - 60px);
   }
   .modal-dialog-scrollable .modal-content {
-    max-height: calc(100vh - 60px);
+    max-height: calc(100vh - 22px);
   }
   .modal-dialog-centered {
     min-height: calc(100% - 2px);

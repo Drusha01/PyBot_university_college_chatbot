@@ -1,4 +1,4 @@
-@media (max-width: 576px) and (min-height: 768px) {
+@media screen and (max-width: 576px) {
   .cqw-1 {
     min-width: calc(1 * 11.5px) !important;
     max-width: calc(1 * 17.5px) !important;
@@ -800,7 +800,7 @@
     max-height: calc(100 * 18.5px) !important;
   }
 }
-@media (min-width: 768px) and (min-height: 1024px) {
+@media screen and (min-width: 768px) and (min-height: 1024px) {
   .cqw-1 {
     min-width: calc(1 * 18px) !important;
     max-width: calc(1 * 28px) !important;
@@ -1602,7 +1602,7 @@
     max-height: calc(100 * 19.5px) !important;
   }
 }
-@media (min-width: 992px) and (min-height: 620px) {
+@media screen and (min-width: 992px) and (min-height: 620px) {
   .cqw-1 {
     min-width: calc(1 * 14.5px) !important;
     max-width: calc(1 * 19.5px) !important;
@@ -2404,7 +2404,7 @@
     max-height: calc(100 * 19.5px) !important;
   }
 }
-@media (min-width: 1200px) and (min-height: 768px) {
+@media screen and (min-width: 1200px) and (min-height: 768px) {
   .cqw-1 {
     min-width: calc(1 * 11.5px) !important;
     max-width: calc(1 * 19.5px) !important;
