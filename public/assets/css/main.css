@@ -43,6 +43,7 @@
 body {
   font-family: var(--font-default);
   color: var(--color-default);
+  width: 100%;
 }
 
 a {
@@ -302,7 +303,6 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  /* background-color: #008374; */
   position: absolute;
   width: 100%;
 }
@@ -342,11 +342,29 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 992px) {
   .navbar {
     padding: 0;
   }
-
+  .message-box .message-input {
+    min-height: 16px !important;
+    max-height: 80px !important;
+    background: none;
+    border: none;
+    outline: none !important;
+    resize: vertical;
+    color: rgb(0 0 0);
+    font-size: 13px;
+    margin: 0;
+    padding-right: 12px;
+    width: 235px;
+  }
+ .message-box .message-submit {
+  text-transform: uppercase;
+    line-height: 1;
+    padding: 10px 10px;
+    border-radius: 10px;
+ }
   .navbar ul {
     margin: 0;
     padding: 0;
@@ -411,6 +429,9 @@ section {
   .navbar .active:focus,
   .navbar li:hover>a {
     color: #212529;
+    font-weight: 800;
+    background: white;
+    border-radius: 5px;
   }
 
   .navbar .dropdown ul {
@@ -492,7 +513,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+@media (max-width: 780px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -503,7 +524,9 @@ section {
     transition: 0.3s;
     z-index: 9997;
   }
-
+  i.mobile-nav-toggle.mobile-nav-show.bi.bi-list {
+    display: block !important;
+  }
   .navbar ul {
     position: absolute;
     inset: 0;
@@ -575,13 +598,14 @@ section {
   }
 
   .mobile-nav-show {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(43 43 43 / 74%);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
     transition: 0.5s;
-    z-index: 9999;
+    z-index: 9990;
     margin-right: 10px;
+    -webkit-text-stroke: 1px black;
   }
 
   .mobile-nav-hide {
@@ -611,6 +635,7 @@ section {
     background: rgba(0, 106, 93, 0.8);
     z-index: 9996;
   }
+
 }
 
 /*--------------------------------------------------------------
@@ -2726,3 +2751,183 @@ section {
 		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
 		var(--dot-color);
 }
+
+.animated {
+  -webkit-animation-duration: 0s !important;
+  animation-duration: 2s !important;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-text-stroke: 2px #ffffff;
+  -webkit-text-stroke-width: medium;
+  color: black;
+}
+
+.featurette {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.lead {
+  font-size: 1rem !important;
+  font-weight: 300;
+}
+h1.animated.fadeInDown {
+  font-size: xxx-large;
+  -webkit-text-stroke: 3.2px #ffffff;
+  filter: drop-shadow(6px 6px 10px #000);
+  letter-spacing: 3px;
+}
+p.animated.fadeInUp {
+  -webkit-text-stroke: 1px #ffffff;
+  filter: drop-shadow(3px 3px 7px #000);
+  letter-spacing: 0px;
+  border-left-style: ridge;
+  padding-left: 11.6px;
+  font-size: medium;
+}
+i.mobile-nav-toggle.mobile-nav-show.bi.bi-list {
+    display: none;
+}
+
+.bg-gradient-primary {
+  background-image: linear-gradient(310deg, #115245 0%, #0f9874 100%);
+}
+.icon-shape {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    border-radius: 0.75rem;
+}
+
+@media screen and (max-width: 576px) {
+  .carousel-caption {
+    position: absolute;
+    right: 45% !important;
+    bottom: 3.25rem !important;
+    left: 5% !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 0.25rem !important;
+    color: #414141 !important;
+    text-align: left !important;
+    font-family: var(--font-primary) !important;
+    font-size: x-large !important;
+    -webkit-text-stroke: 1.1px #fff !important;
+    -webkit-text-stroke-width: medium;
+    backdrop-filter: blur(1px) !important;
+    width: 80% !important;
+  }
+
+  h1.animated.fadeInDown {
+    font-size: xx-large !important;
+    -webkit-text-stroke: medium #ffffff !important;
+    backdrop-filter: blur(1px) !important;
+  }
+  p.animated.fadeInUp {
+    font-size: medium !important;
+    -webkit-text-stroke: medium #ffffff !important;
+    backdrop-filter: blur(1px) !important;
+  }
+  .container.col-md-6.drop {
+    mix-blend-mode: multiply;
+  }
+  .lead {
+    font-size: 1rem !important;
+    font-weight: 300;
+  }
+  #chat-circle {
+    position: fixed;
+    bottom: 5px;
+    right: 0px;
+  }
+  
+  .chat {
+    width: 364px;
+    height: 97.5vh;
+    max-height: 700px;
+    bottom: -25px;
+    right: -13px;
+    z-index: 99999;
+    border-radius: 6px;
+    backdrop-filter: brightness(0.5);
+  }
+  .chat-title .avatar {
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    left: 12px;
+    border-radius: 30px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+  }
+  .chat-title {
+    flex: 0 1 45px;
+    position: relative;
+    z-index: 2;
+    background: rgb(47 47 47);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px 10px 7px 55px;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+  }
+  .chat-box-toggle {
+    float:right;
+    margin-right:15px;
+    cursor:pointer;
+    margin-block: 5px;
+  }
+  .message-box .message-input {
+    font-size: 14px !important;
+    margin-inline: 0px;
+    max-width: 269px !important;
+    width: 295px !important;
+  }
+  .message-box .message-submit {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    max-width: 235px !important;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-block: 3%;
+  }
+  .messages .message {
+    font-size: 15px;
+  }
+  .chat-title h1, .chat-title h2 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .chat-title h2 {
+    font-size: 12px;
+  }
+  .chat-title .avatar {
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    left: 9px;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+}
+  .header.sticked{
+    width: 101%;
+  }
+  hr.featurette-divider {
+    width: 350px !important;
+    text-align: center;
+}
+
+}
+

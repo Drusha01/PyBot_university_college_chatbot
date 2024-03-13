@@ -25,7 +25,7 @@
                       <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
                     </div>
                   </div>
-                  <div class="container col-md-6">
+                  <div class="container col-md-6 drop">
                     <div class="frame1">
                       <div class="diagonal" id="d1">
                         <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" />
@@ -65,7 +65,7 @@
                       <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
                     </div>
                   </div>
-                  <div class="container col-md-6">
+                  <div class="container col-md-6 drop">
                     <div class="frame1">
                       <div class="diagonal" id="d1">
                         <img src="{{asset('storage/content/carousel/'.$value->carousel_content_image)}}" />
@@ -116,7 +116,7 @@
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
-            <div class="container col-md-6">
+            <div class="container col-md-6 drop">
               <div class="frame1">
                 <div class="diagonal" id="d1">
                   <img src="{{ asset('admin-assets/media/programs/banner-1.jpg') }}" />
@@ -155,7 +155,7 @@
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
-            <div class="container col-md-6">
+            <div class="container col-md-6 drop">
               <div class="frame1">
                 <div class="diagonal" id="d1">
                   <img src="{{asset('admin-assets/media/programs/banner-2.jpg')}}" />
@@ -194,7 +194,7 @@
                 <p class="animated fadeInUp"><a class="btn btn-md btn-success background-color-green btn-apply d-none" href="#">Learn More</a></p>
               </div>
             </div>
-            <div class="container col-md-6">
+            <div class="container col-md-6 drop">
               <div class="frame1">
                 <div class="diagonal" id="d1">
                   <img src="{{asset('admin-assets/media/programs/banner-3.jpg')}}" />
@@ -234,7 +234,7 @@
       <div class="container marketing">
         <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
           <h1 class="display-6 fw-normal">Technology Degrees That Deliver Results</h1>
-          <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
+          <p class="fs-6">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
           </p>
         </div>
         @foreach( $academic_data as $key=>$value)
@@ -255,7 +255,7 @@
     <div class="container marketing">
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="academics">
         <h1 class="display-6 fw-normal">Technology Degrees That Deliver Results</h1>
-        <p class="fs-5">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
+        <p class="fs-6">We offer a range of technology programs designed to equip students with cutting-edge skills and knowledge following industry standards. Our programs include:
         </p>
       </div>
       <hr class="featurette-divider">
@@ -299,16 +299,16 @@
       @if($academic_data)
           <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
             <h1 class="display-6 fw-normal">Admissions</h1>
-            <p class="fs-5">
-              We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
+            <p class="fs-6">
+              We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-6">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
             </p>
             <p><a class="btn btn-md btn-success background-color-green text-center btn-apply btn-font" href="../student/apply.php">Apply Now</a></p>
           </div>
       @else
       <div class="pricing-header pt-md-4 pb-md-4 mx-auto text-center" id="admissions">
         <h1 class="display-6 fw-normal">Admissions</h1>
-        <p class="fs-5">
-          We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-5">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
+        <p class="fs-6">
+          We have rolled out an AI-enabled decision support system named - <span class="green-bold fs-6">Pybot</span>. to improve and accelerate the way we assess and admit candidates seeking enrollment.
         </p>
         <p><a class="btn btn-md btn-success background-color-green text-center btn-apply btn-font" href="../student/apply.php">Apply Now</a></p>
       </div>

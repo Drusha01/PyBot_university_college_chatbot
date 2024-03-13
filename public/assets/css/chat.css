@@ -104,7 +104,7 @@ Mixins
 --------------------*/
 /*--------------------
 Body
---------------------*/
+--------------------*/dt
 *,
 *::before,
 *::after {
@@ -166,12 +166,12 @@ Chat
 --------------------*/
 .chat {
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   right: 0;
   transform: translate(-5%, -5%);
-  width: 369px;
+  width: 265px;
   height: 80vh;
-  max-height: 465px;
+  max-height: 385px;
   z-index: 99;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.815);
@@ -194,15 +194,16 @@ Chat Title
   color: #fff;
   text-transform: uppercase;
   text-align: left;
-  padding: 10px 10px 7px 50px;
+  padding: 10px 10px 7px 55px;
   display: flex;
   justify-content: space-between;
+  font-size: small;
 }
 .chat-title h1, .chat-title h2 {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 12px;
   margin: 0;
-  padding: 0;
+  padding: 1px;
 }
 .chat-title h2 {
   color: rgba(255, 255, 255, 0.5);
@@ -212,11 +213,11 @@ Chat Title
 .chat-title .avatar {
   position: absolute;
   z-index: 1;
-  top: 8px;
-  left: 9px;
+  top: 9px;
+  left: 12px;
   border-radius: 30px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -252,9 +253,9 @@ Messages
   border-radius: 10px 10px 10px 0;
   background: rgb(5 138 143 / 35%);
   margin: 8px 0;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 1.4;
-  margin-left: 10px;
+  margin-left: 5px;
   position: relative;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
@@ -314,14 +315,15 @@ Messages
   transform: scale(0);
   transform-origin: 0 0;
   -webkit-animation: bounce 500ms linear both;
-          animation: bounce 500ms linear both;
+  animation: bounce 500ms linear both;
+  margin-bottom: 12px;
 }
 .messages .message.next {
-  margin-top: -7px;
+  margin-top: -10px;
   transform: scale(0);
   transform-origin: 0 0;
   -webkit-animation: bounce 500ms linear both;
-          animation: bounce 500ms linear both;
+  animation: bounce 500ms linear both;
 }
 
 .messages .message.loading::before {
@@ -444,10 +446,12 @@ Message Box
   outline: none !important;
   resize: vertical;
   color: rgb(0 0 0);
-  font-size: 13px;
+  font-size: 11px !important;
   margin: 0;
   padding-right: 12px;
   width: 295px;
+  height: 20px;
+  max-width: 187px !important;
 }
 .message-box textarea:focus:-webkit-placeholder {
   color: rgba(255, 255, 255, 0.882);
@@ -455,12 +459,12 @@ Message Box
 .message-box .message-submit {
   position: absolute;
   z-index: 1;
-  top: 9px;
+  top: 6px;
   right: 10px;
   color: #fff;
   border: none;
   background: #248A52;
-  font-size: 10px;
+  font-size: 8px;
   text-transform: uppercase;
   line-height: 1;
   padding: 6px 10px;
@@ -495,7 +499,7 @@ Custom Srollbar
   display: flex;
   position: fixed;
   bottom: 5px;
-  right: 5px;
+  right: 0px;
   background: #063d2ffa;
   width: 70px;
   height: 70px;
@@ -503,7 +507,7 @@ Custom Srollbar
   color: white;
   padding: 15px;
   cursor: pointer;
-  z-index: 999;
+  z-index: 995;
   transform: translate(-5%, -5%);
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
@@ -511,6 +515,7 @@ Custom Srollbar
   float:right;
   margin-right:15px;
   cursor:pointer;
+  margin-block: 5px;
 }
 #chat-overlay {
   background: #000;

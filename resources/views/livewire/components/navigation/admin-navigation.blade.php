@@ -20,6 +20,9 @@
                 </div>
                 <div class="icon"><i class="bi bi-search"></i></div>
             </div> -->
+            <a class="logo d-flex align-items-center navbar-brand" href="#">
+                <span class="logo">{{$system_asset['system_asset_name']}}</span>
+            </a>
 
             <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
@@ -57,7 +60,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
                                 <div class="d-flex">
                                 <img style="border-radius:50%;"src="@if($user_details['user_profile_picture']== 'default.png'){{ asset('admin-assets/media/avatar/5.jpg')}} @else {{asset('storage/images/thumbnail/'.$user_details['user_profile_picture'])}} @endif" width="40" alt="">
-                                    <div class="text-center my-auto">
+                                    <div class="text-center my-auto" style="">
                                         <h6 class="font-weight-normal px-2 mb-0">{{$user_details['user_firstname'].' '.$user_details['user_lastname']}}</h6>
                                     </div>
                                     <div class=""><i class="fs-10 bi bi-chevron-down"></i></div>

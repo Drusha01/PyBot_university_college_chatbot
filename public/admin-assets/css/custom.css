@@ -5,6 +5,30 @@
 @import url("switch.css");
 @import url("accordion.css");
 
+@font-face {
+  font-family: 'Nico-Moji';
+  src:url('../fonts/Nico-Moji.ttf.woff') format('woff'),
+      url('../fonts/Nico-Moji.ttf.svg#Nico-Moji') format('svg'),
+      url('../fonts/Nico-Moji.ttf.eot'),
+      url('../fonts/Nico-Moji.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo {
+  margin: 0;
+  position: relative;
+  font-size: 35px;
+  line-height: 41px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  font-family: 'Nico-Moji';
+  display: inline-block;
+  width: 95px;
+  flex-shrink: 1;
+  color: #dee2e6;
+  -webkit-text-stroke: 2.5px #03180b;
+}
 
 .max-w-15 {
     max-width: 15.7%;
