@@ -33,7 +33,7 @@ $('.message-submit').click(function() {
   }
 
   // append message into div
-  $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  $('<div class="message message-personal">' + msg + '<div class="timestamp">' + d.getHours() + ':' + m + '</div></div>').appendTo($('.mCSB_container')).addClass('next');
 
   // update scroll bar
   $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
@@ -122,7 +122,7 @@ function myFunction(item, index, arr) {
     ` + '</div>').appendTo($('.mCSB_container')).addClass('next');
     }
   }else if(arr[index]['answer_type'] == 2){
-    $('<div class="message new">' + arr[index]['answer'] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new">' + arr[index]['answer'] + '<div class="timestamp">' + d.getHours() + ':' + m + '</div></div>').appendTo($('.mCSB_container')).addClass('new');
   }
   setDate();
   updateScrollbar();

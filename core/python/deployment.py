@@ -70,16 +70,16 @@ def get_response(intent_list, intents_json):
                 if i['tag'] == tag :
                     result = i['responses']
                     result_list.append({'response':result,'question':i['patterns']})
-    else:
-        result_list.append({'response':[
-                {
-                    "answer_id": 0,
-                    "q_and_a_type_details": "I don\'t quite understand your inquiry, please ask something else.",
-                    "answer_details": "I don\'t quite understand your inquiry, please ask something else.",
-                    "answer_type": 2,
-                    "target_type_details": "public"
-                }
-            ],'question':'no question response'})
+    # else:
+    #     result_list.append({'response':[
+    #             {
+    #                 "answer_id": 0,
+    #                 "q_and_a_type_details": "I don\'t quite understand your inquiry, please ask something else.",
+    #                 "answer_details": "I don\'t quite understand your inquiry, please ask something else.",
+    #                 "answer_type": 2,
+    #                 "target_type_details": "public"
+    #             }
+    #         ],'question':'no question response'})
     return result_list
 
 

@@ -233,7 +233,6 @@ class Python_executioner extends Controller
             }else{
                 $answers = [];
                 $count = count($answer['response']);
-
                 if($count ==1){
                     foreach ($answer['response'] as $key => $value) {
                         $answer_list = [];
@@ -262,16 +261,15 @@ class Python_executioner extends Controller
                         $rand = rand(0,$length-1);
                         array_push($response, ['answer'=>$responses[$rand]->answer_details,'answer_type'=>$responses[$rand]->answer_type]);
                     }else{
-                        array_push($response, ['answer'=>'I don\'t quite understand yourasdfafs inquiry, please ask something else.','answer_type'=>2]);
-                        // $default_response = DB::table('default_response')
-                        //     ->where('id','=',2)
-                        //     ->get()
-                        //     ->first();
-                        // if( $default_response){
-                        //     array_push($response, ['answer'=>$default_response->response,'answer_type'=>2]);
-                        // }else{
-                        //     array_push($response, ['answer'=>'I don\'t quite understand your inquiry, please ask something else.','answer_type'=>2]);
-                        // }
+                        $default_response = DB::table('default_response')
+                            ->where('id','=',2)
+                            ->get()
+                            ->first();
+                        if( $default_response){
+                            array_push($response, ['answer'=>$default_response->response,'answer_type'=>2]);
+                        }else{
+                            array_push($response, ['answer'=>'I don\'t quite understand your inquiry, please ask something else.','answer_type'=>2]);
+                        }
                         // return json_encode($response);
                     }
                 }
