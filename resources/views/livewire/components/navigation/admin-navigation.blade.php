@@ -26,7 +26,7 @@
 
             <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" data-toggle="dropdown">
                         <i class='bi bi-bell fs-20 mx-0'></i>
                         <span class="count">4</span>
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     </div>
-                </li>
+                </li> -->
                     <li class="nav-item nav-profile dropdown text-dark px-2">
                         <div>
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
