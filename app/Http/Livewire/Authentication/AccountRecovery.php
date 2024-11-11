@@ -109,7 +109,7 @@ class AccountRecovery extends Component
                     'title'             									=> 'Invalid token!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '/login'
+                    'link'              									=> 'login'
                 ]);      
             }
         }else{
@@ -119,7 +119,7 @@ class AccountRecovery extends Component
                 'title'             									=> 'Invalid token!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '2000',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);   
         }
         
@@ -171,7 +171,7 @@ class AccountRecovery extends Component
                     'title'             									=> 'Invalid token!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '/login'
+                    'link'              									=> 'login'
                 ]);      
             }
         }else{
@@ -181,7 +181,7 @@ class AccountRecovery extends Component
                 'title'             									=> 'Invalid token!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '2000',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);   
         }
     }
@@ -249,7 +249,7 @@ class AccountRecovery extends Component
                         'title'             									=> 'Successfully changed your password!',
                         'showConfirmButton' 									=> 'true',
                         'timer'             									=> '2000',
-                        'link'              									=> '/login'
+                        'link'              									=> 'login'
                     ]);
                 }
             }else{
@@ -263,7 +263,7 @@ class AccountRecovery extends Component
                     'title'             									=> 'Invalid token!',
                     'showConfirmButton' 									=> 'true',
                     'timer'             									=> '2000',
-                    'link'              									=> '/login'
+                    'link'              									=> 'login'
                 ]);   
             }
         }else{
@@ -273,7 +273,7 @@ class AccountRecovery extends Component
                 'title'             									=> 'Invalid token!',
                 'showConfirmButton' 									=> 'true',
                 'timer'             									=> '2000',
-                'link'              									=> '/login'
+                'link'              									=> 'login'
             ]);   
         }
     }

@@ -17,14 +17,14 @@
     <!-- Tab Navigation -->
     <ul class="nav nav-tabs" id="adminTabs">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#data-tab">Data</a>
+            <a wire:ignore.self class="nav-link active" data-toggle="tab" href="#data-tab" wire:click="update_data()">Data</a>
             <!-- List of JASON display -->
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#build-tab">Builds</a>
+            <a wire:ignore.self class="nav-link" data-toggle="tab" href="#build-tab" wire:click="update_data()">Builds</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#deploy-tab">Deployment</a>
+            <a wire:ignore.self class="nav-link" data-toggle="tab" href="#deploy-tab" wire:click="update_data()">Deployment</a>
         </li>
 
     </ul>
@@ -34,9 +34,11 @@
             <!-- Tab Content -->
             <div class="tab-content h-100">
                 <!-- Data tab -->
-                <div class="tab-pane fade show active" id="data-tab">
+                <div class="tab-pane fade show active" id="data-tab" wire:ignore.self>
                     <div class="container-fluid">
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create New Intents</button>
+                    @if( $access_role['C'] == 1)
+                        <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#addModal">Create New Intents</button>
+                    @endif
                         <!-- Admin Table -->
                         <div class="table-responsive">
                             <table id="example1" class="table table-hover table-bordered" style="width:100%">
@@ -86,9 +88,11 @@
                     </div>
                 </div>
                 <!-- Build tab -->
-                <div class="tab-pane fade" id="build-tab">
+                <div class="tab-pane fade" id="build-tab" wire:ignore.self>
                     <div class="container-fluid">
-                    <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
+                    @if( $access_role['C'] == 1)
+                        <button class="btn btn-success float-right mt-2 mb-2" data-toggle="modal" data-target="#trainModal">Train</button>
+                    @endif
                         <!-- Admin Table -->
                         <div class="table-responsive">
                             <table id="example2" class="table table-hover table-bordered" style="width:100%">
@@ -139,12 +143,15 @@
                     </div>
                 </div>
                 <!-- Deploy tab -->
-                <div class="tab-pane fade" id="deploy-tab">
+                <div class="tab-pane fade" id="deploy-tab" wire:ignore.self>
                     <div class="container-fluid">
-                    
-                    <button class="btn btn-success float-right mt-2 mb-2 mx-1" data-toggle="modal" data-target="#deployModal">Deploy</button>
-                    <button class="btn btn-warning float-right mt-2 mb-2 mx-1" wire:click="restart_deployment()" >Restart</button>
-                    <button class="btn btn-danger float-right mt-2 mb-2 mx-1" wire:click="end_deployment()" >End</button>
+                    @if( $access_role['U'] == 1)
+                        <button class="btn btn-success float-right mt-2 mb-2 mx-1" data-toggle="modal" data-target="#deployModal">Deploy</button>
+                    @endif
+                    <!-- <button class="btn btn-warning float-right mt-2 mb-2 mx-1" wire:click="restart_deployment()" >Restart</button> -->
+                    @if( $access_role['D'] == 1)
+                        <button class="btn btn-danger float-right mt-2 mb-2 mx-1" wire:click="end_deployment()" >End</button>
+                    @endif
                         <!-- Admin Table -->
                         <div class="table-responsive">
                             <hr>

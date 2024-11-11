@@ -10,34 +10,28 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow import keras 
 from keras import layers,models
 from keras.models import load_model
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
-
-if len(sys.argv) > 1:
-    iteration = sys.argv[1]
-    path = sys.argv[2]+'\\core\\'
-    model_name =  sys.argv[3]
-else:
-    iteration = '0'
-    path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\'
-    model_name =  'pybot_model'
-    threshhold = .25
+iteration = '8'
+model_name =  'model_v'
+path = 'C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\model_list\\'+model_name+iteration+"\\"
+threshhold = .25
 
 
 
 
 lemmatizer = WordNetLemmatizer()
+intents = json.loads(open(path+'intent.json').read())
 
-intents = json.loads(open('C:\\wamp64\\www\\PyBot_university_college_chatbot\\core\\intents\\intents_v'+iteration+'.json').read())
 
 
-word_folder = 'words\\'
-classes_folder = 'classes\\'
+words = pickle.load( open(path+'words.pk1','rb'))
+classes  = pickle.load(open(path+'classes.pk1','rb'))
 
-words = pickle.load( open(path+word_folder+'words_v'+iteration+'.pk1','rb'))
-classes  = pickle.load(open(path+classes_folder+'classes_v'+iteration+'.pk1','rb'))
-
-model_folder = 'model\\'
-model = load_model(path+model_folder+model_name+'_v'+iteration+'.h5')
+model = load_model(path+model_name+iteration+'.h5')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -68,21 +62,29 @@ def predict_class(sentence):
     return return_list
 
 def get_response(intent_list, intents_json):
-    tag = intent_list[0]['intent']
-    list_of_intents = intents_json['intents']
-    result = 'i dont understand you'
-    for i in list_of_intents:   
-        if i['tag'] == tag:
-            result = random.choice(i['responses'])
-            break
-    return result
+    result_list = []
+    if intent_list:
+        tag = intent_list[0]['intent']
+        list_of_intents = intents_json['intents']
+        result = 'i dont understand you'
+        length = len(intent_list)
+        for x in range(length):
+            tag = intent_list[x]['intent']
+            for i in list_of_intents:   
+                if i['tag'] == tag :
+                    result = i['responses']
+                    result_list.append({'response':result,'question':i['patterns']})
+    else:
+        result_list.append({'response':'no response','question':'no question reposnse'})
+    return result_list
+
 
 print('NICE pybot is running')
 
 
 
 while True:
-    message = input(" ")
+    message = input("what is your question\n")
     ints = predict_class(message)
     res = get_response(ints, intents)
     print(res)

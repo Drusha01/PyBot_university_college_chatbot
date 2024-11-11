@@ -34,6 +34,7 @@
     <script src="{{ asset('admin-assets/js/template.js') }}"></script>
     <script src="{{ asset('admin-assets/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/feather.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- injects:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
@@ -42,6 +43,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="{{ asset('admin-assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
+      <!-- Nepcha Analytics (nepcha.com) -->
+  <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+  <script defer data-site="http://www.pybot.online/" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 
 </head>
 

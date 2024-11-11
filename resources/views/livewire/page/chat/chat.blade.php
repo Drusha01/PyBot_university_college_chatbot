@@ -1,12 +1,32 @@
-<div class="container "style="margin-top:120px">
+<div>
+    <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-color: white;">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-10 text-center">            
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{{route ('page.home')}}">Home</a></li>
+          <li>Chat Application</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+    <div class="container mt-3">
         <div class="row">
             <!-- Left Column (Chat) -->
             <div class="col-md-12">
                 <div class="card border p-0">
                     <div class="card-header bg-success">
-                        <h2 class="text-center">Chat Support</h2>
+                        <h2 class="text-center text-black">Chat Support</h2>
                     </div>
-                    <div class="card-body overflow-auto chat-box-six border-bottom" style="max-height:400px" id="chat_content"  wire:poll.2000ms="update_data()">
+                    <div class="card-body dots-bg overflow-auto chat-box-six border-bottom" style="max-height:400px" id="chat_content"  wire:poll.2000ms="update_data()">
                         <div class="">
                         <!-- Student's message -->
                         @if($chat_box)
@@ -49,7 +69,7 @@
                         </div>
                        
                     </div>
-                    <div class="input-group">
+                    <div class="input-group mt-3">
                         <input type="text" class="form-control border-0" wire:model="chat_content_details" placeholder="Type your message...">
                         <div class="input-group-append">
                             <button class="btn btn-success m-0" style="border-radius: 0px 0px 3px 0px !important;" wire:click="send_message()"> Send </button>
@@ -60,3 +80,4 @@
 
         </div>
     </div>
+</div>

@@ -22,3 +22,7 @@ pip3 install --upgrade pip3
 pip3 install tensorflow
 pip3 install keras
 
+
+https://www.pythondiscord.com/pages/tags/microsoft-build-tools/
+pip install --use-pep517 chatterbot
+

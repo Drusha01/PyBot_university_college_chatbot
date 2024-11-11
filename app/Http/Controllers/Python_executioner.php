@@ -165,10 +165,31 @@ class Python_executioner extends Controller
 
         // check admin detals and restriction
         $question = $request->input('chat');
-
+        $response = [];
         // write to question folder
         if(strlen($question)>0){
             
+
+            $question_array = explode(' ',$question);
+            $whatToStrip = array("?","!",",",";"); // Add what you want to strip in this array
+            foreach ($question_array as $key => $value) {
+                $string = str_replace($whatToStrip, "",  $value);
+                if($string = DB::table('profanity_words')
+                ->where('words','=',$string )
+                ->get()
+                ->first()){
+                    $default_response = DB::table('default_response')
+                            ->where('id','=',1)
+                            ->first();
+                    if( $default_response){
+                        array_push($response, ['answer'=>$default_response->response,'answer_type'=>2]);
+                    }else{
+                        array_push($response, ['answer'=>'Hi, I was not programmed to respond to such bad words. You can ask for other infomation.','answer_type'=>2]);
+                    }
+                    return json_encode($response);
+                }
+            }
+            // preprocessor to check if the question has match in db if one or more is matched, return the answer (db/array)
             $file_path  = dirname(__FILE__,4);
             $question_file_path = '/core/deployment/questions/';
             $answer_file_path = '/core/deployment/answers/';
@@ -196,7 +217,6 @@ class Python_executioner extends Controller
             while(!file_exists($file_path.$answer_file_path.$question_file_name)){
                 usleep(100); 
             }
-            
             // read json file
             $answer = json_decode(file_get_contents($file_path.$answer_file_path.$question_file_name),true);
             unlink($file_path.$answer_file_path.$question_file_name);
@@ -210,68 +230,52 @@ class Python_executioner extends Controller
             }
             if($valid){
                 print_r( $pybot_response );
-                
             }else{
-                // print_r($answer['response']);
                 $answers = [];
                 $count = count($answer['response']);
-
                 if($count ==1){
-                    $response = [];
                     foreach ($answer['response'] as $key => $value) {
                         $answer_list = [];
                         $length = count($value['response']);
                         $rand = rand(0,$length-1);
                         array_push($response, ['answer'=>$value['response'][$rand ]['answer_details'],'answer_type'=>$value['response'][$rand ]['answer_type']]);
                     }
-                    return json_encode($response);
                 }elseif($count >1){
-                    $response = [];
                     foreach ($answer['response'] as $key => $value) {
                         $answer_list = [];
                         $length = count($value['response']);
                         $rand = rand(0,$length-1);
                         array_push($response, ['answer'=>$value['response'][$rand ]['answer_details'],'answer_type'=>$value['response'][$rand ]['answer_type']]);
                     }
-                    return json_encode($response);
                 }else{
-
+                    $q_and_a = DB::table('questions')
+                    ->where('question_details','=',$question)
+                    ->get()
+                    ->first();
+                    if( $q_and_a){
+                        $responses = DB::table('answers')
+                            ->where('answer_q_and_a_id','=', $q_and_a->question_q_and_a_id)
+                            ->get()
+                            ->toArray();
+                        $length = count($responses);
+                        $rand = rand(0,$length-1);
+                        array_push($response, ['answer'=>$responses[$rand]->answer_details,'answer_type'=>$responses[$rand]->answer_type]);
+                    }else{
+                        $default_response = DB::table('default_response')
+                            ->where('id','=',2)
+                            ->get()
+                            ->first();
+                        if( $default_response){
+                            array_push($response, ['answer'=>$default_response->response,'answer_type'=>2]);
+                        }else{
+                            array_push($response, ['answer'=>'I don\'t quite understand your inquiry, please ask something else.','answer_type'=>2]);
+                        }
+                        // return json_encode($response);
+                    }
                 }
-                return $count;
-                
-                // foreach ($variable as $key => $value) {
-                //     # code...
-                // }
-                // echo '<br><br>';
-                // print_r($answer['answer']);
-                // echo '<br><br>';
-                // print_r($answer['response']);
-                // print_r('unsure response');
+                return json_encode($response);
             }
-           
-            // if($pybot_response['target_type_details'] == 'public'){
-            //     print_r(($pybot_response['answer_details']));
-            // }else if($pybot_response['target_type_details'] == 'student'){
-            //     // check if we are logged in
-            //     $this->user_details = $request->session()->all();
-            //     if(isset($this->user_details['user_id'])){
-            //         print_r(($pybot_response['answer_details']));
-            //     }else{
-            //         print_r('I\'m sorry, the response is only intented to signed up user please sign up asdfs');
-            //     }
-            // }else if ($pybot_response['target_type_details'] == 'admin'){
-            //     $this->user_details = $request->session()->all();
-            //     if(isset($this->user_details['user_id'])){
-            //         print_r(($pybot_response['answer_details']));
-            //     }else{
-            //         print_r('I\'m sorry, the response is only intented to signed up user please sign up');
-            //     }
-            // }
-            
-           
         }
-        
-
     }
     
     public function model_list(Request $request){

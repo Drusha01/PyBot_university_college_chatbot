@@ -4,7 +4,7 @@
             @foreach($current_roles as $item => $value)
                 @if($value->access_role_create || $value->access_role_read || $value->access_role_update || $value->access_role_delete)
                 <li class="nav-item">
-                    <a class="nav-link"  href="/admin/{{$value->module_nav_route}}" >
+                    <a class="nav-link"  href="{{route ($value->module_nav_route)}}" >
                     <i class='{{$value->module_nav_icon}}'></i>
                         <span class="menu-title">{{$value->module_nav_name}}</span>
                     </a>

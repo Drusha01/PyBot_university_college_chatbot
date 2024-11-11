@@ -13,17 +13,20 @@
 
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
             
-            <div class="search-input">
+            <!-- <div class="search-input">
                 <a href="" target="_blank" hidden></a>
                 <input type="text" placeholder="Type to search..">
                 <div class="autocom-box">
                 </div>
                 <div class="icon"><i class="bi bi-search"></i></div>
-            </div>
+            </div> -->
+            <a class="logo d-flex align-items-center navbar-brand" href="#">
+                <span class="logo">{{$system_asset['system_asset_name']}}</span>
+            </a>
 
             <ul class="navbar-nav navbar-nav-right bs-borderbox">
 
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" data-toggle="dropdown">
                         <i class='bi bi-bell fs-20 mx-0'></i>
                         <span class="count">4</span>
@@ -51,13 +54,13 @@
                         </div>
                     </div>
                     </div>
-                </li>
+                </li> -->
                     <li class="nav-item nav-profile dropdown text-dark px-2">
                         <div>
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
                                 <div class="d-flex">
                                 <img style="border-radius:50%;"src="@if($user_details['user_profile_picture']== 'default.png'){{ asset('admin-assets/media/avatar/5.jpg')}} @else {{asset('storage/images/thumbnail/'.$user_details['user_profile_picture'])}} @endif" width="40" alt="">
-                                    <div class="text-center my-auto">
+                                    <div class="text-center my-auto" style="">
                                         <h6 class="font-weight-normal px-2 mb-0">{{$user_details['user_firstname'].' '.$user_details['user_lastname']}}</h6>
                                     </div>
                                     <div class=""><i class="fs-10 bi bi-chevron-down"></i></div>

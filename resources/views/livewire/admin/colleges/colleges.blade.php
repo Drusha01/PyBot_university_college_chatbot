@@ -4,7 +4,7 @@
         <div class="pagetitle">
             <nav>
                 <ol class="breadcrumb breadcrumb-custom">
-                    <li class="breadcrumb-item"><a href="{{ url('admin-dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Manage Colleges</li>
                 </ol>
             </nav>
@@ -132,7 +132,10 @@
             <div class="tab-pane fade @if($active == 'college_management') show active @endif ">
                 <div class="container-fluid">
                     <!-- Add user Button (Opens Add user Modal) -->
-                    <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CCS')">Add College Q&A</button>
+                    @if( $access_role['C'] == 1)
+                        <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CCS')">Add College Q&A</button>
+                        <button class="btn btn-warning float-right mt-2 mb-2" wire:click="default_response()">Default Response</button>
+                    @endif
                     <!-- User Table -->
                     <div class="table-responsive">
                         <table id="example2" class="table table-hover table-bordered" style="width:100%">
@@ -191,8 +194,12 @@
                                         @endforeach
                                         </td>
                                         <td class="text-center">
+                                            @if( $access_role['U'] == 1)
                                             <button class="btn btn-primary" wire:click="edit_q_and_a({{$value['q_and_a_id']}})"><i class='bx bxs-edit'></i></button>
+                                            @endif
+                                            @if( $access_role['D'] == 1)
                                             <button class="btn btn-danger" wire:click="delete_q_and_a({{$value['q_and_a_id']}})"><i class='bx bxs-trash'></i></button>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty
@@ -208,8 +215,10 @@
             <!-- CSC ----------------------------------------------------------------------------------------------------- tab -->
             <div class="tab-pane fade @if($active == 'csc_management') show active @endif ">
                 <div class="container-fluid">
-                <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CSC')">Add CSC Q&A</button>
-                    <!-- Role Table -->
+                @if( $access_role['C'] == 1)
+                    <button class="btn btn-success float-right mt-2 mb-2" wire:click="add_q_and_a('CSC')">Add CSC Q&A</button>
+                @endif
+                <!-- Role Table -->
                     <div class="table-responsive">
                         <table id="example3" class="table table-hover table-bordered" style="width:100%">
                             <caption>These data can be modified and structured before calling as a function in the model</caption>
@@ -306,7 +315,7 @@
                                                 @foreach($q_and_a['questions'] as $key => $value)
                                                 <div class="form-group" >
                                                     <label for="editquestion">Question/s</label>
-                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
+                                                    <textarea wire:key="question-{{$key}}"  class="form-control form-control-sm" rows="3" id="editquestion" wire:model.defer="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
                                                 </div>
                                                 <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_question({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -320,7 +329,7 @@
                                                         @if($q_and_a['answers'][$key]['answer_type'] == 1)
                                                         <input wire:key="answer-{{$key}}"class="form-control form-control-sm" type="file" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></input>
                                                         @else
-                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        <textarea wire:key="answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model.defer="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
                                                         @endif
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
@@ -380,7 +389,7 @@
                                                 @foreach($q_and_a['questions'] as $key => $value)
                                                 <div class="form-group" >
                                                     <label for="editquestion">Question/s</label>
-                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
+                                                    <textarea wire:key="question-{{$key}}" class="form-control form-control-sm" rows="3" id="editquestion" wire:model.defer="q_and_a.questions.{{$key}}.question_details"  placeholder="Type Question"></textarea>
                                                 </div>
                                                 <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_question({{$key}})"><i class="bi bi-x-lg"></i></button>
                                                 @endforeach
@@ -394,7 +403,7 @@
                                                         @if($q_and_a['answers'][$key]['answer_type'] == 1)
                                                         <input wire:key="csc-answer-{{$key}}"class="form-control form-control-sm" type="file" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></input>
                                                         @else
-                                                        <textarea wire:key="csc-answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
+                                                        <textarea wire:key="csc-answer-{{$key}}"class="form-control form-control-sm" rows="3" id="editresponse" wire:model.defer="q_and_a.answers.{{$key}}.answer_details"  placeholder="Type desire response.."></textarea>
                                                         @endif
                                                     </div>
                                                     <button class="btn btn-danger btn-icon remove-entry float-right" type="button" wire:click="remove_answer({{$key}})"><i class="bi bi-x-lg"></i></button>
@@ -433,6 +442,28 @@
                             </div>
                         </form>
                         @endif
+                    </div>
+                </div>
+            </div>
+            <div class="modal modal-md fade" id="DefaultResponseModal" tabindex="-1" role="dialog" aria-labelledby="DefaultResponseModalLabel" aria-hidden="true" wire:ignore.self>
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="DefaultResponseModalLabel">Default Response</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form wire:submit.prevent="save_default_response()">
+                            <div class="form-group col-md-12">
+                                <label for="editRoleName">Response</label>
+                                <input type="text" class="form-control" placeholder="enter profanity words" wire:model.defer="default_response.response" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
